@@ -10,9 +10,8 @@
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "consolidate": "^0.14.0",
     "express": "^4.13.4",
-    "handlebars": "^4.0.5",
+    "express-handlebars": "^3.0.0",
     "node-sass-middleware": "^0.9.7"
   }
 }
