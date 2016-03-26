@@ -11,40 +11,18 @@
 }
 
 .home-header {
-  color: $text-color-header;
+  color: $grey-color-50;
 
-  .home-navbar {
-    min-height: 60px;
-    padding: 10px;
-    margin: 0 50px 20px 50px;
-
-    * {
-      margin-bottom: 0;
-    }
-
-    a {
-      color: $text-color-header;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        display: inline-block;
-
-        a {
-          padding: 10px;
-          border-radius: 5px;
-
-          &:hover {
-            background-color: rgba($purple-color-600, 0.5);
-          }
-        }
+  nav {
+    li {
+      a:hover {
+        background-color: rgba($purple-color-600, 0.5);
       }
     }
+  }
+
+  a {
+    color: $grey-color-50;
   }
 
   .jumbotron {

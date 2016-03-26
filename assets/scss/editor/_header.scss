@@ -1,0 +1,15 @@
+.editor-header {
+  background-color: $grey-color-100;
+
+  a {
+    color: $grey-color-dark;
+  }
+
+  nav {
+    li {
+      a:hover {
+        background-color: darken($grey-color-100, 4);
+      }
+    }
+  }
+}
