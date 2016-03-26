@@ -1,0 +1,15 @@
+{
+  "name": "deltamike-node",
+  "version": "1.0.0",
+  "description": "deltamike-node",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "",
+    "start": "node server/index.js"
+  },
+  "author": "Kacper Goliński <kacper.golinski@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
