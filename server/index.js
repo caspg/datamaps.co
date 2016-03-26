@@ -1,14 +1,23 @@
 const express = require('express')
 const engines = require('consolidate')
+const sassMiddleware = require('node-sass-middleware')
+const path = require('path')
 
 const isDev = process.env.NODE_ENV !== 'production'
 const port = isDev ? 3000 : process.env.PORT
 const app = express()
 
 app.engine('hbs', engines.handlebars)
-
 app.set('views', './views')
 app.set('view engine', 'hbs')
+
+app.use(sassMiddleware({
+  src: path.resolve(__dirname, '../assets/scss'),
+  dest: path.resolve(__dirname, '../public/css'),
+  outputStyle: 'compressed',
+  prefix: '/css'
+}))
+app.use('/css', express.static(path.join(__dirname, '../public/css')))
 
 app.get('/', function(req, res) {
   res.render('index')
