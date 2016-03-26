@@ -1,3 +1,12 @@
-body {
-  color: blue;
-}
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$purple-color-600: #5E35B1;
+$purple-color-500: #673AB7;
+$purple-color-400: #7E57C2;
+
+$text-color:       $grey-color;
+$text-color-header: #FAFAFA;
+
+@import 'home/header';

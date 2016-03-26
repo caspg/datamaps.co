@@ -14,7 +14,8 @@ app.use(sassMiddleware({
   src: path.resolve(__dirname, '../assets/scss'),
   dest: path.resolve(__dirname, '../public/css'),
   outputStyle: 'compressed',
-  prefix: '/css'
+  prefix: '/css',
+  debug: true
 }))
 app.use('/css', express.static(path.join(__dirname, '../public/css')))
 
