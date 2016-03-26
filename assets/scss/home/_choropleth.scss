@@ -1,0 +1,41 @@
+.choropleth-section {
+  margin-top: 100px;
+  padding: 0 20px;
+
+  .section-title {
+    margin-bottom: 50px;
+  }
+
+  .choropleth-img-wrapper {
+    padding: 5px;
+  }
+
+  .choropleth-img {
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+
+  .info-column {
+    padding-left: 50px;
+  }
+
+  .buttons-wrapper {
+    padding-top: 5px;
+    padding-left: 0;
+  }
+
+  .button {
+    margin-bottom: 80px;
+    min-width: 250px;
+  }
+
+  .choropleth-attributes {
+    margin-top: 15px;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
