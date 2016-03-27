@@ -18,18 +18,29 @@ export default class DatamapBox extends Component {
     })
   }
 
+  renderMapWithLegend(svgWidth, svgHeight) {
+    return (
+      <MapWithLegend
+        svgWidth={svgWidth}
+        svgHeight={svgHeight}
+      />
+    )
+  }
+
   render() {
-    const svgWidth = this.state.containerWidth ? Math.min(this.state.containerWidth, 800) : 0
+    const { containerWidth } = this.state
+    const svgWidth = containerWidth ? Math.min(containerWidth, 800) : 0
+    const svgHeight = svgWidth * 0.8
     const svgStyle = {
       width: svgWidth,
-      height: svgWidth * 0.8,
+      height: svgHeight,
       backgroundColor: 'green',
     }
 
     return (
       <div ref="DatamapBox">
         <svg style={svgStyle}>
-          {this.state.renderMap && <MapWithLegend />}
+          {this.state.renderMap && this.renderMapWithLegend(svgWidth, svgHeight)}
         </svg>
       </div>
     )

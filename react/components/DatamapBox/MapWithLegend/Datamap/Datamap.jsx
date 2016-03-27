@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import topojson from 'topojson'
 import d3 from 'd3'
 
 import { usaTopoJSON } from '../../../../topoData'
 import DatamapSubunit from './DatamapSubunit'
 
-export default class index extends Component {
+export default class Datamap extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -14,8 +14,8 @@ export default class index extends Component {
   }
 
   get path() {
-    const containerWidth = 800
-    const containerHeight = 500
+    const containerWidth = this.props.svgWidth
+    const containerHeight = this.props.svgHeight
     const projection = d3.geo.albersUsa().scale(containerWidth)
       .translate([containerWidth / 2, containerHeight / 2])
 
@@ -40,4 +40,9 @@ export default class index extends Component {
       </g>
     )
   }
+}
+
+Datamap.propTypes = {
+  svgWidth: PropTypes.number.isRequired,
+  svgHeight: PropTypes.number.isRequired,
 }
