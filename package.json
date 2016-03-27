@@ -11,6 +11,7 @@
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
+    "d3": "^3.5.16",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
     "node-sass-middleware": "^0.9.7",
