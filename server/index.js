@@ -10,6 +10,10 @@ app.get('/editor', function(req, res) {
   res.render('editor', { title: '| Editor' })
 })
 
+app.get('/editor/*', function(req, res) {
+  res.render('editor', { title: '| Editor' })
+})
+
 app.listen(port, '0.0.0.0', function _onStart(err) {
   if (err) {
     console.log(err)
