@@ -4,16 +4,12 @@ import MapContainer from './MapContainer'
 
 export default class App extends Component {
   render() {
-    const colStyle = {
-      border: '1px solid #ccc',
-    }
-
     return (
-      <div className="row">
-        <div className="col-xs-8" style={colStyle}>
+      <div className="app-container">
+        <div className="app-col map-column">
           <MapContainer />
         </div>
-        <div className="col-xs-4" style={colStyle}>
+        <div className="app-col editor-body-column">
           {this.props.children}
         </div>
       </div>

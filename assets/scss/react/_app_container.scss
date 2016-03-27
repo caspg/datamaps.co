@@ -1,0 +1,18 @@
+.app-container {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+  .app-col {
+    display: table-cell;
+    border: 1px solid #ccc;
+  }
+
+  .map-column {
+    width: 65%;
+  }
+
+  .editor-body-column {
+    width: 35%;
+  }
+}

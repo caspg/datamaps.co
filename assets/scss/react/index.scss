@@ -1,0 +1,10 @@
+@import 'app_container';
+@import 'map_container';
+
+#editor-container {
+  margin-top: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
