@@ -43,9 +43,13 @@ export default class DatamapBox extends Component {
   render() {
     const { containerWidth } = this.state
     const svgWidth = containerWidth || 0
+    const datamapBoxStyle = {
+      height: '100%',
+      position: 'relative',
+    }
 
     return (
-      <div ref="DatamapBox">
+      <div ref="DatamapBox" style={datamapBoxStyle}>
         <MapElements
           svgWidth={svgWidth}
           svgHeight={svgWidth * 0.8}

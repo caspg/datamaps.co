@@ -8,6 +8,11 @@ export default class DatamapElements extends Component {
       width: svgWidth,
       height: svgHeight,
       backgroundColor: 'green',
+      margin: 'auto',
+      position: 'absolute',
+      top: '15px',
+      left: 0,
+      right: 0,
     }
 
     return (
