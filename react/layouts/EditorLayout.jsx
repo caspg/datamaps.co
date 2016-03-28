@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-// import MapContainer from '../containers/MapContainer'
+import MapContainer from '../containers/MapContainer'
 
 export default class EditorLayout extends Component {
   constructor(props) {
@@ -57,6 +57,7 @@ export default class EditorLayout extends Component {
         marginRight: isFullMap ? 0 : editorBodyWidth,
         height: '100%',
         backgroundColor: '#BDBDBD',
+        overflow: 'scroll',
       },
       editorBodyColumn: {
         display: isFullMap ? 'none' : 'block',
@@ -75,7 +76,7 @@ export default class EditorLayout extends Component {
       <div className="editor-wrapper" style={this.styles.wrapper}>
         <div ref="container" style={this.styles.container}>
           <div className="map-column" style={this.styles.mapColumn}>
-            MapContainer
+            <MapContainer />
           </div>
           <div className="editor-body-column" style={this.styles.editorBodyColumn}>
             {this.props.children}

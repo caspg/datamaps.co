@@ -15,12 +15,12 @@ export default class DatamapBox extends Component {
   }
 
   componentDidMount() {
-    const { minWidth, maxWidth } = this.state
-    const clientWidth = this.refs.DatamapBox.clientWidth
-    const containerWidth = Math.min(Math.max(clientWidth, minWidth), maxWidth)
-    this.setState({ containerWidth })
-
     window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillReceiveProps() {
+    const containerWidth = this.currentContainerWidth()
+    this.setState({ containerWidth })
   }
 
   componentWillUnmount() {
@@ -28,11 +28,16 @@ export default class DatamapBox extends Component {
   }
 
   handleResize() {
-    const containerWidth = this.refs.DatamapBox.clientWidth
-
-    if (containerWidth > this.state.minWidth && containerWidth < this.state.maxWidth) {
-      this.setState({ containerWidth: this.refs.DatamapBox.clientWidth })
+    const containerWidth = this.currentContainerWidth()
+    if (containerWidth !== this.state.containerWidth) {
+      this.setState({ containerWidth })
     }
+  }
+
+  currentContainerWidth() {
+    const { minWidth, maxWidth } = this.state
+    const clientWidth = this.refs.DatamapBox.clientWidth
+    return Math.min(Math.max(clientWidth, minWidth), maxWidth)
   }
 
   render() {
