@@ -8,13 +8,20 @@ import DatamapSubunit from './DatamapSubunit'
 export default class Datamap extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       geoJSONfeatures: topojson.feature(usaTopoJSON, usaTopoJSON.objects.usa).features,
+      path: this.path(this.props.svgWidth, this.props.svgHeight),
     }
   }
 
-  get path() {
-    const { svgWidth, svgHeight } = this.props
+  componentWillReceiveProps(nextProps) {
+    const { svgWidth, svgHeight } = nextProps
+    const path = this.path(svgWidth, svgHeight)
+    this.setState({ path })
+  }
+
+  path(svgWidth, svgHeight) {
     const projection = d3.geo.albersUsa().scale(svgWidth)
       .translate([svgWidth / 2, svgHeight / 2])
 
@@ -26,7 +33,7 @@ export default class Datamap extends Component {
       return (
         <DatamapSubunit
           key={feature.id}
-          path={() => this.path(feature)}
+          path={() => this.state.path(feature)}
         />
       )
     })
