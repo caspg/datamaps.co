@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
-import App from '../containers/App'
+import EditorLayout from '../layouts/EditorLayout'
 import InitPage from '../containers/pages/InitPage'
 import UploadPage from '../containers/pages/UploadPage'
 
 export default (
-  <Route path="/editor" component={App}>
+  <Route path="/editor" component={EditorLayout}>
     <IndexRoute component={InitPage} />
     <Route path="/editor/upload" component={UploadPage} />
   </Route>

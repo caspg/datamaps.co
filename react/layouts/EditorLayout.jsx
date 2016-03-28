@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
-import MapContainer from './MapContainer'
+import MapContainer from '../containers/MapContainer'
 
-export default class App extends Component {
+export default class EditorLayout extends Component {
   render() {
     return (
       <div className="app-container">
@@ -17,6 +17,6 @@ export default class App extends Component {
   }
 }
 
-App.propTypes = {
+EditorLayout.propTypes = {
   children: PropTypes.node,
 }
