@@ -13,8 +13,8 @@ export default class DatamapElements extends Component {
     return (
       <svg style={svgStyle}>
         <MapWithLegend
-          svgWidth={svgWidth}
-          svgHeight={svgHeight}
+          svgWidth={0}
+          svgHeight={0}
         />
       </svg>
     )

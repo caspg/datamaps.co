@@ -1,0 +1,12 @@
+.map-container {
+  height: 100%;
+  position: relative;
+
+  svg {
+    margin: auto;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+  }
+}
