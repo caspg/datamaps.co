@@ -7,7 +7,6 @@ export default class DatamapElements extends Component {
     const svgStyle = {
       width: svgWidth,
       height: svgHeight,
-      backgroundColor: 'green',
       margin: 'auto',
       position: 'absolute',
       top: '15px',

@@ -51,12 +51,10 @@ export default class EditorLayout extends Component {
         position: 'relative',
         height: '100%',
         width: '100%',
-        backgroundColor: '#424242',
       },
       mapColumn: {
         marginRight: isFullMap ? 0 : editorBodyWidth,
         height: '100%',
-        backgroundColor: '#BDBDBD',
         overflow: 'scroll',
       },
       editorBodyColumn: {
