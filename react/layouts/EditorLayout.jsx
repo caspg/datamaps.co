@@ -64,7 +64,7 @@ export default class EditorLayout extends Component {
         top: 0,
         bottom: 0,
         right: 0,
-        backgroundColor: '#ddd',
+        border: '1px solid #ddd',
       },
     }
   }

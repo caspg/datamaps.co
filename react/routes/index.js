@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
 import EditorLayout from '../layouts/EditorLayout'
-import InitPage from '../containers/pages/InitPage'
+import InitPage from '../components/InitPage'
 import UploadPage from '../containers/pages/UploadPage'
 
 export default (
