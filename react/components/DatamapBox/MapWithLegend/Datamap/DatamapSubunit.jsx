@@ -21,8 +21,8 @@ export default class DatamapSubunit extends Component {
 
   render() {
     const subutniStyle = {
-      fill: this.state.active ? '#FFCCBC' : '#ccc',
-      stroke: this.state.active ? '#FF5722' : '#ddd',
+      fill: this.state.active ? '#FFCCBC' : '#f5f5f5',
+      stroke: this.state.active ? '#FF5722' : '#ccc',
       strokeWidth: this.state.active ? 2 : 0.5,
     }
 
