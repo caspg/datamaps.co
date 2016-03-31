@@ -1,13 +1,14 @@
 .dropzone-container {
+  padding: 0 50px;
+  margin-bottom: 50px;
+
   .empty-table-btn {
-    margin: 30px 0 0 50px;
+    margin-top: 30px;
     width: 300px;
   }
 
   .dropzone {
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin: 30px 0;
     padding: 25px;
     width: 250px;
     height: 150px;
@@ -20,5 +21,9 @@
 
   .dropzone-active {
     border-style: solid;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }

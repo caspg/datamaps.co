@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
 import { Link } from 'react-router'
 
+import DropzoneInfo from './DropzoneInfo'
+
 export default class DropzoneBox extends Component {
   constructor(props) {
     super(props)
@@ -19,6 +21,8 @@ export default class DropzoneBox extends Component {
         <Dropzone className="dropzone" activeClassName="dropzone-active" onDrop={this.onDrop}>
           <div>Try dropping some file here, or click to select files to upload.</div>
         </Dropzone>
+
+        <DropzoneInfo />
       </div>
     )
   }
