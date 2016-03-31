@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 
+import DropzoneBox from '../../components/DropzoneBox'
+
 export default class UploadPage extends Component {
   render() {
     return (
-      <div>UploadPage component</div>
+      <DropzoneBox />
     )
   }
 }

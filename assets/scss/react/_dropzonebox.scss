@@ -1,0 +1,19 @@
+.dropzone-container {
+  .dropzone {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 25px;
+    width: 250px;
+    height: 150px;
+    border-width: 1px;
+    border-color: #666;
+    border-style: dashed;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+
+  .dropzone-active {
+    border-style: solid;
+  }
+}
