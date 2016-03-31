@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
+import { Link } from 'react-router'
 
 export default class DropzoneBox extends Component {
   constructor(props) {
@@ -13,7 +14,9 @@ export default class DropzoneBox extends Component {
   render() {
     return (
       <div className="dropzone-container">
-        <Dropzone className="dropzone"  activeClassName="dropzone-active" onDrop={this.onDrop}>
+        <Link to="/editor" className="button empty-table-btn">go to empty data table</Link>
+
+        <Dropzone className="dropzone" activeClassName="dropzone-active" onDrop={this.onDrop}>
           <div>Try dropping some file here, or click to select files to upload.</div>
         </Dropzone>
       </div>
