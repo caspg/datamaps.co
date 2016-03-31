@@ -15,14 +15,18 @@ export default class DropzoneBox extends Component {
 
   render() {
     return (
-      <div className="dropzone-container">
-        <Link to="/editor" className="button empty-table-btn">go to empty data table</Link>
+      <div>
+        <div className="dropzone-container">
+          <Link to="/editor" className="empty-table-btn">go to empty data table</Link>
 
-        <Dropzone className="dropzone" activeClassName="dropzone-active" onDrop={this.onDrop}>
-          <div>Try dropping some file here, or click to select files to upload.</div>
-        </Dropzone>
+          <Dropzone className="dropzone" activeClassName="dropzone-active" onDrop={this.onDrop}>
+            <div>Try dropping some file here, or click to select files to upload.</div>
+          </Dropzone>
+        </div>
 
-        <DropzoneInfo />
+        <div className="dropzone-info-container">
+          <DropzoneInfo />
+        </div>
       </div>
     )
   }
