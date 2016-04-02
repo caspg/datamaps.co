@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import topojson from 'topojson'
 import d3 from 'd3'
 
-import { usaTopoJSON } from '../../../../topoData'
+import { usaTopoJSON } from '../../../../data/topoJSON'
 import DatamapSubunit from './DatamapSubunit'
 
 export default class Datamap extends Component {

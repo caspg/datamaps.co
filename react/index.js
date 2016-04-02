@@ -5,8 +5,15 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 import Root from './containers/Root'
 import configureStore from './store/configureStore'
+import statesList from '../data/statesList'
 
-const store = configureStore()
+const initialState = {
+  regionData: [],
+  emptyData: statesList,
+
+}
+
+const store = configureStore(initialState)
 const history = syncHistoryWithStore(browserHistory, store)
 
 render(
