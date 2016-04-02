@@ -17,7 +17,7 @@ export default class DropzoneBox extends Component {
     return (
       <div>
         <div className="dropzone-container">
-          <Link to="/editor" className="empty-table-btn">go to empty data table</Link>
+          <Link to="/editor/edit-data" className="empty-table-btn">go to empty data table</Link>
 
           <Dropzone className="dropzone" activeClassName="dropzone-active" onDrop={this.onDrop}>
             <div>Try dropping some file here, or click to select files to upload.</div>
