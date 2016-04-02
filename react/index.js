@@ -8,7 +8,7 @@ import configureStore from './store/configureStore'
 import statesList from './data/statesList'
 
 const initialState = {
-  regionData: [],
+  // regionData: [],
   emptyData: statesList,
 
 }
