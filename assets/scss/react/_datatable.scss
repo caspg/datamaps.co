@@ -1,0 +1,16 @@
+table.datatable {
+  width: 100%;
+
+  td {
+    width: 45%;
+
+    &:last-of-type {
+      border: none;
+      width: 10%;
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+}

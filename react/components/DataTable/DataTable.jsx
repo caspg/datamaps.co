@@ -5,20 +5,18 @@ import DataTableRow from './DataTableRow'
 
 export default class DataTable extends Component {
   renderTableRows() {
-    return this.props.emptyData.map((data, index) => {
-      return (
-        <DataTableRow
-          key={index}
-          regionName={data.regionName}
-          value={data.value}
-        />
-      )
-    })
+    return this.props.emptyData.map((data, index) =>
+      <DataTableRow
+        key={index}
+        regionName={data.regionName}
+        value={data.value}
+      />
+    )
   }
 
   render() {
     return (
-      <table>
+      <table className="datatable">
         <thead>
           <tr>
             <SortableHeader
