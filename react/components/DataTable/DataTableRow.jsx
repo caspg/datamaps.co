@@ -1,4 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
+
+import NumericInput from '../NumericInput'
 
 export default class DataTableRow extends Component {
   render() {
@@ -8,13 +10,16 @@ export default class DataTableRow extends Component {
           {this.props.regionName}
         </td>
         <td>
-          NumericInput component
+          <NumericInput
+            value={this.props.value}
+            onBlur={() => console.log('NumericInput onBlur')}
+          />
         </td>
         <td>
           <h3>+</h3>
         </td>
       </tr>
-    );
+    )
   }
 }
 
