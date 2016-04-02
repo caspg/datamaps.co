@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
+import DataTable from '../../components/DataTable'
 
 export default class EditDataPage extends Component {
   render() {
     return (
-      <div>EditDataPage</div>
-    );
+      <div>
+        <DataTable />
+      </div>
+    )
   }
 }
