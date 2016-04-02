@@ -65,7 +65,9 @@ export default class EditorLayout extends Component {
         bottom: 0,
         right: 0,
         border: '1px solid #ddd',
-        overflow: 'scroll',
+        borderTop: 'none',
+        'overflow-y': 'scroll',
+        'overflow-x': 'hidden',
       },
     }
   }

@@ -15,9 +15,6 @@ export default class DataTableRow extends Component {
             onBlur={() => console.log('NumericInput onBlur')}
           />
         </td>
-        <td>
-          <h3>+</h3>
-        </td>
       </tr>
     )
   }

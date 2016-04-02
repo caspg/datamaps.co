@@ -1,16 +1,37 @@
+$borderStyle: 1px solid #ddd;
+
 table.datatable {
   width: 100%;
+  border-collapse: collapse;
+
+  th {
+    padding: 10px 15px;
+    border-right: $borderStyle;
+
+    h6 {
+      margin-bottom: 0;
+    }
+  }
 
   td {
-    width: 45%;
+    width: 50%;
+    height: 35px;
+    padding: 0;
+    border: $borderStyle;
+    border-left: none;
 
-    &:last-of-type {
-      border: none;
-      width: 10%;
+    &:first-of-type {
+      padding: 10px 15px;
     }
   }
 
   input {
     width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
   }
 }
