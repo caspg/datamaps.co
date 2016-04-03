@@ -13,18 +13,18 @@ export default class Datamap extends Component {
     this.state = {
       geoJSONfeatures: topojson.feature(usaTopoJSON, usaTopoJSON.objects.usa).features,
       path: this.path(this.props.svgWidth, this.props.svgHeight),
+      svgResized: false,
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { svgWidth, svgHeight } = nextProps
     const path = this.path(svgWidth, svgHeight)
-    this.setState({ path })
-  }
 
-  shouldComponentUpdate(nextProps) {
-    return nextProps.svgWidth !== this.props.svgWidth ||
+    const svgResized = nextProps.svgWidth !== this.props.svgWidth ||
       nextProps.svgHeight !== this.props.svgHeight
+
+    this.setState({ path, svgResized })
   }
 
   path(svgWidth, svgHeight) {
@@ -46,6 +46,7 @@ export default class Datamap extends Component {
           name={feature.properties.name}
           mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
           value={subunitValue}
+          svgResized={this.state.svgResized}
         />
       )
     })

@@ -11,6 +11,11 @@ export default class DatamapSubunit extends Component {
     }
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.svgResized !== this.props.svgResized ||
+      nextState.active !== this.state.active
+  }
+
   handleMouseEnter() {
     this.setState({ active: true })
 
@@ -46,4 +51,5 @@ DatamapSubunit.propTypes = {
   mouseEnterOnSubunit: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.number,
+  svgResized: PropTypes.bool.isRequired,
 }
