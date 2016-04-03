@@ -6,6 +6,7 @@
     "mocha": true
   },
   "rules": {
-    "semi": 0
+    "semi": 0,
+    "jsx-boolean-value": "always"
   }
 }

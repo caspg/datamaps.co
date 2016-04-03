@@ -41,7 +41,9 @@ export default class Datamap extends Component {
 
   render() {
     return (
-      <g>
+      <g
+        onMouseMove={this.props.mouseMoveOnDatamap}
+      >
         {this.renderDatamapSubunits()}
       </g>
     )
@@ -51,4 +53,5 @@ export default class Datamap extends Component {
 Datamap.propTypes = {
   svgWidth: PropTypes.number.isRequired,
   svgHeight: PropTypes.number.isRequired,
+  mouseMoveOnDatamap: PropTypes.func.isRequired,
 }

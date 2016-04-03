@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class HoverInfo extends Component {
   render() {
@@ -8,10 +8,10 @@ export default class HoverInfo extends Component {
       border: '1px solid #ddd',
       position: 'absolute',
       left: this.props.position.x + 20,
-      top: this.props.position.y + 30,
+      top: this.props.position.y - 50 + 20,
       display: this.props.active ? 'block' : 'none',
       background: '#fff',
-      'box-shadow': '1px 1px 5px #ddd',
+      boxShadow: '1px 1px 5px #ddd',
       padding: 10,
     }
 
@@ -22,4 +22,11 @@ export default class HoverInfo extends Component {
       </div>
     );
   }
+}
+
+HoverInfo.propTypes = {
+  position: PropTypes.object.isRequired,
+  active: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 }

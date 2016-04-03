@@ -19,6 +19,7 @@ export default class DatamapElements extends Component {
         <MapWithLegend
           svgWidth={svgWidth}
           svgHeight={svgHeight}
+          mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
         />
       </svg>
     )
@@ -38,4 +39,5 @@ export default class DatamapElements extends Component {
 DatamapElements.propTypes = {
   svgWidth: PropTypes.number.isRequired,
   svgHeight: PropTypes.number.isRequired,
+  mouseMoveOnDatamap: PropTypes.func.isRequired,
 }

@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 
 import MapElements from './MapElements'
+import HoverInfo from './HoverInfo'
 
 export default class DatamapBox extends Component {
   constructor(props) {
     super(props)
     this.handleResize = this.handleResize.bind(this)
+    this.mouseMoveOnDatamap = this.mouseMoveOnDatamap.bind(this)
 
     this.state = {
       containerWidth: null,
       minWidth: 500,
       maxWidth: 750,
+      infoWindowPos: { x: 0, y: 0 },
     }
   }
 
@@ -40,8 +43,13 @@ export default class DatamapBox extends Component {
     return Math.min(Math.max(clientWidth, minWidth), maxWidth)
   }
 
+  mouseMoveOnDatamap(e) {
+    const position = { x: e.clientX, y: e.clientY }
+    this.setState({ infoWindowPos: position })
+  }
+
   render() {
-    const { containerWidth } = this.state
+    const { containerWidth, infoWindowPos } = this.state
     const svgWidth = containerWidth || 0
     const datamapBoxStyle = {
       height: '100%',
@@ -53,6 +61,13 @@ export default class DatamapBox extends Component {
         <MapElements
           svgWidth={svgWidth}
           svgHeight={svgWidth * 0.8}
+          mouseMoveOnDatamap={this.mouseMoveOnDatamap}
+        />
+        <HoverInfo
+          active={true}
+          position={infoWindowPos}
+          name="dummy name"
+          value={99}
         />
       </div>
     )
