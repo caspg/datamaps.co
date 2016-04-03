@@ -12,17 +12,19 @@ export default class NumericInput extends Component {
   }
 
   handleOnChange(event) {
-    const newValue = event.target.value;
-    if (newValue === this.state.value) return;
-    if (!/^[+-]?\d*(\.\d*)?$/.test(newValue)) return;
-    this.setState({ value: newValue });
+    const newValue = parseFloat(event.target.value)
+
+    if (/^[+-]?\d*(\.\d*)?$/.test(newValue)) {
+      this.setState({ value: newValue })
+    } else {
+      this.setState({ value: parseFloat(this.state.value) || '' })
+    }
   }
 
-  handleOnBlur(event) {
-    const newValue = parseFloat(event.target.value) || null;
-    if (this.props.value === newValue) return;
-    this.setState({ value: newValue });
-    this.props.onBlur(newValue);
+  handleOnBlur() {
+    if (this.props.value !== this.state.value) {
+      this.props.onBlur(this.state.value)
+    }
   }
 
   render() {
