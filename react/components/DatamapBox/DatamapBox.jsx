@@ -8,12 +8,15 @@ export default class DatamapBox extends Component {
     super(props)
     this.handleResize = this.handleResize.bind(this)
     this.mouseMoveOnDatamap = this.mouseMoveOnDatamap.bind(this)
+    this.mouseEnterOnDatamap = this.mouseEnterOnDatamap.bind(this)
+    this.mouseLeaveDatamap = this.mouseLeaveDatamap.bind(this)
 
     this.state = {
       containerWidth: null,
       minWidth: 500,
       maxWidth: 750,
       infoWindowPos: { x: 0, y: 0 },
+      infoWindowActive: false,
     }
   }
 
@@ -27,7 +30,7 @@ export default class DatamapBox extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', this.handleResize)
   }
 
   handleResize() {
@@ -48,8 +51,16 @@ export default class DatamapBox extends Component {
     this.setState({ infoWindowPos: position })
   }
 
+  mouseEnterOnDatamap() {
+    this.setState({ infoWindowActive: true })
+  }
+
+  mouseLeaveDatamap() {
+    this.setState({ infoWindowActive: false })
+  }
+
   render() {
-    const { containerWidth, infoWindowPos } = this.state
+    const { containerWidth, infoWindowPos, infoWindowActive } = this.state
     const svgWidth = containerWidth || 0
     const datamapBoxStyle = {
       height: '100%',
@@ -62,9 +73,11 @@ export default class DatamapBox extends Component {
           svgWidth={svgWidth}
           svgHeight={svgWidth * 0.8}
           mouseMoveOnDatamap={this.mouseMoveOnDatamap}
+          mouseEnterOnDatamap={this.mouseEnterOnDatamap}
+          mouseLeaveDatamap={this.mouseLeaveDatamap}
         />
         <HoverInfo
-          active={true}
+          active={infoWindowActive}
           position={infoWindowPos}
           name="dummy name"
           value={99}
