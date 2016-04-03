@@ -1,37 +1,47 @@
 $borderStyle: 1px solid #ddd;
 
-table.datatable {
-  width: 100%;
-  border-collapse: collapse;
-
-  th {
-    padding: 10px 15px;
-    border-right: $borderStyle;
-
-    h6 {
-      margin-bottom: 0;
-    }
+.datatable-container {
+  a {
+    margin-top: 30px;
+    margin-left: 15px;
+    display: inline-block;
   }
 
-  td {
-    width: 50%;
-    height: 35px;
-    padding: 0;
-    border: $borderStyle;
-    border-left: none;
-
-    &:first-of-type {
-      padding: 10px 15px;
-    }
-  }
-
-  input {
+  table {
+    margin-top: 30px;
     width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
-    padding-left: 15px;
+    border-collapse: collapse;
+
+    th {
+      padding: 10px 15px;
+      border-top: $borderStyle;
+      border-right: $borderStyle;
+
+      h6 {
+        margin-bottom: 0;
+      }
+    }
+
+    td {
+      width: 50%;
+      height: 35px;
+      padding: 0;
+      border: $borderStyle;
+      border-left: none;
+
+      &:first-of-type {
+        padding: 10px 15px;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+      padding-left: 15px;
+    }
   }
 }

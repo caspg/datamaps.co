@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import { List } from 'immutable'
 
 import SortableHeader from './SortableHeader'
@@ -18,21 +19,24 @@ export default class DataTable extends Component {
 
   render() {
     return (
-      <table className="datatable">
-        <thead>
-          <tr>
-            <SortableHeader
-              label="STATES NAME"
-            />
-            <SortableHeader
-              label="VALUE"
-            />
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderTableRows()}
-        </tbody>
-      </table>
+      <div className="datatable-container">
+        <Link to="/editor/upload">upload new data</Link>
+        <table>
+          <thead>
+            <tr>
+              <SortableHeader
+                label="STATES NAME"
+              />
+              <SortableHeader
+                label="VALUE"
+              />
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderTableRows()}
+          </tbody>
+        </table>
+      </div>
     )
   }
 }
