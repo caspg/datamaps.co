@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { List } from 'immutable'
 
 import SortableHeader from './SortableHeader'
 import DataTableRow from './DataTableRow'
@@ -8,8 +9,8 @@ export default class DataTable extends Component {
     return this.props.regionData.map((data, index) =>
       <DataTableRow
         key={index}
-        regionName={data.regionName}
-        value={data.value}
+        regionName={data.get('regionName')}
+        value={data.get('value')}
       />
     )
   }
@@ -36,5 +37,5 @@ export default class DataTable extends Component {
 }
 
 DataTable.propTypes = {
-  regionData: PropTypes.array.isRequired,
+  regionData: PropTypes.instanceOf(List).isRequired,
 }

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
+import { List } from 'immutable'
 
 import MapWithLegend from './MapWithLegend'
 
@@ -36,7 +37,7 @@ export default class DatamapElements extends Component {
       <div>
         {svgWidth && svgHeight && this.renderMapElements(svgWidth, svgHeight)}
       </div>
-    );
+    )
   }
 }
 
@@ -47,5 +48,5 @@ DatamapElements.propTypes = {
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
-  regionData: PropTypes.array.isRequired,
+  regionData: PropTypes.instanceOf(List).isRequired,
 }

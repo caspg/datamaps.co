@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
+import { List } from 'immutable'
 
-import Datamap from './Datamap';
+import Datamap from './Datamap'
 
 export default class MapWithLegend extends Component {
   render() {
@@ -18,7 +19,7 @@ export default class MapWithLegend extends Component {
           mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
         />
       </g>
-    );
+    )
   }
 }
 
@@ -29,5 +30,5 @@ MapWithLegend.propTypes = {
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
-  regionData: PropTypes.array.isRequired,
+  regionData: PropTypes.instanceOf(List).isRequired,
 }

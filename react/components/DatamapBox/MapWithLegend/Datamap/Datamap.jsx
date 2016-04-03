@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import topojson from 'topojson'
 import d3 from 'd3'
+import { List } from 'immutable'
 
 import { usaTopoJSON } from '../../../../data/topoJSON'
 import DatamapSubunit from './DatamapSubunit'
@@ -35,8 +36,8 @@ export default class Datamap extends Component {
 
   renderDatamapSubunits() {
     return this.state.geoJSONfeatures.map((feature) => {
-      const subunitData = this.props.regionData.filter((datum) => datum.code === feature.id)[0]
-      const subunitValue = subunitData ? subunitData.value : null
+      const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
+      const subunitValue = subunitData ? subunitData.get('value') : null
 
       return (
         <DatamapSubunit
@@ -70,5 +71,5 @@ Datamap.propTypes = {
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
-  regionData: PropTypes.array.isRequired,
+  regionData: PropTypes.instanceOf(List).isRequired,
 }

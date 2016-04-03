@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react'
 
 export default class DatamapSubunit extends Component {
   constructor(props) {
@@ -37,7 +37,7 @@ export default class DatamapSubunit extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       />
-    );
+    )
   }
 }
 
