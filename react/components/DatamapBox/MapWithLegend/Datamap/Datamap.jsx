@@ -21,6 +21,11 @@ export default class Datamap extends Component {
     this.setState({ path })
   }
 
+  shouldComponentUpdate(nextProps) {
+    return nextProps.svgWidth !== this.props.svgWidth ||
+      nextProps.svgHeight !== this.props.svgHeight
+  }
+
   path(svgWidth, svgHeight) {
     const projection = d3.geo.albersUsa().scale(svgWidth)
       .translate([svgWidth / 2, svgHeight / 2])
