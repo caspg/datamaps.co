@@ -22,7 +22,9 @@ export default class MapWithLegend extends Component {
   extremeValues(props) {
     const { regionData } = props
     const values = regionData.map((item) => item.get('value'))
-    return List([values.min(), values.max()])
+    const filteredValues = values.filterNot((item) => item === null)
+
+    return List([filteredValues.min(), filteredValues.max()])
   }
 
   linearScale(props) {

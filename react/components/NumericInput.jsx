@@ -16,13 +16,14 @@ export default class NumericInput extends Component {
     if (/^[+-]?\d*(\.\d*)?$/.test(newValue)) {
       this.setState({ value: newValue || '' })
     } else {
-      this.setState({ value: parseFloat(this.state.value) || '' })
+      this.setState({ value: this.state.value || '' })
     }
   }
 
   handleOnBlur() {
     if (this.props.value !== this.state.value) {
-      const parsedValue = parseFloat(this.state.value)
+      const { value } = this.state
+      const parsedValue = value ? parseFloat(value) : null
       this.props.onBlur(parsedValue)
     }
   }

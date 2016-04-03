@@ -40,7 +40,7 @@ export default class Datamap extends Component {
     return this.state.geoJSONfeatures.map((feature) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
       const subunitValue = subunitData ? subunitData.get('value') : null
-      const fillColor = subunitData ? colorScale(subunitValue) : '#f5f5f5'
+      const fillColor = subunitValue ? colorScale(subunitValue) : '#f5f5f5'
 
       return (
         <DatamapSubunit
