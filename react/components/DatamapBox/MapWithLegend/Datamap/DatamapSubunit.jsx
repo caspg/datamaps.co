@@ -13,6 +13,7 @@ export default class DatamapSubunit extends Component {
 
   handleMouseEnter() {
     this.setState({ active: true })
+    this.props.mouseEnterOnSubunit(this.props.name)
   }
 
   handleMouseLeave() {
@@ -40,4 +41,6 @@ export default class DatamapSubunit extends Component {
 
 DatamapSubunit.propTypes = {
   path: PropTypes.func.isRequired,
+  mouseEnterOnSubunit: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
 }

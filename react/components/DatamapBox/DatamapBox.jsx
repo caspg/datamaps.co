@@ -10,6 +10,7 @@ export default class DatamapBox extends Component {
     this.mouseMoveOnDatamap = this.mouseMoveOnDatamap.bind(this)
     this.mouseEnterOnDatamap = this.mouseEnterOnDatamap.bind(this)
     this.mouseLeaveDatamap = this.mouseLeaveDatamap.bind(this)
+    this.mouseEnterOnSubunit = this.mouseEnterOnSubunit.bind(this)
 
     this.state = {
       containerWidth: null,
@@ -17,6 +18,7 @@ export default class DatamapBox extends Component {
       maxWidth: 750,
       infoWindowPos: { x: 0, y: 0 },
       infoWindowActive: false,
+      activeSubunitName: 'default',
     }
   }
 
@@ -59,8 +61,17 @@ export default class DatamapBox extends Component {
     this.setState({ infoWindowActive: false })
   }
 
+  mouseEnterOnSubunit(name) {
+    this.setState({ activeSubunitName: name })
+  }
+
   render() {
-    const { containerWidth, infoWindowPos, infoWindowActive } = this.state
+    const {
+      containerWidth,
+      infoWindowPos,
+      infoWindowActive,
+      activeSubunitName } = this.state
+
     const svgWidth = containerWidth || 0
     const datamapBoxStyle = {
       height: '100%',
@@ -75,11 +86,12 @@ export default class DatamapBox extends Component {
           mouseMoveOnDatamap={this.mouseMoveOnDatamap}
           mouseEnterOnDatamap={this.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.mouseLeaveDatamap}
+          mouseEnterOnSubunit={this.mouseEnterOnSubunit}
         />
         <HoverInfo
           active={infoWindowActive}
           position={infoWindowPos}
-          name="dummy name"
+          name={activeSubunitName}
           value={99}
         />
       </div>

@@ -39,6 +39,8 @@ export default class Datamap extends Component {
         <DatamapSubunit
           key={feature.id}
           path={() => this.state.path(feature)}
+          name={feature.properties.name}
+          mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
         />
       )
     })
@@ -63,4 +65,5 @@ Datamap.propTypes = {
   mouseMoveOnDatamap: PropTypes.func.isRequired,
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
+  mouseEnterOnSubunit: PropTypes.func.isRequired,
 }
