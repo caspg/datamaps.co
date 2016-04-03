@@ -6,6 +6,7 @@
     "mocha": true
   },
   "rules": {
-    "semi": 0
+    "semi": 0,
+    "new-cap": [2, "capIsNewExceptions": ["Map", "List"]]
   }
 }

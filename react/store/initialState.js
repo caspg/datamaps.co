@@ -2,8 +2,13 @@ import { fromJS } from 'immutable'
 
 import statesEmptyData from '../data/states-empty-data'
 
-const immutableRegionData = fromJS(statesEmptyData)
-
 export default {
-  regionData: immutableRegionData,
+  regionData: fromJS(statesEmptyData),
+  mapUi: fromJS({
+    dataClassification: 'linear',
+    linear: {
+      startColor: '#f7fbff',
+      endColor: '#08519c',
+    },
+  }),
 }

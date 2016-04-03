@@ -1,6 +1,7 @@
-import { EDIT_ROW } from '../constants/ActionTypes';
+import { List } from 'immutable'
+import { EDIT_ROW } from '../constants/ActionTypes'
 
-export default function regionData(state = [], action) {
+export default function regionData(state = List(), action) {
   switch (action.type) {
     case EDIT_ROW: {
       const regionIndex = state.findIndex((item) => item.get('regionName') === action.regionName)
