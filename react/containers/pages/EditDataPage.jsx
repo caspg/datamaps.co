@@ -8,7 +8,7 @@ class EditDataPage extends Component {
     return (
       <div>
         <DataTable
-          emptyData={this.props.emptyData}
+          regionData={this.props.regionData}
         />
       </div>
     )
@@ -16,12 +16,12 @@ class EditDataPage extends Component {
 }
 
 EditDataPage.propTypes = {
-  emptyData: PropTypes.array.isRequired,
+  regionData: PropTypes.array.isRequired,
 }
 
 function mapStateToProps(state) {
   return {
-    emptyData: state.emptyData,
+    regionData: state.regionData,
   }
 }
 

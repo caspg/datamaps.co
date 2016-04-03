@@ -5,11 +5,10 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 import Root from './containers/Root'
 import configureStore from './store/configureStore'
-import statesList from './data/statesList'
+import statesEmptyData from './data/states-empty-data'
 
 const initialState = {
-  // regionData: [],
-  emptyData: statesList,
+  regionData: statesEmptyData,
 
 }
 

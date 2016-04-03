@@ -5,7 +5,7 @@ import DataTableRow from './DataTableRow'
 
 export default class DataTable extends Component {
   renderTableRows() {
-    return this.props.emptyData.map((data, index) =>
+    return this.props.regionData.map((data, index) =>
       <DataTableRow
         key={index}
         regionName={data.regionName}
@@ -36,5 +36,5 @@ export default class DataTable extends Component {
 }
 
 DataTable.propTypes = {
-  emptyData: PropTypes.array.isRequired,
+  regionData: PropTypes.array.isRequired,
 }

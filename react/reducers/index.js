@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
-import emptyData from './emptyData'
+import regionData from './regionData'
 
 export default combineReducers({
-  emptyData,
+  regionData,
   routing: routerReducer,
 })
