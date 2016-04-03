@@ -35,9 +35,12 @@ export default class Datamap extends Component {
   }
 
   renderDatamapSubunits() {
+    const { colorScale } = this.props
+
     return this.state.geoJSONfeatures.map((feature) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
       const subunitValue = subunitData ? subunitData.get('value') : null
+      const fillColor = subunitData ? colorScale(subunitValue) : '#f5f5f5'
 
       return (
         <DatamapSubunit
@@ -47,6 +50,7 @@ export default class Datamap extends Component {
           mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
           value={subunitValue}
           svgResized={this.state.svgResized}
+          fillColor={fillColor}
         />
       )
     })
@@ -73,4 +77,5 @@ Datamap.propTypes = {
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(List).isRequired,
+  colorScale: PropTypes.func.isRequired,
 }

@@ -29,7 +29,7 @@ export default class DatamapSubunit extends Component {
 
   render() {
     const subutniStyle = {
-      fill: this.state.active ? '#FFCCBC' : '#f5f5f5',
+      fill: this.state.active ? '#FFCCBC' : this.props.fillColor,
       stroke: this.state.active ? '#FF5722' : '#ccc',
       strokeWidth: this.state.active ? 2 : 0.5,
     }
@@ -52,4 +52,5 @@ DatamapSubunit.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.number,
   svgResized: PropTypes.bool.isRequired,
+  fillColor: PropTypes.string.isRequired,
 }
