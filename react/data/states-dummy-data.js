@@ -3,7 +3,7 @@ function dummyValue() {
 }
 
 export default [
-  { regionName: 'Alabama', code: 'AL', value: dummyValue() },
+  { regionName: 'Alabama', code: 'AL', value: null },
   { regionName: 'Alaska', code: 'AK', value: dummyValue() },
   { regionName: 'Arizona', code: 'AZ', value: dummyValue() },
   { regionName: 'Arkansas', code: 'AR', value: dummyValue() },
