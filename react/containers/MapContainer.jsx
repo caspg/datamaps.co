@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { List } from 'immutable'
+import { List, Map } from 'immutable'
 
 import DatamapBox from '../components/DatamapBox'
 
@@ -9,6 +9,7 @@ class MapContainer extends Component {
     return (
       <DatamapBox
         regionData={this.props.regionData}
+        mapUi={this.props.mapUi}
       />
     )
   }
@@ -16,11 +17,13 @@ class MapContainer extends Component {
 
 MapContainer.propTypes = {
   regionData: PropTypes.instanceOf(List).isRequired,
+  mapUi: PropTypes.instanceOf(Map).isRequired,
 }
 
 function mapStateToProps(state) {
   return {
     regionData: state.regionData,
+    mapUi: state.mapUi,
   }
 }
 

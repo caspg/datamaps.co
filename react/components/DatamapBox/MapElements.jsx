@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { List } from 'immutable'
+import { List, Map } from 'immutable'
 
 import MapWithLegend from './MapWithLegend'
 
@@ -18,6 +18,7 @@ export default class DatamapElements extends Component {
     return (
       <svg style={svgStyle}>
         <MapWithLegend
+          mapUi={this.props.mapUi}
           regionData={this.props.regionData}
           svgWidth={svgWidth}
           svgHeight={svgHeight}
@@ -49,4 +50,5 @@ DatamapElements.propTypes = {
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(List).isRequired,
+  mapUi: PropTypes.instanceOf(Map).isRequired,
 }

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { List } from 'immutable'
+import { List, Map } from 'immutable'
 
 import MapElements from './MapElements'
 import HoverInfo from './HoverInfo'
@@ -85,6 +85,7 @@ export default class DatamapBox extends Component {
     return (
       <div ref="DatamapBox" style={datamapBoxStyle}>
         <MapElements
+          mapUi={this.props.mapUi}
           regionData={this.props.regionData}
           svgWidth={svgWidth}
           svgHeight={svgWidth * 0.8}
@@ -106,4 +107,5 @@ export default class DatamapBox extends Component {
 
 DatamapBox.propTypes = {
   regionData: PropTypes.instanceOf(List).isRequired,
+  mapUi: PropTypes.instanceOf(Map).isRequired,
 }
