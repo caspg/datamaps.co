@@ -7,15 +7,14 @@ export default class NumericInput extends Component {
     this.handleOnBlur = this.handleOnBlur.bind(this)
 
     this.state = {
-      value: this.props.value || null,
+      value: this.props.value || '',
     }
   }
 
   handleOnChange(event) {
-    const newValue = parseFloat(event.target.value)
-
+    const newValue = event.target.value
     if (/^[+-]?\d*(\.\d*)?$/.test(newValue)) {
-      this.setState({ value: newValue })
+      this.setState({ value: newValue || '' })
     } else {
       this.setState({ value: parseFloat(this.state.value) || '' })
     }
@@ -23,7 +22,8 @@ export default class NumericInput extends Component {
 
   handleOnBlur() {
     if (this.props.value !== this.state.value) {
-      this.props.onBlur(this.state.value)
+      const parsedValue = parseFloat(this.state.value)
+      this.props.onBlur(parsedValue)
     }
   }
 
@@ -41,7 +41,7 @@ export default class NumericInput extends Component {
 }
 
 NumericInput.propTypes = {
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   className: PropTypes.string,
   onBlur: PropTypes.func.isRequired,
 }
