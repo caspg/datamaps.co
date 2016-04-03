@@ -35,12 +35,16 @@ export default class Datamap extends Component {
 
   renderDatamapSubunits() {
     return this.state.geoJSONfeatures.map((feature) => {
+      const subunitData = this.props.regionData.filter((datum) => datum.code === feature.id)[0]
+      const subunitValue = subunitData ? subunitData.value : null
+
       return (
         <DatamapSubunit
           key={feature.id}
           path={() => this.state.path(feature)}
           name={feature.properties.name}
           mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
+          value={subunitValue}
         />
       )
     })
@@ -66,4 +70,5 @@ Datamap.propTypes = {
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
+  regionData: PropTypes.array.isRequired,
 }

@@ -17,6 +17,7 @@ export default class DatamapElements extends Component {
     return (
       <svg style={svgStyle}>
         <MapWithLegend
+          regionData={this.props.regionData}
           svgWidth={svgWidth}
           svgHeight={svgHeight}
           mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
@@ -46,4 +47,5 @@ DatamapElements.propTypes = {
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
+  regionData: PropTypes.array.isRequired,
 }

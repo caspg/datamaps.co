@@ -1,9 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 
 import DatamapBox from '../components/DatamapBox'
 
-export default class MapContainer extends Component {
+class MapContainer extends Component {
   render() {
-    return (<DatamapBox />)
+    return (
+      <DatamapBox
+        regionData={this.props.regionData}
+      />
+    )
   }
 }
+
+MapContainer.propTypes = {
+  regionData: PropTypes.array.isRequired,
+}
+
+function mapStateToProps(state) {
+  return {
+    regionData: state.regionData,
+  }
+}
+
+export default connect(mapStateToProps)(MapContainer)

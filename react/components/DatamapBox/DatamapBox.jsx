@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 import MapElements from './MapElements'
 import HoverInfo from './HoverInfo'
@@ -24,9 +24,7 @@ export default class DatamapBox extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
-  }
 
-  componentWillReceiveProps() {
     const containerWidth = this.currentContainerWidth()
     this.setState({ containerWidth })
   }
@@ -61,8 +59,11 @@ export default class DatamapBox extends Component {
     this.setState({ infoWindowActive: false })
   }
 
-  mouseEnterOnSubunit(name) {
-    this.setState({ activeSubunitName: name })
+  mouseEnterOnSubunit(name, value) {
+    this.setState({
+      activeSubunitName: name,
+      activeSubunitValue: value,
+    })
   }
 
   render() {
@@ -70,7 +71,9 @@ export default class DatamapBox extends Component {
       containerWidth,
       infoWindowPos,
       infoWindowActive,
-      activeSubunitName } = this.state
+      activeSubunitName,
+      activeSubunitValue,
+    } = this.state
 
     const svgWidth = containerWidth || 0
     const datamapBoxStyle = {
@@ -81,6 +84,7 @@ export default class DatamapBox extends Component {
     return (
       <div ref="DatamapBox" style={datamapBoxStyle}>
         <MapElements
+          regionData={this.props.regionData}
           svgWidth={svgWidth}
           svgHeight={svgWidth * 0.8}
           mouseMoveOnDatamap={this.mouseMoveOnDatamap}
@@ -92,9 +96,13 @@ export default class DatamapBox extends Component {
           active={infoWindowActive}
           position={infoWindowPos}
           name={activeSubunitName}
-          value={99}
+          value={activeSubunitValue}
         />
       </div>
     )
   }
+}
+
+DatamapBox.propTypes = {
+  regionData: PropTypes.array.isRequired,
 }

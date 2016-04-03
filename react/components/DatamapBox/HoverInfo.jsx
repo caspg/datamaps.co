@@ -28,5 +28,5 @@ HoverInfo.propTypes = {
   position: PropTypes.object.isRequired,
   active: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
 }
