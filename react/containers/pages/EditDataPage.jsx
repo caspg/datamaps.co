@@ -5,11 +5,16 @@ import { List } from 'immutable'
 import DataTable from '../../components/DataTable'
 
 class EditDataPage extends Component {
+  handleRowEdit(regionName, value) {
+    console.log(regionName, value)
+  }
+
   render() {
     return (
       <div>
         <DataTable
           regionData={this.props.regionData}
+          onRowEdit={this.handleRowEdit}
         />
       </div>
     )

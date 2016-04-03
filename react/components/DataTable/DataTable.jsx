@@ -11,6 +11,7 @@ export default class DataTable extends Component {
         key={index}
         regionName={data.get('regionName')}
         value={data.get('value')}
+        onRowEdit={this.props.onRowEdit}
       />
     )
   }
@@ -38,4 +39,5 @@ export default class DataTable extends Component {
 
 DataTable.propTypes = {
   regionData: PropTypes.instanceOf(List).isRequired,
+  onRowEdit: PropTypes.func.isRequired,
 }
