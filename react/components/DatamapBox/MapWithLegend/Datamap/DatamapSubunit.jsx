@@ -13,7 +13,8 @@ export default class DatamapSubunit extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     return nextProps.svgResized !== this.props.svgResized ||
-      nextState.active !== this.state.active
+      nextState.active !== this.state.active ||
+      nextProps.fillColor !== this.props.fillColor
   }
 
   handleMouseEnter() {

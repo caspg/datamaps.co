@@ -13,6 +13,12 @@ export default class MapWithLegend extends Component {
     }
   }
 
+  componentWillReceiveProps(nexProps) {
+    this.setState({
+      colorScale: this.colorScale(nexProps),
+    })
+  }
+
   extremeValues(props) {
     const { regionData } = props
     const values = regionData.map((item) => item.get('value'))
