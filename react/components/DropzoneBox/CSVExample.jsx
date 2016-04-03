@@ -5,8 +5,8 @@ const examplesData = {
 }
 
 const example = (type) =>
-  examplesData[type].map((item) =>
-    <p>{item[0]}, {item[1]}</p>
+  examplesData[type].map((item, index) =>
+    <p key={index}>{item[0]}, {item[1]}</p>
   )
 
 const CSVExample = (props) =>

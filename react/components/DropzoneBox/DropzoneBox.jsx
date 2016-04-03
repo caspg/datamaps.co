@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
 import { Link } from 'react-router'
+import d3 from 'd3'
+import { fromJS } from 'immutable'
 
 import DropzoneInfo from './DropzoneInfo'
 
@@ -10,7 +12,21 @@ export default class DropzoneBox extends Component {
     this.onDrop = this.onDrop.bind(this)
   }
 
-  onDrop() {
+  onDrop(files) {
+    const file = files[0]
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      const parsedCSV = d3.csv.parse(e.target.result)
+      const list = fromJS(parsedCSV)
+      const filteredList = list.filter((item) => item.get('value'))
+      const parsedList = filteredList.map((item) =>
+        item.update((_item) => _item.set('value', parseFloat(_item.get('value'))))
+      )
+
+      this.props.onDataUpload(parsedList)
+    }
+
+    reader.readAsText(file)
   }
 
   render() {
@@ -30,4 +46,8 @@ export default class DropzoneBox extends Component {
       </div>
     )
   }
+}
+
+DropzoneBox.propTypes = {
+  onDataUpload: PropTypes.func.isRequired,
 }

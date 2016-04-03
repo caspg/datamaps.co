@@ -4,7 +4,7 @@ import CSVExample from './CSVExample'
 
 const DropzoneInfo = () =>
   <div>
-    <p>CSV file has to includes two columns:</p>
+    <p>CSV file has to include two columns:</p>
     <ul>
       <li>code (state code)</li>
       <li>value</li>
