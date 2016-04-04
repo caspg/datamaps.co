@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
 import MapContainer from '../containers/MapContainer'
+import DevTools from '../containers/DevTools'
 
 export default class EditorLayout extends Component {
   constructor(props) {
@@ -78,6 +79,7 @@ export default class EditorLayout extends Component {
         <div ref="container" style={this.styles.container}>
           <div className="map-column" style={this.styles.mapColumn}>
             <MapContainer />
+            <DevTools />
           </div>
           <div className="editor-body-column" style={this.styles.editorBodyColumn}>
             {this.props.children}
