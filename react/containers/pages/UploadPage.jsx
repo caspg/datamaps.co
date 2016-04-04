@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import { uploadData } from '../../actions/regionData'
 import DropzoneBox from '../../components/DropzoneBox'
 
 class UploadPage extends Component {
@@ -10,7 +11,7 @@ class UploadPage extends Component {
   }
 
   handleDataUpload(data) {
-    console.log(data)
+    this.props.dispatch(uploadData(data))
   }
 
   render() {
@@ -20,6 +21,10 @@ class UploadPage extends Component {
       />
     )
   }
+}
+
+UploadPage.propTypes = {
+  dispatch: PropTypes.func.isRequired,
 }
 
 export default connect()(UploadPage)
