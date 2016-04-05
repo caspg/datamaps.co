@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { browserHistory } from 'react-router'
 
 import { uploadData } from '../../actions/regionData'
 import DropzoneBox from '../../components/DropzoneBox'
@@ -12,6 +13,7 @@ class UploadPage extends Component {
 
   handleDataUpload(data) {
     this.props.dispatch(uploadData(data))
+    browserHistory.push('/editor/edit-data');
   }
 
   render() {
