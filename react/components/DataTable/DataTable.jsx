@@ -1,20 +1,27 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import { List } from 'immutable'
+import { Map } from 'immutable'
 
 import SortableHeader from './SortableHeader'
 import DataTableRow from './DataTableRow'
+import { stateCodes } from '../../data/states-empty-data-map'
 
 export default class DataTable extends Component {
   renderTableRows() {
-    return this.props.regionData.map((data, index) =>
-      <DataTableRow
-        key={index}
-        regionName={data.get('regionName')}
-        value={data.get('value')}
-        onRowEdit={this.props.onRowEdit}
-      />
-    )
+    const { regionData } = this.props
+    return stateCodes.map((code, index) => {
+      const regionDatum = regionData.get(code)
+
+      return (
+        <DataTableRow
+          key={index}
+          regionName={regionDatum.get('regionName')}
+          regionCode={regionDatum.get('code')}
+          value={regionDatum.get('value')}
+          onRowEdit={this.props.onRowEdit}
+        />
+      )
+    })
   }
 
   render() {
@@ -42,6 +49,6 @@ export default class DataTable extends Component {
 }
 
 DataTable.propTypes = {
-  regionData: PropTypes.instanceOf(List).isRequired,
+  regionData: PropTypes.instanceOf(Map).isRequired,
   onRowEdit: PropTypes.func.isRequired,
 }
