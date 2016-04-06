@@ -9,7 +9,13 @@ export default function regionData(state = Map(), action) {
     }
 
     case UPLOAD_DATA: {
-      return state
+      return state.withMutations((map) => {
+        const { data } = action
+        for (let i = 0; i < data.size; i++) {
+          const datum = data.get(i)
+          map.set(datum.get('code'), datum.get('value'))
+        }
+      })
     }
 
     default:
