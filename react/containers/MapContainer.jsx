@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { List, Map } from 'immutable'
+import { Map } from 'immutable'
 
 import DatamapBox from '../components/DatamapBox'
 
@@ -16,7 +16,7 @@ class MapContainer extends Component {
 }
 
 MapContainer.propTypes = {
-  regionData: PropTypes.instanceOf(List).isRequired,
+  regionData: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
 }
 

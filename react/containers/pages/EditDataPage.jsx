@@ -11,8 +11,8 @@ class EditDataPage extends Component {
     this.handleRowEdit = this.handleRowEdit.bind(this)
   }
 
-  handleRowEdit(regionName, value) {
-    this.props.dispatch(editRow(regionName, value))
+  handleRowEdit(regionCode, value) {
+    this.props.dispatch(editRow(regionCode, value))
   }
 
   render() {

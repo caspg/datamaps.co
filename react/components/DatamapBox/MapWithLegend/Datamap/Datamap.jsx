@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import topojson from 'topojson'
 import d3 from 'd3'
-import { List } from 'immutable'
+import { Map } from 'immutable'
 
 import { usaTopoJSON } from '../../../../data/topoJSON'
 import DatamapSubunit from './DatamapSubunit'
@@ -76,6 +76,6 @@ Datamap.propTypes = {
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
-  regionData: PropTypes.instanceOf(List).isRequired,
+  regionData: PropTypes.instanceOf(Map).isRequired,
   colorScale: PropTypes.func.isRequired,
 }

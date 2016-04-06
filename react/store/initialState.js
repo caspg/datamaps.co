@@ -4,7 +4,7 @@ import statesEmptyData from '../data/states-empty-data'
 // import statesDummyData from '../data/states-dummy-data'
 
 export default {
-  regionData: fromJS(statesEmptyData),
+  regionData: statesEmptyData,
   mapUi: fromJS({
     dataClassification: 'linear',
     linear: {

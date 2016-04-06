@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { List, Map } from 'immutable'
+import { Map } from 'immutable'
 
 import MapWithLegend from './MapWithLegend'
 
@@ -49,6 +49,6 @@ DatamapElements.propTypes = {
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
-  regionData: PropTypes.instanceOf(List).isRequired,
+  regionData: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
 }
