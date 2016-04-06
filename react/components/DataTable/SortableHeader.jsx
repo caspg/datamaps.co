@@ -5,6 +5,7 @@ export default class SortableHeader extends Component {
     return (
       <th>
         <h6>{this.props.label}</h6>
+        <span className="sort-arrow asc"></span>
       </th>
     );
   }

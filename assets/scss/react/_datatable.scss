@@ -1,4 +1,5 @@
 $borderStyle: 1px solid #ddd;
+$sortArrowH: 5px;
 
 .datatable-container {
   a {
@@ -19,6 +20,27 @@ $borderStyle: 1px solid #ddd;
 
       h6 {
         margin-bottom: 0;
+        display: inline-block;
+      }
+
+      .sort-arrow {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: $sortArrowH / 2;
+        margin-left: 10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+
+        &.asc {
+          border-width: $sortArrowH $sortArrowH 0 $sortArrowH;
+          border-color: #222 transparent transparent transparent;
+        }
+
+        &.desc {
+          border-width: 0 $sortArrowH $sortArrowH $sortArrowH;
+          border-color: transparent transparent #000000 transparent;
+        }
       }
     }
 
