@@ -7,6 +7,23 @@ import DataTableRow from './DataTableRow'
 import { stateCodes } from '../../data/states-empty-data'
 
 export default class DataTable extends Component {
+  sortableHeaders() {
+    const headers = [
+      { label: 'STATES NAME', sortKey: 'regionName' },
+      { label: 'VALUE', sortKey: 'value' },
+    ]
+
+    return headers.map((header, index) =>
+      <SortableHeader
+        key={index}
+        label={header.label}
+        sortKey={header.sortKey}
+        toggleDirection={this.props.toggleDirection}
+        sortState={this.props.sortState}
+      />
+    )
+  }
+
   renderTableRows() {
     const { regionData } = this.props
     return stateCodes.map((code, index) => {
@@ -31,12 +48,7 @@ export default class DataTable extends Component {
         <table>
           <thead>
             <tr>
-              <SortableHeader
-                label="STATES NAME"
-              />
-              <SortableHeader
-                label="VALUE"
-              />
+              {this.sortableHeaders()}
             </tr>
           </thead>
           <tbody>
@@ -51,4 +63,6 @@ export default class DataTable extends Component {
 DataTable.propTypes = {
   regionData: PropTypes.instanceOf(Map).isRequired,
   onRowEdit: PropTypes.func.isRequired,
+  sortState: PropTypes.object.isRequired,
+  toggleDirection: PropTypes.func.isRequired,
 }

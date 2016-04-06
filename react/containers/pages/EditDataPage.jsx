@@ -9,10 +9,15 @@ class EditDataPage extends Component {
   constructor(props) {
     super(props)
     this.handleRowEdit = this.handleRowEdit.bind(this)
+    this.handleToggleDirection = this.handleToggleDirection.bind(this)
   }
 
   handleRowEdit(regionCode, value) {
     this.props.dispatch(editRow(regionCode, value))
+  }
+
+  handleToggleDirection() {
+    console.log('handleToggleDirection')
   }
 
   render() {
@@ -20,7 +25,9 @@ class EditDataPage extends Component {
       <div>
         <DataTable
           regionData={this.props.regionData}
+          sortState={this.props.sortState}
           onRowEdit={this.handleRowEdit}
+          toggleDirection={this.handleToggleDirection}
         />
       </div>
     )
@@ -30,11 +37,13 @@ class EditDataPage extends Component {
 EditDataPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
+  sortState: PropTypes.object.isRequired,
 }
 
 function mapStateToProps(state) {
   return {
     regionData: state.regionData,
+    sortState: state.sortState,
   }
 }
 
