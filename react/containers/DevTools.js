@@ -10,6 +10,7 @@ export default createDevTools(
     changeMonitorKey="ctrl-m"
     defaultPosition="left"
     defaultSize={0.2}
+    defaultIsVisible={false}
   >
     <LogMonitor />
   </DockMonitor>
