@@ -1,10 +1,14 @@
 import { Map } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
-function updateStateWithUpload(map, data) {
+function updateStateWithUpload(state, data) {
   for (let i = 0; i < data.size; i++) {
-    const datum = data.get(i)
-    map.set(datum.get('code'), datum.get('value'))
+    const newDatum = data.get(i)
+    const code = newDatum.get('code')
+
+    state.set(code,
+      state.get(code).set('value', newDatum.get('value'))
+    )
   }
 }
 
@@ -16,8 +20,8 @@ export default function regionData(state = Map(), action) {
     }
 
     case UPLOAD_DATA: {
-      return state.withMutations((map) =>
-        updateStateWithUpload(map, action.data))
+      return state.withMutations((_state) =>
+        updateStateWithUpload(_state, action.data))
     }
 
     default:
