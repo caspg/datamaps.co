@@ -4,7 +4,7 @@ import { Map } from 'immutable'
 
 import SortableHeader from './SortableHeader'
 import DataTableRow from './DataTableRow'
-import { stateCodes } from '../../data/states-empty-data-map'
+import { stateCodes } from '../../data/states-empty-data'
 
 export default class DataTable extends Component {
   renderTableRows() {
