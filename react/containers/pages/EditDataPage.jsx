@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Map } from 'immutable'
 
-import { editRow } from '../../actions/regionData'
+import { editRow, toggleDirection } from '../../actions/regionData'
 import DataTable from '../../components/DataTable'
 
 class EditDataPage extends Component {
@@ -16,8 +16,8 @@ class EditDataPage extends Component {
     this.props.dispatch(editRow(regionCode, value))
   }
 
-  handleToggleDirection() {
-    console.log('handleToggleDirection')
+  handleToggleDirection(sortKey) {
+    this.props.dispatch(toggleDirection(sortKey))
   }
 
   render() {
@@ -37,7 +37,7 @@ class EditDataPage extends Component {
 EditDataPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
-  sortState: PropTypes.object.isRequired,
+  sortState: PropTypes.instanceOf(Map).isRequired,
 }
 
 function mapStateToProps(state) {

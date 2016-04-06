@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import { Map } from 'immutable'
+import React, { PropTypes } from 'react'
 
 const sortArrowConstructor = (direction) => {
   const sortDirection = direction === 'ASC' ? 'asc' : 'desc'
@@ -7,21 +8,22 @@ const sortArrowConstructor = (direction) => {
 
 const SortableHeader = (props) => {
   const { sortState, toggleDirection, sortKey } = props
-  const sortArrow = (sortState.key === sortKey) ? sortArrowConstructor(sortState.direction) : null
+  const sortArrow = (sortState.get('key') === sortKey) ?
+    sortArrowConstructor(sortState.get('direction')) : null
 
   return (
     <th onClick={() => toggleDirection(sortKey)}>
       <h6>{props.label}</h6>
       {sortArrow}
     </th>
-  );
+  )
 }
 
 SortableHeader.propTypes = {
   label: PropTypes.string.isRequired,
   sortKey: PropTypes.string.isRequired,
   toggleDirection: PropTypes.func.isRequired,
-  sortState: PropTypes.object.isRequired,
+  sortState: PropTypes.instanceOf(Map).isRequired,
 }
 
 export default SortableHeader

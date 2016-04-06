@@ -63,6 +63,6 @@ export default class DataTable extends Component {
 DataTable.propTypes = {
   regionData: PropTypes.instanceOf(Map).isRequired,
   onRowEdit: PropTypes.func.isRequired,
-  sortState: PropTypes.object.isRequired,
+  sortState: PropTypes.instanceOf(Map).isRequired,
   toggleDirection: PropTypes.func.isRequired,
 }

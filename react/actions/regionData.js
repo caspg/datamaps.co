@@ -1,6 +1,6 @@
 import { push } from 'react-router-redux'
 
-import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
+import { EDIT_ROW, UPLOAD_DATA, TOGGLE_DIRECTION } from '../constants/ActionTypes'
 
 function editRow(regionCode, value) {
   return { type: EDIT_ROW, regionCode, value }
@@ -17,7 +17,12 @@ function uploadDataAndRedirect(data) {
   }
 }
 
+function toggleDirection(sortKey) {
+  return { type: TOGGLE_DIRECTION, sortKey };
+}
+
 export {
   editRow,
   uploadDataAndRedirect,
+  toggleDirection,
 }
