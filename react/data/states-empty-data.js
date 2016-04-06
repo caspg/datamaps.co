@@ -9,7 +9,7 @@ export const stateCodes = List([
 ])
 
 export default fromJS({
-  AL: { regionName: 'Alabama', code: 'AL', value: 111 },
+  AL: { regionName: 'Alabama', code: 'AL', value: null },
   AK: { regionName: 'Alaska', code: 'AK', value: null },
   AZ: { regionName: 'Arizona', code: 'AZ', value: null },
   AR: { regionName: 'Arkansas', code: 'AR', value: null },
@@ -18,7 +18,7 @@ export default fromJS({
   CT: { regionName: 'Connecticut', code: 'CT', value: null },
   DE: { regionName: 'Delaware', code: 'DE', value: null },
   DC: { regionName: 'District of Columbia', code: 'DC', value: null },
-  FL: { regionName: 'Florida', code: 'FL', value: 666 },
+  FL: { regionName: 'Florida', code: 'FL', value: null },
   GA: { regionName: 'Georgia', code: 'GA', value: null },
   HI: { regionName: 'Hawaii', code: 'HI', value: null },
   ID: { regionName: 'Idaho', code: 'ID', value: null },
