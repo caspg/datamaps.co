@@ -1,17 +1,15 @@
-import { List, fromJS } from 'immutable'
+import { Map } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
-import statesEmptyData from '../data/states-empty-data'
-
-export default function regionData(state = List(), action) {
+export default function regionData(state = Map(), action) {
   switch (action.type) {
     case EDIT_ROW: {
-      const regionIndex = state.findIndex((item) => item.get('regionName') === action.regionName)
-      return state.update(regionIndex, (item) => item.set('value', action.value))
+      const { regionCode, value } = action
+      return state.update(regionCode, (item) => item.set('value', value))
     }
 
     case UPLOAD_DATA: {
-      return fromJS(statesEmptyData).merge(action.data)
+      return state
     }
 
     default:

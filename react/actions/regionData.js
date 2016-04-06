@@ -2,8 +2,8 @@ import { push } from 'react-router-redux'
 
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
-function editRow(regionName, value) {
-  return { type: EDIT_ROW, regionName, value }
+function editRow(regionCode, value) {
+  return { type: EDIT_ROW, regionCode, value }
 }
 
 function uploadData(data) {

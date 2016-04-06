@@ -9,8 +9,8 @@ export default class DataTableRow extends Component {
   }
 
   handleInputBlur(value) {
-    const { onRowEdit, regionName } = this.props
-    onRowEdit(regionName, value)
+    const { onRowEdit, regionCode } = this.props
+    onRowEdit(regionCode, value)
   }
 
   render() {
@@ -32,6 +32,7 @@ export default class DataTableRow extends Component {
 
 DataTableRow.propTypes = {
   regionName: PropTypes.string.isRequired,
+  regionCode: PropTypes.string.isRequired,
   value: PropTypes.number,
   onRowEdit: PropTypes.func.isRequired,
 }

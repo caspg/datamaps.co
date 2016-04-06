@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { List } from 'immutable'
+import { Map } from 'immutable'
 
 import { editRow } from '../../actions/regionData'
 import DataTable from '../../components/DataTable'
@@ -29,7 +29,7 @@ class EditDataPage extends Component {
 
 EditDataPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  regionData: PropTypes.instanceOf(List).isRequired,
+  regionData: PropTypes.instanceOf(Map).isRequired,
 }
 
 function mapStateToProps(state) {
