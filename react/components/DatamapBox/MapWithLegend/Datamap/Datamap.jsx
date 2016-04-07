@@ -9,6 +9,7 @@ import DatamapSubunit from './DatamapSubunit'
 export default class Datamap extends Component {
   constructor(props) {
     super(props)
+    this.handleMouseEnterOnSubunit = this.handleMouseEnterOnSubunit.bind(this)
 
     this.state = {
       geoJSONfeatures: topojson.feature(usaTopoJSON, usaTopoJSON.objects.usa).features,
@@ -34,10 +35,22 @@ export default class Datamap extends Component {
     return d3.geo.path().projection(projection)
   }
 
+  handleMouseEnterOnSubunit(name, value, index) {
+    const data = this.state.geoJSONfeatures
+    const newData = [
+      ...data.slice(0, index),
+      ...data.slice(index + 1),
+      data[index],
+    ]
+
+    this.setState({ geoJSONfeatures: newData })
+    this.props.mouseEnterOnSubunit(name, value)
+  }
+
   renderDatamapSubunits() {
     const { colorScale } = this.props
 
-    return this.state.geoJSONfeatures.map((feature) => {
+    return this.state.geoJSONfeatures.map((feature, index) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
       const subunitValue = subunitData ? subunitData.get('value') : null
       const fillColor = subunitValue ? colorScale(subunitValue) : '#f5f5f5'
@@ -45,12 +58,13 @@ export default class Datamap extends Component {
       return (
         <DatamapSubunit
           key={feature.id}
+          index={index}
           path={() => this.state.path(feature)}
           name={feature.properties.name}
-          mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
           value={subunitValue}
           svgResized={this.state.svgResized}
           fillColor={fillColor}
+          mouseEnterOnSubunit={this.handleMouseEnterOnSubunit}
         />
       )
     })

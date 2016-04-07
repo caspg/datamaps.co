@@ -6,7 +6,7 @@ import statesDummyData from '../data/states-dummy-data'
 
 export default {
   regionCodes: stateCodes,
-  regionData: fromJS(statesDummyData),
+  regionData: statesDummyData,
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: fromJS({
     dataClassification: 'linear',

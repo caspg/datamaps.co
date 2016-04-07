@@ -20,8 +20,8 @@ export default class DatamapSubunit extends Component {
   handleMouseEnter() {
     this.setState({ active: true })
 
-    const { name, value } = this.props
-    this.props.mouseEnterOnSubunit(name, value)
+    const { name, value, index } = this.props
+    this.props.mouseEnterOnSubunit(name, value, index)
   }
 
   handleMouseLeave() {
@@ -54,4 +54,5 @@ DatamapSubunit.propTypes = {
   value: PropTypes.number,
   svgResized: PropTypes.bool.isRequired,
   fillColor: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 }
