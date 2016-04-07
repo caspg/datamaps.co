@@ -44,25 +44,14 @@ EditDataPage.propTypes = {
 
 function sortCollection(collection, sortState, regionData) {
   const sortKey = sortState.get('key')
+  const direction = (sortState.get('direction') === 'ASC') ? 1 : -1
+  const sortValue = (item) => regionData.get(item).get(sortKey)
 
-  switch (sortState.get('direction')) {
-    case 'ASC':
-      return collection.sort((a, b) => {
-        if (regionData.get(a).get(sortKey) > regionData.get(b).get(sortKey)) return 1
-        if (regionData.get(a).get(sortKey) < regionData.get(b).get(sortKey)) return -1
-        return 0
-      })
-
-    case 'DESC':
-      return collection.sort((a, b) => {
-        if (regionData.get(a).get(sortKey) > regionData.get(b).get(sortKey)) return -1
-        if (regionData.get(a).get(sortKey) < regionData.get(b).get(sortKey)) return 1
-        return 0
-      })
-
-    default:
-      return collection
-  }
+  return collection.sort((a, b) => {
+    if (sortValue(a) > sortValue(b)) return 1 * direction
+    if (sortValue(a) < sortValue(b)) return -1 * direction
+    return 0
+  })
 }
 
 function mapStateToProps(state) {
