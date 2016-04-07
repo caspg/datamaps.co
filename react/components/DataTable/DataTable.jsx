@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import { Map } from 'immutable'
+import { Map, List } from 'immutable'
 
 import SortableHeader from './SortableHeader'
 import DataTableRow from './DataTableRow'
-import { stateCodes } from '../../data/states-empty-data'
 
 export default class DataTable extends Component {
   sortableHeaders() {
@@ -25,8 +24,8 @@ export default class DataTable extends Component {
   }
 
   renderTableRows() {
-    const { regionData } = this.props
-    return stateCodes.map((code, index) => {
+    const { regionData, regionCodes } = this.props
+    return regionCodes.map((code, index) => {
       const regionDatum = regionData.get(code)
 
       return (
@@ -61,6 +60,7 @@ export default class DataTable extends Component {
 }
 
 DataTable.propTypes = {
+  regionCodes: PropTypes.instanceOf(List).isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
   onRowEdit: PropTypes.func.isRequired,
   sortState: PropTypes.instanceOf(Map).isRequired,

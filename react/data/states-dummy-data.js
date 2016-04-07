@@ -11,7 +11,7 @@ export default fromJS({
   AR: { regionName: 'Arkansas', code: 'AR', value: dummyValue() },
   CA: { regionName: 'California', code: 'CA', value: dummyValue() },
   CO: { regionName: 'Colorado', code: 'CO', value: dummyValue() },
-  CT: { regionName: 'Connecticut', code: 'CT', value: dummyValue() },
+  CT: { regionName: 'Connecticut', code: 'CT', value: null },
   DE: { regionName: 'Delaware', code: 'DE', value: dummyValue() },
   DC: { regionName: 'District of Columbia', code: 'DC', value: null },
   FL: { regionName: 'Florida', code: 'FL', value: dummyValue() },

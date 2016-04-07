@@ -11,6 +11,12 @@ export default class NumericInput extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value !== this.props.value) {
+      this.setState({ value: nextProps.value })
+    }
+  }
+
   handleOnChange(event) {
     const newValue = event.target.value
     if (/^[+-]?\d*(\.\d*)?$/.test(newValue)) {

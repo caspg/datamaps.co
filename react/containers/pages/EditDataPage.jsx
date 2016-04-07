@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Map } from 'immutable'
+import { Map, List } from 'immutable'
 
 import { editRow, toggleDirection } from '../../actions/regionData'
 import DataTable from '../../components/DataTable'
@@ -24,6 +24,7 @@ class EditDataPage extends Component {
     return (
       <div>
         <DataTable
+          regionCodes={this.props.regionCodes}
           regionData={this.props.regionData}
           sortState={this.props.sortState}
           onRowEdit={this.handleRowEdit}
@@ -37,13 +38,40 @@ class EditDataPage extends Component {
 EditDataPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
+  regionCodes: PropTypes.instanceOf(List).isRequired,
   sortState: PropTypes.instanceOf(Map).isRequired,
 }
 
+function sortCollection(collection, sortState, regionData) {
+  const sortKey = sortState.get('key')
+
+  switch (sortState.get('direction')) {
+    case 'ASC':
+      return collection.sort((a, b) => {
+        if (regionData.get(a).get(sortKey) > regionData.get(b).get(sortKey)) return 1
+        if (regionData.get(a).get(sortKey) < regionData.get(b).get(sortKey)) return -1
+        return 0
+      })
+
+    case 'DESC':
+      return collection.sort((a, b) => {
+        if (regionData.get(a).get(sortKey) > regionData.get(b).get(sortKey)) return -1
+        if (regionData.get(a).get(sortKey) < regionData.get(b).get(sortKey)) return 1
+        return 0
+      })
+
+    default:
+      return collection
+  }
+}
+
 function mapStateToProps(state) {
+  const { regionCodes, sortState, regionData } = state
+
   return {
-    regionData: state.regionData,
-    sortState: state.sortState,
+    regionCodes: sortCollection(regionCodes, sortState, regionData),
+    regionData,
+    sortState,
   }
 }
 
