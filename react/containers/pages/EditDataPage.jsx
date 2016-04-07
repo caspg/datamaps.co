@@ -42,12 +42,12 @@ EditDataPage.propTypes = {
   sortState: PropTypes.instanceOf(Map).isRequired,
 }
 
-function sortCollection(collection, sortState, regionData) {
+function sortCollection(regionCodes, sortState, regionData) {
   const sortKey = sortState.get('key')
   const direction = (sortState.get('direction') === 'ASC') ? 1 : -1
-  const sortValue = (item) => regionData.get(item).get(sortKey)
+  const sortValue = (code) => regionData.get(code).get(sortKey)
 
-  return collection.sort((a, b) => {
+  return regionCodes.sort((a, b) => {
     if (sortValue(a) > sortValue(b)) return 1 * direction
     if (sortValue(a) < sortValue(b)) return -1 * direction
     return 0
