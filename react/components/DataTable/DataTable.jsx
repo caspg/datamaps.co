@@ -43,6 +43,7 @@ export default class DataTable extends Component {
   render() {
     return (
       <div className="datatable-container">
+        <Link className="button" to="/editor/edit-map">edit map style</Link>
         <Link to="/editor/upload">upload new data</Link>
         <table>
           <thead>
