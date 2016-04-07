@@ -1,6 +1,6 @@
 import { Map } from 'immutable'
 
-import { TOGGLE_DIRECTION } from '../constants/ActionTypes'
+import { TOGGLE_DIRECTION, UPLOAD_DATA } from '../constants/ActionTypes'
 
 function newSortDirection(state, action) {
   if (state.get('key') !== action.sortKey) return state.get('direction')
@@ -13,6 +13,12 @@ export default function sortState(state = Map(), action) {
       return Map({
         key: action.sortKey,
         direction: newSortDirection(state, action),
+      })
+
+    case UPLOAD_DATA:
+      return Map({
+        key: 'regionName',
+        direction: 'ASC',
       })
 
     default:
