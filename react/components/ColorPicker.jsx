@@ -67,16 +67,16 @@ export default class ColorPicker extends Component {
     }
 
     const colorPickerStyle = {
-      display: 'inline-block',
+      position: 'absolute',
+      left: 0,
+      top: 40,
       zIndex: 1001,
     }
 
     return (
-      <div>
-        <div className="swatch-container">
-          <div ref="swatch" style={swatchStyle} onClick={this.handleSwatchClick}>
-            <div style={swatchColor} />
-          </div>
+      <div style={{ display: 'inline-block', position: 'relative' }}>
+        <div ref="swatch" style={swatchStyle} onClick={this.handleSwatchClick}>
+          <div style={swatchColor} />
         </div>
         <div ref="colorPickerContainer" style={colorPickerStyle}>
           {this.state.displayColorPicker && this.renderColorPicker()}

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import { changeLinearStartColor } from '../actions/mapUi'
 import ColorPicker from '../components/ColorPicker'
 
 export default class LinearColorsEditor extends Component {
@@ -10,7 +11,7 @@ export default class LinearColorsEditor extends Component {
   }
 
   handleStartColorChange(color) {
-
+    this.props.dispatch(changeLinearStartColor(color));
   }
 
   render() {
@@ -18,11 +19,14 @@ export default class LinearColorsEditor extends Component {
     const startColor = mapUi.get('linear').get('startColor')
 
     return (
-      <div>
-        <ColorPicker
-          color={startColor}
-          onColorChange={this.handleStartColorChange}
-        />
+      <div className="linear-colors-editor">
+        <div className="color-picker-row">
+          <span>start color: </span>
+          <ColorPicker
+            color={startColor}
+            onColorChange={this.handleStartColorChange}
+          />
+        </div>
       </div>
     )
   }
