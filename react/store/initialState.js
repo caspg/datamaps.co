@@ -9,6 +9,7 @@ export default {
   regionData: statesDummyData,
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: fromJS({
+    title: 'Super map test title',
     dataClassification: 'linear',
     linear: {
       startColor: '#f7fbff',

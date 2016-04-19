@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { Map } from 'immutable'
 
 import MapWithLegend from './MapWithLegend'
+import Title from './Title'
 
-export default class DatamapElements extends Component {
+export default class MmapElements extends Component {
   renderMapElements(svgWidth, svgHeight) {
     const svgStyle = {
       width: svgWidth,
@@ -15,8 +16,17 @@ export default class DatamapElements extends Component {
       right: 0,
     }
 
+    const titleStyle = {
+      textAnchor: 'start',
+      fontSize: 25,
+      fill: '#424242',
+      fontWeight: '300',
+    }
+
     return (
       <svg style={svgStyle}>
+        <Title text={this.props.mapUi.get('title')} style={titleStyle} coords={{ x: 30, y: 40 }} />
+
         <MapWithLegend
           mapUi={this.props.mapUi}
           regionData={this.props.regionData}
@@ -42,7 +52,7 @@ export default class DatamapElements extends Component {
   }
 }
 
-DatamapElements.propTypes = {
+MmapElements.propTypes = {
   svgWidth: PropTypes.number.isRequired,
   svgHeight: PropTypes.number.isRequired,
   mouseMoveOnDatamap: PropTypes.func.isRequired,
