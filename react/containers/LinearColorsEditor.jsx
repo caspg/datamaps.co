@@ -1,10 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import ColorPicker from '../components/ColorPicker'
+
 export default class LinearColorsEditor extends Component {
   render() {
     return (
-      <div>LinearColorsEditor</div>
+      <div>
+        <ColorPicker />
+      </div>
     )
   }
 }
