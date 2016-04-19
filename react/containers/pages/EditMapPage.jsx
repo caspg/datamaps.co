@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { changeMapTitle } from '../../actions/mapUi'
 import TitleEditor from '../../components/TitleEditor'
+import LinearColorsEditor from '../LinearColorsEditor'
 
 export default class EditMapPage extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class EditMapPage extends Component {
   }
 
   handleTitleChange(title) {
-    this.props.dispatch(changeMapTitle(title));
+    this.props.dispatch(changeMapTitle(title))
   }
 
   render() {
@@ -22,6 +23,7 @@ export default class EditMapPage extends Component {
           onChange={this.handleTitleChange}
           placeholder="Add new title"
         />
+        <LinearColorsEditor />
       </div>
     )
   }
@@ -34,9 +36,8 @@ EditMapPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-
     mapUi: state.mapUi,
   }
 }
 
-export default connect(mapStateToProps)(EditMapPage);
+export default connect(mapStateToProps)(EditMapPage)
