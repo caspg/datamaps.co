@@ -4,10 +4,25 @@ import { connect } from 'react-redux'
 import ColorPicker from '../components/ColorPicker'
 
 export default class LinearColorsEditor extends Component {
+  constructor(props) {
+    super(props)
+    this.handleStartColorChange = this.handleStartColorChange.bind(this)
+  }
+
+  handleStartColorChange(color) {
+
+  }
+
   render() {
+    const { mapUi } = this.props
+    const startColor = mapUi.get('linear').get('startColor')
+
     return (
       <div>
-        <ColorPicker />
+        <ColorPicker
+          color={startColor}
+          onColorChange={this.handleStartColorChange}
+        />
       </div>
     )
   }
