@@ -1,9 +1,13 @@
-import { CHANGE_MAP_TITLE, CHANGE_LINEAR_START_COLOR } from '../constants/ActionTypes'
+import * as actions from '../constants/ActionTypes'
 
 export function changeMapTitle(title) {
-  return { type: CHANGE_MAP_TITLE, title }
+  return { type: actions.CHANGE_MAP_TITLE, title }
 }
 
 export function changeLinearStartColor(color) {
-  return { type: CHANGE_LINEAR_START_COLOR, color }
+  return { type: actions.CHANGE_LINEAR_START_COLOR, color }
+}
+
+export function changeLinearEndColor(color) {
+  return { type: actions.CHANGE_LINEAR_END_COLOR, color }
 }
