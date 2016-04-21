@@ -13,6 +13,9 @@ export default function mapUi(state = Map(), action) {
     case actions.CHANGE_LINEAR_END_COLOR:
       return state.setIn(['linear', 'endColor'], action.color)
 
+    case actions.CHANGE_LINEAR_NO_DATA_COLOR:
+      return state.set('noDataColor', action.color)
+
     default:
       return state
   }

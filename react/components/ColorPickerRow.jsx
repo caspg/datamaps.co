@@ -3,7 +3,7 @@ import ColorPicker from './ColorPicker'
 
 const ColorPickerRow = (props) =>
   <div className="color-picker-row row">
-    <div className="col-xs-4">
+    <div className="col-xs-6">
       <span>{props.label}</span>
     </div>
     <div className="col-xs-4">

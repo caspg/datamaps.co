@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import { changeLinearStartColor, changeLinearEndColor } from '../actions/mapUi'
+import * as mapUiActions from '../actions/mapUi'
 import ColorPickerRow from '../components/ColorPickerRow'
 
 export default class LinearColorsEditor extends Component {
@@ -9,20 +9,26 @@ export default class LinearColorsEditor extends Component {
     super(props)
     this.handleStartColorChange = this.handleStartColorChange.bind(this)
     this.handleEndColorChange = this.handleEndColorChange.bind(this)
+    this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
   }
 
   handleStartColorChange(color) {
-    this.props.dispatch(changeLinearStartColor(color));
+    this.props.dispatch(mapUiActions.changeLinearStartColor(color))
   }
 
   handleEndColorChange(color) {
-    this.props.dispatch(changeLinearEndColor(color));
+    this.props.dispatch(mapUiActions.changeLinearEndColor(color))
+  }
+
+  handleNoDataColorChange(color) {
+    this.props.dispatch(mapUiActions.changeLinearNoDataColor(color))
   }
 
   render() {
     const { mapUi } = this.props
-    const startColor = mapUi.get('linear').get('startColor')
-    const endColor = mapUi.get('linear').get('endColor')
+    const startColor = mapUi.getIn(['linear', 'startColor'])
+    const endColor = mapUi.getIn(['linear', 'endColor'])
+    const noDataColor = mapUi.get('noDataColor')
 
     return (
       <div className="linear-colors-editor">
@@ -36,6 +42,12 @@ export default class LinearColorsEditor extends Component {
           label="end color:"
           color={endColor}
           onColorChange={this.handleEndColorChange}
+        />
+
+        <ColorPickerRow
+          label="no data color:"
+          color={noDataColor}
+          onColorChange={this.handleNoDataColorChange}
         />
       </div>
     )

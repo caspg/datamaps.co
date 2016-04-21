@@ -11,3 +11,7 @@ export function changeLinearStartColor(color) {
 export function changeLinearEndColor(color) {
   return { type: actions.CHANGE_LINEAR_END_COLOR, color }
 }
+
+export function changeLinearNoDataColor(color) {
+  return { type: actions.CHANGE_LINEAR_NO_DATA_COLOR, color }
+}
