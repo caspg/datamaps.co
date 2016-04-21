@@ -48,12 +48,12 @@ export default class Datamap extends Component {
   }
 
   renderDatamapSubunits() {
-    const { colorScale } = this.props
+    const { colorScale, noDataColor } = this.props
 
     return this.state.geoJSONfeatures.map((feature, index) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
       const subunitValue = subunitData ? subunitData.get('value') : null
-      const fillColor = subunitValue ? colorScale(subunitValue) : '#f5f5f5'
+      const fillColor = subunitValue ? colorScale(subunitValue) : noDataColor
 
       return (
         <DatamapSubunit
@@ -92,4 +92,5 @@ Datamap.propTypes = {
   mouseEnterOnSubunit: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
   colorScale: PropTypes.func.isRequired,
+  noDataColor: PropTypes.string.isRequired,
 }

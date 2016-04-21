@@ -49,7 +49,8 @@ export default class MapWithLegend extends Component {
   }
 
   render() {
-    const { svgWidth, svgHeight } = this.props
+    const { svgWidth, svgHeight, mapUi } = this.props
+    const noDataColor = mapUi.get('noDataColor')
 
     return (
       <g>
@@ -58,6 +59,7 @@ export default class MapWithLegend extends Component {
           svgWidth={svgWidth}
           svgHeight={svgHeight}
           colorScale={this.state.colorScale}
+          noDataColor={noDataColor}
           mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
           mouseEnterOnDatamap={this.props.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.props.mouseLeaveDatamap}

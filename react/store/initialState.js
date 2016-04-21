@@ -15,5 +15,6 @@ export default {
       startColor: '#f7fbff',
       endColor: '#08519c',
     },
+    noDataColor: '#f5f5f5',
   }),
 }
