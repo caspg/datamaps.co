@@ -69,7 +69,7 @@ export default class ColorPicker extends Component {
     const colorPickerStyle = {
       position: 'absolute',
       left: 0,
-      top: 40,
+      top: 30,
       zIndex: 1001,
     }
 
