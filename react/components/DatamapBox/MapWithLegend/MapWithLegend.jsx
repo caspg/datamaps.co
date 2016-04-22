@@ -3,7 +3,7 @@ import { Map } from 'immutable'
 import d3 from 'd3'
 
 import Datamap from './Datamap'
-import LinearLegend from './MapLegend/LinearLegend'
+import MapLegend from './MapLegend/MapLegend'
 
 export default class MapWithLegend extends Component {
   extremeValues() {
@@ -55,7 +55,7 @@ export default class MapWithLegend extends Component {
           mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
         />
 
-        <LinearLegend
+        <MapLegend
           svgWidth={svgWidth}
           svgHeight={svgHeight}
           extremeValues={extremeValues}
