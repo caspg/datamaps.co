@@ -31,7 +31,7 @@ export default class LinearLegend extends Component {
   }
 
   render() {
-    const textStyle = { textAnchor: 'middle', fontSize: 9, fill: '#333' }
+    const textStyle = { textAnchor: 'middle', fontSize: 10, fill: '#333' }
     const { extremeValues } = this.props
     const minVal = extremeValues.get('min')
     const maxVal = extremeValues.get('max')

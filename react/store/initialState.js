@@ -2,11 +2,12 @@ import { fromJS, Map } from 'immutable'
 
 // import statesEmptyData from '../data/states-empty-data'
 import { stateCodes } from '../data/states-empty-data'
-import statesDummyData from '../data/states-dummy-data'
+import { statesDummyData, extremeValues } from '../data/states-dummy-data'
 
 export default {
   regionCodes: stateCodes,
   regionData: statesDummyData,
+  extremeValues: extremeValues,
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: fromJS({
     title: 'Super map test title',

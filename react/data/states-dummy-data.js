@@ -1,10 +1,10 @@
-import { fromJS } from 'immutable'
+import { Map, fromJS } from 'immutable'
 
 function dummyValue() {
   return Math.floor(Math.random() * (120 - 90)) + 90
 }
 
-export default fromJS({
+const statesDummyData = fromJS({
   AL: { regionName: 'Alabama', code: 'AL', value: dummyValue() },
   AK: { regionName: 'Alaska', code: 'AK', value: dummyValue() },
   AZ: { regionName: 'Arizona', code: 'AZ', value: dummyValue() },
@@ -57,3 +57,9 @@ export default fromJS({
   WI: { regionName: 'Wisconsin', code: 'WI', value: null },
   WY: { regionName: 'Wyoming', code: 'WY', value: null },
 })
+
+const values = statesDummyData.map((item) => item.get('value'))
+const filteredValues = values.filterNot((item) => item === null)
+const extremeValues = Map({ min: filteredValues.min(), max: filteredValues.max() })
+
+export { statesDummyData, extremeValues }

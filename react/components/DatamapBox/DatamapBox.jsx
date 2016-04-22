@@ -87,6 +87,7 @@ export default class DatamapBox extends Component {
         <MapElements
           mapUi={this.props.mapUi}
           regionData={this.props.regionData}
+          extremeValues={this.props.extremeValues}
           svgWidth={svgWidth}
           svgHeight={svgWidth * 0.8}
           mouseMoveOnDatamap={this.mouseMoveOnDatamap}
@@ -107,5 +108,6 @@ export default class DatamapBox extends Component {
 
 DatamapBox.propTypes = {
   regionData: PropTypes.instanceOf(Map).isRequired,
+  extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
 }

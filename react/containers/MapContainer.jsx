@@ -9,6 +9,7 @@ class MapContainer extends Component {
     return (
       <DatamapBox
         regionData={this.props.regionData}
+        extremeValues={this.props.extremeValues}
         mapUi={this.props.mapUi}
       />
     )
@@ -17,12 +18,14 @@ class MapContainer extends Component {
 
 MapContainer.propTypes = {
   regionData: PropTypes.instanceOf(Map).isRequired,
+  extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
 }
 
 function mapStateToProps(state) {
   return {
     regionData: state.regionData,
+    extremeValues: state.extremeValues,
     mapUi: state.mapUi,
   }
 }

@@ -30,6 +30,7 @@ export default class MmapElements extends Component {
         <MapWithLegend
           mapUi={this.props.mapUi}
           regionData={this.props.regionData}
+          extremeValues={this.props.extremeValues}
           svgWidth={svgWidth}
           svgHeight={svgHeight}
           mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
@@ -60,5 +61,6 @@ MmapElements.propTypes = {
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
+  extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
 }

@@ -6,16 +6,8 @@ import Datamap from './Datamap'
 import MapLegend from './MapLegend/MapLegend'
 
 export default class MapWithLegend extends Component {
-  extremeValues() {
-    const { regionData } = this.props
-    const values = regionData.map((item) => item.get('value'))
-    const filteredValues = values.filterNot((item) => item === null)
-
-    return Map({ min: filteredValues.min(), max: filteredValues.max() })
-  }
-
-  linearScale(extremeValues) {
-    const { mapUi } = this.props
+  linearScale() {
+    const { mapUi, extremeValues } = this.props
     const startColor = mapUi.get('linear').get('startColor')
     const endColor = mapUi.get('linear').get('endColor')
 
@@ -25,9 +17,9 @@ export default class MapWithLegend extends Component {
       .interpolate(d3.interpolateLab)
   }
 
-  colorScale(extremeValues) {
+  colorScale() {
     const scales = {
-      linear: this.linearScale(extremeValues),
+      linear: this.linearScale(),
     }
 
     const dataClassification = this.props.mapUi.get('dataClassification')
@@ -35,10 +27,9 @@ export default class MapWithLegend extends Component {
   }
 
   render() {
-    const extremeValues = this.extremeValues()
-    const colorScale = this.colorScale(extremeValues)
+    const colorScale = this.colorScale()
 
-    const { svgWidth, svgHeight, mapUi } = this.props
+    const { svgWidth, svgHeight, mapUi, extremeValues } = this.props
     const noDataColor = mapUi.get('noDataColor')
 
     return (
@@ -74,5 +65,6 @@ MapWithLegend.propTypes = {
   mouseLeaveDatamap: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
+  extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
 }
