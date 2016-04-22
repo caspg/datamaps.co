@@ -1,54 +1,43 @@
 import React, { Component, PropTypes } from 'react'
-import { List, Map } from 'immutable'
+import { Map } from 'immutable'
 import d3 from 'd3'
 
 import Datamap from './Datamap'
+import LinearLegend from './MapLegend/LinearLegend'
 
 export default class MapWithLegend extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      extremeValues: this.extremeValues(props),
-      colorScale: this.colorScale(props),
-    }
-  }
-
-  componentWillReceiveProps(nexProps) {
-    this.setState({
-      colorScale: this.colorScale(nexProps),
-    })
-  }
-
-  extremeValues(props) {
-    const { regionData } = props
+  extremeValues() {
+    const { regionData } = this.props
     const values = regionData.map((item) => item.get('value'))
     const filteredValues = values.filterNot((item) => item === null)
 
-    return List([filteredValues.min(), filteredValues.max()])
+    return Map({ min: filteredValues.min(), max: filteredValues.max() })
   }
 
-  linearScale(props) {
-    const extremeValues = this.extremeValues(props)
-    const { mapUi } = props
+  linearScale(extremeValues) {
+    const { mapUi } = this.props
     const startColor = mapUi.get('linear').get('startColor')
     const endColor = mapUi.get('linear').get('endColor')
 
     return d3.scale.linear()
-      .domain([extremeValues.get(0), extremeValues.get(1)])
+      .domain([extremeValues.get('min'), extremeValues.get('max')])
       .range([startColor, endColor])
       .interpolate(d3.interpolateLab)
   }
 
-  colorScale(props) {
+  colorScale(extremeValues) {
     const scales = {
-      linear: this.linearScale(props),
+      linear: this.linearScale(extremeValues),
     }
 
-    const dataClassification = props.mapUi.get('dataClassification')
+    const dataClassification = this.props.mapUi.get('dataClassification')
     return scales[dataClassification]
   }
 
   render() {
+    const extremeValues = this.extremeValues()
+    const colorScale = this.colorScale(extremeValues)
+
     const { svgWidth, svgHeight, mapUi } = this.props
     const noDataColor = mapUi.get('noDataColor')
 
@@ -58,12 +47,19 @@ export default class MapWithLegend extends Component {
           regionData={this.props.regionData}
           svgWidth={svgWidth}
           svgHeight={svgHeight}
-          colorScale={this.state.colorScale}
+          colorScale={colorScale}
           noDataColor={noDataColor}
           mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
           mouseEnterOnDatamap={this.props.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.props.mouseLeaveDatamap}
           mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
+        />
+
+        <LinearLegend
+          svgWidth={svgWidth}
+          svgHeight={svgHeight}
+          extremeValues={extremeValues}
+          mapUi={mapUi}
         />
       </g>
     )
