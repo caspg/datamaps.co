@@ -54,5 +54,5 @@ LinearLegend.propTypes = {
   svgWidth: PropTypes.number.isRequired,
   svgHeight: PropTypes.number.isRequired,
   extremeValues: PropTypes.instanceOf(Map).isRequired,
-  mapUi: PropTypes.object.isRequired,
+  mapUi: PropTypes.instanceOf(Map).isRequired,
 }
