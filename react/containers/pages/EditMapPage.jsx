@@ -2,17 +2,23 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { changeMapTitle } from '../../actions/mapUi'
-import TitleEditor from '../../components/TitleEditor'
 import LinearColorsEditor from '../LinearColorsEditor'
+import TitleEditor from '../../components/TitleEditor'
+import DataClassificationSelect from '../../components/DataClassificationSelect'
 
 export default class EditMapPage extends Component {
   constructor(props) {
     super(props)
     this.handleTitleChange = this.handleTitleChange.bind(this)
+    this.handleClassificationChange = this.handleClassificationChange.bind(this)
   }
 
   handleTitleChange(title) {
     this.props.dispatch(changeMapTitle(title))
+  }
+
+  handleClassificationChange(classification) {
+    console.log(classification)
   }
 
   render() {
@@ -22,6 +28,10 @@ export default class EditMapPage extends Component {
           text={this.props.mapUi.get('title')}
           onChange={this.handleTitleChange}
           placeholder="Add new title"
+        />
+        <DataClassificationSelect
+          dataClassification={this.props.mapUi.get('dataClassification')}
+          onClassificationChange={this.handleClassificationChange}
         />
         <LinearColorsEditor />
       </div>
