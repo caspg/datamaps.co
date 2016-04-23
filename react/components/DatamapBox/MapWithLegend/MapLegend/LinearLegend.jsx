@@ -12,7 +12,7 @@ export default class LinearLegend extends Component {
       d3.scale.linear()
         .domain([0, 200])
         .range([startColor, endColor])
-        .interpolate(d3.interpolate)(value)
+        .interpolate(d3.interpolateLab)(value)
     )
   }
 

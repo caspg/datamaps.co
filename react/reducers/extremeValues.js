@@ -11,7 +11,8 @@ export default function extremeValues(state = Map(), action) {
     }
 
     case UPLOAD_DATA: {
-      return state
+      const values = action.data.map((item) => item.get('value'))
+      return state.set('min', values.min()).set('max', values.max())
     }
 
     default:
