@@ -19,6 +19,17 @@ export default function mapUi(state = Map(), action) {
     case constants.CHANGE_DATA_CLASSIFICATION:
       return state.set('dataClassification', action.classification)
 
+    case constants.CHANGE_COLOR_PALLETE: {
+      const newState = Map({
+        equidistant: Map({
+          palleteKey: action.palleteKey,
+          pallete: action.pallete,
+        }),
+      })
+
+      return state.mergeDeep(newState)
+    }
+
     default:
       return state
   }

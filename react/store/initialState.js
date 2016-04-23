@@ -7,7 +7,7 @@ import { statesDummyData, extremeValues } from '../data/states-dummy-data'
 export default {
   regionCodes: stateCodes,
   regionData: statesDummyData,
-  extremeValues: extremeValues,
+  extremeValues,
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: Map({
     title: 'Super map test title',

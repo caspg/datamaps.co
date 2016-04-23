@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import * as mapUiActions from '../actions/mapUi'
+import colorbrewer from '../data/colorbrewer'
 import ColorSchemePicker from '../components/ColorSchemePicker'
 
 export class EquidistantScaleEditor extends Component {
@@ -10,7 +12,9 @@ export class EquidistantScaleEditor extends Component {
   }
 
   handlePalletePicked(palleteKey) {
-    console.log(palleteKey)
+    const classesCount = this.props.mapUi.getIn(['equidistant', 'classesCount'])
+    const pallete = colorbrewer[palleteKey][classesCount]
+    this.props.dispatch(mapUiActions.changeColorPallete(palleteKey, pallete))
   }
 
   render() {
@@ -28,6 +32,7 @@ export class EquidistantScaleEditor extends Component {
 }
 
 EquidistantScaleEditor.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   mapUi: PropTypes.object.isRequired,
 }
 
