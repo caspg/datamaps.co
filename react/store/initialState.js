@@ -1,4 +1,4 @@
-import { fromJS, Map } from 'immutable'
+import { Map } from 'immutable'
 
 // import statesEmptyData from '../data/states-empty-data'
 import { stateCodes } from '../data/states-empty-data'
@@ -11,7 +11,7 @@ export default {
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: Map({
     title: 'Super map test title',
-    dataClassification: 'linear',
+    dataClassification: 'equidistant',
     linear: Map({
       startColor: '#f7fbff',
       endColor: '#08519c',
