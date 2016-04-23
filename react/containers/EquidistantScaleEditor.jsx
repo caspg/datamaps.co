@@ -3,12 +3,18 @@ import { connect } from 'react-redux'
 
 import * as mapUiActions from '../actions/mapUi'
 import colorbrewer from '../data/colorbrewer'
+import ColorPickerRow from '../components/ColorPickerRow'
 import ColorSchemePicker from '../components/ColorSchemePicker'
 
 export class EquidistantScaleEditor extends Component {
   constructor(props) {
     super(props)
     this.handlePalletePicked = this.handlePalletePicked.bind(this)
+    this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
+  }
+
+  handleNoDataColorChange(color) {
+    this.props.dispatch(mapUiActions.changeLinearNoDataColor(color))
   }
 
   handlePalletePicked(palleteKey) {
@@ -18,13 +24,21 @@ export class EquidistantScaleEditor extends Component {
   }
 
   render() {
-    const palleteKey = this.props.mapUi.getIn(['equidistant', 'palleteKey'])
+    const { mapUi } = this.props
+    const palleteKey = mapUi.getIn(['equidistant', 'palleteKey'])
+    const noDataColor = mapUi.get('noDataColor')
 
     return (
       <div className="equidistant-colors-editor">
         <ColorSchemePicker
           palleteKey={palleteKey}
           palletePicked={this.handlePalletePicked}
+        />
+
+        <ColorPickerRow
+          label="no data color:"
+          color={noDataColor}
+          onColorChange={this.handleNoDataColorChange}
         />
       </div>
     )
