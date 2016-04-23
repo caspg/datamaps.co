@@ -3,7 +3,7 @@ import topojson from 'topojson'
 import d3 from 'd3'
 import { Map } from 'immutable'
 
-import { usaTopoJSON } from '../../../../data/topoJSON'
+import { usaTopoJSON } from '../../../data/topoJSON'
 import DatamapSubunit from './DatamapSubunit'
 
 export default class Datamap extends Component {
