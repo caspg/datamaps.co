@@ -7,13 +7,14 @@ export default class ColorPallete extends Component {
   }
 
   handlePalletePicked() {
-    this.props.colorPalletePicked(this.props.palleteKey)
+    this.props.palletePicked(this.props.palleteKey)
   }
 
   renderPallete() {
-    return this.props.pallete.map((color) =>
+    return this.props.pallete.map((color, i) =>
       <div
-        style={{ width: 20, height: 20, 'background-color': color }}
+        key={i}
+        style={{ width: 20, height: 20, backgroundColor: color }}
       />
     )
   }
@@ -38,5 +39,5 @@ ColorPallete.propTypes = {
   pallete: PropTypes.array.isRequired,
   palleteKey: PropTypes.string.isRequired,
   activePalleteKey: PropTypes.string.isRequired,
-  colorPalletePicked: PropTypes.func.isRequired,
+  palletePicked: PropTypes.func.isRequired,
 }

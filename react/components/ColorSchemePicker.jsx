@@ -9,12 +9,13 @@ const singlehueSchemes = ['Blues', 'Greens', 'Greys', 'Oranges', 'Purples', 'Red
 
 export default class ColorSchemePicker extends Component {
   renderPalletes(schemes) {
-    return schemes.map((key) =>
+    return schemes.map((palleteKey, i) =>
       <ColorPallete
+        key={i}
         activePalleteKey={this.props.palleteKey}
-        palleteKey={key}
-        pallete={colorbrewer[key][4]}
-        colorPalletePicked={this.props.colorPalletePicked}
+        palleteKey={palleteKey}
+        pallete={colorbrewer[palleteKey][4]}
+        palletePicked={this.props.palletePicked}
       />
     )
   }
@@ -39,5 +40,5 @@ export default class ColorSchemePicker extends Component {
 
 ColorSchemePicker.propTypes = {
   palleteKey: PropTypes.string.isRequired,
-  colorPalletePicked: PropTypes.func.isRequired,
+  palletePicked: PropTypes.func.isRequired,
 }

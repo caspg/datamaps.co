@@ -3,13 +3,25 @@ import { connect } from 'react-redux'
 
 import ColorSchemePicker from '../components/ColorSchemePicker'
 
-export default class EquidistantScaleEditor extends Component {
+export class EquidistantScaleEditor extends Component {
+  constructor(props) {
+    super(props)
+    this.handlePalletePicked = this.handlePalletePicked.bind(this)
+  }
+
+  handlePalletePicked(palleteKey) {
+    console.log(palleteKey)
+  }
+
   render() {
     const palleteKey = this.props.mapUi.getIn(['equidistant', 'palleteKey'])
 
     return (
       <div className="equidistant-colors-editor">
-        <ColorSchemePicker palleteKey={palleteKey} />
+        <ColorSchemePicker
+          palleteKey={palleteKey}
+          palletePicked={this.handlePalletePicked}
+        />
       </div>
     )
   }
