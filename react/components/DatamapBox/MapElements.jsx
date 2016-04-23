@@ -18,9 +18,19 @@ export default class MmapElements extends Component {
       .interpolate(d3.interpolateLab)
   }
 
+  equidistantScale() {
+    const { mapUi, extremeValues } = this.props
+    const colorPallete = mapUi.getIn(['equidistant', 'pallete'])
+
+    return d3.scale.quantize()
+      .domain([extremeValues.get('min'), extremeValues.get('max')])
+      .range(colorPallete)
+  }
+
   colorScale() {
     const scales = {
       linear: this.linearScale(),
+      equidistant: this.equidistantScale(),
     }
 
     const dataClassification = this.props.mapUi.get('dataClassification')

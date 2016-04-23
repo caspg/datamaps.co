@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { changeMapTitle, changeDataClassification } from '../../actions/mapUi'
 import LinearScaleEditor from '../LinearScaleEditor'
+import EquidistantScaleEditor from '../EquidistantScaleEditor'
 import TitleEditor from '../../components/TitleEditor'
 import DataClassificationSelect from '../../components/DataClassificationSelect'
 
@@ -21,9 +22,19 @@ export default class EditMapPage extends Component {
     this.props.dispatch(changeDataClassification(classification))
   }
 
-  render() {
-    console.log(this.props.mapUi.get('dataClassification'))
+  renderEditor() {
+    const dataClassification = this.props.mapUi.get('dataClassification')
+    const linearEditor = <LinearScaleEditor />
+    const equidistantEditor = <EquidistantScaleEditor />
+    const editors = {
+      linear: linearEditor,
+      equidistant: equidistantEditor,
+    }
 
+    return editors[dataClassification]
+  }
+
+  render() {
     return (
       <div className="edit-map-page">
         <TitleEditor
@@ -35,7 +46,7 @@ export default class EditMapPage extends Component {
           dataClassification={this.props.mapUi.get('dataClassification')}
           onClassificationChange={this.handleClassificationChange}
         />
-        <LinearScaleEditor />
+        {this.renderEditor()}
       </div>
     )
   }
