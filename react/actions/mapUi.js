@@ -15,3 +15,7 @@ export function changeLinearEndColor(color) {
 export function changeLinearNoDataColor(color) {
   return { type: actions.CHANGE_LINEAR_NO_DATA_COLOR, color }
 }
+
+export function changeDataClassification(classification) {
+  return { type: actions.CHANGE_DATA_CLASSIFICATION, classification }
+}

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import * as mapUiActions from '../actions/mapUi'
 import ColorPickerRow from '../components/ColorPickerRow'
 
-export default class LinearColorsEditor extends Component {
+export default class LinearScaleEditor extends Component {
   constructor(props) {
     super(props)
     this.handleStartColorChange = this.handleStartColorChange.bind(this)
@@ -54,7 +54,7 @@ export default class LinearColorsEditor extends Component {
   }
 }
 
-LinearColorsEditor.propTypes = {
+LinearScaleEditor.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapUi: PropTypes.object.isRequired,
 }
@@ -65,4 +65,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(LinearColorsEditor)
+export default connect(mapStateToProps)(LinearScaleEditor)

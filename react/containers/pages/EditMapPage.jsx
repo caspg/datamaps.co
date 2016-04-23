@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import { changeMapTitle } from '../../actions/mapUi'
-import LinearColorsEditor from '../LinearColorsEditor'
+import { changeMapTitle, changeDataClassification } from '../../actions/mapUi'
+import LinearScaleEditor from '../LinearScaleEditor'
 import TitleEditor from '../../components/TitleEditor'
 import DataClassificationSelect from '../../components/DataClassificationSelect'
 
@@ -18,10 +18,12 @@ export default class EditMapPage extends Component {
   }
 
   handleClassificationChange(classification) {
-    console.log(classification)
+    this.props.dispatch(changeDataClassification(classification))
   }
 
   render() {
+    console.log(this.props.mapUi.get('dataClassification'))
+
     return (
       <div className="edit-map-page">
         <TitleEditor
@@ -33,7 +35,7 @@ export default class EditMapPage extends Component {
           dataClassification={this.props.mapUi.get('dataClassification')}
           onClassificationChange={this.handleClassificationChange}
         />
-        <LinearColorsEditor />
+        <LinearScaleEditor />
       </div>
     )
   }

@@ -1,20 +1,23 @@
 import { Map } from 'immutable'
 
-import * as actions from '../constants/ActionTypes'
+import * as constants from '../constants/ActionTypes'
 
 export default function mapUi(state = Map(), action) {
   switch (action.type) {
-    case actions.CHANGE_MAP_TITLE:
+    case constants.CHANGE_MAP_TITLE:
       return state.set('title', action.title)
 
-    case actions.CHANGE_LINEAR_START_COLOR:
+    case constants.CHANGE_LINEAR_START_COLOR:
       return state.setIn(['linear', 'startColor'], action.color)
 
-    case actions.CHANGE_LINEAR_END_COLOR:
+    case constants.CHANGE_LINEAR_END_COLOR:
       return state.setIn(['linear', 'endColor'], action.color)
 
-    case actions.CHANGE_LINEAR_NO_DATA_COLOR:
+    case constants.CHANGE_LINEAR_NO_DATA_COLOR:
       return state.set('noDataColor', action.color)
+
+    case constants.CHANGE_DATA_CLASSIFICATION:
+      return state.set('dataClassification', action.classification)
 
     default:
       return state
