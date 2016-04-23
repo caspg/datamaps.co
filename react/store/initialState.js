@@ -18,6 +18,7 @@ export default {
     }),
     equidistant: Map({
       classesCount: 5,
+      palleteKey: 'GnBu',
       pallete: ['#f0f9e8', '#bae4bc', '#7bccc4', '#43a2ca', '#0868ac'],
     }),
     noDataColor: '#f5f5f5',

@@ -19,16 +19,14 @@ export default class ColorPallete extends Component {
   }
 
   render() {
-    const palleteStyle = {
-      display: 'inline-block',
-      margin: 5,
-    }
+    const { activePalleteKey, palleteKey } = this.props
+    const isActive = (activePalleteKey === palleteKey)
+    const activeClass = isActive ? 'active-pallete' : ''
 
     return (
       <div
-        className="color-pallete"
+        className={`color-pallete ${activeClass}`}
         onClick={this.handlePalletePicked}
-        style={palleteStyle}
       >
         {this.renderPallete()}
       </div>
@@ -37,7 +35,8 @@ export default class ColorPallete extends Component {
 }
 
 ColorPallete.propTypes = {
-  palleteKey: PropTypes.string.isRequired,
-  colorPalletePicked: PropTypes.func.isRequired,
   pallete: PropTypes.array.isRequired,
+  palleteKey: PropTypes.string.isRequired,
+  activePalleteKey: PropTypes.string.isRequired,
+  colorPalletePicked: PropTypes.func.isRequired,
 }

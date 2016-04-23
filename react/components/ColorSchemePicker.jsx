@@ -11,6 +11,7 @@ export default class ColorSchemePicker extends Component {
   renderPalletes(schemes) {
     return schemes.map((key) =>
       <ColorPallete
+        activePalleteKey={this.props.palleteKey}
         palleteKey={key}
         pallete={colorbrewer[key][4]}
         colorPalletePicked={this.props.colorPalletePicked}
@@ -37,5 +38,6 @@ export default class ColorSchemePicker extends Component {
 }
 
 ColorSchemePicker.propTypes = {
+  palleteKey: PropTypes.string.isRequired,
   colorPalletePicked: PropTypes.func.isRequired,
 }
