@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
 import MapContainer from '../containers/MapContainer'
+import EditorHeader from '../containers/EditorHeader'
 import DevTools from '../containers/DevTools'
 
 export default class EditorLayout extends Component {
@@ -42,7 +43,7 @@ export default class EditorLayout extends Component {
 
     return {
       wrapper: {
-        marginTop: 50,
+        marginTop: 90,
         position: 'absolute',
         top: 0,
         bottom: 0,
@@ -75,14 +76,17 @@ export default class EditorLayout extends Component {
 
   render() {
     return (
-      <div className="editor-wrapper" style={this.styles.wrapper}>
-        <div ref="container" style={this.styles.container}>
-          <div className="map-column" style={this.styles.mapColumn}>
-            <MapContainer />
-            <DevTools />
-          </div>
-          <div className="editor-body-column" style={this.styles.editorBodyColumn}>
-            {this.props.children}
+      <div>
+        <EditorHeader />
+        <div className="editor-wrapper" style={this.styles.wrapper}>
+          <div ref="container" style={this.styles.container}>
+            <div className="map-column" style={this.styles.mapColumn}>
+              <MapContainer />
+              <DevTools />
+            </div>
+            <div className="editor-body-column" style={this.styles.editorBodyColumn}>
+              {this.props.children}
+            </div>
           </div>
         </div>
       </div>
