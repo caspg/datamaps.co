@@ -23,8 +23,8 @@ export default class DataClassesSelect extends Component {
 
   render() {
     return (
-      <div>
-        DataClassesSelect
+      <div className="data-classes-select">
+        <p>Number of data classes:</p>
         <Select
           name="form-field-name"
           value={this.props.classesCount}

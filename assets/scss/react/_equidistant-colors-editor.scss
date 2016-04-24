@@ -1,6 +1,7 @@
 .equidistant-colors-editor {
   margin-top: 15px;
   display: inline-block;
+  width: 100%;
 
   p {
     margin-bottom: 10px;
@@ -39,5 +40,14 @@
   .color-picker-row {
     margin-top: 10px;
     margin-left: 5px;
+  }
+
+  .data-classes-select {
+    margin-bottom: 15px;
+    min-height: 36px;
+
+    p {
+      margin-bottom: 5px;
+    }
   }
 }
