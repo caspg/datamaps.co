@@ -15,12 +15,13 @@ export default class EquidistantLegend extends Component {
     const maxVal = extremeValues.get('max')
     const interval = (maxVal - minVal) / classesCount
     const colorPallete = mapUi.getIn(['equidistant', 'pallete'])
+    const startingPoint = rectWidth * classesCount + 20
 
     const legend = colorPallete.map((color, i) =>
       <g key={i}>
         <text
           key={i + 100}
-          x={this.props.svgWidth - 250 + rectWidth * i}
+          x={this.props.svgWidth - startingPoint + rectWidth * i}
           y={this.props.svgHeight - 60}
           style={textStyle}
         >
@@ -28,7 +29,7 @@ export default class EquidistantLegend extends Component {
         </text>
         <rect
           key={i + 1000}
-          x={this.props.svgWidth - 250 + rectWidth * i}
+          x={this.props.svgWidth - startingPoint + rectWidth * i}
           y={this.props.svgHeight - 50}
           width={rectWidth}
           height="15"
@@ -40,7 +41,7 @@ export default class EquidistantLegend extends Component {
     legend.push(
       <text
         key={999}
-        x={this.props.svgWidth - 250 + rectWidth * classesCount}
+        x={this.props.svgWidth - startingPoint + rectWidth * classesCount}
         y={this.props.svgHeight - 60}
         style={textStyle}
       >
