@@ -28,6 +28,7 @@
     "react-select": "^1.0.0-beta12",
     "redux": "^3.4.0",
     "redux-thunk": "^2.0.1",
+    "save-svg-as-png": "^1.0.2",
     "style-loader": "^0.13.1",
     "topojson": "^1.6.24"
   },
