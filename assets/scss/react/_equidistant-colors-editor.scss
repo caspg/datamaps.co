@@ -25,6 +25,7 @@
     margin: 4px;
     border: 6px solid white;
     border-radius: 4px;
+    cursor: pointer;
 
     &.active-pallete {
       border: 6px solid $grey-color-300;

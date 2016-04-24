@@ -25,7 +25,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.2",
-    "react-select": "^0.9.1",
+    "react-select": "^1.0.0-beta12",
     "redux": "^3.4.0",
     "redux-thunk": "^2.0.1",
     "style-loader": "^0.13.1",

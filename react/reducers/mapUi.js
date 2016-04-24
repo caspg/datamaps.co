@@ -30,6 +30,17 @@ export default function mapUi(state = Map(), action) {
       return state.mergeDeep(newState)
     }
 
+    case constants.CHANGE_CLASSES_COUNT: {
+      const newState = Map({
+        equidistant: Map({
+          classesCount: action.count,
+          pallete: action.pallete,
+        }),
+      })
+
+      return state.mergeDeep(newState)
+    }
+
     default:
       return state
   }

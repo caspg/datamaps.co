@@ -23,3 +23,7 @@ export function changeDataClassification(classification) {
 export function changeColorPallete(palleteKey, pallete) {
   return { type: constants.CHANGE_COLOR_PALLETE, palleteKey, pallete }
 }
+
+export function changeClassesCount(count, pallete) {
+  return { type: constants.CHANGE_CLASSES_COUNT, count, pallete }
+}
