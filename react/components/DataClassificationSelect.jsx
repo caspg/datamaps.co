@@ -15,8 +15,8 @@ export default class DataClassificationSelect extends Component {
     ]
   }
 
-  handleOnChange(value) {
-    this.props.onClassificationChange(value)
+  handleOnChange(option) {
+    this.props.onClassificationChange(option.value)
   }
 
   render() {

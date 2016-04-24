@@ -20,7 +20,7 @@ export default class LinearLegend extends Component {
     return Array(40).fill().map((_, i) =>
       <rect
         key={i}
-        x={this.props.svgWidth - 250 + i * 5}
+        x={this.props.svgWidth - 220 + i * 5}
         y={this.props.svgHeight - 50}
         width={5}
         height="15"
@@ -38,10 +38,10 @@ export default class LinearLegend extends Component {
 
     return (
       <g>
-        <text x={this.props.svgWidth - 250} y={this.props.svgHeight - 60} style={textStyle}>
+        <text x={this.props.svgWidth - 220} y={this.props.svgHeight - 60} style={textStyle}>
           {minVal}
         </text>
-        <text x={this.props.svgWidth - 50} y={this.props.svgHeight - 60} style={textStyle}>
+        <text x={this.props.svgWidth - 20} y={this.props.svgHeight - 60} style={textStyle}>
           {maxVal}
         </text>
         {this.renderGradient()}
