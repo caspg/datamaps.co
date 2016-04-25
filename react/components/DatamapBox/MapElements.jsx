@@ -7,34 +7,44 @@ import Datamap from './Datamap'
 import MapLegend from './MapLegend'
 
 export default class MmapElements extends Component {
-  linearScale() {
-    const { mapUi, extremeValues } = this.props
-    const startColor = mapUi.get('linear').get('startColor')
-    const endColor = mapUi.get('linear').get('endColor')
+  linearScale(min, max) {
+    const { mapUi } = this.props
 
-    return d3.scale.linear()
-      .domain([extremeValues.get('min'), extremeValues.get('max')])
-      .range([startColor, endColor])
-      .interpolate(d3.interpolateLab)
+    return function _linearScale() {
+      console.log('_linearScale')
+      const startColor = mapUi.get('linear').get('startColor')
+      const endColor = mapUi.get('linear').get('endColor')
+
+      return d3.scale.linear()
+        .domain([min, max])
+        .range([startColor, endColor])
+        .interpolate(d3.interpolateLab)
+    }
   }
 
-  equidistantScale() {
-    const { mapUi, extremeValues } = this.props
-    const colorPallete = mapUi.getIn(['equidistant', 'pallete'])
+  equidistantScale(min, max) {
+    const { mapUi } = this.props
 
-    return d3.scale.quantize()
-      .domain([extremeValues.get('min'), extremeValues.get('max')])
-      .range(colorPallete)
+    return function _equidistantScale() {
+      console.log('_equidistantScale')
+      const colorPallete = mapUi.getIn(['equidistant', 'pallete'])
+
+      return d3.scale.quantize().domain([min, max]).range(colorPallete)
+    }
   }
 
   colorScale() {
+    const { extremeValues } = this.props
+    const min = extremeValues.get('customMin') || extremeValues.get('min')
+    const max = extremeValues.get('customMax') || extremeValues.get('max')
+
     const scales = {
-      linear: this.linearScale(),
-      equidistant: this.equidistantScale(),
+      linear: this.linearScale(min, max),
+      equidistant: this.equidistantScale(min, max),
     }
 
     const dataClassification = this.props.mapUi.get('dataClassification')
-    return scales[dataClassification]
+    return scales[dataClassification]()
   }
 
   renderMapElements(svgWidth, svgHeight) {
