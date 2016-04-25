@@ -54,6 +54,7 @@ export default class MmapElements extends Component {
       top: '15px',
       left: 0,
       right: 0,
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     }
 
     const titleStyle = {
