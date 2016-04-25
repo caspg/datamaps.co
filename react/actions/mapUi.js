@@ -31,3 +31,7 @@ export function changeClassesCount(count, pallete) {
 export function changeDomainStartValue(value) {
   return { type: constants.CHANGE_DOMAIN_START_VALUE, value }
 }
+
+export function changeDomainEndValue(value) {
+  return { type: constants.CHANGE_DOMAIN_END_VALUE, value }
+}

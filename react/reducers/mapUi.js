@@ -44,6 +44,9 @@ export default function mapUi(state = Map(), action) {
     case constants.CHANGE_DOMAIN_START_VALUE:
       return state.setIn(['equidistant', 'domainStartValue'], action.value)
 
+    case constants.CHANGE_DOMAIN_END_VALUE:
+      return state.setIn(['equidistant', 'domainEndValue'], action.value)
+
     default:
       return state
   }

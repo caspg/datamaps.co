@@ -40,7 +40,7 @@ export class EquidistantScaleEditor extends Component {
   }
 
   handleDomainEndValueChange(value) {
-    console.log(value)
+    this.props.dispatch(mapUiActions.changeDomainEndValue(value))
   }
 
   render() {

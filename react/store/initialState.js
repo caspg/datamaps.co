@@ -21,6 +21,7 @@ export default {
       palleteKey: 'GnBu',
       pallete: ['#f0f9e8', '#bae4bc', '#7bccc4', '#43a2ca', '#0868ac'],
       domainStartValue: null,
+      domainEndValue: null,
     }),
     noDataColor: '#f5f5f5',
   }),
