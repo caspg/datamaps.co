@@ -19,5 +19,6 @@ app.use(sassMiddleware({
 }))
 app.use('/css', express.static(path.join(__dirname, '../public/css')))
 app.use('/js', express.static(path.join(__dirname, '../public/js')))
+app.use('/images', express.static(path.join(__dirname, '../public/images')))
 
 module.exports = app

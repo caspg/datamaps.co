@@ -1,5 +1,5 @@
 .choropleth-section {
-  margin-top: 100px;
+  margin-top: 70px;
   padding: 0 20px;
 
   .section-title {
@@ -8,17 +8,14 @@
 
   .choropleth-img-wrapper {
     padding: 5px;
+    text-align: center;
   }
 
   .choropleth-img {
     border-radius: 5px;
-    max-width: 400px;
+    max-width: 800px;
     width: 100%;
     height: auto;
-  }
-
-  .info-column {
-    padding-left: 50px;
   }
 
   .buttons-wrapper {
@@ -27,15 +24,22 @@
   }
 
   .button {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
     min-width: 250px;
   }
 
   .choropleth-attributes {
-    margin-top: 15px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    margin-left: -20px;
+    margin-right: -20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $grey-color-600;
 
     li {
       margin-bottom: 5px;
+      display: inline-block;
     }
   }
 }
