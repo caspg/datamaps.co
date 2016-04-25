@@ -63,9 +63,17 @@ export default class MmapElements extends Component {
       fontWeight: '300',
     }
 
+    const legendTitleStyle = {
+      textAnchor: 'end',
+      fontSize: 12,
+      fill: '#424242',
+      fontWeight: '300',
+    }
+
     const { mapUi, extremeValues } = this.props
     const noDataColor = mapUi.get('noDataColor')
     const colorScale = this.colorScale()
+    const legendTitleCoords = { x: svgWidth - 20, y: svgHeight - 85 }
 
     return (
       <svg style={svgStyle}>
@@ -81,6 +89,12 @@ export default class MmapElements extends Component {
           mouseEnterOnDatamap={this.props.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.props.mouseLeaveDatamap}
           mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
+        />
+
+        <Title
+          text={this.props.mapUi.get('legendTitle')}
+          style={legendTitleStyle}
+          coords={legendTitleCoords}
         />
 
         <MapLegend

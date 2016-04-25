@@ -11,6 +11,7 @@ export default {
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: Map({
     title: 'Super map test title',
+    legendTitle: 'Super legend test title [unit]',
     dataClassification: 'equidistant',
     linear: Map({
       startColor: '#f7fbff',
