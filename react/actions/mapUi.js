@@ -27,3 +27,7 @@ export function changeColorPallete(palleteKey, pallete) {
 export function changeClassesCount(count, pallete) {
   return { type: constants.CHANGE_CLASSES_COUNT, count, pallete }
 }
+
+export function changeDomainStartValue(value) {
+  return { type: constants.CHANGE_DOMAIN_START_VALUE, value }
+}

@@ -1,5 +1,5 @@
 import { Map } from 'immutable'
-import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
+import { EDIT_ROW, UPLOAD_DATA, CHANGE_DOMAIN_START_VALUE } from '../constants/ActionTypes'
 
 export default function extremeValues(state = Map(), action) {
   switch (action.type) {
@@ -14,6 +14,9 @@ export default function extremeValues(state = Map(), action) {
       const values = action.data.map((item) => item.get('value'))
       return state.merge({ min: values.min(), max: values.max() })
     }
+
+    case CHANGE_DOMAIN_START_VALUE:
+      return state.set('customMin', action.value)
 
     default:
       return state

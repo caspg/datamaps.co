@@ -42,6 +42,7 @@ export default class NumericInput extends Component {
         value={this.state.value}
         onChange={this.handleOnChange}
         onBlur={this.handleOnBlur}
+        placeholder={this.props.placeholder}
       />
     )
   }
@@ -50,5 +51,6 @@ export default class NumericInput extends Component {
 NumericInput.propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   className: PropTypes.string,
+  placeholder: PropTypes.number,
   onBlur: PropTypes.func.isRequired,
 }

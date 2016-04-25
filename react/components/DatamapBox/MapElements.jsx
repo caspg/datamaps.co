@@ -11,9 +11,8 @@ export default class MmapElements extends Component {
     const { mapUi } = this.props
 
     return function _linearScale() {
-      console.log('_linearScale')
-      const startColor = mapUi.get('linear').get('startColor')
-      const endColor = mapUi.get('linear').get('endColor')
+      const startColor = mapUi.getIn(['linear', 'startColor'])
+      const endColor = mapUi.getIn(['linear', 'endColor'])
 
       return d3.scale.linear()
         .domain([min, max])
@@ -26,7 +25,6 @@ export default class MmapElements extends Component {
     const { mapUi } = this.props
 
     return function _equidistantScale() {
-      console.log('_equidistantScale')
       const colorPallete = mapUi.getIn(['equidistant', 'pallete'])
 
       return d3.scale.quantize().domain([min, max]).range(colorPallete)

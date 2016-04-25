@@ -11,7 +11,7 @@ export default class EquidistantLegend extends Component {
     }
     const { extremeValues, mapUi } = this.props
     const classesCount = mapUi.getIn(['equidistant', 'classesCount'])
-    const minVal = extremeValues.get('min')
+    const minVal = extremeValues.get('customMin') || extremeValues.get('min')
     const maxVal = extremeValues.get('max')
     const interval = (maxVal - minVal) / classesCount
     const colorPallete = mapUi.getIn(['equidistant', 'pallete'])

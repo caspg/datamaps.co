@@ -41,6 +41,9 @@ export default function mapUi(state = Map(), action) {
       return state.mergeDeep(newState)
     }
 
+    case constants.CHANGE_DOMAIN_START_VALUE:
+      return state.setIn(['equidistant', 'domainStartValue'], action.value)
+
     default:
       return state
   }

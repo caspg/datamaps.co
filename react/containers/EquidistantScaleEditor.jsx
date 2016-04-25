@@ -6,6 +6,7 @@ import colorbrewer from '../data/colorbrewer'
 import ColorPickerRow from '../components/ColorPickerRow'
 import ColorSchemePicker from '../components/ColorSchemePicker'
 import DataClassesSelect from '../components/DataClassesSelect'
+import NumericInput from '../components/NumericInput'
 
 export class EquidistantScaleEditor extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ export class EquidistantScaleEditor extends Component {
     this.handlePalletePicked = this.handlePalletePicked.bind(this)
     this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
     this.handleClassesCountChange = this.handleClassesCountChange.bind(this)
+    this.handleDomainStartValueChange = this.handleDomainStartValueChange.bind(this)
   }
 
   handleNoDataColorChange(color) {
@@ -31,11 +33,16 @@ export class EquidistantScaleEditor extends Component {
     this.props.dispatch(mapUiActions.changeClassesCount(count, pallete))
   }
 
+  handleDomainStartValueChange(value) {
+    this.props.dispatch(mapUiActions.changeDomainStartValue(value))
+  }
+
   render() {
     const { mapUi } = this.props
     const palleteKey = mapUi.getIn(['equidistant', 'palleteKey'])
     const noDataColor = mapUi.get('noDataColor')
     const classesCount = mapUi.getIn(['equidistant', 'classesCount'])
+    const customMin = mapUi.getIn(['equidistant', 'customMin'])
 
     return (
       <div className="equidistant-colors-editor">
@@ -43,6 +50,17 @@ export class EquidistantScaleEditor extends Component {
           classesCount={classesCount}
           onClassesCountChange={this.handleClassesCountChange}
         />
+
+        <div>
+          <p>
+            Enter new domain start's value:
+          </p>
+          <NumericInput
+            value={customMin}
+            onBlur={this.handleDomainStartValueChange}
+            placeholder={extremeValues.get('min')}
+          />
+        </div>
 
         <ColorSchemePicker
           palleteKey={palleteKey}
@@ -67,6 +85,7 @@ EquidistantScaleEditor.propTypes = {
 function mapStateToProps(state) {
   return {
     mapUi: state.mapUi,
+    extremeValues: state.extremeValues,
   }
 }
 
