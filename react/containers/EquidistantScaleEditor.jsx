@@ -7,7 +7,7 @@ import colorbrewer from '../data/colorbrewer'
 import ColorPickerRow from '../components/ColorPickerRow'
 import ColorSchemePicker from '../components/ColorSchemePicker'
 import DataClassesSelect from '../components/DataClassesSelect'
-import NumericInput from '../components/NumericInput'
+import DomainValueEditor from '../components/DomainValueEditor'
 
 export class EquidistantScaleEditor extends Component {
   constructor(props) {
@@ -16,6 +16,7 @@ export class EquidistantScaleEditor extends Component {
     this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
     this.handleClassesCountChange = this.handleClassesCountChange.bind(this)
     this.handleDomainStartValueChange = this.handleDomainStartValueChange.bind(this)
+    this.handleDomainEndValueChange = this.handleDomainEndValueChange.bind(this)
   }
 
   handleNoDataColorChange(color) {
@@ -38,12 +39,19 @@ export class EquidistantScaleEditor extends Component {
     this.props.dispatch(mapUiActions.changeDomainStartValue(value))
   }
 
+  handleDomainEndValueChange(value) {
+    console.log(value)
+  }
+
   render() {
     const { mapUi, extremeValues } = this.props
     const palleteKey = mapUi.getIn(['equidistant', 'palleteKey'])
     const noDataColor = mapUi.get('noDataColor')
     const classesCount = mapUi.getIn(['equidistant', 'classesCount'])
     const customMin = mapUi.getIn(['equidistant', 'customMin'])
+    const customMax = mapUi.getIn(['equidistant', 'customMax'])
+    const min = extremeValues.get('min')
+    const max = extremeValues.get('max')
 
     return (
       <div className="equidistant-colors-editor">
@@ -52,16 +60,19 @@ export class EquidistantScaleEditor extends Component {
           onClassesCountChange={this.handleClassesCountChange}
         />
 
-        <div>
-          <p>
-            Enter new domain start's value:
-          </p>
-          <NumericInput
-            value={customMin}
-            onBlur={this.handleDomainStartValueChange}
-            placeholder={extremeValues.get('min')}
-          />
-        </div>
+        <DomainValueEditor
+          label="Enter new domain start's value:"
+          value={customMin}
+          placeholder={min}
+          onDomainValueChange={this.handleDomainStartValueChange}
+        />
+
+        <DomainValueEditor
+          label="Enter new domain end's value:"
+          value={customMax}
+          placeholder={max}
+          onDomainValueChange={this.handleDomainEndValueChange}
+        />
 
         <ColorSchemePicker
           palleteKey={palleteKey}
