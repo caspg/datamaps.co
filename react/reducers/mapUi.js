@@ -7,6 +7,9 @@ export default function mapUi(state = Map(), action) {
     case constants.CHANGE_MAP_TITLE:
       return state.set('title', action.title)
 
+    case constants.CHANGE_LEGEND_TITLE:
+      return state.set('legendTitle', action.title)
+
     case constants.CHANGE_LINEAR_START_COLOR:
       return state.setIn(['linear', 'startColor'], action.color)
 

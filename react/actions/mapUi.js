@@ -4,6 +4,10 @@ export function changeMapTitle(title) {
   return { type: constants.CHANGE_MAP_TITLE, title }
 }
 
+export function changeLegendTitle(title) {
+  return { type: constants.CHANGE_LEGEND_TITLE, title }
+}
+
 export function changeLinearStartColor(color) {
   return { type: constants.CHANGE_LINEAR_START_COLOR, color }
 }
