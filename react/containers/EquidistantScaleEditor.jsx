@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Map } from 'immutable'
 
 import * as mapUiActions from '../actions/mapUi'
 import colorbrewer from '../data/colorbrewer'
@@ -38,7 +39,7 @@ export class EquidistantScaleEditor extends Component {
   }
 
   render() {
-    const { mapUi } = this.props
+    const { mapUi, extremeValues } = this.props
     const palleteKey = mapUi.getIn(['equidistant', 'palleteKey'])
     const noDataColor = mapUi.get('noDataColor')
     const classesCount = mapUi.getIn(['equidistant', 'classesCount'])
@@ -80,6 +81,7 @@ export class EquidistantScaleEditor extends Component {
 EquidistantScaleEditor.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapUi: PropTypes.object.isRequired,
+  extremeValues: PropTypes.instanceOf(Map).isRequired,
 }
 
 function mapStateToProps(state) {
