@@ -15,6 +15,7 @@
     "d3": "^3.5.16",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "immutable": "^3.8.1",
     "morgan": "^1.7.0",
     "node-sass-middleware": "^0.9.7",
