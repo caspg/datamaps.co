@@ -1,4 +1,5 @@
 node_modules/
 
-public/css/
+public/css/react_bundle.css
+public/css/index.css
 public/js/react_bundle.js

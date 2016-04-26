@@ -34,6 +34,6 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('../css/bundle.css', { allChunks: true }),
+    new ExtractTextPlugin('../css/react_bundle.css', { allChunks: true }),
   ],
 };
