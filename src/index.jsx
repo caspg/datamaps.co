@@ -5,13 +5,17 @@ import { Router, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import configureStore from './redux/store/configureStore'
-// import routes from '../routes'
+import HomeRoute from './routes/home/HomeRoute'
 
-// const store = configureStore()
-// const history = syncHistoryWithStore(browserHistory, store)
+const store = configureStore()
+const history = syncHistoryWithStore(browserHistory, store)
 
 const Root = () =>
-  <h1>Hello world</h1>
+  <Provider store={store}>
+    <Router history={history}>
+      {HomeRoute}
+    </Router>
+  </Provider>
 
 render(
   <Root />,
