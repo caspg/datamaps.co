@@ -1,8 +1,8 @@
 import { Map } from 'immutable'
 
 // import statesEmptyData from '../data/states-empty-data'
-import { stateCodes } from '../data/states-empty-data'
-import { statesDummyData, extremeValues } from '../data/states-dummy-data'
+import { stateCodes } from '../../data/states-empty-data'
+import { statesDummyData, extremeValues } from '../../data/states-dummy-data'
 
 export default {
   regionCodes: stateCodes,

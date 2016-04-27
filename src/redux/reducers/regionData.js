@@ -1,7 +1,7 @@
 import { Map } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
-import statesEmptyData from '../data/states-empty-data'
+import statesEmptyData from '../../data/states-empty-data'
 
 function updateEmptyData(emptyData, data) {
   for (let i = 0; i < data.size; i++) {
