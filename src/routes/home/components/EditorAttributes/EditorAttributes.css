@@ -1,0 +1,14 @@
+@value grey-color-300, grey-color-600 from "styles/colors.css";
+
+.container {
+  margin-top: 90px;
+  margin-bottom: 100px;
+  margin-left: -150px;
+  margin-right: -150px;
+  padding: 0 100px 40px 100px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: grey-color-600;
+  border-top: 1px solid grey-color-300;
+  border-bottom: 1px solid grey-color-300;
+}
