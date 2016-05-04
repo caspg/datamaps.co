@@ -4,11 +4,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    main: [path.resolve(__dirname, '../src/index.jsx')],
+    old_react_bundle: path.resolve(__dirname, '../react/index.js'),
+    react_bundle: path.resolve(__dirname, '../src/index.jsx'),
   },
   output: {
     path: path.resolve(__dirname, '../public/js'),
-    filename: 'react_bundle.js',
+    filename: '[name].js',
   },
   module: {
     loaders: [
@@ -27,6 +28,7 @@ module.exports = {
     ],
   },
   resolve: {
+    root: path.resolve(__dirname, '../src'),
     extensions: ['', '.js', '.jsx'],
     alias: {
       react: path.resolve(__dirname, '../node_modules', 'react'),
