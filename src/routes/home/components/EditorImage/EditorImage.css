@@ -1,0 +1,11 @@
+.container {
+  padding: 5px;
+  text-align: center;
+}
+
+.image {
+  border-radius: 5px;
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
