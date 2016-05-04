@@ -1,3 +1,5 @@
+@value grey-color from "styles/colors.css";
+
 .nav {
   height: 50px;
   padding: 0 20px 0 20px;
@@ -13,25 +15,26 @@
   display: inline-block;
 }
 
-.grey {
-  composes: grey from "styles/colors.css";
-}
-
-.white {
-  color: white;
-}
-
 .link {
   padding: 10px;
   border-radius: 5px;
+  text-decoration: none;
 }
 
 .grey-link {
   composes: link;
-  composes: grey;
+  color: grey-color;
+}
+
+.grey-link:hover {
+  color: grey-color;
 }
 
 .white-link {
   composes: link;
-  composes: white;
+  color: white;
+}
+
+.white-link:hover {
+  color: white;
 }

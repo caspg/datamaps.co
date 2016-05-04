@@ -10,7 +10,7 @@ const Navbar = (props) => {
     <nav className={`row middle-xs + ${style.nav}`}>
       <div className="col-xs-6">
         <h4>
-          <Link to="/" className={style[color]}>Datamaps.co</Link>
+          <Link to="/" className={style[`${color}-link`]}>Datamaps.co</Link>
         </h4>
       </div>
       <div className="col-xs-6 end-xs">
