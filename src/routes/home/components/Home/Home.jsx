@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Home = () =>
-  <div>Hello world from Home</div>
+import Navbar from '../Navbar/Navbar'
 
-export default Home
+const Home = () =>
+  <Navbar textColor="grey" />
+
+export default Home;
