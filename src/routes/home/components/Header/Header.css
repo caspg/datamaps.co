@@ -1,0 +1,26 @@
+@value purple-600, purple-400 from 'styles/colors.css';
+
+.header-gradient {
+  background-color: $purple-color-500;
+  background: -moz-linear-gradient(50% 100% 90deg,purple-600 0%,purple-400 95.0%);
+  background: -webkit-linear-gradient(90deg, purple-600 0%, purple-400 95.0%);
+  background: -webkit-gradient(linear,50% 100% ,50% 0% ,color-stop(0,purple-600 ),color-stop(0.950,purple-400 ));
+  background: -o-linear-gradient(90deg, purple-600 0%, purple-400 95.0%);
+  background: -ms-linear-gradient(90deg, purple-600 0%, purple-400 95.0%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='purple-600', endColorstr='purple-400' ,GradientType=0)";
+  background: linear-gradient(0deg, purple-600 0%, purple-400 95.0%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='purple-600',endColorstr='purple-400' , GradientType=0);
+}
+
+.header {
+  composes: header-gradient;
+}
+
+.title-container {
+  height: 250px;
+}
+
+.title {
+  padding: 15px;
+  color: white;
+}
