@@ -1,4 +1,4 @@
-@value grey-color from "styles/colors.css";
+@value grey-color-dark from "styles/colors.css";
 
 .nav {
   height: 50px;
@@ -13,6 +13,7 @@
 
 .list-item {
   display: inline-block;
+  margin-bottom: 0;
 }
 
 .link {
@@ -23,11 +24,12 @@
 
 .grey-link {
   composes: link;
-  color: grey-color;
+  color: grey-color-dark;
 }
 
 .grey-link:hover {
-  color: grey-color;
+  color: grey-color-dark;
+  background-color:
 }
 
 .white-link {
