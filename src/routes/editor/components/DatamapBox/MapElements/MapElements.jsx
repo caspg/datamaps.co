@@ -46,14 +46,15 @@ export default class MapElements extends Component {
     return scales[dataClassification]()
   }
 
-  renderMapElements(svgWidth, svgHeight) {
+  render() {
+    const svgWidth = 700
+    const svgHeight = svgWidth * 0.8
     const { mapUi, extremeValues } = this.props
     const noDataColor = mapUi.get('noDataColor')
     const colorScale = this.colorScale()
-    const legendTitleCoords = { x: svgWidth - 20, y: svgHeight - 85 }
 
     return (
-      <svg className={style.svg}>
+      <svg className={style.svg} style={{ width: svgWidth, height: svgHeight }}>
         <Title
           text={this.props.mapUi.get('title')}
           className="map-title"
@@ -75,7 +76,7 @@ export default class MapElements extends Component {
         <Title
           text={this.props.mapUi.get('legendTitle')}
           className="legend-title"
-          coords={legendTitleCoords}
+          coords={{ x: svgWidth - 20, y: svgHeight - 85 }}
         />
 
         <MapLegend
@@ -87,21 +88,9 @@ export default class MapElements extends Component {
       </svg>
     )
   }
-
-  render() {
-    const { svgWidth, svgHeight } = this.props
-
-    return (
-      <div>
-        {svgWidth && svgHeight && this.renderMapElements(svgWidth, svgHeight)}
-      </div>
-    )
-  }
 }
 
 MapElements.propTypes = {
-  svgWidth: PropTypes.number.isRequired,
-  svgHeight: PropTypes.number.isRequired,
   mouseMoveOnDatamap: PropTypes.func.isRequired,
   mouseEnterOnDatamap: PropTypes.func.isRequired,
   mouseLeaveDatamap: PropTypes.func.isRequired,

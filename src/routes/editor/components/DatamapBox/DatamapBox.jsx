@@ -8,44 +8,16 @@ import HoverInfo from './HoverInfo/HoverInfo'
 export default class DatamapBox extends Component {
   constructor(props) {
     super(props)
-    this.handleResize = this.handleResize.bind(this)
     this.mouseMoveOnDatamap = this.mouseMoveOnDatamap.bind(this)
     this.mouseEnterOnDatamap = this.mouseEnterOnDatamap.bind(this)
     this.mouseLeaveDatamap = this.mouseLeaveDatamap.bind(this)
     this.mouseEnterOnSubunit = this.mouseEnterOnSubunit.bind(this)
 
     this.state = {
-      containerWidth: null,
-      minWidth: 500,
-      maxWidth: 750,
       infoWindowPos: { x: 0, y: 0 },
       infoWindowActive: false,
       activeSubunitName: 'default',
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize)
-
-    const containerWidth = this.currentContainerWidth()
-    this.setState({ containerWidth })
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize)
-  }
-
-  handleResize() {
-    const containerWidth = this.currentContainerWidth()
-    if (containerWidth !== this.state.containerWidth) {
-      this.setState({ containerWidth })
-    }
-  }
-
-  currentContainerWidth() {
-    const { minWidth, maxWidth } = this.state
-    const clientWidth = this.refs.DatamapBox.clientWidth
-    return Math.min(Math.max(clientWidth, minWidth), maxWidth)
   }
 
   mouseMoveOnDatamap(e) {
@@ -70,14 +42,11 @@ export default class DatamapBox extends Component {
 
   render() {
     const {
-      containerWidth,
       infoWindowPos,
       infoWindowActive,
       activeSubunitName,
       activeSubunitValue,
     } = this.state
-
-    const svgWidth = containerWidth || 0
 
     return (
       <div ref="DatamapBox" className={style.datamapbox}>
@@ -85,8 +54,6 @@ export default class DatamapBox extends Component {
           mapUi={this.props.mapUi}
           regionData={this.props.regionData}
           extremeValues={this.props.extremeValues}
-          svgWidth={700}
-          svgHeight={700 * 0.8}
           mouseMoveOnDatamap={this.mouseMoveOnDatamap}
           mouseEnterOnDatamap={this.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.mouseLeaveDatamap}
