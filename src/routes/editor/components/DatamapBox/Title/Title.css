@@ -1,0 +1,15 @@
+@value grey-color-dark from 'styles/colors.css';
+
+.map-title {
+  text-anchor: start;
+  font-size: 25px;
+  fill: grey-color-dark;
+  font-weight: 300;
+}
+
+.legend-title {
+  text-anchor: end;
+  font-size: 12px;
+  fill: grey-color-dark;
+  font-weight: 300;
+}

@@ -2,11 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import { Map } from 'immutable'
 import d3 from 'd3'
 
+import style from './MapElements.css'
 import Title from '../Title/Title'
 import Datamap from '../Datamap/Datamap'
 import MapLegend from '../MapLegend/MapLegend'
 
-export default class MmapElements extends Component {
+export default class MapElements extends Component {
   linearScale(min, max) {
     const { mapUi } = this.props
 
@@ -46,39 +47,18 @@ export default class MmapElements extends Component {
   }
 
   renderMapElements(svgWidth, svgHeight) {
-    const svgStyle = {
-      width: svgWidth,
-      height: svgHeight,
-      margin: 'auto',
-      position: 'absolute',
-      top: '15px',
-      left: 0,
-      right: 0,
-      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-    }
-
-    const titleStyle = {
-      textAnchor: 'start',
-      fontSize: 25,
-      fill: '#424242',
-      fontWeight: '300',
-    }
-
-    const legendTitleStyle = {
-      textAnchor: 'end',
-      fontSize: 12,
-      fill: '#424242',
-      fontWeight: '300',
-    }
-
     const { mapUi, extremeValues } = this.props
     const noDataColor = mapUi.get('noDataColor')
     const colorScale = this.colorScale()
     const legendTitleCoords = { x: svgWidth - 20, y: svgHeight - 85 }
 
     return (
-      <svg style={svgStyle}>
-        <Title text={this.props.mapUi.get('title')} style={titleStyle} coords={{ x: 30, y: 40 }} />
+      <svg className={style.svg}>
+        <Title
+          text={this.props.mapUi.get('title')}
+          className="map-title"
+          coords={{ x: 30, y: 40 }}
+        />
 
         <Datamap
           regionData={this.props.regionData}
@@ -94,7 +74,7 @@ export default class MmapElements extends Component {
 
         <Title
           text={this.props.mapUi.get('legendTitle')}
-          style={legendTitleStyle}
+          className="legend-title"
           coords={legendTitleCoords}
         />
 
@@ -119,7 +99,7 @@ export default class MmapElements extends Component {
   }
 }
 
-MmapElements.propTypes = {
+MapElements.propTypes = {
   svgWidth: PropTypes.number.isRequired,
   svgHeight: PropTypes.number.isRequired,
   mouseMoveOnDatamap: PropTypes.func.isRequired,

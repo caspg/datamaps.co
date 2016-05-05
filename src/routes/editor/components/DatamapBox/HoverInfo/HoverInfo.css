@@ -1,0 +1,11 @@
+@value grey-color-300 from 'styles/colors.css';
+
+.hoverinfo {
+  width: 100px;
+  min-height: 80px;
+  border: 1px solid grey-color-300;
+  position: absolute;
+  background-color: white;
+  box-shadow: 1px 1px 5px grey-color-300;
+  padding: 10px;
+}

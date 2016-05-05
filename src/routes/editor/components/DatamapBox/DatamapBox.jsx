@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Map } from 'immutable'
 
+import style from './DatamapBox.css'
 import MapElements from './MapElements/MapElements'
 import HoverInfo from './HoverInfo/HoverInfo'
 
@@ -77,19 +78,15 @@ export default class DatamapBox extends Component {
     } = this.state
 
     const svgWidth = containerWidth || 0
-    const datamapBoxStyle = {
-      height: '100%',
-      position: 'relative',
-    }
 
     return (
-      <div ref="DatamapBox" style={datamapBoxStyle}>
+      <div ref="DatamapBox" className={style.datamapbox}>
         <MapElements
           mapUi={this.props.mapUi}
           regionData={this.props.regionData}
           extremeValues={this.props.extremeValues}
-          svgWidth={svgWidth}
-          svgHeight={svgWidth * 0.8}
+          svgWidth={700}
+          svgHeight={700 * 0.8}
           mouseMoveOnDatamap={this.mouseMoveOnDatamap}
           mouseEnterOnDatamap={this.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.mouseLeaveDatamap}
