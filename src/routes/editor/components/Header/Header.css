@@ -1,5 +1,11 @@
-@value grey-color-100 from 'styles/colors.css';
+@value grey-color-100, grey-color-300 from 'styles/colors.css';
 
 .navbar-wrapper {
   background-color: grey-color-100;
+}
+
+.actionbar {
+  height: 40px;
+  padding: 0 30px;
+  border: 1px solid grey-color-300;
 }
