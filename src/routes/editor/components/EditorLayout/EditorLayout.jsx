@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 
 import style from './EditorLayout.css'
 import Header from '../Header/Header'
+import MapContainer from '../../containers/MapContainer'
 
 const EditorLayout = (props) =>
   <div>
@@ -9,7 +10,7 @@ const EditorLayout = (props) =>
 
     <div className={style.wrapper}>
       <div className={style['map-column']}>
-        MapContainer
+        <MapContainer />
       </div>
 
       <div className={style['editor-body-column']}>
