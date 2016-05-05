@@ -8,10 +8,10 @@ import EditDataPage from '../containers/pages/EditDataPage'
 import EditMapPage from '../containers/pages/EditMapPage'
 
 export default (
-  <Route path="/editor" component={EditorLayout}>
+  <Route path="/old/editor" component={EditorLayout}>
     <IndexRoute component={InitPage} />
-    <Route path="/editor/upload" component={UploadPage} />
-    <Route path="/editor/edit-data" component={EditDataPage} />
-    <Route path="/editor/edit-map" component={EditMapPage} />
+    <Route path="/old/editor/upload" component={UploadPage} />
+    <Route path="/old/editor/edit-data" component={EditDataPage} />
+    <Route path="/old/editor/edit-map" component={EditMapPage} />
   </Route>
 )

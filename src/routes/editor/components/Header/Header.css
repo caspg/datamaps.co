@@ -1,0 +1,5 @@
+@value grey-color-100 from 'styles/colors.css';
+
+.navbar-wrapper {
+  background-color: grey-color-100;
+}

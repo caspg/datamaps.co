@@ -6,6 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 import configureStore from './redux/store/configureStore'
 import HomeRoute from './routes/home/HomeRoute'
+import EditorRoute from './routes/editor/EditorRoute'
 
 import 'styles/globals.css'
 
@@ -16,6 +17,7 @@ const Root = () =>
   <Provider store={store}>
     <Router history={history}>
       {HomeRoute}
+      {EditorRoute}
     </Router>
   </Provider>
 
