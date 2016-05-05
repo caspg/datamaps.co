@@ -1,0 +1,19 @@
+@value grey-color-600 from 'styles/colors.css';
+
+.footer {
+  margin-top: 50px;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+}
+
+.text {
+  color: grey-color-600;
+}
+
+.small-text {
+  font-size: 12px;
+  margin-top: 5px;
+  padding-right: 0;
+  color: grey-color-600;
+}
