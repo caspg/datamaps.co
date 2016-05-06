@@ -1,8 +1,0 @@
-{
-  "name": "DatamapBox",
-  "main": "./DatamapBox.jsx",
-  "dependencies": {
-    "react-dom": "^15.0.1",
-    "react-select": "^0.9.1"
-  }
-}

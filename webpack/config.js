@@ -4,7 +4,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    old_react_bundle: path.resolve(__dirname, '../react/index.js'),
     react_bundle: path.resolve(__dirname, '../src/index.jsx'),
   },
   output: {
