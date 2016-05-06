@@ -1,13 +1,28 @@
+const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    react_bundle: path.resolve(__dirname, '../src/index.jsx'),
+    app: path.resolve(__dirname, '../src/index.jsx'),
+    vendor: [
+      'react',
+      'react-dom',
+      'immutable',
+      'react-dropzone',
+      'react-redux',
+      'react-router',
+      'react-router-redux',
+      'react-select',
+      'redux',
+      'redux-thunk',
+      'save-svg-as-png',
+      'topojson',
+    ],
   },
   output: {
     path: path.resolve(__dirname, '../public/js'),
-    filename: '[name].js',
+    filename: '[name].bundle.js',
   },
   module: {
     loaders: [
@@ -38,6 +53,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('../css/react_bundle.css', { allChunks: true }),
+    new ExtractTextPlugin('../css/app.bundle.css', { allChunks: true }),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   ],
 }
