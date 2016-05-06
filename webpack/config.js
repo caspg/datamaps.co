@@ -1,7 +1,6 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-
 module.exports = {
   entry: {
     react_bundle: path.resolve(__dirname, '../src/index.jsx'),
@@ -41,4 +40,4 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('../css/react_bundle.css', { allChunks: true }),
   ],
-};
+}
