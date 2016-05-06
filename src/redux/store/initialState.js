@@ -12,7 +12,7 @@ export default {
   mapUi: Map({
     title: 'Super map test title',
     legendTitle: 'Super legend test title [unit]',
-    dataClassification: 'equidistant',
+    dataClassification: 'linear',
     linear: Map({
       startColor: '#f7fbff',
       endColor: '#08519c',
