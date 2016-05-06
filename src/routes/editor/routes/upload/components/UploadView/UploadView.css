@@ -8,19 +8,3 @@
 .empty-table-btn {
   margin-top: 30px;
 }
-
-.dropzone {
-  margin: 30px 0;
-  padding: 25px;
-  width: 250px;
-  height: 150px;
-  border-width: 1px;
-  border-color: grey-color-600;
-  border-style: dashed;
-  border-radius: 5px;
-  background-color: grey-color-100;
-}
-
-.dropzone-active {
-  border-style: solid;
-}
