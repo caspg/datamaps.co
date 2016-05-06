@@ -31,7 +31,7 @@ export class LinearScaleEditor extends Component {
     const noDataColor = mapUi.get('noDataColor')
 
     return (
-      <div className="linear-colors-editor">
+      <div>
         <ColorPickerRow
           label="start color:"
           color={startColor}
