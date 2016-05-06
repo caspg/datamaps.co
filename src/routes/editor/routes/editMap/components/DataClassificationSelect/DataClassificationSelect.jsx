@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import Select from 'react-select'
-import 'react-select/dist/react-select.min.css'
 
 export default class DataClassificationSelect extends Component {
   constructor(props) {
