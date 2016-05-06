@@ -15,7 +15,7 @@ export default class EquidistantLegend extends Component {
     const maxVal = extremeValues.get('customMax') || extremeValues.get('max')
     const interval = (maxVal - minVal) / classesCount
     const colorPallete = mapUi.getIn(['equidistant', 'pallete'])
-    const startingPoint = rectWidth * classesCount + 20
+    const startingPoint = rectWidth * classesCount + 80
 
     const legend = colorPallete.map((color, i) =>
       <g key={i}>

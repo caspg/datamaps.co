@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Select from 'react-select'
 
+import style from './DataClassificationSelect.css'
+
 export default class DataClassificationSelect extends Component {
   constructor(props) {
     super(props)
@@ -20,7 +22,7 @@ export default class DataClassificationSelect extends Component {
 
   render() {
     return (
-      <div>
+      <div className={style.container}>
         <Select
           value={this.props.dataClassification}
           options={this.options()}

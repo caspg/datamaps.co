@@ -76,7 +76,7 @@ export default class MapElements extends Component {
         <Title
           text={this.props.mapUi.get('legendTitle')}
           className="legend-title"
-          coords={{ x: svgWidth - 20, y: svgHeight - 85 }}
+          coords={{ x: svgWidth - 80, y: svgHeight - 85 }}
         />
 
         <MapLegend

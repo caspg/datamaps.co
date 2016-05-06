@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Map } from 'immutable'
 
 import * as mapUiActions from 'redux/actions/mapUi'
-import colorbrewer from '/data/colorbrewer'
+import colorbrewer from 'data/colorbrewer'
 import ColorPickerRow from '../components/ColorPickerRow/ColorPickerRow'
 import ColorSchemePicker from '../components/ColorSchemePicker/ColorSchemePicker'
 import DataClassesSelect from '../components/DataClassesSelect/DataClassesSelect'
@@ -54,7 +54,7 @@ export class EquidistantScaleEditor extends Component {
     const max = extremeValues.get('max')
 
     return (
-      <div className="equidistant-colors-editor">
+      <div>
         <DataClassesSelect
           classesCount={classesCount}
           onClassesCountChange={this.handleClassesCountChange}

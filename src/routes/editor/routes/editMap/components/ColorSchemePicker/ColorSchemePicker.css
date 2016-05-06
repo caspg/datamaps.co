@@ -1,0 +1,18 @@
+@value grey-color-300 from 'styles/colors.css';
+
+.container {
+  margin-top: 20px;
+  padding-left: 5px;
+  display: inline-block;
+}
+
+.row {
+  padding: 0 10px;
+}
+
+.single-hue-row {
+  composes: row;
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid grey-color-300;
+}

@@ -28,6 +28,10 @@ class CommonEditor extends Component {
   render() {
     return (
       <div>
+        <DataClassificationSelect
+          dataClassification={this.props.mapUi.get('dataClassification')}
+          onClassificationChange={this.handleClassificationChange}
+        />
         <TitleEditor
           text={this.props.mapUi.get('title')}
           onChange={this.handleTitleChange}
@@ -37,10 +41,6 @@ class CommonEditor extends Component {
           text={this.props.mapUi.get('legendTitle')}
           onChange={this.handleLegendTitleChange}
           placeholder="Add a new legend title"
-        />
-        <DataClassificationSelect
-          dataClassification={this.props.mapUi.get('dataClassification')}
-          onClassificationChange={this.handleClassificationChange}
         />
       </div>
     )

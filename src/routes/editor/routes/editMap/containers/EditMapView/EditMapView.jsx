@@ -4,16 +4,16 @@ import { connect } from 'react-redux'
 import style from './EditMapView.css'
 import CommonEditor from '../CommonEditor'
 import LinearScaleEditor from '../LinearScaleEditor'
-// import EquidistantScaleEditor from '../EquidistantScaleEditor'
+import EquidistantScaleEditor from '../EquidistantScaleEditor'
 
 class EditMapView extends Component {
   renderEditor() {
     const dataClassification = this.props.mapUi.get('dataClassification')
     const linearEditor = <LinearScaleEditor />
-    // const equidistantEditor = <EquidistantScaleEditor />
+    const equidistantEditor = <EquidistantScaleEditor />
     const editors = {
       linear: linearEditor,
-      // equidistant: equidistantEditor,
+      equidistant: equidistantEditor,
     }
 
     return editors[dataClassification]

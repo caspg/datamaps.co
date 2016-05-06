@@ -40,7 +40,7 @@ export default class NumericInput extends Component {
     return (
       <input
         type="text"
-        className={style.input}
+        className={style[this.props.className]}
         value={this.state.value}
         onChange={this.handleOnChange}
         onBlur={this.handleOnBlur}
@@ -55,4 +55,8 @@ NumericInput.propTypes = {
   className: PropTypes.string,
   placeholder: PropTypes.number,
   onBlur: PropTypes.func.isRequired,
+}
+
+NumericInput.defaultProps = {
+  className: 'input',
 }

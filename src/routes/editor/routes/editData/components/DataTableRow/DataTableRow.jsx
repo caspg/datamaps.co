@@ -22,6 +22,7 @@ export default class DataTableRow extends Component {
         </td>
         <td className={style.cell}>
           <NumericInput
+            className="table-input"
             value={this.props.value}
             onBlur={this.handleInputBlur}
           />

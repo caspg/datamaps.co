@@ -1,0 +1,18 @@
+@value grey-color-200, grey-color-300 from 'styles/colors.css';
+
+.pallete {
+  display: inline-block;
+  margin: 4px;
+  border: 6px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pallete:hover {
+  border: 6px solid grey-color-200;
+}
+
+.pallete-active {
+  composes: pallete;
+  border: 6px solid grey-color-300;
+}
