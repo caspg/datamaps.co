@@ -1,3 +1,7 @@
 :global(h4) {
   margin-bottom: 0;
 }
+
+:global(p) {
+  margin-bottom: 0;
+}

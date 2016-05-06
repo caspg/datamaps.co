@@ -1,0 +1,8 @@
+@value grey-color-100, grey-color-300 from 'styles/colors.css';
+
+.csv-example {
+  margin-top: 20px;
+  background-color: grey-color-100;
+  padding: 5px 20px;
+  border: 1px solid grey-color-300;
+}

@@ -1,0 +1,18 @@
+@value grey-color-300, grey-color-600 from 'styles/colors.css';
+
+.container {
+  border-top: 1px solid grey-color-300;
+  padding: 0 50px;
+  padding-top: 30px;
+  color: grey-color-600;
+}
+
+.list {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.list-item {
+  margin-bottom: 0;
+}
