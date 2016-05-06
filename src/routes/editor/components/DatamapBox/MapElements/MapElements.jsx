@@ -53,8 +53,14 @@ export default class MapElements extends Component {
     const noDataColor = mapUi.get('noDataColor')
     const colorScale = this.colorScale()
 
+    const svgStyle = {
+      width: svgWidth,
+      height: svgHeight,
+      fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    }
+
     return (
-      <svg className={style.svg} style={{ width: svgWidth, height: svgHeight }}>
+      <svg className={style.svg} style={svgStyle}>
         <Title
           text={this.props.mapUi.get('title')}
           className="map-title"
