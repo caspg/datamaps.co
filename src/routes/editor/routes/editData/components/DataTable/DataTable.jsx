@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Map, List } from 'immutable'
 
+import style from './DataTable.css'
 import SortableHeader from '../SortableHeader/SortableHeader'
 import DataTableRow from '../DataTableRow/DataTableRow'
 
@@ -41,7 +42,7 @@ export default class DataTable extends Component {
 
   render() {
     return (
-      <table>
+      <table className={style.table}>
         <thead>
           <tr>
             {this.sortableHeaders()}

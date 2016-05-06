@@ -1,0 +1,40 @@
+@value arrowH: 5px;
+@value grey-color-300, dark from 'styles/colors.css';
+
+.cell {
+  padding: 10px 0;
+  border-top: 1px solid grey-color-300;
+  border-right: 1px solid grey-color-300;
+  cursor: pointer;
+}
+
+.label {
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.label:first-of-type {
+  padding-left: 15px;
+}
+
+.arrow {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: arrowH / 2;
+  margin-left: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.arrow-asc {
+  composes: arrow;
+  border-width: arrowH arrowH 0 arrowH;
+  border-color: dark transparent transparent transparent;
+}
+
+.arrow-desc {
+  composes: arrow;
+  border-width: 0 arrowH arrowH arrowH;
+  border-color: transparent transparent dark transparent;
+}

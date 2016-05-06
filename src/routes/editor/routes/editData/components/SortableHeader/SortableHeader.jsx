@@ -1,9 +1,11 @@
 import { Map } from 'immutable'
 import React, { PropTypes } from 'react'
 
+import style from './SortableHeader.css'
+
 const sortArrowConstructor = (direction) => {
-  const sortDirection = direction === 'ASC' ? 'asc' : 'desc'
-  return <span className={`sort-arrow ${sortDirection}`} />
+  const className = direction === 'ASC' ? style['arrow-asc'] : style['arrow-desc']
+  return <span className={className} />
 }
 
 const SortableHeader = (props) => {
@@ -12,8 +14,11 @@ const SortableHeader = (props) => {
     sortArrowConstructor(sortState.get('direction')) : null
 
   return (
-    <th onClick={() => toggleDirection(sortKey)}>
-      <h6>{props.label}</h6>
+    <th
+      className={style.cell}
+      onClick={() => toggleDirection(sortKey)}
+    >
+      <h6 className={style.label}>{props.label}</h6>
       {sortArrow}
     </th>
   )

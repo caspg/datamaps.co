@@ -1,0 +1,14 @@
+@value grey-color-300 from 'styles/colors.css';
+
+.cell {
+  width: 50%;
+  height: 35px;
+  padding: 0;
+  border: 1px solid grey-color-300;
+  border-left: none;
+}
+
+.cell:first-of-type {
+  padding-left: 15px;
+}
+

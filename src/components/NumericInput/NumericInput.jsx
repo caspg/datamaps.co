@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
+import style from './NumericInput.css'
+
 export default class NumericInput extends Component {
   constructor(props) {
     super(props)
@@ -38,7 +40,7 @@ export default class NumericInput extends Component {
     return (
       <input
         type="text"
-        className={this.props.className}
+        className={style.input}
         value={this.state.value}
         onChange={this.handleOnChange}
         onBlur={this.handleOnBlur}

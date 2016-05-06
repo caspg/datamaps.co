@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
+import style from './DataTableRow.css'
 import NumericInput from 'components/NumericInput/NumericInput'
 
 export default class DataTableRow extends Component {
@@ -16,10 +17,10 @@ export default class DataTableRow extends Component {
   render() {
     return (
       <tr>
-        <td>
+        <td className={style.cell}>
           {this.props.regionName}
         </td>
-        <td>
+        <td className={style.cell}>
           <NumericInput
             value={this.props.value}
             onBlur={this.handleInputBlur}
