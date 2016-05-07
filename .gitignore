@@ -1,5 +1,5 @@
 node_modules/
 
 public/css/react_bundle.css
-public/js/react_bundle.js
+public/js/app.bundle.js
 public/js/vendor.bundle.js

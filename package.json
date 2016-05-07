@@ -46,6 +46,7 @@
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.9",
     "stylelint": "^5.2.1",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-middleware": "^1.6.1"
   }
 }

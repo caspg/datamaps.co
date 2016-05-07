@@ -4,7 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, '../src/index.jsx'),
+    app: [
+      path.resolve(__dirname, '../src/index.jsx'),
+    ],
     vendor: [
       'react',
       'react-dom',
@@ -28,11 +30,8 @@ module.exports = {
     loaders: [
       {
         test: /.jsx?$/,
-        loader: 'babel-loader',
+        loaders: ['babel-loader'],
         exclude: /node_modules/,
-        query: {
-          presets: ['stage-1', 'es2015', 'react'],
-        },
       },
       {
         test: /^((?!\.global).)*css$/,
@@ -53,6 +52,10 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+
     new ExtractTextPlugin('../css/app.bundle.css', { allChunks: true }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   ],
