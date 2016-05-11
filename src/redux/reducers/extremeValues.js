@@ -5,6 +5,7 @@ export default function extremeValues(state = Map(), action) {
   switch (action.type) {
     case constants.EDIT_ROW: {
       const { value } = action
+      if (!value) return state
       if (value < state.get('min')) return state.set('min', value)
       if (value > state.get('max')) return state.set('max', value)
       return state

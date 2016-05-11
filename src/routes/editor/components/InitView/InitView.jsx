@@ -11,7 +11,7 @@ const InitView = () =>
           Upload CSV data file
         </Link>
         <Link to="/editor/edit-data" className={'button ' + style.button}>
-          Start with empty data table
+          go to data table
         </Link>
       </div>
     </div>

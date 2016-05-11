@@ -35,6 +35,6 @@ export default class DataTableRow extends Component {
 DataTableRow.propTypes = {
   regionName: PropTypes.string.isRequired,
   regionCode: PropTypes.string.isRequired,
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onRowEdit: PropTypes.func.isRequired,
 }

@@ -51,7 +51,7 @@ DatamapSubunit.propTypes = {
   path: PropTypes.func.isRequired,
   mouseEnterOnSubunit: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   svgResized: PropTypes.bool.isRequired,
   fillColor: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,

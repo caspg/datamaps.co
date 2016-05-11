@@ -9,7 +9,7 @@ export default class NumericInput extends Component {
     this.handleOnBlur = this.handleOnBlur.bind(this)
 
     this.state = {
-      value: this.props.value || '',
+      value: props.value,
     }
   }
 
@@ -31,7 +31,7 @@ export default class NumericInput extends Component {
   handleOnBlur() {
     if (this.props.value !== this.state.value) {
       const { value } = this.state
-      const parsedValue = value ? parseFloat(value) : null
+      const parsedValue = value ? parseFloat(value) : ''
       this.props.onBlur(parsedValue)
     }
   }
