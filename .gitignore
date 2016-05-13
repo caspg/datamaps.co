@@ -3,3 +3,5 @@ node_modules/
 public/css/react_bundle.css
 public/js/app.bundle.js
 public/js/vendor.bundle.js
+
+lib/scripts/outputs

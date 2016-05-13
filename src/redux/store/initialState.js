@@ -1,17 +1,17 @@
 import { Map } from 'immutable'
 
-// import statesEmptyData from '../data/states-empty-data'
-import { stateCodes } from '../../data/states-empty-data'
-import { statesDummyData, extremeValues } from '../../data/states-dummy-data'
+import worldEmptyData, { countryCodes } from '../../data/world-empty-data'
+import statesEmptyData, { stateCodes } from '../../data/states-empty-data'
+// import { statesDummyData, extremeValues } from '../../data/states-dummy-data'
 
 export default {
-  regionCodes: stateCodes,
-  regionData: statesDummyData,
-  extremeValues,
+  regionCodes: countryCodes,
+  regionData: worldEmptyData,
+  extremeValues: Map({ min: '', max: '' }),
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: Map({
-    title: 'Super map test title',
-    legendTitle: 'Super legend test title [unit]',
+    title: '',
+    legendTitle: '',
     dataClassification: 'equidistant',
     linear: Map({
       startColor: '#f7fbff',

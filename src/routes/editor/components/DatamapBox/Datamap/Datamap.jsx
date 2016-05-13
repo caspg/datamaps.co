@@ -3,7 +3,8 @@ import topojson from 'topojson'
 import d3 from 'd3'
 import { Map } from 'immutable'
 
-import { usaTopoJSON } from 'data/topoJSON'
+import usaTopo from 'data/topo/usa'
+import worldTopo from 'data/topo/world'
 import DatamapSubunit from './DatamapSubunit'
 
 export default class Datamap extends Component {
@@ -12,9 +13,10 @@ export default class Datamap extends Component {
     this.handleMouseEnterOnSubunit = this.handleMouseEnterOnSubunit.bind(this)
 
     this.state = {
-      geoJSONfeatures: topojson.feature(usaTopoJSON, usaTopoJSON.objects.usa).features,
+      geoJSONfeatures: topojson.feature(worldTopo, worldTopo.objects.world).features,
       path: this.path(this.props.svgWidth, this.props.svgHeight),
       svgResized: false,
+      topo: worldTopo,
     }
   }
 
@@ -29,7 +31,7 @@ export default class Datamap extends Component {
   }
 
   path(svgWidth, svgHeight) {
-    const projection = d3.geo.albersUsa().scale(svgWidth)
+    const projection = d3.geo.equirectangular().scale(svgWidth / 2 / Math.PI)
       .translate([svgWidth / 2, svgHeight / 2])
 
     return d3.geo.path().projection(projection)
