@@ -7,7 +7,6 @@ import statesEmptyData, { stateCodes } from '../../data/states-empty-data'
 export default {
   regionCodes: countryCodes,
   regionData: worldEmptyData,
-  extremeValues: Map({ min: '', max: '' }),
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
   mapUi: Map({
     title: '',

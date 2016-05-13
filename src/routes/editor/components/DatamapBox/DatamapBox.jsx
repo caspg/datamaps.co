@@ -41,7 +41,7 @@ export default class DatamapBox extends Component {
   }
 
   render() {
-    const { regionData } = this.props
+    const { regionData, extremeValues } = this.props
 
     const {
       infoWindowPos,
@@ -49,10 +49,6 @@ export default class DatamapBox extends Component {
       activeSubunitName,
       activeSubunitValue,
     } = this.state
-
-    const values = regionData.map((item) => item.get('value'))
-    const filteredValues = values.filterNot((item) => item === '')
-    const extremeValues = Map({ min: filteredValues.min(), max: filteredValues.max() })
 
     return (
       <div ref="DatamapBox" className={style.datamapbox}>

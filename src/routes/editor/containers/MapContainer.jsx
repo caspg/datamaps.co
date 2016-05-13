@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Map } from 'immutable'
+import { createSelector } from 'reselect'
 
 import DatamapBox from '../components/DatamapBox/DatamapBox'
 
@@ -17,10 +18,20 @@ MapContainer.propTypes = {
   mapUi: PropTypes.instanceOf(Map).isRequired,
 }
 
+const getRegionData = (state) => state.regionData
+const extremeValuesSelector = createSelector(
+  [getRegionData],
+  (regionData) => {
+    const values = regionData.map((item) => item.get('value'))
+    const filteredValues = values.filterNot((item) => item === '')
+    return Map({ min: filteredValues.min(), max: filteredValues.max() })
+  }
+)
+
 function mapStateToProps(state) {
   return {
     regionData: state.regionData,
-    extremeValues: state.extremeValues,
+    extremeValues: extremeValuesSelector(state),
     mapUi: state.mapUi,
   }
 }
