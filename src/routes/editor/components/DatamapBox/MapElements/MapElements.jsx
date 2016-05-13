@@ -47,9 +47,9 @@ export default class MapElements extends Component {
   }
 
   render() {
-    const svgWidth = 700
+    const svgWidth = 750
     const svgHeight = svgWidth * 0.8
-    const { mapUi, extremeValues } = this.props
+    const { mapUi, extremeValues, regionData } = this.props
     const noDataColor = mapUi.get('noDataColor')
     const colorScale = this.colorScale()
 
@@ -58,6 +58,15 @@ export default class MapElements extends Component {
       height: svgHeight,
       fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
     }
+
+    const mapLegend = (
+      <MapLegend
+        svgWidth={svgWidth}
+        svgHeight={svgHeight}
+        extremeValues={extremeValues}
+        mapUi={mapUi}
+      />
+    )
 
     return (
       <svg className={style.svg} style={svgStyle}>
@@ -68,7 +77,7 @@ export default class MapElements extends Component {
         />
 
         <Datamap
-          regionData={this.props.regionData}
+          regionData={regionData}
           svgWidth={svgWidth}
           svgHeight={svgHeight}
           colorScale={colorScale}
@@ -85,12 +94,7 @@ export default class MapElements extends Component {
           coords={{ x: svgWidth - 80, y: svgHeight - 85 }}
         />
 
-        <MapLegend
-          svgWidth={svgWidth}
-          svgHeight={svgHeight}
-          extremeValues={extremeValues}
-          mapUi={mapUi}
-        />
+        {extremeValues.get('min') && extremeValues.get('max') && mapLegend}
       </svg>
     )
   }
