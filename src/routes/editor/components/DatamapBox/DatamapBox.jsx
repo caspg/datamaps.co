@@ -41,6 +41,8 @@ export default class DatamapBox extends Component {
   }
 
   render() {
+    const { regionData } = this.props
+
     const {
       infoWindowPos,
       infoWindowActive,
@@ -48,12 +50,16 @@ export default class DatamapBox extends Component {
       activeSubunitValue,
     } = this.state
 
+    const values = regionData.map((item) => item.get('value'))
+    const filteredValues = values.filterNot((item) => item === '')
+    const extremeValues = Map({ min: filteredValues.min(), max: filteredValues.max() })
+
     return (
       <div ref="DatamapBox" className={style.datamapbox}>
         <MapElements
           mapUi={this.props.mapUi}
-          regionData={this.props.regionData}
-          extremeValues={this.props.extremeValues}
+          regionData={regionData}
+          extremeValues={extremeValues}
           mouseMoveOnDatamap={this.mouseMoveOnDatamap}
           mouseEnterOnDatamap={this.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.mouseLeaveDatamap}
