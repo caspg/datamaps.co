@@ -28,14 +28,18 @@ export default class MapElements extends Component {
     return function _equidistantScale() {
       const colorPallete = mapUi.getIn(['equidistant', 'pallete'])
 
+      if (min === max) {
+        return () => colorPallete[colorPallete.length - 1]
+      }
+
       return d3.scale.quantize().domain([min, max]).range(colorPallete)
     }
   }
 
   colorScale() {
     const { extremeValues } = this.props
-    const min = extremeValues.get('customMin') || extremeValues.get('min')
-    const max = extremeValues.get('customMax') || extremeValues.get('max')
+    const min = extremeValues.get('min')
+    const max = extremeValues.get('max')
 
     const scales = {
       linear: this.linearScale(min, max),
