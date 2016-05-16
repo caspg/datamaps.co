@@ -1,7 +1,5 @@
 node_modules/
 
-public/css/react_bundle.css
-public/js/app.bundle.js
-public/js/vendor.bundle.js
+public/bundles/*
 
 lib/scripts/outputs

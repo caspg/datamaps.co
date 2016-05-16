@@ -23,8 +23,9 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, '../public/js'),
+    path: path.resolve(__dirname, '../public/bundles'),
     filename: '[name].bundle.js',
+    publicPath: '/bundles/',
   },
   module: {
     loaders: [
@@ -52,11 +53,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-
-    new ExtractTextPlugin('../css/app.bundle.css', { allChunks: true }),
+    new ExtractTextPlugin('app.bundle.css', { allChunks: true }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   ],
 }
