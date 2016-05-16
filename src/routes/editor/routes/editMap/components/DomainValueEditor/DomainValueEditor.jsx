@@ -15,9 +15,9 @@ const DomainValueEditor = (props) =>
 
 DomainValueEditor.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onDomainValueChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.number,
+  placeholder: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 export default DomainValueEditor;

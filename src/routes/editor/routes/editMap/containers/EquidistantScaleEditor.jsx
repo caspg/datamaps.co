@@ -93,6 +93,7 @@ export class EquidistantScaleEditor extends Component {
 EquidistantScaleEditor.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapUi: PropTypes.object.isRequired,
+  extremeValues: PropTypes.instanceOf(Map).isRequired,
 }
 
 const makeMapStateToProps = () => {

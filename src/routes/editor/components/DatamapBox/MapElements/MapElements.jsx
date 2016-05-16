@@ -68,6 +68,9 @@ export default class MapElements extends Component {
       />
     )
 
+    const isNotExtremeValuesEmpty = extremeValues.get('min') !== '' &&
+      extremeValues.get('max') !== ''
+
     return (
       <svg className={style.svg} style={svgStyle}>
         <Title
@@ -94,7 +97,7 @@ export default class MapElements extends Component {
           coords={{ x: svgWidth - 80, y: svgHeight - 85 }}
         />
 
-        {extremeValues.get('min') && extremeValues.get('max') && mapLegend}
+        {isNotExtremeValuesEmpty && mapLegend}
       </svg>
     )
   }

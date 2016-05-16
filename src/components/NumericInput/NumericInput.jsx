@@ -53,7 +53,7 @@ export default class NumericInput extends Component {
 NumericInput.propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   className: PropTypes.string,
-  placeholder: PropTypes.number,
+  placeholder: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onBlur: PropTypes.func.isRequired,
 }
 
