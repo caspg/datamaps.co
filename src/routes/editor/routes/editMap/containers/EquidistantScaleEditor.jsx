@@ -8,6 +8,7 @@ import ColorPickerRow from '../components/ColorPickerRow/ColorPickerRow'
 import ColorSchemePicker from '../components/ColorSchemePicker/ColorSchemePicker'
 import DataClassesSelect from '../components/DataClassesSelect/DataClassesSelect'
 import DomainValueEditor from '../components/DomainValueEditor/DomainValueEditor'
+import makeExtremeValuesSelector from 'redux/selectors/extremeValues'
 
 export class EquidistantScaleEditor extends Component {
   constructor(props) {
@@ -92,14 +93,18 @@ export class EquidistantScaleEditor extends Component {
 EquidistantScaleEditor.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapUi: PropTypes.object.isRequired,
-  extremeValues: PropTypes.instanceOf(Map).isRequired,
 }
 
-function mapStateToProps(state) {
-  return {
-    mapUi: state.mapUi,
-    extremeValues: state.extremeValues,
+const makeMapStateToProps = () => {
+  const extremeValuesSelector = makeExtremeValuesSelector()
+  const mapStateToProps = (state) => {
+    return {
+      extremeValues: extremeValuesSelector(state),
+      mapUi: state.mapUi,
+    }
   }
+
+  return mapStateToProps
 }
 
-export default connect(mapStateToProps)(EquidistantScaleEditor)
+export default connect(makeMapStateToProps)(EquidistantScaleEditor)
