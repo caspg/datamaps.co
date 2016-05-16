@@ -21,4 +21,6 @@
 .picker {
   position: absolute;
   z-index: 1001;
+  top: 5px;
+  left: -176px !important;
 }
