@@ -49,8 +49,8 @@ export class EquidistantScaleEditor extends Component {
     const palleteKey = mapUi.getIn(['equidistant', 'palleteKey'])
     const noDataColor = mapUi.get('noDataColor')
     const classesCount = mapUi.getIn(['equidistant', 'classesCount'])
-    const customMin = mapUi.getIn(['equidistant', 'customMin'])
-    const customMax = mapUi.getIn(['equidistant', 'customMax'])
+    const customMin = mapUi.getIn(['equidistant', 'domainStartValue'])
+    const customMax = mapUi.getIn(['equidistant', 'domainEndValue'])
     const min = extremeValues.get('min')
     const max = extremeValues.get('max')
 
