@@ -1,7 +1,7 @@
 import { Map } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
-import statesEmptyData from '../../data/states-empty-data'
+import usaEmptyData from '../../data/usa-empty-data'
 
 function updateEmptyData(emptyData, data) {
   for (let i = 0; i < data.size; i++) {
@@ -17,13 +17,16 @@ function updateEmptyData(emptyData, data) {
 export default function regionData(state = Map(), action) {
   switch (action.type) {
     case EDIT_ROW: {
-      const { regionCode, value } = action
-      return state.update(regionCode, (item) => item.set('value', value))
+      const { regionCode, value, mapType } = action
+      return state.updateIn([mapType, regionCode], (item) =>
+        item.set('value', value)
+      )
     }
 
     case UPLOAD_DATA: {
-      return statesEmptyData.withMutations((emptyData) =>
+      return state.set(action.mapType, usaEmptyData.withMutations((emptyData) =>
         updateEmptyData(emptyData, action.data))
+      )
     }
 
     default:

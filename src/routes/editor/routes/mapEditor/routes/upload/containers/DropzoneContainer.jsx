@@ -11,7 +11,8 @@ class DropzoneContainer extends Component {
   }
 
   handleDataUpload(data) {
-    this.props.dispatch(uploadDataAndRedirect(data))
+    const { dispatch, mapType } = this.props
+    dispatch(uploadDataAndRedirect(data, mapType))
   }
 
   render() {
@@ -25,6 +26,13 @@ class DropzoneContainer extends Component {
 
 DropzoneContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  mapType: PropTypes.string.isRequired,
 }
 
-export default connect()(DropzoneContainer)
+function mapStateToProps(state) {
+  return {
+    mapType: state.mapType,
+  }
+}
+
+export default connect(mapStateToProps)(DropzoneContainer)

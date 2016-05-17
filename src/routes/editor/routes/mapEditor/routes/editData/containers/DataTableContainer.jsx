@@ -13,7 +13,7 @@ class DataTableContainer extends Component {
   }
 
   handleRowEdit(regionCode, value) {
-    this.props.dispatch(editRow(regionCode, value))
+    this.props.dispatch(editRow(regionCode, value, this.props.mapType))
   }
 
   handleToggleDirection(sortKey) {
@@ -21,10 +21,12 @@ class DataTableContainer extends Component {
   }
 
   render() {
+    const { mapType } = this.props
+
     return (
       <DataTable
-        regionCodes={this.props.regionCodes}
-        regionData={this.props.regionData}
+        regionCodes={this.props.sortedRegionCodes}
+        regionData={this.props.regionData.get(mapType)}
         sortState={this.props.sortState}
         onRowEdit={this.handleRowEdit}
         toggleDirection={this.handleToggleDirection}
@@ -36,8 +38,9 @@ class DataTableContainer extends Component {
 DataTableContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
-  regionCodes: PropTypes.instanceOf(List).isRequired,
+  sortedRegionCodes: PropTypes.instanceOf(List).isRequired,
   sortState: PropTypes.instanceOf(Map).isRequired,
+  mapType: PropTypes.string.isRequired,
 }
 
 function sortCollection(regionCodes, sortState, regionData) {
@@ -53,12 +56,15 @@ function sortCollection(regionCodes, sortState, regionData) {
 }
 
 function mapStateToProps(state) {
-  const { regionCodes, sortState, regionData } = state
+  const { regionCodes, sortState, regionData, mapType } = state
+  const currentRegionCodes = regionCodes.get(mapType)
+  const currentRegionData = regionData.get(mapType)
 
   return {
-    regionCodes: sortCollection(regionCodes, sortState, regionData),
+    sortedRegionCodes: sortCollection(currentRegionCodes, sortState, currentRegionData),
     regionData,
     sortState,
+    mapType
   }
 }
 

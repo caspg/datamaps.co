@@ -2,18 +2,18 @@ import { push } from 'react-router-redux'
 
 import { EDIT_ROW, UPLOAD_DATA, TOGGLE_DIRECTION } from '../constants/ActionTypes'
 
-function editRow(regionCode, value) {
-  return { type: EDIT_ROW, regionCode, value }
+function editRow(regionCode, value, mapType) {
+  return { type: EDIT_ROW, regionCode, value, mapType }
 }
 
-function uploadData(data) {
-  return { type: UPLOAD_DATA, data }
+function uploadData(data, mapType) {
+  return { type: UPLOAD_DATA, data, mapType }
 }
 
-function uploadDataAndRedirect(data) {
-  return function (dispatch) {
-    dispatch(uploadData(data))
-    dispatch(push('/editor/edit-data'))
+function uploadDataAndRedirect(data, mapType) {
+  return dispatch => {
+    dispatch(uploadData(data, mapType))
+    dispatch(push(`/editor/${mapType}/edit-data`))
   }
 }
 

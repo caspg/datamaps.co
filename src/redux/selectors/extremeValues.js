@@ -4,15 +4,16 @@ import { createSelector } from 'reselect'
 const replaceUndefined = (value) =>
   (typeof value === 'undefined') ? '' : value
 
+const getMapType = (state) => state.mapType
 const getRegionData = (state) => state.regionData
 const domainStartValue = (state) => state.mapUi.getIn(['equidistant', 'domainStartValue'])
 const domainEndValue = (state) => state.mapUi.getIn(['equidistant', 'domainEndValue'])
 
 const makeExtremeValuesSelector = () =>
   createSelector(
-  [getRegionData, domainStartValue, domainEndValue],
-  (regionData, startValue, endValue) => {
-    const values = regionData.map((item) => item.get('value'))
+  [getMapType, getRegionData, domainStartValue, domainEndValue],
+  (mapType, regionData, startValue, endValue) => {
+    const values = regionData.get(mapType).map((item) => item.get('value'))
     const combinedValues = List([values, startValue, endValue]).flatten()
     const filteredValues = combinedValues.filterNot((item) => item === '')
 
