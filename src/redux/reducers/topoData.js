@@ -8,10 +8,10 @@ export default function topoData(state = Map(), action) {
       return state.set('isFetching', true)
 
     case RECEIVE_TOPO_DATA:
-      return state.merge({
+      return state.merge(Map({
         isFetching: false,
         [action.mapType]: action.topoData,
-      })
+      }))
 
     default:
       return state
