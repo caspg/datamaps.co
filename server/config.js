@@ -11,9 +11,9 @@ const app = express()
 
 app.use(morgan('dev'))
 
-app.use('/css', express.static(path.join(__dirname, '../public/css')))
-app.use('/js', express.static(path.join(__dirname, '../public/js')))
+app.use('/bundles', express.static(path.join(__dirname, '../public/bundles')))
 app.use('/images', express.static(path.join(__dirname, '../public/images')))
+app.use('/data', express.static(path.join(__dirname, '../public/data')))
 
 app.use(webpackDevMiddleware(compiler, {
   hot: true,
