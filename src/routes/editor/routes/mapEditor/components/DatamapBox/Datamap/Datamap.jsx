@@ -27,7 +27,18 @@ export default class Datamap extends Component {
   }
 
   path(svgWidth, svgHeight) {
-    const projection = d3.geo.equirectangular().scale(svgWidth / 2 / Math.PI)
+    const config = {
+      usa: {
+        projection: 'albersUsa',
+        scale: 1,
+      },
+      world: {
+        projection: 'equirectangular',
+        scale: 2 * Math.PI,
+      },
+    }[this.props.mapType]
+
+    const projection = d3.geo[config.projection]().scale(svgWidth / config.scale)
       .translate([svgWidth / 2, svgHeight / 2])
 
     return d3.geo.path().projection(projection)

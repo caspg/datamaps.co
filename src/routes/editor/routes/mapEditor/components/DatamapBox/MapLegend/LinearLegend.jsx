@@ -23,7 +23,7 @@ export default class LinearLegend extends Component {
         x={this.props.svgWidth - 280 + i * 5}
         y={this.props.svgHeight - 50}
         width={5}
-        height="15"
+        height="10"
         fill={this.linearColorScale(i * 5)}
         stroke="none"
       />

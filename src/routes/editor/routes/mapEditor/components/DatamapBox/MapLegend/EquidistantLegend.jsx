@@ -32,7 +32,7 @@ export default class EquidistantLegend extends Component {
           x={this.props.svgWidth - startingPoint + rectWidth * i}
           y={this.props.svgHeight - 50}
           width={rectWidth}
-          height="15"
+          height="10"
           fill={color}
         />
       </g>
