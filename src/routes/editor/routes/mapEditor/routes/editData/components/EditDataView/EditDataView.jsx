@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
 import style from './EditDataView.css'
@@ -15,5 +15,11 @@ const EditDataView = (props) =>
 
      <DataTableContainer />
    </div>
+
+EditDataView.propTypes = {
+  params: PropTypes.shape({
+    mapType: PropTypes.string.isRequired,
+  }),
+}
 
 export default EditDataView
