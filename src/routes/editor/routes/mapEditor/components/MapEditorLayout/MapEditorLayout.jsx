@@ -1,13 +1,10 @@
 import React, { PropTypes } from 'react'
 
-import style from './EditorLayout.css'
-import Header from '../Header/Header'
+import style from './MapEditorLayout.css'
 import MapContainer from '../../containers/MapContainer'
 
-const EditorLayout = (props) =>
+const MapEditorLayout = (props) =>
   <div>
-    <Header />
-
     <div className={style.wrapper}>
       <div className={style['map-column']}>
         <MapContainer />
@@ -19,8 +16,8 @@ const EditorLayout = (props) =>
     </div>
   </div>
 
-EditorLayout.propTypes = {
+MapEditorLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default EditorLayout
+export default MapEditorLayout
