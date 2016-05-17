@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import topojson from 'topojson'
 import d3 from 'd3'
 import { Map } from 'immutable'
 
-import usaTopo from 'data/topo/usa'
-import worldTopo from 'data/topo/world'
 import DatamapSubunit from './DatamapSubunit'
 
 export default class Datamap extends Component {
@@ -13,10 +10,9 @@ export default class Datamap extends Component {
     this.handleMouseEnterOnSubunit = this.handleMouseEnterOnSubunit.bind(this)
 
     this.state = {
-      geoJSONfeatures: topojson.feature(worldTopo, worldTopo.objects.world).features,
+      topoJSONfeatures: this.props.topoData.get(this.props.mapType),
       path: this.path(this.props.svgWidth, this.props.svgHeight),
       svgResized: false,
-      topo: worldTopo,
     }
   }
 
@@ -38,21 +34,21 @@ export default class Datamap extends Component {
   }
 
   handleMouseEnterOnSubunit(name, value, index) {
-    const data = this.state.geoJSONfeatures
+    const data = this.state.topoJSONfeatures
     const newData = [
       ...data.slice(0, index),
       ...data.slice(index + 1),
       data[index],
     ]
 
-    this.setState({ geoJSONfeatures: newData })
+    this.setState({ topoJSONfeatures: newData })
     this.props.mouseEnterOnSubunit(name, value)
   }
 
   renderDatamapSubunits() {
     const { colorScale, noDataColor } = this.props
 
-    return this.state.geoJSONfeatures.map((feature, index) => {
+    return this.state.topoJSONfeatures.map((feature, index) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
       const subunitValue = subunitData ? subunitData.get('value') : null
       const fillColor = subunitValue ? colorScale(subunitValue) : noDataColor
@@ -86,6 +82,7 @@ export default class Datamap extends Component {
 }
 
 Datamap.propTypes = {
+  topoData: PropTypes.instanceOf(Map).isRequired,
   mapType: PropTypes.string.isRequired,
   svgWidth: PropTypes.number.isRequired,
   svgHeight: PropTypes.number.isRequired,

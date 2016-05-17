@@ -7,7 +7,7 @@ const MapEditorLayout = (props) =>
   <div>
     <div className={style.wrapper}>
       <div className={style['map-column']}>
-        <MapContainer mapType={props.mapType} />
+        <MapContainer />
       </div>
 
       <div className={style['editor-body-column']}>
@@ -18,7 +18,6 @@ const MapEditorLayout = (props) =>
 
 MapEditorLayout.propTypes = {
   children: PropTypes.node.isRequired,
-  mapType: PropTypes.string.isRequired,
 }
 
 export default MapEditorLayout

@@ -84,6 +84,7 @@ export default class MapElements extends Component {
         />
 
         <Datamap
+          topoData={this.props.topoData}
           mapType={this.props.mapType}
           regionData={regionData}
           svgWidth={svgWidth}
@@ -117,4 +118,5 @@ MapElements.propTypes = {
   extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
   mapType: PropTypes.string.isRequired,
+  topoData: PropTypes.instanceOf(Map).isRequired,
 }

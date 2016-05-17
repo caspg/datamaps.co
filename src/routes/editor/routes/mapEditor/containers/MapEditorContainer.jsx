@@ -24,11 +24,11 @@ class MapEditorContainer extends Component {
   }
 
   render() {
-    const { children, mapType } = this.props
+    const { children } = this.props
 
     return (
       <div>
-        {this.isDataLoaded() && <MapEditorLayout mapType={mapType} children={children} />}
+        {this.isDataLoaded() && <MapEditorLayout children={children} />}
       </div>
     )
   }
@@ -41,7 +41,6 @@ MapEditorContainer.propTypes = {
   params: PropTypes.shape({
     mapType: PropTypes.string.isRequired,
   }),
-  mapType: PropTypes.string.isRequired,
 }
 
 function mapStateToProps(state) {

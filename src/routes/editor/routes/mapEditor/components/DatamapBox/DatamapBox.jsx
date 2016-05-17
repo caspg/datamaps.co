@@ -53,6 +53,7 @@ export default class DatamapBox extends Component {
     return (
       <div ref="DatamapBox" className={style.datamapbox}>
         <MapElements
+          topoData={this.props.topoData}
           mapType={this.props.mapType}
           mapUi={this.props.mapUi}
           regionData={regionData}
@@ -78,4 +79,5 @@ DatamapBox.propTypes = {
   extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
   mapType: PropTypes.string.isRequired,
+  topoData: PropTypes.instanceOf(Map).isRequired,
 }

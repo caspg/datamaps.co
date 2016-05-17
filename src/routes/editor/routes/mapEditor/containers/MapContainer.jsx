@@ -11,7 +11,7 @@ const MapContainer = (props) =>
     extremeValues={props.extremeValues}
     mapUi={props.mapUi}
     mapType={props.mapType}
-
+    topoData={props.topoData}
   />
 
 MapContainer.propTypes = {
@@ -19,6 +19,7 @@ MapContainer.propTypes = {
   extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
   mapType: PropTypes.string.isRequired,
+  topoData: PropTypes.instanceOf(Map).isRequired,
 }
 
 const makeMapStateToProps = () => {
@@ -28,6 +29,8 @@ const makeMapStateToProps = () => {
       regionData: state.regionData,
       extremeValues: extremeValuesSelector(state),
       mapUi: state.mapUi,
+      topoData: state.topoData,
+      mapType: state.mapType,
     }
   }
 
