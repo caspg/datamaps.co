@@ -6,6 +6,7 @@ import mapUi from './mapUi'
 import sortState from './sortState'
 import regionCodes from './regionCodes'
 import topoData from './topoData'
+import mapType from './mapType'
 
 export default combineReducers({
   regionData,
@@ -13,5 +14,6 @@ export default combineReducers({
   sortState,
   regionCodes,
   topoData,
+  mapType,
   routing: routerReducer,
 })

@@ -21,8 +21,7 @@ class MapEditorContainer extends Component {
   }
 
   render() {
-    const { children, params } = this.props
-    const { mapType } = params
+    const { children, mapType } = this.props
 
     return (
       <div>
@@ -39,11 +38,13 @@ MapEditorContainer.propTypes = {
   params: PropTypes.shape({
     mapType: PropTypes.string.isRequired,
   }),
+  mapType: PropTypes.string.isRequired,
 }
 
 function mapStateToProps(state) {
   return {
     topoData: state.topoData,
+    mapType: state.mapType,
   }
 }
 

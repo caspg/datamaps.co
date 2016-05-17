@@ -5,6 +5,7 @@ import statesEmptyData, { stateCodes } from '../../data/states-empty-data'
 // import { statesDummyData, extremeValues } from '../../data/states-dummy-data'
 
 export default {
+  mapType: '',
   regionCodes: countryCodes,
   regionData: worldEmptyData,
   sortState: Map({ key: 'regionName', direction: 'ASC' }),
