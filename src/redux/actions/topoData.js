@@ -21,7 +21,11 @@ export function fetchTopoData(mapType) {
     return axios.get(url)
       .then((response) => {
         const topoJSONData = response.data
-        const topoJSONFeatures = topojson.feature(topoJSONData, topoJSONData.objects.world).features
+        const topoJSONFeatures = topojson.feature(
+          topoJSONData,
+          topoJSONData.objects[mapType]
+        ).features
+
         dispatch(receiveTopoData(mapType, topoJSONFeatures))
       })
   }
