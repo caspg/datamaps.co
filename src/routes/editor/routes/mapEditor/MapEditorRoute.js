@@ -8,8 +8,19 @@ import UploadRoute from './routes/upload/UploadRoute'
 import EditDataRoute from './routes/editData/EditDataRoute'
 import EditMapRoute from './routes/editMap/EditMapRoute'
 
+const validateParam = (nextState, replace) => {
+  const mapTypes = ['usa', 'world']
+
+  if (mapTypes.indexOf(nextState.params.mapType) < 0) {
+    replace({
+      pathname: '/editor',
+      state: { nextPathname: nextState.location.pathname },
+    })
+  }
+}
+
 export default (
-  <Route path=":mapType" component={MapEditorLayout}>
+  <Route path=":mapType" component={MapEditorLayout} onEnter={validateParam}>
     <IndexRoute component={InitView} />
     {UploadRoute}
     {EditDataRoute}
