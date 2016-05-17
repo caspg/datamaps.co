@@ -16,7 +16,10 @@ class MapEditorContainer extends Component {
       return true
     }
 
-    dispatch(fetchTopoData(mapType))
+    if (!topoData.get('isFetching')) {
+      dispatch(fetchTopoData(mapType))
+    }
+
     return false
   }
 
