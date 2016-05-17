@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
-import MapEditorLayout from './components/MapEditorLayout/MapEditorLayout'
+import MapEditorContainer from './containers/MapEditorContainer'
 import InitView from './components/InitView/InitView'
 
 import UploadRoute from './routes/upload/UploadRoute'
@@ -20,7 +20,7 @@ const validateParam = (nextState, replace) => {
 }
 
 export default (
-  <Route path=":mapType" component={MapEditorLayout} onEnter={validateParam}>
+  <Route path=":mapType" component={MapEditorContainer} onEnter={validateParam}>
     <IndexRoute component={InitView} />
     {UploadRoute}
     {EditDataRoute}
