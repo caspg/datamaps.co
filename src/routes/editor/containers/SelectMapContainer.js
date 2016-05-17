@@ -10,7 +10,10 @@ class SelectMapContainer extends Component {
     e.preventDefault()
     const { dispatch } = this.props
 
-    dispatch(setMapType(mapType))
+    if (this.props.mapType !== mapType) {
+      dispatch(setMapType(mapType))
+    }
+
     dispatch(push(`/editor/${mapType}/edit-data`))
   }
 
@@ -28,6 +31,13 @@ class SelectMapContainer extends Component {
 
 SelectMapContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  mapType: PropTypes.string.isRequired,
 }
 
-export default connect()(SelectMapContainer)
+function mapStateToProps(state) {
+  return {
+    mapType: state.mapType,
+  }
+}
+
+export default connect(mapStateToProps)(SelectMapContainer)
