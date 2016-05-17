@@ -10,7 +10,7 @@ const InitView = (props) =>
         <Link to={`/editor/${props.params.mapType}/upload`} className={'button ' + style.button}>
           Upload CSV data file
         </Link>
-        <Link to={`/editor/${props.params.mapType}/edit-map`} className={'button ' + style.button}>
+        <Link to={`/editor/${props.params.mapType}/edit-data`} className={'button ' + style.button}>
           go to data table
         </Link>
       </div>
