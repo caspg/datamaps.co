@@ -4,8 +4,8 @@ import style from './HoverInfo.css'
 
 const HoverInfo = (props) => {
   const hoverInfoStyle = {
-    left: props.position.x + 20,
-    top: props.position.y - 50 + 20,
+    left: props.position.get('x') + 20,
+    top: props.position.get('y') - 50 + 20,
     display: props.active ? 'block' : 'none',
   }
 

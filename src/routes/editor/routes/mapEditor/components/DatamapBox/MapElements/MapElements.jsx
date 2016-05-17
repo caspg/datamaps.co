@@ -8,6 +8,10 @@ import Datamap from '../Datamap/Datamap'
 import MapLegend from '../MapLegend/MapLegend'
 
 export default class MapElements extends Component {
+  shouldComponentUpdate(nextProps) {
+    return this.props.infoWindowPos.equals(nextProps.infoWindowPos)
+  }
+
   linearScale(min, max) {
     const { mapUi } = this.props
 
@@ -119,4 +123,5 @@ MapElements.propTypes = {
   mapUi: PropTypes.instanceOf(Map).isRequired,
   mapType: PropTypes.string.isRequired,
   topoData: PropTypes.instanceOf(Map).isRequired,
+  infoWindowPos: PropTypes.instanceOf(Map).isRequired,
 }

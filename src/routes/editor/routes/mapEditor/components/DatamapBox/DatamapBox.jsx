@@ -14,14 +14,14 @@ export default class DatamapBox extends Component {
     this.mouseEnterOnSubunit = this.mouseEnterOnSubunit.bind(this)
 
     this.state = {
-      infoWindowPos: { x: 0, y: 0 },
+      infoWindowPos: Map({ x: 0, y: 0 }),
       infoWindowActive: false,
       activeSubunitName: 'default',
     }
   }
 
   mouseMoveOnDatamap(e) {
-    const position = { x: e.clientX, y: e.clientY }
+    const position = Map({ x: e.clientX, y: e.clientY })
     this.setState({ infoWindowPos: position })
   }
 
@@ -62,6 +62,7 @@ export default class DatamapBox extends Component {
           mouseEnterOnDatamap={this.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.mouseLeaveDatamap}
           mouseEnterOnSubunit={this.mouseEnterOnSubunit}
+          infoWindowPos={infoWindowPos}
         />
         <HoverInfo
           active={infoWindowActive}

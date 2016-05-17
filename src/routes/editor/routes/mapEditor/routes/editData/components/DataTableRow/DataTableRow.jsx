@@ -9,6 +9,10 @@ export default class DataTableRow extends Component {
     this.handleInputBlur = this.handleInputBlur.bind(this)
   }
 
+  shouldComponentUpdate(nextProps) {
+    return nextProps.value !== this.props.value || nextProps.regionName !== this.props.regionName
+  }
+
   handleInputBlur(value) {
     const { onRowEdit, regionCode } = this.props
     onRowEdit(regionCode, value)
