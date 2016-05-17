@@ -46,7 +46,6 @@ MapEditorContainer.propTypes = {
 function mapStateToProps(state) {
   return {
     topoData: state.topoData,
-    mapType: state.mapType,
   }
 }
 
