@@ -20,6 +20,7 @@ module.exports = {
       'redux-thunk',
       'save-svg-as-png',
       'topojson',
+      'axios',
     ],
   },
   output: {
