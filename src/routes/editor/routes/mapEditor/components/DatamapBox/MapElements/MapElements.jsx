@@ -84,6 +84,7 @@ export default class MapElements extends Component {
         />
 
         <Datamap
+          mapType={this.props.mapType}
           regionData={regionData}
           svgWidth={svgWidth}
           svgHeight={svgHeight}
@@ -115,4 +116,5 @@ MapElements.propTypes = {
   regionData: PropTypes.instanceOf(Map).isRequired,
   extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
+  mapType: PropTypes.string.isRequired,
 }

@@ -10,12 +10,15 @@ const MapContainer = (props) =>
     regionData={props.regionData}
     extremeValues={props.extremeValues}
     mapUi={props.mapUi}
+    mapType={props.mapType}
+
   />
 
 MapContainer.propTypes = {
   regionData: PropTypes.instanceOf(Map).isRequired,
   extremeValues: PropTypes.instanceOf(Map).isRequired,
   mapUi: PropTypes.instanceOf(Map).isRequired,
+  mapType: PropTypes.string.isRequired,
 }
 
 const makeMapStateToProps = () => {

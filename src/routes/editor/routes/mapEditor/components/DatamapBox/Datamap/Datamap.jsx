@@ -86,6 +86,7 @@ export default class Datamap extends Component {
 }
 
 Datamap.propTypes = {
+  mapType: PropTypes.string.isRequired,
   svgWidth: PropTypes.number.isRequired,
   svgHeight: PropTypes.number.isRequired,
   mouseMoveOnDatamap: PropTypes.func.isRequired,

@@ -21,9 +21,12 @@ class MapEditorContainer extends Component {
   }
 
   render() {
+    const { children, params } = this.props
+    const { mapType } = params
+
     return (
       <div>
-        {this.isDataLoaded() && <MapEditorLayout children={this.props.children} />}
+        {this.isDataLoaded() && <MapEditorLayout mapType={mapType} children={children} />}
       </div>
     )
   }
