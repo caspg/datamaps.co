@@ -2,25 +2,39 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Map } from 'immutable'
 
+import { setMapType } from 'redux/actions'
 import { fetchTopoData } from 'redux/actions/topoData'
 
 import MapEditorLayout from '../components/MapEditorLayout/MapEditorLayout'
 
 class MapEditorContainer extends Component {
-  isDataLoaded() {
-    const { params, topoData, dispatch } = this.props
-    const { mapType } = params
+  componentWillMount() {
+    const { mapType, params, dispatch } = this.props
+    if (!mapType) {
+      dispatch(setMapType(params.mapType))
+    }
+  }
+
+  componentWillReceiveProps(nexProps) {
+    const currentTopoData = nexProps.topoData.get(nexProps.mapType)
+
+    if (!!nexProps.mapType && typeof currentTopoData === 'undefined') {
+      this.loadDataIfNecessary(nexProps)
+    }
+  }
+
+  loadDataIfNecessary(props) {
+    const { mapType, topoData, dispatch } = props
     const currentTopoData = topoData.get(mapType)
 
-    if (typeof currentTopoData !== 'undefined') {
-      return true
-    }
-
-    if (!topoData.get('isFetching')) {
+    if (typeof currentTopoData === 'undefined') {
       dispatch(fetchTopoData(mapType))
     }
+  }
 
-    return false
+  isDataReady() {
+    const { mapType, topoData } = this.props
+    return (!!mapType && typeof topoData.get(mapType) !== 'undefined')
   }
 
   render() {
@@ -28,7 +42,7 @@ class MapEditorContainer extends Component {
 
     return (
       <div>
-        {this.isDataLoaded() && <MapEditorLayout children={children} />}
+        {this.isDataReady() && <MapEditorLayout children={children} />}
       </div>
     )
   }
@@ -41,11 +55,13 @@ MapEditorContainer.propTypes = {
   params: PropTypes.shape({
     mapType: PropTypes.string.isRequired,
   }),
+  mapType: PropTypes.string,
 }
 
 function mapStateToProps(state) {
   return {
     topoData: state.topoData,
+    mapType: state.mapType,
   }
 }
 

@@ -11,22 +11,24 @@ export default class Datamap extends Component {
 
     this.state = {
       topoJSONfeatures: this.props.topoData.get(this.props.mapType),
-      path: this.path(this.props.svgWidth, this.props.svgHeight),
+      path: this.path(this.props.svgWidth, this.props.svgHeight, this.props.mapType),
       svgResized: false,
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { svgWidth, svgHeight } = nextProps
-    const path = this.path(svgWidth, svgHeight)
+    const { svgWidth, svgHeight, mapType, topoData } = nextProps
+    const path = this.path(svgWidth, svgHeight, mapType)
 
     const svgResized = nextProps.svgWidth !== this.props.svgWidth ||
       nextProps.svgHeight !== this.props.svgHeight
 
-    this.setState({ path, svgResized })
+    const topoJSONfeatures = topoData.get(mapType)
+
+    this.setState({ path, svgResized, topoJSONfeatures })
   }
 
-  path(svgWidth, svgHeight) {
+  path(svgWidth, svgHeight, mapType) {
     const config = {
       usa: {
         projection: 'albersUsa',
@@ -36,7 +38,7 @@ export default class Datamap extends Component {
         projection: 'equirectangular',
         scale: 2 * Math.PI,
       },
-    }[this.props.mapType]
+    }[mapType]
 
     const projection = d3.geo[config.projection]().scale(svgWidth / config.scale)
       .translate([svgWidth / 2, svgHeight / 2])

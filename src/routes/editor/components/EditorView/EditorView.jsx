@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 
-import Header from '../Header/Header'
+import HeaderContainer from '../../containers/HeaderContainer'
 
 const EditorView = (props) =>
   <div>
-    <Header />
+    <HeaderContainer />
 
     {props.children}
   </div>

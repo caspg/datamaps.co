@@ -3,10 +3,15 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
 import { setMapType } from 'redux/actions'
+import Header from '../components/Header/Header'
 
-class SelectMapContainer extends Component {
-  handleMapSelect(e, mapType) {
-    e.preventDefault()
+class HeaderContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.handleMapTypeChange = this.handleMapTypeChange.bind(this)
+  }
+
+  handleMapTypeChange(mapType) {
     const { dispatch } = this.props
 
     if (this.props.mapType !== mapType) {
@@ -18,17 +23,15 @@ class SelectMapContainer extends Component {
 
   render() {
     return (
-      <div>
-        <h1>SelectMapContainer</h1>
-
-        <a href="#" className="button" onClick={(e) => this.handleMapSelect(e, 'usa')}>USA</a>
-        <a href="#" className="button" onClick={(e) => this.handleMapSelect(e, 'world')}>WORLD</a>
-      </div>
+      <Header
+        mapType={this.props.mapType}
+        onMapTypeChange={this.handleMapTypeChange}
+      />
     )
   }
 }
 
-SelectMapContainer.propTypes = {
+HeaderContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapType: PropTypes.string.isRequired,
 }
@@ -39,4 +42,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(SelectMapContainer)
+export default connect(mapStateToProps)(HeaderContainer)
