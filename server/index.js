@@ -1,5 +1,4 @@
-const isDev = process.env.NODE_ENV !== 'production'
-const port = isDev ? 3000 : process.env.PORT
+const port = 3030
 const app = require('./config')
 const path = require('path')
 
