@@ -3,6 +3,7 @@ import React from 'react'
 import style from './Header.css'
 import Navbar from 'components/Navbar/Navbar'
 import SaveButtons from '../SaveButtons/SaveButtons'
+import MapSelect from '../MapSelect/MapSelect'
 
 const Header = () =>
   <div>
@@ -11,6 +12,7 @@ const Header = () =>
     </div>
 
     <div className={'row middle-xs end-xs ' + style.actionbar}>
+      <MapSelect />
       <SaveButtons />
     </div>
   </div>

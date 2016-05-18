@@ -5,3 +5,7 @@
 :global(p) {
   margin-bottom: 0;
 }
+
+:global(.map-select .Select-control) {
+  height: 40px;
+}
