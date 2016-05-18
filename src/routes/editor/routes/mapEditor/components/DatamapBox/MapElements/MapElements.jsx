@@ -107,6 +107,12 @@ export default class MapElements extends Component {
           coords={{ x: svgWidth - 80, y: svgHeight - 85 }}
         />
 
+        <Title
+          text="created with datamaps.co ©"
+          className="crreated-with"
+          coords={{ x: 30, y: svgHeight - 40}}
+        />
+
         {isNotExtremeValuesEmpty && mapLegend}
       </svg>
     )
