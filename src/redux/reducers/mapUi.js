@@ -50,6 +50,9 @@ export default function mapUi(state = Map(), action) {
     case constants.CHANGE_DOMAIN_END_VALUE:
       return state.setIn(['equidistant', 'domainEndValue'], action.value)
 
+    case constants.SET_MAP_TYPE:
+      return state.merge({ title: '', legendTitle: '' })
+
     default:
       return state
   }
