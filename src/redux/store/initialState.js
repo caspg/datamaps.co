@@ -31,7 +31,5 @@ export default {
     }),
     noDataColor: '#f5f5f5',
   }),
-  topoData: Map({
-    isFetching: false,
-  }),
+  topoData: Map(),
 }

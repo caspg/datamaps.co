@@ -13,21 +13,19 @@ class MapEditorContainer extends Component {
     if (!mapType) {
       dispatch(setMapType(params.mapType))
     }
+
+    this.loadDataIfNecessary(this.props)
   }
 
   componentWillReceiveProps(nexProps) {
-    const currentTopoData = nexProps.topoData.get(nexProps.mapType)
-
-    if (!!nexProps.mapType && typeof currentTopoData === 'undefined') {
-      this.loadDataIfNecessary(nexProps)
-    }
+    this.loadDataIfNecessary(nexProps)
   }
 
   loadDataIfNecessary(props) {
     const { mapType, topoData, dispatch } = props
     const currentTopoData = topoData.get(mapType)
 
-    if (typeof currentTopoData === 'undefined') {
+    if (!!mapType && typeof currentTopoData === 'undefined') {
       dispatch(fetchTopoData(mapType))
     }
   }
