@@ -1,0 +1,25 @@
+@value grey-color-300 from 'styles/colors.css';
+
+.container {
+  display: inline-block;
+  padding: 20px;
+}
+
+.image {
+  border: 1px solid grey-color-300;
+  border-radius: 8px;
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+
+  -webkit-transition: box-shadow 0.1s ease-in-out;
+  -moz-transition: box-shadow 0.1s ease-in-out;
+  -o-transition: box-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.image:hover {
+  -webkit-box-shadow: 3px 3px 8px 0px grey-color-300;
+  -moz-box-shadow: 3px 3px 8px 0px grey-color-300;
+  box-shadow: 3px 3px 8px 0px grey-color-300;
+}
