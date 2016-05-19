@@ -4,15 +4,17 @@ import { Link } from 'react-router'
 import style from './InitView.css'
 
 const InitView = (props) =>
-  <div className="row center-xs">
-    <div className="col-xs-12">
-      <div className={style.container}>
-        <Link to={`/editor/${props.params.mapType}/upload`} className={'button ' + style.button}>
-          Upload CSV data file
-        </Link>
-        <Link to={`/editor/${props.params.mapType}/edit-data`} className={'button ' + style.button}>
-          go to data table
-        </Link>
+  <div className={style.container}>
+    <div className="row center-xs">
+      <div className="col-xs-12">
+        <div className={style.wrapper}>
+          <Link to={`/editor/${props.params.mapType}/upload`} className={'button ' + style.button}>
+            Upload CSV data file
+          </Link>
+          <Link to={`/editor/${props.params.mapType}/edit-data`} className={'button ' + style.button}>
+            go to data table
+          </Link>
+        </div>
       </div>
     </div>
   </div>
