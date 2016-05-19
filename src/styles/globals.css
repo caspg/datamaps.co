@@ -1,3 +1,11 @@
+:global(html) {
+  height: 100%;
+}
+
+:global(body) {
+  height: 100%;
+}
+
 :global(h4) {
   margin-bottom: 0;
 }

@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react'
 import style from './EditorInitView.css'
 import maps from 'config/maps'
 import MapThumb from '../MapThumb/MapThumb'
+import Footer from 'components/Footer/Footer'
 
 const EditorInitView = (props) => {
   const mapThumbs = maps.types.map((type, i) =>
@@ -15,12 +16,16 @@ const EditorInitView = (props) => {
   )
 
   return (
-    <div>
-      <div className={style.thumbs}>
-        <div className="row center-xs">
-          {mapThumbs}
+    <div className={style.container}>
+      <div className={style.wrapper}>
+        <div className={style.thumbs}>
+          <div className="row center-xs">
+            {mapThumbs}
+          </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
