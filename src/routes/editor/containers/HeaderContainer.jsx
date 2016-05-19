@@ -24,6 +24,7 @@ class HeaderContainer extends Component {
   render() {
     return (
       <Header
+        currentPath={this.props.currentPath}
         mapType={this.props.mapType}
         onMapTypeChange={this.handleMapTypeChange}
       />
@@ -34,6 +35,7 @@ class HeaderContainer extends Component {
 HeaderContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapType: PropTypes.string.isRequired,
+  currentPath: PropTypes.string.isRequired,
 }
 
 function mapStateToProps(state) {
