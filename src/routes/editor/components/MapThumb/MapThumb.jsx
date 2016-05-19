@@ -1,10 +1,47 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 
 import style from './MapThumb.css'
 
-const MapThumb = (props) =>
-  <div className={style.container}>
-    <img className={style.image} src={`/images/maps/${props.code}.jpg`} alt={props.displayName} />
-  </div>
+class MapThumb extends Component {
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(e) {
+    e.preventDefault()
+    this.props.handleMapSelect(this.props.code)
+  }
+
+  render() {
+    const { code, displayName } = this.props
+
+    return (
+      <div className={style.container}>
+        <div>
+          <img
+            className={style.image}
+            src={`/images/maps/${code}.jpg`}
+            alt={displayName}
+            onClick={this.handleClick}
+          />
+        </div>
+
+        <button
+          className="button"
+          onClick={this.handleClick}
+        >
+          {displayName}
+        </button>
+      </div>
+    )
+  }
+}
+
+MapThumb.propTypes = {
+  code: PropTypes.string.isRequired,
+  displayName: PropTypes.string.isRequired,
+  handleMapSelect: PropTypes.func.isRequired,
+}
 
 export default MapThumb

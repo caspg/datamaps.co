@@ -7,8 +7,12 @@ import { setMapType } from 'redux/actions'
 import EditorInitView from '../components/EditorInitView/EditorInitView'
 
 class EditorInitContainer extends Component {
-  handleMapSelect(e, mapType) {
-    e.preventDefault()
+  constructor(props) {
+    super(props)
+    this.handleMapSelect = this.handleMapSelect.bind(this)
+  }
+
+  handleMapSelect(mapType) {
     const { dispatch } = this.props
 
     if (this.props.mapType !== mapType) {
@@ -20,7 +24,7 @@ class EditorInitContainer extends Component {
 
   render() {
     return (
-      <EditorInitView />
+      <EditorInitView handleMapSelect={this.handleMapSelect} />
     )
   }
 }

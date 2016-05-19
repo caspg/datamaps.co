@@ -6,11 +6,13 @@
 }
 
 .image {
+  margin: 20px;
   border: 1px solid grey-color-300;
   border-radius: 8px;
   max-width: 250px;
   width: 100%;
   height: auto;
+  cursor: pointer;
 
   -webkit-transition: box-shadow 0.1s ease-in-out;
   -moz-transition: box-shadow 0.1s ease-in-out;
