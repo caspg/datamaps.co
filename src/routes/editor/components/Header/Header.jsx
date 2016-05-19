@@ -17,7 +17,11 @@ const Header = (props) => {
       </div>
 
       <div className={'row middle-xs end-xs ' + style.actionbar}>
-        <MapSelect mapType={props.mapType} onMapTypeChange={props.onMapTypeChange} />
+        <MapSelect
+          mapType={props.mapType}
+          onMapTypeChange={props.onMapTypeChange}
+          currentPath={props.currentPath}
+        />
 
         {!isEditorPath && <SaveButtons />}
       </div>

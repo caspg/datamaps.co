@@ -3,6 +3,7 @@ import Select from 'react-select'
 
 import mapsConfig from 'config/maps'
 import style from './MapSelect.css'
+import routes from 'config/routes'
 
 class MapSelect extends Component {
   constructor(props) {
@@ -19,10 +20,12 @@ class MapSelect extends Component {
       return { value: item.code, label: item.displayName }
     })
 
+    const selectValue = (this.props.currentPath === routes.editor) ? '' : this.props.mapType
+
     return (
       <div className={'map-select ' + style.container}>
         <Select
-          value={this.props.mapType}
+          value={selectValue}
           options={options}
           onChange={this.handleOnChange}
           clearable={false}
@@ -35,6 +38,7 @@ class MapSelect extends Component {
 MapSelect.propTypes = {
   mapType: PropTypes.string.isRequired,
   onMapTypeChange: PropTypes.func.isRequired,
+  currentPath: PropTypes.string.isRequired,
 }
 
 export default MapSelect
