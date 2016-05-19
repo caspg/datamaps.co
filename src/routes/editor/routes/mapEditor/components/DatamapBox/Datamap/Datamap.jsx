@@ -21,12 +21,14 @@ export default class Datamap extends Component {
     const { svgWidth, svgHeight, mapType, topoData } = nextProps
     const path = this.path(svgWidth, svgHeight, mapType)
 
-    const svgResized = nextProps.svgWidth !== this.props.svgWidth ||
-      nextProps.svgHeight !== this.props.svgHeight
+    // const svgResized = nextProps.svgWidth !== this.props.svgWidth ||
+    //   nextProps.svgHeight !== this.props.svgHeight
 
     const topoJSONfeatures = topoData.get(mapType)
 
-    this.setState({ path, svgResized, topoJSONfeatures })
+    if (mapType !== this.props.mapType) {
+      this.setState({ path, topoJSONfeatures })
+    }
   }
 
   path(svgWidth, svgHeight, mapType) {
