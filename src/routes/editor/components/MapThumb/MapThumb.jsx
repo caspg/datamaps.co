@@ -27,12 +27,9 @@ class MapThumb extends Component {
           />
         </div>
 
-        <button
-          className="button"
-          onClick={this.handleClick}
-        >
+        <h4>
           {displayName}
-        </button>
+        </h4>
       </div>
     )
   }
