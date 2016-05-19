@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import d3 from 'd3'
 import { Map } from 'immutable'
 
+import config from 'config/maps'
 import DatamapSubunit from './DatamapSubunit'
 
 export default class Datamap extends Component {
@@ -29,18 +30,11 @@ export default class Datamap extends Component {
   }
 
   path(svgWidth, svgHeight, mapType) {
-    const config = {
-      usa: {
-        projection: 'albersUsa',
-        scale: 1,
-      },
-      world: {
-        projection: 'equirectangular',
-        scale: 2 * Math.PI,
-      },
-    }[mapType]
+    const mapConfig = config.configs[mapType].mapUi
+    const projectionName = mapConfig.projection
+    const scaleDenominator = mapConfig.scaleDenominator
 
-    const projection = d3.geo[config.projection]().scale(svgWidth / config.scale)
+    const projection = d3.geo[projectionName]().scale(svgWidth / scaleDenominator)
       .translate([svgWidth / 2, svgHeight / 2])
 
     return d3.geo.path().projection(projection)
