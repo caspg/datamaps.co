@@ -64,7 +64,7 @@ export default class Datamap extends Component {
     return this.state.topoJSONfeatures.map((feature, index) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
       const subunitValue = subunitData ? subunitData.get('value') : null
-      const fillColor = subunitValue ? colorScale(subunitValue) : noDataColor
+      const fillColor = subunitValue === '' ? noDataColor : colorScale(subunitValue)
 
       return (
         <DatamapSubunit
