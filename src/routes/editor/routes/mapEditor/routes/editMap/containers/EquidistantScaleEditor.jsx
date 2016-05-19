@@ -10,6 +10,8 @@ import DataClassesSelect from '../components/DataClassesSelect/DataClassesSelect
 import DomainValueEditor from '../components/DomainValueEditor/DomainValueEditor'
 import makeExtremeValuesSelector from 'redux/selectors/extremeValues'
 
+import style from './EquidistantScaleEditor.css'
+
 export class EquidistantScaleEditor extends Component {
   constructor(props) {
     super(props)
@@ -55,7 +57,7 @@ export class EquidistantScaleEditor extends Component {
     const max = extremeValues.get('max')
 
     return (
-      <div>
+      <div className={style.container}>
         <DataClassesSelect
           classesCount={classesCount}
           onClassesCountChange={this.handleClassesCountChange}

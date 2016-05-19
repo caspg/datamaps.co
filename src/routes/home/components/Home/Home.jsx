@@ -5,7 +5,7 @@ import Navbar from 'components/Navbar/Navbar'
 import ActionButton from '../ActionButton/ActionButton'
 import EditorImage from '../EditorImage/EditorImage'
 import EditorAttributes from '../EditorAttributes/EditorAttributes'
-import Footer from '../Footer/Footer'
+import Footer from 'components/Footer/Footer'
 
 const Home = () =>
   <div>
@@ -17,7 +17,11 @@ const Home = () =>
     <EditorImage />
     <EditorAttributes />
 
-    <Footer />
+    <Footer>
+      <i>
+        Icons made by <a style={{ color: 'inherit' }} href="http://www.freepik.com" title="Freepik" target="_blank"> Freepik</a>
+      </i>
+    </Footer>
   </div>
 
 export default Home;

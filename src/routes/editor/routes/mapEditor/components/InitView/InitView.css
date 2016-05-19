@@ -1,6 +1,6 @@
 .container {
-  height: 100%;
-  margin-bottom: -170px; /* Height of Footer and footer's margin */
+  min-height: 100%;
+  margin-bottom: -120px; /* Height of Footer and footer's margin */
 }
 
 .wrapper {

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import style from './MapEditorLayout.css'
 import MapContainer from '../../containers/MapContainer'
-import EditorFooter from '../EditorFooter/EditorFooter'
+import Footer from 'components/Footer/Footer'
 
 const MapEditorLayout = (props) =>
   <div className={style.wrapper}>
@@ -13,7 +13,11 @@ const MapEditorLayout = (props) =>
     <div className={style['editor-body-column']}>
       {props.children}
 
-      <EditorFooter />
+      <Footer>
+        <i>
+          Color schemes from <a style={{ color: 'inherit' }} href="http://www.colorbrewer.org" title="colorbrewer" target="_blank">colorbrewer.org</a>
+        </i>
+      </Footer>
     </div>
   </div>
 
