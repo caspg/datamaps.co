@@ -1,0 +1,19 @@
+.container {
+  text-align: left;
+  margin-top: 70px;
+}
+
+.element-width {
+  width: 100%;
+  max-width: 350px;
+  min-width: 200px;
+}
+
+.textarea {
+  composes: element-width;
+  height: 200px;
+}
+
+.input {
+  composes: element-width;
+}

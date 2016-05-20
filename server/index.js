@@ -2,7 +2,7 @@ const port = 3030
 const app = require('./config')
 const path = require('path')
 
-app.get(['/', '/editor', '/editor/*'], (req, res) => {
+app.get(['/', '/editor', '/editor/*', '/contact'], (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'))
 })
 

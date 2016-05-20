@@ -10,6 +10,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './redux/store/configureStore'
 import HomeRoute from './routes/home/HomeRoute'
 import EditorRoute from './routes/editor/EditorRoute'
+import ContactRoute from './routes/contact/ContactRoute'
 import Devtools from './containers/Devtools'
 
 const store = configureStore()
@@ -21,6 +22,7 @@ const Root = () =>
       <Router history={history}>
         {HomeRoute}
         {EditorRoute}
+        {ContactRoute}
       </Router>
       <Devtools />
     </div>

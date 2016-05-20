@@ -2,13 +2,9 @@
 
 .header {
   composes: purple-gradient;
+  height: 120px;
 }
 
-.title-container {
-  height: 250px;
-}
+.wrapper {
 
-.title {
-  padding: 15px;
-  color: white;
 }

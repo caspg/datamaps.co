@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
+import routes from 'config/routes'
 import style from './Navbar.css'
 
 const Navbar = (props) => {
@@ -10,16 +11,16 @@ const Navbar = (props) => {
     <nav className={`row middle-xs + ${style.nav}`}>
       <div className="col-xs-6">
         <h4>
-          <Link to="/" className={style[`${color}-link`]}>Datamaps.co</Link>
+          <Link to={routes.root} className={style[`${color}-link`]}>Datamaps.co</Link>
         </h4>
       </div>
       <div className="col-xs-6 end-xs">
         <ul className={style['unordered-list']}>
           <li className={style['list-item']}>
-            <Link to="/editor" className={style[`${color}-link`]}>Editor</Link>
+            <Link to={routes.editor} className={style[`${color}-link`]}>Editor</Link>
           </li>
           <li className={style['list-item']}>
-            <Link to="/" className={style[`${color}-link`]}>Contact</Link>
+            <Link to={routes.contact} className={style[`${color}-link`]}>Contact</Link>
           </li>
         </ul>
       </div>
