@@ -10,6 +10,8 @@ import {
   changeBorderColor,
 } from 'redux/actions/mapUi'
 
+import style from './CommonEditor.css'
+
 import TitleEditor from '../components/TitleEditor/TitleEditor'
 import DataClassificationSelect from '../components/DataClassificationSelect/DataClassificationSelect'
 import ColorPickerRow from '../components/ColorPickerRow/ColorPickerRow'
@@ -49,7 +51,7 @@ class CommonEditor extends Component {
     const borderColor = this.props.mapUi.get('borderColor')
 
     return (
-      <div style={{ marginBottom: 120 }}>
+      <div className={style.container}>
         <DataClassificationSelect
           dataClassification={this.props.mapUi.get('dataClassification')}
           onClassificationChange={this.handleClassificationChange}

@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
+import routes from 'config/routes'
 import style from './EditMapView.css'
 import CommonEditor from '../CommonEditor'
 import LinearScaleEditor from '../LinearScaleEditor'
@@ -23,6 +25,13 @@ class EditMapView extends Component {
     return (
       <div className={style.container}>
         <div className={style.wrapper}>
+          <Link to={`/editor/${this.props.mapType}/upload`} className={style.link}>
+            Upload new data
+          </Link>
+          <Link to={`/editor/${this.props.mapType}/edit-data`} className={style.link}>
+            Edit data
+          </Link>
+
           <CommonEditor>
             {this.renderEditor()}
           </CommonEditor>
@@ -34,11 +43,13 @@ class EditMapView extends Component {
 
 EditMapView.propTypes = {
   mapUi: PropTypes.object.isRequired,
+  mapType: PropTypes.string.isRequired,
 }
 
 function mapStateToProps(state) {
   return {
     mapUi: state.mapUi,
+    mapType: state.mapType,
   }
 }
 
