@@ -59,6 +59,7 @@ export default class MapElements extends Component {
     const svgHeight = svgWidth * 0.8
     const { mapUi, extremeValues, regionData } = this.props
     const noDataColor = mapUi.get('noDataColor')
+    const borderColor = mapUi.get('borderColor')
     const colorScale = this.colorScale()
 
     const svgStyle = {
@@ -95,6 +96,7 @@ export default class MapElements extends Component {
           svgHeight={svgHeight}
           colorScale={colorScale}
           noDataColor={noDataColor}
+          borderColor={borderColor}
           mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
           mouseEnterOnDatamap={this.props.mouseEnterOnDatamap}
           mouseLeaveDatamap={this.props.mouseLeaveDatamap}

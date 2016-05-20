@@ -55,7 +55,7 @@ export default class Datamap extends Component {
   }
 
   renderDatamapSubunits() {
-    const { colorScale, noDataColor } = this.props
+    const { colorScale, noDataColor, borderColor } = this.props
 
     return this.state.topoJSONfeatures.map((feature, index) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
@@ -71,6 +71,7 @@ export default class Datamap extends Component {
           value={subunitValue}
           svgResized={this.state.svgResized}
           fillColor={fillColor}
+          borderColor={borderColor}
           mouseEnterOnSubunit={this.handleMouseEnterOnSubunit}
         />
       )
@@ -102,4 +103,5 @@ Datamap.propTypes = {
   regionData: PropTypes.instanceOf(Map).isRequired,
   colorScale: PropTypes.func.isRequired,
   noDataColor: PropTypes.string.isRequired,
+  borderColor: PropTypes.string.isRequired,
 }

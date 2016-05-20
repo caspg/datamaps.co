@@ -30,6 +30,7 @@ export default {
       domainEndValue: '',
     }),
     noDataColor: '#f5f5f5',
+    borderColor: '#ccc',
   }),
   topoData: Map(),
 }

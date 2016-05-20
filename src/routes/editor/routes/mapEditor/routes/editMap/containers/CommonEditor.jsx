@@ -3,7 +3,13 @@ import { connect } from 'react-redux'
 
 import { changeLinearNoDataColor } from 'redux/actions/mapUi'
 
-import { changeMapTitle, changeLegendTitle, changeDataClassification } from 'redux/actions/mapUi'
+import {
+  changeMapTitle,
+  changeLegendTitle,
+  changeDataClassification,
+  changeBorderColor,
+} from 'redux/actions/mapUi'
+
 import TitleEditor from '../components/TitleEditor/TitleEditor'
 import DataClassificationSelect from '../components/DataClassificationSelect/DataClassificationSelect'
 import ColorPickerRow from '../components/ColorPickerRow/ColorPickerRow'
@@ -15,6 +21,7 @@ class CommonEditor extends Component {
     this.handleClassificationChange = this.handleClassificationChange.bind(this)
     this.handleLegendTitleChange = this.handleLegendTitleChange.bind(this)
     this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
+    this.handleBorderColorChange = this.handleBorderColorChange.bind(this)
   }
 
   handleTitleChange(title) {
@@ -33,8 +40,13 @@ class CommonEditor extends Component {
     this.props.dispatch(changeLinearNoDataColor(color))
   }
 
+  handleBorderColorChange(color) {
+    this.props.dispatch(changeBorderColor(color))
+  }
+
   render() {
     const noDataColor = this.props.mapUi.get('noDataColor')
+    const borderColor = this.props.mapUi.get('borderColor')
 
     return (
       <div style={{ marginBottom: 120 }}>
@@ -59,6 +71,12 @@ class CommonEditor extends Component {
           label="no data color:"
           color={noDataColor}
           onColorChange={this.handleNoDataColorChange}
+        />
+
+        <ColorPickerRow
+          label="border's line color:"
+          color={borderColor}
+          onColorChange={this.handleBorderColorChange}
         />
       </div>
     )

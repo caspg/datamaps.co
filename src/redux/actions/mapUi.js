@@ -39,3 +39,7 @@ export function changeDomainStartValue(value) {
 export function changeDomainEndValue(value) {
   return { type: constants.CHANGE_DOMAIN_END_VALUE, value }
 }
+
+export function changeBorderColor(color) {
+  return { type: constants.CHANGE_BORDER_COLOR, color }
+}
