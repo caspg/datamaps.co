@@ -2,6 +2,7 @@ import React from 'react'
 
 import Navbar from 'components/Navbar/Navbar'
 import ContactForm from '../ContactForm/ContactForm'
+import ContactInfo from '../ContactInfo/ContactInfo'
 
 import style from './ContactView.css'
 
@@ -11,14 +12,16 @@ const ContactView = () =>
       <Navbar textColor="white" />
     </div>
 
-    <div className="row">
-      <div className="col-sm-offset-2"></div>
-      <div className="col-xs-10 col-sm-4">
+    <div className={style['contact-wrapper']}>
+      <div className="row">
+        <div className="col-sm-offset-2"></div>
+        <div className="col-xs-10 col-sm-4">
+          <ContactInfo />
+        </div>
 
-      </div>
-
-      <div className="col-xs-10 col-sm-4">
-        <ContactForm />
+        <div className="col-xs-10 col-sm-4">
+          <ContactForm />
+        </div>
       </div>
     </div>
   </div>

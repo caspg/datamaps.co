@@ -9,10 +9,10 @@ export default class ContactForm extends Component {
         <form action="https://formspree.io/your@email.com" method="POST">
 
           <label htmlFor="message">Message:</label>
-          <textarea id="message" className={style.textarea} type="text" name="message" required />
+          <textarea id="message" className={style.textarea} type="text" name="message" required placeholder="message" />
 
           <label htmlFor="contact-email">Your contact email:</label>
-          <input id="contact-email" className={style.input} type="text" type="email" />
+          <input id="contact-email" className={style.input} type="text" type="email" placeholder="email" />
 
           <input className="button-primary" type="submit" value="Send" />
         </form>

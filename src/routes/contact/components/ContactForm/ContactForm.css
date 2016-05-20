@@ -16,4 +16,5 @@
 
 .input {
   composes: element-width;
+  display: block;
 }
