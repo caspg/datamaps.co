@@ -5,7 +5,7 @@ import style from './HoverInfo.css'
 const HoverInfo = (props) => {
   const hoverInfoStyle = {
     left: props.position.get('x') + 20,
-    top: props.position.get('y') - 50 + 20,
+    top: props.position.get('y') - 90 +20, // 90px == height of header
     display: props.active ? 'block' : 'none',
   }
 
