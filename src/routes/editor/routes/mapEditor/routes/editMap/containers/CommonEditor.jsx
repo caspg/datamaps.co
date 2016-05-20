@@ -1,9 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import { changeLinearNoDataColor } from 'redux/actions/mapUi'
+
 import { changeMapTitle, changeLegendTitle, changeDataClassification } from 'redux/actions/mapUi'
 import TitleEditor from '../components/TitleEditor/TitleEditor'
 import DataClassificationSelect from '../components/DataClassificationSelect/DataClassificationSelect'
+import ColorPickerRow from '../components/ColorPickerRow/ColorPickerRow'
 
 class CommonEditor extends Component {
   constructor(props) {
@@ -11,6 +14,7 @@ class CommonEditor extends Component {
     this.handleTitleChange = this.handleTitleChange.bind(this)
     this.handleClassificationChange = this.handleClassificationChange.bind(this)
     this.handleLegendTitleChange = this.handleLegendTitleChange.bind(this)
+    this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
   }
 
   handleTitleChange(title) {
@@ -25,9 +29,15 @@ class CommonEditor extends Component {
     this.props.dispatch(changeDataClassification(classification))
   }
 
+  handleNoDataColorChange(color) {
+    this.props.dispatch(changeLinearNoDataColor(color))
+  }
+
   render() {
+    const noDataColor = this.props.mapUi.get('noDataColor')
+
     return (
-      <div>
+      <div style={{ marginBottom: 120 }}>
         <DataClassificationSelect
           dataClassification={this.props.mapUi.get('dataClassification')}
           onClassificationChange={this.handleClassificationChange}
@@ -42,12 +52,21 @@ class CommonEditor extends Component {
           onChange={this.handleLegendTitleChange}
           placeholder="Add a new legend title"
         />
+
+        {this.props.children}
+
+        <ColorPickerRow
+          label="no data color:"
+          color={noDataColor}
+          onColorChange={this.handleNoDataColorChange}
+        />
       </div>
     )
   }
 }
 
 CommonEditor.propTypes = {
+  children: PropTypes.node.isRequired,
   dispatch: PropTypes.func.isRequired,
   mapUi: PropTypes.object.isRequired,
 }

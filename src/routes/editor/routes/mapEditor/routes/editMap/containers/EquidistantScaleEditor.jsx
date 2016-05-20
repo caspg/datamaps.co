@@ -4,26 +4,18 @@ import { Map } from 'immutable'
 
 import * as mapUiActions from 'redux/actions/mapUi'
 import colorbrewer from 'data/colorbrewer'
-import ColorPickerRow from '../components/ColorPickerRow/ColorPickerRow'
 import ColorSchemePicker from '../components/ColorSchemePicker/ColorSchemePicker'
 import DataClassesSelect from '../components/DataClassesSelect/DataClassesSelect'
 import DomainValueEditor from '../components/DomainValueEditor/DomainValueEditor'
 import makeExtremeValuesSelector from 'redux/selectors/extremeValues'
 
-import style from './EquidistantScaleEditor.css'
-
 export class EquidistantScaleEditor extends Component {
   constructor(props) {
     super(props)
     this.handlePalletePicked = this.handlePalletePicked.bind(this)
-    this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
     this.handleClassesCountChange = this.handleClassesCountChange.bind(this)
     this.handleDomainStartValueChange = this.handleDomainStartValueChange.bind(this)
     this.handleDomainEndValueChange = this.handleDomainEndValueChange.bind(this)
-  }
-
-  handleNoDataColorChange(color) {
-    this.props.dispatch(mapUiActions.changeLinearNoDataColor(color))
   }
 
   handlePalletePicked(palleteKey) {
@@ -49,7 +41,6 @@ export class EquidistantScaleEditor extends Component {
   render() {
     const { mapUi, extremeValues } = this.props
     const palleteKey = mapUi.getIn(['equidistant', 'palleteKey'])
-    const noDataColor = mapUi.get('noDataColor')
     const classesCount = mapUi.getIn(['equidistant', 'classesCount'])
     const customMin = mapUi.getIn(['equidistant', 'domainStartValue'])
     const customMax = mapUi.getIn(['equidistant', 'domainEndValue'])
@@ -57,7 +48,7 @@ export class EquidistantScaleEditor extends Component {
     const max = extremeValues.get('max')
 
     return (
-      <div className={style.container}>
+      <div>
         <DataClassesSelect
           classesCount={classesCount}
           onClassesCountChange={this.handleClassesCountChange}
@@ -80,12 +71,6 @@ export class EquidistantScaleEditor extends Component {
         <ColorSchemePicker
           palleteKey={palleteKey}
           palletePicked={this.handlePalletePicked}
-        />
-
-        <ColorPickerRow
-          label="no data color:"
-          color={noDataColor}
-          onColorChange={this.handleNoDataColorChange}
         />
       </div>
     )

@@ -9,7 +9,6 @@ export class LinearScaleEditor extends Component {
     super(props)
     this.handleStartColorChange = this.handleStartColorChange.bind(this)
     this.handleEndColorChange = this.handleEndColorChange.bind(this)
-    this.handleNoDataColorChange = this.handleNoDataColorChange.bind(this)
   }
 
   handleStartColorChange(color) {
@@ -20,15 +19,10 @@ export class LinearScaleEditor extends Component {
     this.props.dispatch(mapUiActions.changeLinearEndColor(color))
   }
 
-  handleNoDataColorChange(color) {
-    this.props.dispatch(mapUiActions.changeLinearNoDataColor(color))
-  }
-
   render() {
     const { mapUi } = this.props
     const startColor = mapUi.getIn(['linear', 'startColor'])
     const endColor = mapUi.getIn(['linear', 'endColor'])
-    const noDataColor = mapUi.get('noDataColor')
 
     return (
       <div>
@@ -42,12 +36,6 @@ export class LinearScaleEditor extends Component {
           label="end color:"
           color={endColor}
           onColorChange={this.handleEndColorChange}
-        />
-
-        <ColorPickerRow
-          label="no data color:"
-          color={noDataColor}
-          onColorChange={this.handleNoDataColorChange}
         />
       </div>
     )

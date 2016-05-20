@@ -23,8 +23,9 @@ class EditMapView extends Component {
     return (
       <div className={style.container}>
         <div className={style.wrapper}>
-          <CommonEditor />
-          {this.renderEditor()}
+          <CommonEditor>
+            {this.renderEditor()}
+          </CommonEditor>
         </div>
       </div>
     )
