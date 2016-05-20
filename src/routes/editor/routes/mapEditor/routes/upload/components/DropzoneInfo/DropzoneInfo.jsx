@@ -1,19 +1,33 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
+import mapsConfig from 'config/maps'
 import style from './DropzoneInfo.css'
 import CSVExample from '../CSVExample/CSVExample'
 
-const DropzoneInfo = () =>
-  <div className={style.container}>
-    <p>CSV file has to include two columns:</p>
-    <ul className={style.list}>
-      <li className={style['list-item']}>code (state code)</li>
-      <li className={style['list-item']}>value</li>
-    </ul>
+const DropzoneInfo = (props) => {
+  const displayMapName = mapsConfig.types.find((item) =>
+    item.code === props.mapType
+  ).displayName
 
-    <a href="https://placebear.com/300/200" download="bear">example csv</a>
+  return (
+    <div className={style.container}>
+      <p>CSV file has to include two columns:</p>
+      <ul className={style.list}>
+        <li className={style['list-item']}>code (state code)</li>
+        <li className={style['list-item']}>value</li>
+      </ul>
 
-    <CSVExample />
-  </div>
+      <a href={`/data/csv/${props.mapType}.csv`} download="data">
+        example {displayMapName} csv
+      </a>
+
+      <CSVExample type={props.mapType} />
+    </div>
+  )
+}
+
+DropzoneInfo.propTypes = {
+  mapType: PropTypes.string.isRequired,
+}
 
 export default DropzoneInfo

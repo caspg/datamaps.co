@@ -31,7 +31,7 @@ class UploadContainer extends Component {
           <DropzoneBox onDataUpload={this.handleDataUpload} />
         </div>
 
-        <DropzoneInfo />
+        <DropzoneInfo mapType={mapType} />
       </div>
     )
   }
