@@ -3,6 +3,7 @@ import React from 'react'
 import Navbar from 'components/Navbar/Navbar'
 import ContactForm from '../ContactForm/ContactForm'
 import ContactInfo from '../ContactInfo/ContactInfo'
+import Footer from 'components/Footer/Footer'
 
 import style from './ContactView.css'
 
@@ -24,6 +25,8 @@ const ContactView = () =>
         </div>
       </div>
     </div>
+
+    <Footer />
   </div>
 
 export default ContactView
