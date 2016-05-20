@@ -5,8 +5,9 @@ import style from './DropzoneInfo.css'
 import CSVExample from '../CSVExample/CSVExample'
 
 const DropzoneInfo = (props) => {
+  const { mapType } = props
   const displayMapName = mapsConfig.types.find((item) =>
-    item.code === props.mapType
+    item.code === mapType
   ).displayName
 
   return (
@@ -17,11 +18,11 @@ const DropzoneInfo = (props) => {
         <li className={style['list-item']}>value</li>
       </ul>
 
-      <a href={`/data/csv/${props.mapType}.csv`} download="data">
+      <a href={`/data/csv/${mapType}.csv`} download={`${mapType}-data`}>
         example {displayMapName} csv
       </a>
 
-      <CSVExample type={props.mapType} />
+      <CSVExample type={mapType} />
     </div>
   )
 }
