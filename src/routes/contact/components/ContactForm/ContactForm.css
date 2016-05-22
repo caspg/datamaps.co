@@ -18,3 +18,19 @@
   composes: element-width;
   display: block;
 }
+
+.succesMsg {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #F1F8E9;
+  border: 1px solid #9CCC65;
+  color: #33691E;
+}
+
+.errors {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #FFEBEE;
+  border: 1px solid #E57373;
+  color: #B71C1C;
+}

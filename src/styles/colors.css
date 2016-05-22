@@ -7,6 +7,10 @@
 @value purple-600: #5E35B1;
 @value purple-400: #7E57C2;
 
+@value light-green-50: #F1F8E9;
+@value light-green-400: #9CCC65;
+@value light-green-900: #33691E;
+
 @value dark: #222;
 
 .purple-gradient {
