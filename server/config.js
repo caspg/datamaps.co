@@ -2,10 +2,6 @@ const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
 
-const webpackConfig = require('../webpack/config.js')
-const webpack = require('webpack')
-const compiler = webpack(webpackConfig)
-
 const app = express()
 
 app.use(morgan('dev'))
@@ -16,6 +12,9 @@ app.use('/data', express.static(path.join(__dirname, '../public/data')))
 
 if (process.env.NODE_ENV !== 'production') {
   const webpackDevMiddleware = require('webpack-dev-middleware')
+  const webpackConfig = require('../webpack/config.js')
+  const webpack = require('webpack')
+  const compiler = webpack(webpackConfig)
 
   app.use(webpackDevMiddleware(compiler, {
     hot: true,
