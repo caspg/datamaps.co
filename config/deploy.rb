@@ -11,7 +11,7 @@ set :linked_dirs, %w(
   log
 )
 
-set :keep_releases, 1
+set :keep_releases, 3
 
 namespace :deploy do
   desc 'Make sure local git is in sync with remote.'
@@ -25,44 +25,43 @@ namespace :deploy do
     end
   end
 
-  desc 'Initial Deploy'
-  task :initial do
-    on roles(:app) do
-      before 'deploy:restart', 'deploy:start'
-      invoke 'deploy'
-    end
-  end
+  # desc 'Initial Deploy'
+  # task :initial do
+  #   on roles(:app) do
+  #     # before 'deploy:restart', 'deploy:start'
+  #     invoke 'deploy'
+  #   end
+  # end
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app) do
-      within release_path do
-        run('npm run restart-server-prod > /dev/null 2>&1 &')
-      end
-    end
-  end
+  # desc 'Restart application'
+  # task :restart do
+  #   on roles(:app) do
+  #     within release_path do
+  #       run('npm run restart-server-prod')
+  #     end
+  #   end
+  # end
 
-  desc 'Start application'
-  task :start do
-    on roles(:app) do
-      within release_path do
-        run('npm run start-server-prod > /dev/null 2>&1 &')
-      end
-    end
-  end
+  # desc 'Start application'
+  # task :start do
+  #   on roles(:app) do
+  #     within release_path do
+  #       run('npm run start-server-prod > /dev/null 2>&1 &')
+  #     end
+  #   end
+  # end
 
-  desc 'Build react file' do
-    task :build do
-      on roles(:app) do
-        within release_path do
-          execute(:npm, :run, 'build')
-        end
-      end
-    end
-  end
+  # desc 'Build react file' do
+  #   task :build do
+  #     on roles(:app) do
+  #       within release_path do
+  #         execute(:npm, :run, 'build')
+  #       end
+  #     end
+  #   end
+  # end
 
   before :starting, :check_revision
-  after :finishing, :restart
-  after :finishing, :build
-  after 'deploy:update', 'deploy:cleanup'
+  # after :finishing, :restart
+  # after :finishing, :build
 end
