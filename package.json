@@ -8,7 +8,8 @@
     "start": "node server/index.js",
     "w": "webpack -w --config webpack/dev.config.js",
     "build": "webpack -p webpack/prod.config.js",
-    "server-prod": "forever -o log/server-prod-out.log -e log/server-prod-err.log config/forever/production.json"
+    "start-server-prod": "forever -o log/server-prod-out.log -e log/server-prod-err.log config/forever/production.json",
+    "restart-server-prod": "forever restart deltamike_node"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "GPL-3.0",
