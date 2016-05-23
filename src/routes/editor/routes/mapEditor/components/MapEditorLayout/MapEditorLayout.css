@@ -1,6 +1,12 @@
 @value grey-color-300 from 'styles/colors.css';
 @value editor-body-width: 400px;
 
+.map-column {
+  height: 600px;
+  padding-bottom: 20px;
+  overflow: scroll;
+}
+
 @media(min-width: 950px) {
   .container {
     margin-top: 90px;
@@ -9,12 +15,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   .map-column {
     margin-right: editor-body-width;
-    height: 700px;
+    height: 100%;
     border-bottom: 1px solid grey-color-300;
   }
 
@@ -28,10 +34,4 @@
     overflow-y: scroll;
     overflow-x: hidden;
   }
-}
-
-.map-column {
-  height: 600px;
-  padding-bottom: 20px;
-  overflow: scroll;
 }
