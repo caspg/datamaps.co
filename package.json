@@ -7,7 +7,7 @@
     "test": "",
     "start": "node server/index.js",
     "w": "webpack -w --config webpack/dev.config.js",
-    "build": "NODE_ENV=production webpack -p webpack/prod.config.js",
+    "build": "NODE_ENV=production webpack -p --config webpack/prod.config.js",
     "start-server-prod": "NODE_ENV=production forever -o log/server-prod-out.log -e log/server-prod-err.log config/forever/production.json",
     "restart-server-prod": "NODE_ENV=production forever restart deltamike_node"
   },
