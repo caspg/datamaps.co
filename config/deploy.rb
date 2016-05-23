@@ -55,6 +55,6 @@ namespace :deploy do
   end
 
   before :starting, :check_revision
-  after :finishing, :restart
   after :finishing, :build
+  after :finishing, :restart
 end
