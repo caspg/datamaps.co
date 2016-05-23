@@ -28,6 +28,7 @@ export default class DataClassificationSelect extends Component {
           options={this.options()}
           onChange={this.handleOnChange}
           clearable={false}
+          className="data-classification"
         />
       </div>
     )

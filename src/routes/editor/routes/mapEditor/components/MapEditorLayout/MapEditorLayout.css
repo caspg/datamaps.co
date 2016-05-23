@@ -15,7 +15,7 @@
   .map-column {
     margin-right: editor-body-width;
     height: 700px;
-    overflow: scroll;
+    border-bottom: 1px solid grey-color-300;
   }
 
   .editor-body-column {
@@ -32,6 +32,6 @@
 
 .map-column {
   height: 600px;
-  border-bottom: 1px solid grey-color-300;
   padding-bottom: 20px;
+  overflow: scroll;
 }
