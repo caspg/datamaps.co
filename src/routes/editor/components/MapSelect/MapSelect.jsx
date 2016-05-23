@@ -24,12 +24,17 @@ class MapSelect extends Component {
 
     return (
       <div className={'map-select ' + style.container}>
-        <Select
-          value={selectValue}
-          options={options}
-          onChange={this.handleOnChange}
-          clearable={false}
-        />
+
+        &nbsp;
+
+        <div className={style.wrapper}>
+          <Select
+            value={selectValue}
+            options={options}
+            onChange={this.handleOnChange}
+            clearable={false}
+          />
+        </div>
       </div>
     )
   }

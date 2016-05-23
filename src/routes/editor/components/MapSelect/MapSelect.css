@@ -1,5 +1,10 @@
 .container {
-  width: 100%;
-  max-width: 200px;
+  width: 200px;
+  height: 38px;
 }
 
+.wrapper {
+  position: absolute;
+  width: 200px;
+  top: 50px;
+}
