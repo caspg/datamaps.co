@@ -11,6 +11,8 @@ set :linked_dirs, %w(
   log
 )
 
+set :keep_releases, 1
+
 namespace :deploy do
   desc 'Make sure local git is in sync with remote.'
   task :check_revision do
@@ -62,4 +64,5 @@ namespace :deploy do
   before :starting, :check_revision
   after :finishing, :restart
   after :finishing, :build
+  after 'deploy:update', 'deploy:cleanup'
 end
