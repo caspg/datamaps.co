@@ -1,7 +1,7 @@
 @value grey-color-300 from 'styles/colors.css';
 @value editor-body-width: 400px;
 
-@media(min-width: 1000px) {
+@media(min-width: 950px) {
   .container {
     margin-top: 90px;
     position: absolute;
