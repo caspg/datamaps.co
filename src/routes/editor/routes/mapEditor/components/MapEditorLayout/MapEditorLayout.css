@@ -1,39 +1,37 @@
 @value grey-color-300 from 'styles/colors.css';
 @value editor-body-width: 400px;
 
-.wrapper {
-  margin-top: 90px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow-x: hidden;
-}
+@media(min-width: 1000px) {
+  .container {
+    margin-top: 90px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+  }
 
-.map-column {
-  margin-right: editor-body-width;
-  height: 100%;
-  overflow: scroll;
-}
-
-.editor-body-column {
-  width: editor-body-width;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  border-left: 1px solid grey-color-300;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-@media(max-width: 800px) {
   .map-column {
-    margin-right: 0;
+    margin-right: editor-body-width;
+    height: 700px;
+    overflow: scroll;
   }
 
   .editor-body-column {
-    right: -400px;
+    width: editor-body-width;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-left: 1px solid grey-color-300;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
+}
+
+.map-column {
+  height: 600px;
+  border-bottom: 1px solid grey-color-300;
+  padding-bottom: 20px;
 }

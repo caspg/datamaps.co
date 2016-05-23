@@ -5,7 +5,7 @@ import MapContainer from '../../containers/MapContainer'
 import Footer from 'components/Footer/Footer'
 
 const MapEditorLayout = (props) =>
-  <div className={style.wrapper}>
+  <div className={style.container}>
     <div className={style['map-column']}>
       <MapContainer />
     </div>
