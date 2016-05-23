@@ -34,21 +34,27 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app) do
-      execute(:npm, :run, 'restart-server-prod')
+      within release_path do
+        execute(:npm, :run, 'restart-server-prod')
+      end
     end
   end
 
   desc 'Start application'
   task :start do
     on roles(:app) do
-      execute(:npm, :run, 'start-server-prod')
+      within release_path do
+        execute(:npm, :run, 'start-server-prod')
+      end
     end
   end
 
   desc 'Build react file' do
     task :build do
       on roles(:app) do
-        execute(:npm, :run, 'build')
+        within release_path do
+          execute(:npm, :run, 'build')
+        end
       end
     end
   end
