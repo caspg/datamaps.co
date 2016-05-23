@@ -6,7 +6,9 @@
   "scripts": {
     "test": "",
     "start": "node server/index.js",
-    "w": "webpack -w --config webpack/dev.config.js"
+    "w": "webpack -w --config webpack/dev.config.js",
+    "build": "webpack -p webpack/prod.config.js",
+    "server-prod": "forever -o log/server-prod-out.log -e log/server-prod-err.log config/forever/production.json"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "GPL-3.0",
@@ -16,6 +18,7 @@
     "d3": "^3.5.16",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
+    "forever": "^0.15.1",
     "immutable": "^3.8.1",
     "morgan": "^1.7.0",
     "react": "^15.0.1",

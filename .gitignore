@@ -3,3 +3,4 @@ node_modules/
 public/bundles/*
 
 lib/scripts/outputs
+log/*
