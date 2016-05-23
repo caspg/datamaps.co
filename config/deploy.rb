@@ -35,7 +35,7 @@ namespace :deploy do
   task :restart do
     on roles(:app) do
       within release_path do
-        execute(:npm, :run, 'restart-server-prod')
+        run('npm run restart-server-prod > /dev/null 2>&1 &')
       end
     end
   end
@@ -44,7 +44,7 @@ namespace :deploy do
   task :start do
     on roles(:app) do
       within release_path do
-        execute(:npm, :run, 'start-server-prod')
+        run('npm run start-server-prod > /dev/null 2>&1 &')
       end
     end
   end
