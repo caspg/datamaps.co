@@ -1,6 +1,7 @@
 node_modules/
 
 public/bundles/*
+!public/bundles/.gitkeep
 
 lib/scripts/outputs
 log/*
