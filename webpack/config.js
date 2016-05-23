@@ -7,21 +7,6 @@ module.exports = {
     app: [
       path.resolve(__dirname, '../src/index.jsx'),
     ],
-    vendor: [
-      'react',
-      'react-dom',
-      'immutable',
-      'react-dropzone',
-      'react-redux',
-      'react-router',
-      'react-router-redux',
-      'react-select',
-      'redux',
-      'redux-thunk',
-      'save-svg-as-png',
-      'topojson',
-      'axios',
-    ],
   },
   output: {
     path: path.resolve(__dirname, '../public/bundles'),
@@ -55,6 +40,5 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin('app.bundle.css', { allChunks: true }),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
   ],
 }
