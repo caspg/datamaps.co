@@ -7,7 +7,7 @@ set :user,        'caspg'
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
 set :linked_dirs, %w(
-  node_modules,
+  node_modules
   log
 )
 

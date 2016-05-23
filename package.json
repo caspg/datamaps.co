@@ -7,9 +7,9 @@
     "test": "",
     "start": "node server/index.js",
     "w": "webpack -w --config webpack/dev.config.js",
-    "build": "webpack -p webpack/prod.config.js",
-    "start-server-prod": "forever -o log/server-prod-out.log -e log/server-prod-err.log config/forever/production.json",
-    "restart-server-prod": "forever restart deltamike_node"
+    "build": "NODE_ENV=production webpack -p webpack/prod.config.js",
+    "start-server-prod": "NODE_ENV=production forever -o log/server-prod-out.log -e log/server-prod-err.log config/forever/production.json",
+    "restart-server-prod": "NODE_ENV=production forever restart deltamike_node"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "GPL-3.0",
