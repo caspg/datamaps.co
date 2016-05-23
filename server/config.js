@@ -1,7 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
-const webpackDevMiddleware = require('webpack-dev-middleware')
 
 const webpackConfig = require('../webpack/config.js')
 const webpack = require('webpack')
@@ -16,6 +15,8 @@ app.use('/images', express.static(path.join(__dirname, '../public/images')))
 app.use('/data', express.static(path.join(__dirname, '../public/data')))
 
 if (process.env.NODE_ENV !== 'production') {
+  const webpackDevMiddleware = require('webpack-dev-middleware')
+
   app.use(webpackDevMiddleware(compiler, {
     hot: true,
     publicPath: '/bundles/',
