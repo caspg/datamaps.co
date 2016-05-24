@@ -4,9 +4,26 @@ import { svgAsDataUri, saveSvgAsPng } from 'save-svg-as-png'
 import style from './SaveButtons.css'
 
 export default class SaveButtons extends Component {
+  constructor(props) {
+    super(props)
+    this.handleSaveSvg = this.handleSaveSvg.bind(this)
+    this.handleSavePng = this.handleSavePng.bind(this)
+  }
+
+  trackEvent(type) {
+    if (process.env.NODE_ENV !== 'production') return
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Save',
+      eventAction: type,
+      eventLabel: 'Save Buttons',
+    });
+  }
+
   handleSavePng() {
     const options = { scale: 3, backgroundColor: 'white' }
     saveSvgAsPng(document.getElementsByTagName('svg')[0], 'datamapsco', options);
+    this.trackEvent('PNG')
   }
 
   handleSaveSvg() {
@@ -18,6 +35,7 @@ export default class SaveButtons extends Component {
     document.body.appendChild(a)
     a.addEventListener('click', () => a.parentNode.removeChild(a))
     a.click()
+    this.trackEvent('SVG')
   }
 
   render() {
