@@ -1,3 +1,5 @@
+@value grey-color-600, grey-color-100 from 'styles/colors.css';
+
 .dropzone {
   margin: 30px 0;
   padding: 25px;
