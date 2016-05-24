@@ -21,7 +21,11 @@ export default class SaveButtons extends Component {
   }
 
   handleSavePng() {
-    const options = { scale: 3, backgroundColor: 'white' }
+    const gElement = document.getElementById('root-svg-group')
+    const scaleFactor = gElement.getBoundingClientRect().width / gElement.getBBox().width
+    const scale = 3 * scaleFactor
+
+    const options = { scale: scale, backgroundColor: 'white' }
     saveSvgAsPng(document.getElementsByTagName('svg')[0], 'datamapsco', options);
     this.trackEvent('PNG')
   }

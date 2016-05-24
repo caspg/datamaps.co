@@ -82,40 +82,42 @@ export default class MapElements extends Component {
 
     return (
       <svg className={style.svg} style={svgStyle}>
-        <Title
-          text={this.props.mapUi.get('title')}
-          className="map-title"
-          coords={{ x: 30, y: 40 }}
-        />
+        <g id="root-svg-group">
+          <Title
+            text={this.props.mapUi.get('title')}
+            className="map-title"
+            coords={{ x: 30, y: 40 }}
+          />
 
-        <Datamap
-          topoData={this.props.topoData}
-          mapType={this.props.mapType}
-          regionData={regionData}
-          svgWidth={svgWidth}
-          svgHeight={svgHeight}
-          colorScale={colorScale}
-          noDataColor={noDataColor}
-          borderColor={borderColor}
-          mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
-          mouseEnterOnDatamap={this.props.mouseEnterOnDatamap}
-          mouseLeaveDatamap={this.props.mouseLeaveDatamap}
-          mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
-        />
+          <Datamap
+            topoData={this.props.topoData}
+            mapType={this.props.mapType}
+            regionData={regionData}
+            svgWidth={svgWidth}
+            svgHeight={svgHeight}
+            colorScale={colorScale}
+            noDataColor={noDataColor}
+            borderColor={borderColor}
+            mouseMoveOnDatamap={this.props.mouseMoveOnDatamap}
+            mouseEnterOnDatamap={this.props.mouseEnterOnDatamap}
+            mouseLeaveDatamap={this.props.mouseLeaveDatamap}
+            mouseEnterOnSubunit={this.props.mouseEnterOnSubunit}
+          />
 
-        <Title
-          text={this.props.mapUi.get('legendTitle')}
-          className="legend-title"
-          coords={{ x: svgWidth - 80, y: svgHeight - 85 }}
-        />
+          <Title
+            text={this.props.mapUi.get('legendTitle')}
+            className="legend-title"
+            coords={{ x: svgWidth - 80, y: svgHeight - 85 }}
+          />
 
-        <Title
-          text="created with datamaps.co ©"
-          className="crreated-with"
-          coords={{ x: 30, y: svgHeight - 40}}
-        />
+          <Title
+            text="created with datamaps.co ©"
+            className="crreated-with"
+            coords={{ x: 30, y: svgHeight - 40}}
+          />
 
-        {isNotExtremeValuesEmpty && mapLegend}
+          {isNotExtremeValuesEmpty && mapLegend}
+        </g>
       </svg>
     )
   }
