@@ -2,15 +2,19 @@ import { Map } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
 import usaEmptyData from '../../data/usa-empty-data'
+import worldEmptyData from '../../data/world-empty-data'
 
 function updateEmptyData(emptyData, data) {
   for (let i = 0; i < data.size; i++) {
     const newDatum = data.get(i)
     const code = newDatum.get('code')
+    const emptyDatum = emptyData.get(code)
 
-    emptyData.set(code,
-      emptyData.get(code).set('value', newDatum.get('value'))
-    )
+    if (!!emptyDatum) {
+      emptyData.set(code,
+        emptyDatum.set('value', newDatum.get('value'))
+      )
+    }
   }
 }
 
@@ -24,8 +28,10 @@ export default function regionData(state = Map(), action) {
     }
 
     case UPLOAD_DATA: {
-      return state.set(action.mapType, usaEmptyData.withMutations((emptyData) =>
-        updateEmptyData(emptyData, action.data))
+      const emptyData = { usa: usaEmptyData, world: worldEmptyData }[action.mapType]
+
+      return state.set(action.mapType, emptyData.withMutations((data) =>
+        updateEmptyData(data, action.data))
       )
     }
 

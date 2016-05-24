@@ -36,7 +36,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app) do
-      execute "cd '#{release_path}'; npm run restart-server-prod > /dev/null 2>&1 &"
+      execute "cd '#{release_path}'; npm run restart-server-prod"
     end
   end
 
