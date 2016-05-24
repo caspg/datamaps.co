@@ -22,6 +22,9 @@ const Navbar = (props) => {
           <li className={style['list-item']}>
             <Link to={routes.contact} className={style[`${color}-link`]}>Contact</Link>
           </li>
+          <li className={style['list-item']}>
+            <Link to={routes.showcase} className={style[`${color}-link`]}>Showcase</Link>
+          </li>
         </ul>
       </div>
     </nav>

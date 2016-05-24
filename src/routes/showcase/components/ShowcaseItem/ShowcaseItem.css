@@ -1,0 +1,25 @@
+.container {
+  margin-bottom: 100px;
+}
+
+.image {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  text-align: left;
+  margin-top: 30px;
+  padding: 0 60px;
+}
+
+.description {
+}
+
+.source {
+  margin-top: 10px;
+  font-size: 0.8em;
+}

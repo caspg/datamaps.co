@@ -6,6 +6,13 @@
 }
 
 .contact-wrapper {
+  margin-top: 40px;
   padding: 0 25px;
   margin-bottom: 90px;
+}
+
+.intro {
+  padding-left: 20px;
+  text-align: left;
+  margin-bottom: 60px;
 }

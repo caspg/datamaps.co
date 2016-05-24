@@ -25,7 +25,7 @@ export default fromJS({
   IL: { regionName: 'Illinois', code: 'IL', value: '' },
   IN: { regionName: 'Indiana', code: 'IN', value: '' },
   IA: { regionName: 'Iowa', code: 'IA', value: '' },
-  KS: { regionName: 'Kansa', code: 'KS', value: '' },
+  KS: { regionName: 'Kansas', code: 'KS', value: '' },
   KY: { regionName: 'Kentucky', code: 'KY', value: '' },
   LA: { regionName: 'Lousiana', code: 'LA', value: '' },
   ME: { regionName: 'Maine', code: 'ME', value: '' },

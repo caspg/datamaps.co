@@ -5,6 +5,7 @@ import { Router } from 'react-router'
 import HomeRoute from '../../routes/home/HomeRoute'
 import EditorRoute from '../../routes/editor/EditorRoute'
 import ContactRoute from '../../routes/contact/ContactRoute'
+import ShowcaseRoute from '../../routes/showcase/ShowcaseRoute'
 
 const Root = (props) =>
   <Provider store={props.store}>
@@ -13,6 +14,7 @@ const Root = (props) =>
         {HomeRoute}
         {EditorRoute}
         {ContactRoute}
+        {ShowcaseRoute}
       </Router>
     </div>
   </Provider>

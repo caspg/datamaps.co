@@ -10,4 +10,6 @@ export default {
   editMap:   '/editor/:mapType/edit-map',
 
   contact: '/contact',
+
+  showcase: '/showcase',
 }
