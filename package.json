@@ -29,7 +29,7 @@
     "immutable": "^3.8.1",
     "morgan": "^1.7.0",
     "react": "^15.0.1",
-    "react-color": "^2.0.0",
+    "react-color": "^2.1.0",
     "react-dom": "^15.0.1",
     "react-dropzone": "^3.3.2",
     "react-redux": "^4.4.5",
