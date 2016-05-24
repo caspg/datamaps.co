@@ -29,7 +29,7 @@ export default class ColorPicker extends Component {
   }
 
   handleChange(color) {
-    this.setState({ color: '#' + color.hex })
+    this.setState({ color: color.hex })
   }
 
   handleOutsideClick(e) {
