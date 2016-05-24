@@ -14,7 +14,7 @@ export default class SaveButtons extends Component {
     if (process.env.NODE_ENV !== 'production') return
     ga('send', {
       hitType: 'event',
-      eventCategory: 'Save',
+      eventCategory: 'Save Button',
       eventAction: type,
       eventLabel: 'Save Buttons',
     });
