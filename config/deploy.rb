@@ -33,10 +33,10 @@ namespace :deploy do
     end
   end
 
-  desc 'Restart application'
-  task :restart do
+  desc 'Stop application'
+  task :stop do
     on roles(:app) do
-      execute "cd '#{release_path}'; npm run restart-server-prod"
+      execute "cd '#{release_path}'; forever stop deltamike_node;"
     end
   end
 
@@ -57,4 +57,5 @@ namespace :deploy do
   before :starting, :check_revision
   after :finishing, :build
   after :finishing, :restart
+  after :finishing, :start
 end
