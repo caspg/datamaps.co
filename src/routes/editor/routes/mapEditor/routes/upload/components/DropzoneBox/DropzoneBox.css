@@ -15,6 +15,14 @@
   border-style: solid;
 }
 
+.errors {
+  padding: 15px;
+  margin: 20px 0;
+  background: #FFEBEE;
+  border: 1px solid #E57373;
+  color: #B71C1C;
+}
+
 @media(min-width: 950px) {
   .dropzone {
     width: 250px;
