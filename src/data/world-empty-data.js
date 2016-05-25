@@ -20,867 +20,867 @@ export const countryCodes = List([
 export default fromJS(
 {
     "AFG": {
-        "regionName": "Afghanistan",
+        "name": "Afghanistan",
         "code": "AFG",
         "value": ""
     },
     "AGO": {
-        "regionName": "Angola",
+        "name": "Angola",
         "code": "AGO",
         "value": ""
     },
     "ALB": {
-        "regionName": "Albania",
+        "name": "Albania",
         "code": "ALB",
         "value": ""
     },
     "ARE": {
-        "regionName": "United Arab Emirates",
+        "name": "United Arab Emirates",
         "code": "ARE",
         "value": ""
     },
     "ARG": {
-        "regionName": "Argentina",
+        "name": "Argentina",
         "code": "ARG",
         "value": ""
     },
     "ARM": {
-        "regionName": "Armenia",
+        "name": "Armenia",
         "code": "ARM",
         "value": ""
     },
     "AUS": {
-        "regionName": "Australia",
+        "name": "Australia",
         "code": "AUS",
         "value": ""
     },
     "AUT": {
-        "regionName": "Austria",
+        "name": "Austria",
         "code": "AUT",
         "value": ""
     },
     "AZE": {
-        "regionName": "Azerbaijan",
+        "name": "Azerbaijan",
         "code": "AZE",
         "value": ""
     },
     "BDI": {
-        "regionName": "Burundi",
+        "name": "Burundi",
         "code": "BDI",
         "value": ""
     },
     "BEL": {
-        "regionName": "Belgium",
+        "name": "Belgium",
         "code": "BEL",
         "value": ""
     },
     "BEN": {
-        "regionName": "Benin",
+        "name": "Benin",
         "code": "BEN",
         "value": ""
     },
     "BFA": {
-        "regionName": "Burkina Faso",
+        "name": "Burkina Faso",
         "code": "BFA",
         "value": ""
     },
     "BGD": {
-        "regionName": "Bangladesh",
+        "name": "Bangladesh",
         "code": "BGD",
         "value": ""
     },
     "BGR": {
-        "regionName": "Bulgaria",
+        "name": "Bulgaria",
         "code": "BGR",
         "value": ""
     },
     "BHS": {
-        "regionName": "The Bahamas",
+        "name": "The Bahamas",
         "code": "BHS",
         "value": ""
     },
     "BIH": {
-        "regionName": "Bosnia and Herzegovina",
+        "name": "Bosnia and Herzegovina",
         "code": "BIH",
         "value": ""
     },
     "BLR": {
-        "regionName": "Belarus",
+        "name": "Belarus",
         "code": "BLR",
         "value": ""
     },
     "BLZ": {
-        "regionName": "Belize",
+        "name": "Belize",
         "code": "BLZ",
         "value": ""
     },
     "BOL": {
-        "regionName": "Bolivia",
+        "name": "Bolivia",
         "code": "BOL",
         "value": ""
     },
     "BRA": {
-        "regionName": "Brazil",
+        "name": "Brazil",
         "code": "BRA",
         "value": ""
     },
     "BRN": {
-        "regionName": "Brunei",
+        "name": "Brunei",
         "code": "BRN",
         "value": ""
     },
     "BTN": {
-        "regionName": "Bhutan",
+        "name": "Bhutan",
         "code": "BTN",
         "value": ""
     },
     "BWA": {
-        "regionName": "Botswana",
+        "name": "Botswana",
         "code": "BWA",
         "value": ""
     },
     "CAF": {
-        "regionName": "Central African Republic",
+        "name": "Central African Republic",
         "code": "CAF",
         "value": ""
     },
     "CAN": {
-        "regionName": "Canada",
+        "name": "Canada",
         "code": "CAN",
         "value": ""
     },
     "CHE": {
-        "regionName": "Switzerland",
+        "name": "Switzerland",
         "code": "CHE",
         "value": ""
     },
     "CHL": {
-        "regionName": "Chile",
+        "name": "Chile",
         "code": "CHL",
         "value": ""
     },
     "CHN": {
-        "regionName": "China",
+        "name": "China",
         "code": "CHN",
         "value": ""
     },
     "CIV": {
-        "regionName": "Ivory Coast",
+        "name": "Ivory Coast",
         "code": "CIV",
         "value": ""
     },
     "CMR": {
-        "regionName": "Cameroon",
+        "name": "Cameroon",
         "code": "CMR",
         "value": ""
     },
     "COD": {
-        "regionName": "Democratic Republic of the Congo",
+        "name": "Democratic Republic of the Congo",
         "code": "COD",
         "value": ""
     },
     "COG": {
-        "regionName": "Republic of the Congo",
+        "name": "Republic of the Congo",
         "code": "COG",
         "value": ""
     },
     "COL": {
-        "regionName": "Colombia",
+        "name": "Colombia",
         "code": "COL",
         "value": ""
     },
     "CRI": {
-        "regionName": "Costa Rica",
+        "name": "Costa Rica",
         "code": "CRI",
         "value": ""
     },
     "CUB": {
-        "regionName": "Cuba",
+        "name": "Cuba",
         "code": "CUB",
         "value": ""
     },
     "CYP": {
-        "regionName": "Cyprus",
+        "name": "Cyprus",
         "code": "CYP",
         "value": ""
     },
     "CZE": {
-        "regionName": "Czech Republic",
+        "name": "Czech Republic",
         "code": "CZE",
         "value": ""
     },
     "DEU": {
-        "regionName": "Germany",
+        "name": "Germany",
         "code": "DEU",
         "value": ""
     },
     "DJI": {
-        "regionName": "Djibouti",
+        "name": "Djibouti",
         "code": "DJI",
         "value": ""
     },
     "DNK": {
-        "regionName": "Denmark",
+        "name": "Denmark",
         "code": "DNK",
         "value": ""
     },
     "DOM": {
-        "regionName": "Dominican Republic",
+        "name": "Dominican Republic",
         "code": "DOM",
         "value": ""
     },
     "DZA": {
-        "regionName": "Algeria",
+        "name": "Algeria",
         "code": "DZA",
         "value": ""
     },
     "ECU": {
-        "regionName": "Ecuador",
+        "name": "Ecuador",
         "code": "ECU",
         "value": ""
     },
     "EGY": {
-        "regionName": "Egypt",
+        "name": "Egypt",
         "code": "EGY",
         "value": ""
     },
     "ERI": {
-        "regionName": "Eritrea",
+        "name": "Eritrea",
         "code": "ERI",
         "value": ""
     },
     "ESP": {
-        "regionName": "Spain",
+        "name": "Spain",
         "code": "ESP",
         "value": ""
     },
     "EST": {
-        "regionName": "Estonia",
+        "name": "Estonia",
         "code": "EST",
         "value": ""
     },
     "ETH": {
-        "regionName": "Ethiopia",
+        "name": "Ethiopia",
         "code": "ETH",
         "value": ""
     },
     "FIN": {
-        "regionName": "Finland",
+        "name": "Finland",
         "code": "FIN",
         "value": ""
     },
     "FJI": {
-        "regionName": "Fiji",
+        "name": "Fiji",
         "code": "FJI",
         "value": ""
     },
     "FLK": {
-        "regionName": "Falkland Islands",
+        "name": "Falkland Islands",
         "code": "FLK",
         "value": ""
     },
     "FRA": {
-        "regionName": "France",
+        "name": "France",
         "code": "FRA",
         "value": ""
     },
     "GUF": {
-        "regionName": "French Guiana",
+        "name": "French Guiana",
         "code": "GUF",
         "value": ""
     },
     "GAB": {
-        "regionName": "Gabon",
+        "name": "Gabon",
         "code": "GAB",
         "value": ""
     },
     "GBR": {
-        "regionName": "United Kingdom",
+        "name": "United Kingdom",
         "code": "GBR",
         "value": ""
     },
     "GEO": {
-        "regionName": "Georgia",
+        "name": "Georgia",
         "code": "GEO",
         "value": ""
     },
     "GHA": {
-        "regionName": "Ghana",
+        "name": "Ghana",
         "code": "GHA",
         "value": ""
     },
     "GIN": {
-        "regionName": "Guinea",
+        "name": "Guinea",
         "code": "GIN",
         "value": ""
     },
     "GMB": {
-        "regionName": "Gambia",
+        "name": "Gambia",
         "code": "GMB",
         "value": ""
     },
     "GNB": {
-        "regionName": "Guinea Bissau",
+        "name": "Guinea Bissau",
         "code": "GNB",
         "value": ""
     },
     "GNQ": {
-        "regionName": "Equatorial Guinea",
+        "name": "Equatorial Guinea",
         "code": "GNQ",
         "value": ""
     },
     "GRC": {
-        "regionName": "Greece",
+        "name": "Greece",
         "code": "GRC",
         "value": ""
     },
     "GRL": {
-        "regionName": "Greenland",
+        "name": "Greenland",
         "code": "GRL",
         "value": ""
     },
     "GTM": {
-        "regionName": "Guatemala",
+        "name": "Guatemala",
         "code": "GTM",
         "value": ""
     },
     "GUY": {
-        "regionName": "Guyana",
+        "name": "Guyana",
         "code": "GUY",
         "value": ""
     },
     "HND": {
-        "regionName": "Honduras",
+        "name": "Honduras",
         "code": "HND",
         "value": ""
     },
     "HRV": {
-        "regionName": "Croatia",
+        "name": "Croatia",
         "code": "HRV",
         "value": ""
     },
     "HTI": {
-        "regionName": "Haiti",
+        "name": "Haiti",
         "code": "HTI",
         "value": ""
     },
     "HUN": {
-        "regionName": "Hungary",
+        "name": "Hungary",
         "code": "HUN",
         "value": ""
     },
     "IDN": {
-        "regionName": "Indonesia",
+        "name": "Indonesia",
         "code": "IDN",
         "value": ""
     },
     "IND": {
-        "regionName": "India",
+        "name": "India",
         "code": "IND",
         "value": ""
     },
     "IRL": {
-        "regionName": "Ireland",
+        "name": "Ireland",
         "code": "IRL",
         "value": ""
     },
     "IRN": {
-        "regionName": "Iran",
+        "name": "Iran",
         "code": "IRN",
         "value": ""
     },
     "IRQ": {
-        "regionName": "Iraq",
+        "name": "Iraq",
         "code": "IRQ",
         "value": ""
     },
     "ISL": {
-        "regionName": "Iceland",
+        "name": "Iceland",
         "code": "ISL",
         "value": ""
     },
     "ISR": {
-        "regionName": "Israel",
+        "name": "Israel",
         "code": "ISR",
         "value": ""
     },
     "ITA": {
-        "regionName": "Italy",
+        "name": "Italy",
         "code": "ITA",
         "value": ""
     },
     "JAM": {
-        "regionName": "Jamaica",
+        "name": "Jamaica",
         "code": "JAM",
         "value": ""
     },
     "JOR": {
-        "regionName": "Jordan",
+        "name": "Jordan",
         "code": "JOR",
         "value": ""
     },
     "JPN": {
-        "regionName": "Japan",
+        "name": "Japan",
         "code": "JPN",
         "value": ""
     },
     "KAZ": {
-        "regionName": "Kazakhstan",
+        "name": "Kazakhstan",
         "code": "KAZ",
         "value": ""
     },
     "KEN": {
-        "regionName": "Kenya",
+        "name": "Kenya",
         "code": "KEN",
         "value": ""
     },
     "KGZ": {
-        "regionName": "Kyrgyzstan",
+        "name": "Kyrgyzstan",
         "code": "KGZ",
         "value": ""
     },
     "KHM": {
-        "regionName": "Cambodia",
+        "name": "Cambodia",
         "code": "KHM",
         "value": ""
     },
     "KOR": {
-        "regionName": "South Korea",
+        "name": "South Korea",
         "code": "KOR",
         "value": ""
     },
     "KWT": {
-        "regionName": "Kuwait",
+        "name": "Kuwait",
         "code": "KWT",
         "value": ""
     },
     "LAO": {
-        "regionName": "Laos",
+        "name": "Laos",
         "code": "LAO",
         "value": ""
     },
     "LBN": {
-        "regionName": "Lebanon",
+        "name": "Lebanon",
         "code": "LBN",
         "value": ""
     },
     "LBR": {
-        "regionName": "Liberia",
+        "name": "Liberia",
         "code": "LBR",
         "value": ""
     },
     "LBY": {
-        "regionName": "Libya",
+        "name": "Libya",
         "code": "LBY",
         "value": ""
     },
     "LKA": {
-        "regionName": "Sri Lanka",
+        "name": "Sri Lanka",
         "code": "LKA",
         "value": ""
     },
     "LSO": {
-        "regionName": "Lesotho",
+        "name": "Lesotho",
         "code": "LSO",
         "value": ""
     },
     "LTU": {
-        "regionName": "Lithuania",
+        "name": "Lithuania",
         "code": "LTU",
         "value": ""
     },
     "LUX": {
-        "regionName": "Luxembourg",
+        "name": "Luxembourg",
         "code": "LUX",
         "value": ""
     },
     "LVA": {
-        "regionName": "Latvia",
+        "name": "Latvia",
         "code": "LVA",
         "value": ""
     },
     "MAR": {
-        "regionName": "Morocco",
+        "name": "Morocco",
         "code": "MAR",
         "value": ""
     },
     "MDA": {
-        "regionName": "Moldova",
+        "name": "Moldova",
         "code": "MDA",
         "value": ""
     },
     "MDG": {
-        "regionName": "Madagascar",
+        "name": "Madagascar",
         "code": "MDG",
         "value": ""
     },
     "MEX": {
-        "regionName": "Mexico",
+        "name": "Mexico",
         "code": "MEX",
         "value": ""
     },
     "MKD": {
-        "regionName": "Macedonia",
+        "name": "Macedonia",
         "code": "MKD",
         "value": ""
     },
     "MLI": {
-        "regionName": "Mali",
+        "name": "Mali",
         "code": "MLI",
         "value": ""
     },
     "MMR": {
-        "regionName": "Myanmar",
+        "name": "Myanmar",
         "code": "MMR",
         "value": ""
     },
     "MNE": {
-        "regionName": "Montenegro",
+        "name": "Montenegro",
         "code": "MNE",
         "value": ""
     },
     "MNG": {
-        "regionName": "Mongolia",
+        "name": "Mongolia",
         "code": "MNG",
         "value": ""
     },
     "MOZ": {
-        "regionName": "Mozambique",
+        "name": "Mozambique",
         "code": "MOZ",
         "value": ""
     },
     "MRT": {
-        "regionName": "Mauritania",
+        "name": "Mauritania",
         "code": "MRT",
         "value": ""
     },
     "MWI": {
-        "regionName": "Malawi",
+        "name": "Malawi",
         "code": "MWI",
         "value": ""
     },
     "MYS": {
-        "regionName": "Malaysia",
+        "name": "Malaysia",
         "code": "MYS",
         "value": ""
     },
     "NAM": {
-        "regionName": "Namibia",
+        "name": "Namibia",
         "code": "NAM",
         "value": ""
     },
     "NCL": {
-        "regionName": "New Caledonia",
+        "name": "New Caledonia",
         "code": "NCL",
         "value": ""
     },
     "NER": {
-        "regionName": "Niger",
+        "name": "Niger",
         "code": "NER",
         "value": ""
     },
     "NGA": {
-        "regionName": "Nigeria",
+        "name": "Nigeria",
         "code": "NGA",
         "value": ""
     },
     "NIC": {
-        "regionName": "Nicaragua",
+        "name": "Nicaragua",
         "code": "NIC",
         "value": ""
     },
     "NLD": {
-        "regionName": "Netherlands",
+        "name": "Netherlands",
         "code": "NLD",
         "value": ""
     },
     "NOR": {
-        "regionName": "Norway",
+        "name": "Norway",
         "code": "NOR",
         "value": ""
     },
     "NPL": {
-        "regionName": "Nepal",
+        "name": "Nepal",
         "code": "NPL",
         "value": ""
     },
     "NZL": {
-        "regionName": "New Zealand",
+        "name": "New Zealand",
         "code": "NZL",
         "value": ""
     },
     "OMN": {
-        "regionName": "Oman",
+        "name": "Oman",
         "code": "OMN",
         "value": ""
     },
     "PAK": {
-        "regionName": "Pakistan",
+        "name": "Pakistan",
         "code": "PAK",
         "value": ""
     },
     "PAN": {
-        "regionName": "Panama",
+        "name": "Panama",
         "code": "PAN",
         "value": ""
     },
     "PER": {
-        "regionName": "Peru",
+        "name": "Peru",
         "code": "PER",
         "value": ""
     },
     "PHL": {
-        "regionName": "Philippines",
+        "name": "Philippines",
         "code": "PHL",
         "value": ""
     },
     "PNG": {
-        "regionName": "Papua New Guinea",
+        "name": "Papua New Guinea",
         "code": "PNG",
         "value": ""
     },
     "POL": {
-        "regionName": "Poland",
+        "name": "Poland",
         "code": "POL",
         "value": ""
     },
     "PRI": {
-        "regionName": "Puerto Rico",
+        "name": "Puerto Rico",
         "code": "PRI",
         "value": ""
     },
     "PRK": {
-        "regionName": "North Korea",
+        "name": "North Korea",
         "code": "PRK",
         "value": ""
     },
     "PRT": {
-        "regionName": "Portugal",
+        "name": "Portugal",
         "code": "PRT",
         "value": ""
     },
     "PRY": {
-        "regionName": "Paraguay",
+        "name": "Paraguay",
         "code": "PRY",
         "value": ""
     },
     "QAT": {
-        "regionName": "Qatar",
+        "name": "Qatar",
         "code": "QAT",
         "value": ""
     },
     "ROU": {
-        "regionName": "Romania",
+        "name": "Romania",
         "code": "ROU",
         "value": ""
     },
     "RUS": {
-        "regionName": "Russia",
+        "name": "Russia",
         "code": "RUS",
         "value": ""
     },
     "RWA": {
-        "regionName": "Rwanda",
+        "name": "Rwanda",
         "code": "RWA",
         "value": ""
     },
     "ESH": {
-        "regionName": "Western Sahara",
+        "name": "Western Sahara",
         "code": "ESH",
         "value": ""
     },
     "SAU": {
-        "regionName": "Saudi Arabia",
+        "name": "Saudi Arabia",
         "code": "SAU",
         "value": ""
     },
     "SDN": {
-        "regionName": "Sudan",
+        "name": "Sudan",
         "code": "SDN",
         "value": ""
     },
     "SSD": {
-        "regionName": "South Sudan",
+        "name": "South Sudan",
         "code": "SSD",
         "value": ""
     },
     "SEN": {
-        "regionName": "Senegal",
+        "name": "Senegal",
         "code": "SEN",
         "value": ""
     },
     "SLB": {
-        "regionName": "Solomon Islands",
+        "name": "Solomon Islands",
         "code": "SLB",
         "value": ""
     },
     "SLE": {
-        "regionName": "Sierra Leone",
+        "name": "Sierra Leone",
         "code": "SLE",
         "value": ""
     },
     "SLV": {
-        "regionName": "El Salvador",
+        "name": "El Salvador",
         "code": "SLV",
         "value": ""
     },
     "SOM": {
-        "regionName": "Somalia",
+        "name": "Somalia",
         "code": "SOM",
         "value": ""
     },
     "SRB": {
-        "regionName": "Republic of Serbia",
+        "name": "Republic of Serbia",
         "code": "SRB",
         "value": ""
     },
     "SUR": {
-        "regionName": "Suriname",
+        "name": "Suriname",
         "code": "SUR",
         "value": ""
     },
     "SVK": {
-        "regionName": "Slovakia",
+        "name": "Slovakia",
         "code": "SVK",
         "value": ""
     },
     "SVN": {
-        "regionName": "Slovenia",
+        "name": "Slovenia",
         "code": "SVN",
         "value": ""
     },
     "SWE": {
-        "regionName": "Sweden",
+        "name": "Sweden",
         "code": "SWE",
         "value": ""
     },
     "SWZ": {
-        "regionName": "Swaziland",
+        "name": "Swaziland",
         "code": "SWZ",
         "value": ""
     },
     "SYR": {
-        "regionName": "Syria",
+        "name": "Syria",
         "code": "SYR",
         "value": ""
     },
     "TCD": {
-        "regionName": "Chad",
+        "name": "Chad",
         "code": "TCD",
         "value": ""
     },
     "TGO": {
-        "regionName": "Togo",
+        "name": "Togo",
         "code": "TGO",
         "value": ""
     },
     "THA": {
-        "regionName": "Thailand",
+        "name": "Thailand",
         "code": "THA",
         "value": ""
     },
     "TJK": {
-        "regionName": "Tajikistan",
+        "name": "Tajikistan",
         "code": "TJK",
         "value": ""
     },
     "TKM": {
-        "regionName": "Turkmenistan",
+        "name": "Turkmenistan",
         "code": "TKM",
         "value": ""
     },
     "TLS": {
-        "regionName": "East Timor",
+        "name": "East Timor",
         "code": "TLS",
         "value": ""
     },
     "TTO": {
-        "regionName": "Trinidad and Tobago",
+        "name": "Trinidad and Tobago",
         "code": "TTO",
         "value": ""
     },
     "TUN": {
-        "regionName": "Tunisia",
+        "name": "Tunisia",
         "code": "TUN",
         "value": ""
     },
     "TUR": {
-        "regionName": "Turkey",
+        "name": "Turkey",
         "code": "TUR",
         "value": ""
     },
     "TWN": {
-        "regionName": "Taiwan",
+        "name": "Taiwan",
         "code": "TWN",
         "value": ""
     },
     "TZA": {
-        "regionName": "United Republic of Tanzania",
+        "name": "United Republic of Tanzania",
         "code": "TZA",
         "value": ""
     },
     "UGA": {
-        "regionName": "Uganda",
+        "name": "Uganda",
         "code": "UGA",
         "value": ""
     },
     "UKR": {
-        "regionName": "Ukraine",
+        "name": "Ukraine",
         "code": "UKR",
         "value": ""
     },
     "URY": {
-        "regionName": "Uruguay",
+        "name": "Uruguay",
         "code": "URY",
         "value": ""
     },
     "USA": {
-        "regionName": "United States of America",
+        "name": "United States of America",
         "code": "USA",
         "value": ""
     },
     "UZB": {
-        "regionName": "Uzbekistan",
+        "name": "Uzbekistan",
         "code": "UZB",
         "value": ""
     },
     "VEN": {
-        "regionName": "Venezuela",
+        "name": "Venezuela",
         "code": "VEN",
         "value": ""
     },
     "VNM": {
-        "regionName": "Vietnam",
+        "name": "Vietnam",
         "code": "VNM",
         "value": ""
     },
     "VUT": {
-        "regionName": "Vanuatu",
+        "name": "Vanuatu",
         "code": "VUT",
         "value": ""
     },
     "PSE": {
-        "regionName": "West Bank",
+        "name": "West Bank",
         "code": "PSE",
         "value": ""
     },
     "YEM": {
-        "regionName": "Yemen",
+        "name": "Yemen",
         "code": "YEM",
         "value": ""
     },
     "ZAF": {
-        "regionName": "South Africa",
+        "name": "South Africa",
         "code": "ZAF",
         "value": ""
     },
     "ZMB": {
-        "regionName": "Zambia",
+        "name": "Zambia",
         "code": "ZMB",
         "value": ""
     },
     "ZWE": {
-        "regionName": "Zimbabwe",
+        "name": "Zimbabwe",
         "code": "ZWE",
         "value": ""
     }

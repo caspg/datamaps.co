@@ -4,16 +4,22 @@ import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 import usaEmptyData from '../../data/usa-empty-data'
 import worldEmptyData from '../../data/world-empty-data'
 
+function codeByName(emptyData, newDatum) {
+  const datum = emptyData.find((item) =>
+    item.get('name') === newDatum.get('name')
+  )
+
+  return (!!datum) ? datum.get('code') : ''
+}
+
 function updateEmptyData(emptyData, data) {
   for (let i = 0; i < data.size; i++) {
     const newDatum = data.get(i)
-    const code = newDatum.get('code')
+    const code = newDatum.get('code') || codeByName(emptyData, newDatum)
     const emptyDatum = emptyData.get(code)
 
     if (!!emptyDatum) {
-      emptyData.set(code,
-        emptyDatum.set('value', newDatum.get('value'))
-      )
+      emptyData.setIn([code, 'value'], newDatum.get('value'))
     }
   }
 }

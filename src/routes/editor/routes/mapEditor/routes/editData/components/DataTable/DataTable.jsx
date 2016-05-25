@@ -31,7 +31,7 @@ export default class DataTable extends Component {
       return (
         <DataTableRow
           key={index}
-          regionName={regionDatum.get('regionName')}
+          regionName={regionDatum.get('name')}
           regionCode={regionDatum.get('code')}
           value={regionDatum.get('value')}
           onRowEdit={this.props.onRowEdit}
