@@ -13,6 +13,12 @@ import Root from './containers/Root'
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
 
+history.listen((location) => {
+  if (process.env.NODE_ENV === 'production') {
+    window.ga('send', 'pageview', location.pathname)
+  }
+})
+
 render(
   <Root store={store} history={history} />,
   document.getElementById('application')
