@@ -2,6 +2,7 @@ import React from 'react'
 
 import Header from '../Header/Header'
 import Navbar from 'components/Navbar/Navbar'
+import About from '../About/About'
 import ActionButton from '../ActionButton/ActionButton'
 import EditorImage from '../EditorImage/EditorImage'
 import EditorAttributes from '../EditorAttributes/EditorAttributes'
@@ -12,6 +13,8 @@ const Home = () =>
     <Header>
       <Navbar textColor="white" />
     </Header>
+
+    <About />
 
     <ActionButton />
     <EditorImage />
