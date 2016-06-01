@@ -1,3 +1,5 @@
+require('babel-core/register')
+
 const renderHtml = require('./helpers/renderHtml')
 const port = 3030
 const app = require('./config')
