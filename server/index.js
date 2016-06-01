@@ -1,31 +1,34 @@
 const renderHtml = require('./helpers/renderHtml')
 const port = 3030
 const app = require('./config')
-const metaTitles = require('../src/config/meta').titles
+const metaData = require('../src/config/meta')
+const metaTitles = metaData.titles
+const metaDescription = metaData.descriptions
 const mapTypes = require('../src/config/maps').types
 
 app.get('/', (req, res) => {
-  res.send(renderHtml({ title: metaTitles.home, description: 'description' }))
+  res.send(renderHtml({ title: metaTitles.home, description: metaDescription.generic }))
 })
 
 app.get('/editor', (req, res) => {
-  res.send(renderHtml({ title: metaTitles.editor, description: 'description' }))
+  res.send(renderHtml({ title: metaTitles.editor, description: metaDescription.generic }))
 })
 
 app.get('/editor/*', (req, res) => {
   const mapType = req.originalUrl.replace('/editor/', '').replace('/', '')
   const displayName = mapTypes.find(i => i.code === mapType).displayName
   const title = metaTitles.mapEditor.replace('{{mapType}}', displayName)
+  const description = metaDescription.mapEditor.replace('{{mapType}}', displayName)
 
-  res.send(renderHtml({ title, description: 'description' }))
+  res.send(renderHtml({ title, description }))
 })
 
 app.get('/contact', (req, res) => {
-  res.send(renderHtml({ title: metaTitles.contact, description: 'description' }))
+  res.send(renderHtml({ title: metaTitles.contact, description: metaDescription.generic }))
 })
 
 app.get('/showcase', (req, res) => {
-  res.send(renderHtml({ title: metaTitles.showcase, description: 'description' }))
+  res.send(renderHtml({ title: metaTitles.showcase, description: metaDescription.generic }))
 })
 
 app.listen(port, '0.0.0.0', (err) => {
