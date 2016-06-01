@@ -5,6 +5,8 @@ import { Map } from 'immutable'
 import { setMapType } from 'redux/actions'
 import { fetchTopoData } from 'redux/actions/topoData'
 
+import mapTypes from 'config/maps'
+import metaTags from 'config/meta'
 import MapEditorLayout from '../components/MapEditorLayout/MapEditorLayout'
 
 class MapEditorContainer extends Component {
@@ -19,6 +21,11 @@ class MapEditorContainer extends Component {
 
   componentWillReceiveProps(nexProps) {
     this.loadDataIfNecessary(nexProps)
+  }
+
+  updateMetaTags() {
+    const { displayName } = mapTypes.types.find(i => i.code === this.props.params.mapType)
+    document.title = metaTags.titles.mapEditor.replace('{{mapType}}', displayName)
   }
 
   loadDataIfNecessary(props) {
@@ -36,6 +43,7 @@ class MapEditorContainer extends Component {
   }
 
   render() {
+    this.updateMetaTags()
     const { children } = this.props
 
     return (

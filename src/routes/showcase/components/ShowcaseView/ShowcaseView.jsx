@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import metaTags from 'config/meta'
 import Navbar from 'components/Navbar/Navbar'
 import Footer from 'components/Footer/Footer'
 import ShowcaseItem from '../ShowcaseItem/ShowcaseItem'
@@ -10,6 +11,8 @@ import style from './ShowcaseView.css'
 import showcase from 'config/showcase'
 
 const ShowcaseView = () => {
+  document.title = metaTags.titles.showcase
+
   const showcaseItems = showcase.map((item, index) =>
     <ShowcaseItem
       key={index}

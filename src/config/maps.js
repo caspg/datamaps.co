@@ -1,7 +1,7 @@
 export default {
   types: [
-    { code: 'usa', displayName: 'usa' },
-    { code: 'world', displayName: 'world' },
+    { code: 'usa', displayName: 'USA' },
+    { code: 'world', displayName: 'World' },
   ],
   configs: {
     usa: {
