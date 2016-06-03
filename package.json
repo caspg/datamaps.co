@@ -8,7 +8,7 @@
     "start": "node server/index.js",
     "w": "webpack -w --config webpack/dev.config.js",
     "build": "NODE_ENV=production webpack -p --config webpack/prod.config.js",
-    "start-server-prod": "NODE_ENV=production forever -o log/server-prod-out.log -e log/server-prod-err.log config/forever/production.json",
+    "start-server-prod": "NODE_ENV=production forever -o log/server-prod-out.log -e log/server-prod-err.log --uid 'deltamike_node' -a start server/index.js",
     "restart-server-prod": "NODE_ENV=production forever restart deltamike_node"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
