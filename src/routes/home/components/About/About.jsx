@@ -10,8 +10,6 @@ const About = () =>
           <p className={style.paragraph}><b>Datamaps.co</b> is a free and simple platform for creating visualizations with data maps. It allows you to upload CSV file with region data, and  fully customize your map's appearance. Your Map can be saved as PNG or SVG.</p>
           <p className={style.paragraph}>With datamaps.co, you can create a custom map of USA and world, but more are coming.</p>
           <p className={style.paragraph}>To stay informed, follow <a href="https://twitter.com/caspg_">@caspg_</a> profile on twitter.</p>
-
-          <h1>Hi, I'm test text:)</h1>
         </div>
       </div>
     </div>
