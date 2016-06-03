@@ -25,14 +25,6 @@ namespace :deploy do
     end
   end
 
-  desc 'Initial Deploy'
-  task :initial do
-    on roles(:app) do
-      before 'deploy:restart', 'deploy:start'
-      invoke 'deploy'
-    end
-  end
-
   desc 'Stop application'
   task :stop do
     on roles(:app) do
