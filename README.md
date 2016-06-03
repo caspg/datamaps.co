@@ -1,6 +1,6 @@
 # datamaps.co
 
-Datamaps.co is a free and simple platform for creating visualizations with data maps. It allows you to upload CSV file with region data, and fully customize your map's appearance. Your Map can be saved as PNG or SVG.
+[Datamaps.co](http://datamaps.co/) is a free and simple platform for creating visualizations with data maps. It allows you to upload CSV file with region data, and fully customize your map's appearance. Your Map can be saved as PNG or SVG.
 
 ![](http://i.imgur.com/hDBUXO7.gif)
 
