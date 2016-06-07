@@ -17,7 +17,7 @@ app.get('/editor', (req, res) => {
 })
 
 app.get('/editor/*', (req, res) => {
-  const mapType = req.originalUrl.replace('/editor/', '').replace('/', '')
+  const mapType = req.originalUrl.replace('/editor/', '').replace(/\/.*/, '')
   const displayName = mapTypes.find(i => i.code === mapType).displayName
   const title = metaTitles.mapEditor.replace('{{mapType}}', displayName)
   const description = metaDescription.mapEditor.replace('{{mapType}}', displayName)
