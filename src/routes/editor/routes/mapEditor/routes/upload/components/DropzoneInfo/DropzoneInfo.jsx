@@ -12,9 +12,9 @@ const DropzoneInfo = (props) => {
 
   return (
     <div className={style.container}>
-      <p>CSV file has to include two columns:</p>
+      <p>CSV file has to include at least two columns:</p>
       <ul className={style.list}>
-        <li className={style['list-item']}>code (state code)</li>
+        <li className={style['list-item']}>code (or name)</li>
         <li className={style['list-item']}>value</li>
       </ul>
 
