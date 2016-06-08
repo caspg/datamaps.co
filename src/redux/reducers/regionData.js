@@ -1,8 +1,13 @@
 import { Map } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
-import usaEmptyData from '../../data/usa-empty-data'
-import worldEmptyData from '../../data/world-empty-data'
+// import usaEmptyData from '../../data/usa-empty-data'
+// import worldEmptyData from '../../data/world-empty-data'
+
+import worldEmptyData from '../../data/empty/world'
+import usaEmptyData from '../../data/empty/usa'
+import chinaEmptyData from '../../data/empty/china'
+import canadaEmptyData from '../../data/empty/canada'
 
 function codeByName(emptyData, newDatum) {
   const datum = emptyData.find((item) =>
@@ -34,7 +39,12 @@ export default function regionData(state = Map(), action) {
     }
 
     case UPLOAD_DATA: {
-      const emptyData = { usa: usaEmptyData, world: worldEmptyData }[action.mapType]
+      const emptyData = {
+        usa: usaEmptyData,
+        world: worldEmptyData,
+        china: chinaEmptyData,
+        canada: canadaEmptyData,
+      }[action.mapType]
 
       return state.set(action.mapType, emptyData.withMutations((data) =>
         updateEmptyData(data, action.data))

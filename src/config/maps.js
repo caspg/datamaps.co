@@ -5,6 +5,7 @@ module.exports = {
     { code: 'usa', displayName: 'USA' },
     { code: 'world', displayName: 'World' },
     { code: 'china', displayName: 'China' },
+    { code: 'canada', displayName: 'Canada' },
   ],
   configs: {
     usa: {
@@ -32,6 +33,17 @@ module.exports = {
         },
       },
       csvExample: [['code', 'value'], ['GX', 104], ['SA', 101], ['JX', 106]],
+    },
+    canada: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.azimuthalEqualArea()
+            .rotate([100, -45])
+            .center([5, 20])
+            .scale(width)
+            .translate([width / 2, height / 2])
+        },
+      },
     },
   },
 }
