@@ -8,7 +8,7 @@ import DataTableRow from '../DataTableRow/DataTableRow'
 export default class DataTable extends Component {
   sortableHeaders() {
     const headers = [
-      { label: 'STATES NAME', sortKey: 'regionName' },
+      { label: 'STATES NAME', sortKey: 'name' },
       { label: 'VALUE', sortKey: 'value' },
     ]
 

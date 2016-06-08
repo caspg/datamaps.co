@@ -13,7 +13,7 @@ export default {
     usa: usaEmptyData,
     world: worldEmptyData,
   }),
-  sortState: Map({ key: 'regionName', direction: 'ASC' }),
+  sortState: Map({ key: 'name', direction: 'ASC' }),
   mapUi: Map({
     title: '',
     legendTitle: '',

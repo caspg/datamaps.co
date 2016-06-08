@@ -17,7 +17,7 @@ export default function sortState(state = Map(), action) {
 
     case UPLOAD_DATA:
       return Map({
-        key: 'regionName',
+        key: 'name',
         direction: 'ASC',
       })
 
