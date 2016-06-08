@@ -5,6 +5,7 @@ import style from './CSVExample.css'
 const examplesData = {
   usa: [['code', 'value'], ['AL', 95], ['CA', 102], ['NY', 99]],
   world: [['code', 'value'], ['POL', 103], ['GBR', 101], ['USA', 105]],
+  china: [['code', 'value'], ['GX', 104], ['SA', 101], ['JX', 106]],
 }
 
 const example = (type) =>

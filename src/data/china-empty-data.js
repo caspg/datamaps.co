@@ -32,7 +32,6 @@ export const chinaCodes = List([
 	"JL",
 	"NM",
 	"HL",
-	"CN"
 ])
 
 export default fromJS({
@@ -191,9 +190,4 @@ export default fromJS({
 		"code": "HL",
 		"value": ""
 	},
-	"CN": {
-		"name": "Paracel Islands",
-		"code": "CN",
-		"value": ""
-	}
 })
