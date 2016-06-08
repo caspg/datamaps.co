@@ -13,6 +13,7 @@ module.exports = {
           return d3.geo.albersUsa().scale(width).translate([width / 2, height / 2])
         },
       },
+      csvExample: [['code', 'value'], ['AL', 95], ['CA', 102], ['NY', 99]],
     },
     world: {
       mapUi: {
@@ -21,6 +22,7 @@ module.exports = {
             .translate([width / 2, height / 2])
         },
       },
+      csvExample: [['code', 'value'], ['POL', 103], ['GBR', 101], ['USA', 105]],
     },
     china: {
       mapUi: {
@@ -29,6 +31,7 @@ module.exports = {
             .translate([width / 2, height / 2.2])
         },
       },
+      csvExample: [['code', 'value'], ['GX', 104], ['SA', 101], ['JX', 106]],
     },
   },
 }
