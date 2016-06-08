@@ -33,11 +33,7 @@ export default class Datamap extends Component {
 
   path(svgWidth, svgHeight, mapType) {
     const mapConfig = config.configs[mapType].mapUi
-    const projectionName = mapConfig.projection
-    const scaleDenominator = mapConfig.scaleDenominator
-
-    const projection = d3.geo[projectionName]().scale(svgWidth / scaleDenominator)
-      .translate([svgWidth / 2, svgHeight / 2])
+    const projection = mapConfig.projection(svgWidth, svgHeight)
 
     return d3.geo.path().projection(projection)
   }
@@ -55,7 +51,7 @@ export default class Datamap extends Component {
   }
 
   renderDatamapSubunits() {
-    const { colorScale, noDataColor, borderColor } = this.props
+    const { colorScale, noDataColor, borderColor, mapType } = this.props
 
     return this.state.topoJSONfeatures.map((feature, index) => {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
@@ -64,7 +60,7 @@ export default class Datamap extends Component {
 
       return (
         <DatamapSubunit
-          key={feature.id}
+          key={`${mapType}-${feature.id}`}
           index={index}
           path={() => this.state.path(feature)}
           name={feature.properties.name}

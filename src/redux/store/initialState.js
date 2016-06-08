@@ -2,16 +2,19 @@ import { Map } from 'immutable'
 
 import worldEmptyData, { countryCodes } from '../../data/world-empty-data'
 import usaEmptyData, { stateCodes } from '../../data/usa-empty-data'
+import chinaEmptyData, { chinaCodes } from '../../data/china-empty-data'
 
 export default {
   mapType: '',
   regionCodes: Map({
     usa: stateCodes,
     world: countryCodes,
+    china: chinaCodes,
   }),
   regionData: Map({
     usa: usaEmptyData,
     world: worldEmptyData,
+    china: chinaEmptyData,
   }),
   sortState: Map({ key: 'name', direction: 'ASC' }),
   mapUi: Map({
