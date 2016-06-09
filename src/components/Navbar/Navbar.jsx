@@ -25,6 +25,11 @@ const Navbar = (props) => {
           <li className={style['list-item']}>
             <Link to={routes.showcase} className={style[`${color}-link`]}>Showcase</Link>
           </li>
+          <li className={style['list-item']}>
+            <a href="https://github.com/caspg/datamaps.co" className={style[`${color}-link`]}>
+              GitHub
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
