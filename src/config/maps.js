@@ -37,13 +37,11 @@ module.exports = {
     canada: {
       mapUi: {
         projection: function _projection(width, height) {
-          return d3.geo.azimuthalEqualArea()
-            .rotate([100, -45])
-            .center([5, 20])
-            .scale(width)
-            .translate([width / 2, height / 2])
+          return d3.geo.azimuthalEqualArea().rotate([100, -45]).center([5, 20])
+            .scale(width / 1.24).translate([width / 2, height / 2.35])
         },
       },
+      csvExample: [['code', 'value'], ['QC', 104], ['YT', 101], ['ON', 106]],
     },
   },
 }

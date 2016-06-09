@@ -17,9 +17,9 @@ const EditorInitView = (props) => {
 
   return (
     <div className={style.container}>
-      <div className={style.wrapper}>
-        <div className={style.thumbs}>
-          <div className="row center-xs">
+      <div className={style.thumbs}>
+        <div className="row center-xs">
+          <div className="col-sm-8">
             {mapThumbs}
           </div>
         </div>

@@ -7,11 +7,6 @@
   overflow-y: scroll;
 }
 
-.wrapper {
-  min-height: 100%;
-  margin-bottom: -120px; /* Height of Footer and footer's margin */
-}
-
 .thumbs {
   padding-top: 80px;
   padding-bottom: 120px;

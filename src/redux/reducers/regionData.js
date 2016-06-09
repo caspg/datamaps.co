@@ -1,9 +1,6 @@
 import { Map } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
 
-// import usaEmptyData from '../../data/usa-empty-data'
-// import worldEmptyData from '../../data/world-empty-data'
-
 import worldEmptyData from '../../data/empty/world'
 import usaEmptyData from '../../data/empty/usa'
 import chinaEmptyData from '../../data/empty/china'
