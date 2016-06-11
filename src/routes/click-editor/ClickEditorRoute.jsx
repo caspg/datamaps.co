@@ -1,9 +1,12 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, IndexRoute } from 'react-router'
 
 import routes from 'config/routes'
 import ClickEditorLayout from './components/ClickEditorLayout/ClickEditorLayout'
+import EditorInitContainer from 'containers/editor/EditorInitContainer'
 
 export default (
-  <Route path={routes.clickEditor} component={ClickEditorLayout} />
+  <Route path={routes.clickEditor} component={ClickEditorLayout}>
+    <IndexRoute component={EditorInitContainer} />
+  </Route>
 )

@@ -4,7 +4,7 @@ import { push } from 'react-router-redux'
 
 import { setMapType } from 'redux/actions'
 
-import EditorInitView from '../components/EditorInitView/EditorInitView'
+import EditorInitView from 'components/editor/EditorInitView/EditorInitView'
 
 class EditorInitContainer extends Component {
   constructor(props) {

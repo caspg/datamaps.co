@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router'
 
 import routes from 'config/routes'
 import EditorLayout from './components/EditorLayout/EditorLayout'
-import EditorInitContainer from './containers/EditorInitContainer'
+import EditorInitContainer from 'containers/editor/EditorInitContainer'
 
 import MapEditorRoute from './routes/mapEditor/MapEditorRoute'
 
