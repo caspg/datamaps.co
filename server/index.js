@@ -12,11 +12,11 @@ app.get('/', (req, res) => {
   res.send(renderHtml({ title: metaTitles.home, description: metaDescription.generic }))
 })
 
-app.get('/editor', (req, res) => {
+app.get(['/editor', '/click-editor'], (req, res) => {
   res.send(renderHtml({ title: metaTitles.editor, description: metaDescription.generic }))
 })
 
-app.get('/editor/*', (req, res) => {
+app.get(['/editor/*', '/click-editor/*'], (req, res) => {
   const mapType = req.originalUrl.replace('/editor/', '').replace(/\/.*/, '')
   const displayName = mapTypes.find(i => i.code === mapType).displayName
   const title = metaTitles.mapEditor.replace('{{mapType}}', displayName)
