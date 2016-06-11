@@ -9,15 +9,12 @@ const EditorLayout = (props) => {
 
   return (
     <div>
-      <HeaderContainer mainPath={routes.editor} currentPath={props.location.pathname} />
-
-      {props.children}
+      <HeaderContainer mainPath={routes.clickEditor} currentPath={props.location.pathname} />
     </div>
   )
 }
 
 EditorLayout.propTypes = {
-  children: PropTypes.node.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }),

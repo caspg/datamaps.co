@@ -12,13 +12,13 @@ class HeaderContainer extends Component {
   }
 
   handleMapTypeChange(mapType) {
-    const { dispatch } = this.props
+    const { dispatch, mainPath } = this.props
 
     if (this.props.mapType !== mapType) {
       dispatch(setMapType(mapType))
     }
 
-    dispatch(push(`/editor/${mapType}`))
+    dispatch(push(`${mainPath}/${mapType}`))
   }
 
   render() {
@@ -36,6 +36,7 @@ HeaderContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapType: PropTypes.string.isRequired,
   currentPath: PropTypes.string.isRequired,
+  mainPath: PropTypes.string.isRequired,
 }
 
 function mapStateToProps(state) {
