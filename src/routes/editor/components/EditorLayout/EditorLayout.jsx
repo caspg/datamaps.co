@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import metaTags from 'config/meta'
-import HeaderContainer from '../../containers/HeaderContainer'
+import HeaderContainer from 'containers/editor/HeaderContainer'
 
 const EditorLayout = (props) => {
   document.title = metaTags.titles.editor

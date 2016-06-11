@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
 import { setMapType } from 'redux/actions'
-import Header from '../components/Header/Header'
+import Header from 'components/editor/Header/Header'
 
 class HeaderContainer extends Component {
   constructor(props) {
