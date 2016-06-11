@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Map } from 'immutable'
 
 import makeExtremeValuesSelector from 'redux/selectors/extremeValues'
-import DatamapBox from '../components/DatamapBox/DatamapBox'
+import DatamapBox from 'components/editor/DatamapBox/DatamapBox'
 
 const MapContainer = (props) =>
   <DatamapBox

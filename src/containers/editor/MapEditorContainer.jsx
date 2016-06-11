@@ -7,7 +7,7 @@ import { fetchTopoData } from 'redux/actions/topoData'
 
 import mapTypes from 'config/maps'
 import metaTags from 'config/meta'
-import MapEditorLayout from '../components/MapEditorLayout/MapEditorLayout'
+import MapEditorLayout from 'components/editor/MapEditorLayout/MapEditorLayout'
 
 class MapEditorContainer extends Component {
   componentWillMount() {

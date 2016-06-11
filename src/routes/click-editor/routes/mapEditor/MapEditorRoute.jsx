@@ -6,9 +6,6 @@ import InitView from './components/InitView/InitView'
 
 import mapConfig from 'config/maps'
 import routes from 'config/routes'
-import UploadRoute from './routes/upload/UploadRoute'
-import EditDataRoute from './routes/editData/EditDataRoute'
-import EditMapRoute from './routes/editMap/EditMapRoute'
 
 const validateParam = (nextState, replace) => {
   const mapTypes = mapConfig.types.map(i => i.code)
@@ -22,10 +19,7 @@ const validateParam = (nextState, replace) => {
 }
 
 export default (
-  <Route path={routes.mapEditor} component={MapEditorContainer} onEnter={validateParam}>
+  <Route path={routes.clickMapEditor} component={MapEditorContainer} onEnter={validateParam}>
     <IndexRoute component={InitView} />
-    {UploadRoute}
-    {EditDataRoute}
-    {EditMapRoute}
   </Route>
 )

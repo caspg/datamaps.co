@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import style from './MapEditorLayout.css'
-import MapContainer from '../../containers/MapContainer'
+import MapContainer from 'containers/editor/MapContainer'
 import Footer from 'components/Footer/Footer'
 
 const MapEditorLayout = (props) =>
