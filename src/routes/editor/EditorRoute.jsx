@@ -9,7 +9,7 @@ import MapEditorRoute from './routes/mapEditor/MapEditorRoute'
 
 export default (
   <Route path={routes.editor} component={EditorLayout}>
-    <IndexRoute component={EditorInitContainer} />
+    <IndexRoute component={EditorInitContainer} mainPath={routes.editor} />
 
     {MapEditorRoute}
   </Route>

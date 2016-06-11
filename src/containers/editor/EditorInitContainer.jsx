@@ -13,13 +13,13 @@ class EditorInitContainer extends Component {
   }
 
   handleMapSelect(mapType) {
-    const { dispatch } = this.props
+    const { dispatch, route } = this.props
 
     if (this.props.mapType !== mapType) {
       dispatch(setMapType(mapType))
     }
 
-    dispatch(push(`/editor/${mapType}`))
+    dispatch(push(`${route.mainPath}/${mapType}`))
   }
 
   render() {
@@ -32,6 +32,9 @@ class EditorInitContainer extends Component {
 EditorInitContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   mapType: PropTypes.string.isRequired,
+  route: React.PropTypes.shape({
+    mainPath: PropTypes.string.isRequired,
+  }),
 }
 
 function mapStateToProps(state) {
