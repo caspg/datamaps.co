@@ -57,7 +57,7 @@ export default class Datamap extends Component {
       const subunitData = this.props.regionData.find((datum) => datum.get('code') === feature.id)
       const subunitValue = subunitData ? subunitData.get('value') : null
       const fillColor = subunitValue === '' ? noDataColor : colorScale(subunitValue)
-      debugger
+
       return (
         <DatamapSubunit
           key={`${mapType}-${feature.id}`}
