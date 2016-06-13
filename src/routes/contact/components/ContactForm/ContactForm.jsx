@@ -33,8 +33,7 @@ export default class ContactForm extends Component {
     })
     .then((response) => {
       if (response.status === 200) {
-        console.log('status: 200')
-        this.setState({ succesMsg: 'Message was successfully sent!', isSending: false })
+        this.setState({ succesMsg: 'Your message was successfully sent!', isSending: false })
         message.value = ''
         email.value = ''
       } else {
