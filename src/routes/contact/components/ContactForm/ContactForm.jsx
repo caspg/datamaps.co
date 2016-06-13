@@ -7,7 +7,7 @@ import config from 'config'
 export default class ContactForm extends Component {
   constructor(props) {
     super(props)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+    // this.handleFormSubmit = this.handleFormSubmit.bind(this)
 
     this.state = {
       errors: [],
@@ -16,127 +16,120 @@ export default class ContactForm extends Component {
     }
   }
 
-  sendForm() {
-    const { message, email } = this.refs
-    const url = `https://formspree.io/${config.contactEmail}`
+  // sendForm() {
+  //   const { message, email } = this.refs
+  //   const url = `https://formspree.io/${config.contactEmail}`
 
-    // if (process.env.NODE_ENV !== 'production') {
-    //   message.value = ''
-    //   email.value = ''
-    //   this.setState({ succesMsg: 'Message was successfully sent!', isSending: false })
-    //   return
-    // }
+  //   // if (process.env.NODE_ENV !== 'production') {
+  //   //   message.value = ''
+  //   //   email.value = ''
+  //   //   this.setState({ succesMsg: 'Message was successfully sent!', isSending: false })
+  //   //   return
+  //   // }
 
-    axios.post(url, {
-      message: message.value,
-      email: email.value,
-    })
-    .then((response) => {
-      if (response.status === 200) {
-        this.setState({ succesMsg: 'Message was successfully sent!', isSending: false })
-        message.value = ''
-        email.value = ''
-      } else {
-        this.setState({
-          errors: ['There was some problem. Please try again later.'],
-          isSending: false,
-        })
-      }
-    })
-    .catch((response) =>
-      this.setState({
-        errors: [response],
-        isSending: false,
-      })
-    )
-  }
+  //   console.log('sending to: ', url)
 
-  validateForm() {
-    const { message, email } = this.refs
-    const errors = []
+  //   axios.post(url, {
+  //     message: message.value,
+  //     email: email.value,
+  //   })
+  //   .then((response) => {
+  //     if (response.status === 200) {
+  //       console.log('status 200')
+  //       this.setState({ succesMsg: 'Message was successfully sent!', isSending: false })
+  //       message.value = ''
+  //       email.value = ''
+  //     } else {
+  //       this.setState({
+  //         errors: ['There was some problem. Please try again later.'],
+  //         isSending: false,
+  //       })
+  //     }
+  //   })
+  //   .catch((response) =>
+  //     this.setState({
+  //       errors: [response],
+  //       isSending: false,
+  //     })
+  //   )
+  // }
 
-    if (message.value === '') {
-      errors.push('Message body can\'t be blank')
-    }
+  // validateForm() {
+  //   const { message, email } = this.refs
+  //   const errors = []
 
-    if (!!email.value && !/@/.test(email.value)) {
-      errors.push('Email is missing an @')
-    }
+  //   if (message.value === '') {
+  //     errors.push('Message body can\'t be blank')
+  //   }
 
-    this.setState({ errors })
+  //   if (!!email.value && !/@/.test(email.value)) {
+  //     errors.push('Email is missing an @')
+  //   }
 
-    return errors.length === 0
-  }
+  //   this.setState({ errors })
 
-  handleFormSubmit(e) {
-    this.setState({
-      errors: [],
-      succesMsg: '',
-    })
+  //   return errors.length === 0
+  // }
 
-    if (this.refs._bazzinga.value === '') {
-      /* eslint no-unused-expressions: ["error", { "allowShortCircuit": true }] */
-      if (this.validateForm()) {
-        this.setState({ isSending: true })
-        this.sendForm()
-      }
-    }
+  // handleFormSubmit(e) {
+  //   this.setState({
+  //     errors: [],
+  //     succesMsg: '',
+  //   })
 
-    e.target.blur()
-  }
+  //   if (this.refs._bazzinga.value === '') {
+  //      eslint no-unused-expressions: ["error", { "allowShortCircuit": true }]
+  //     if (this.validateForm()) {
+  //       this.setState({ isSending: true })
+  //       this.sendForm()
+  //     }
+  //   }
 
-  renderErrors() {
-    const errors = this.state.errors.map((error, index) =>
-      <li key={index}>{error}</li>
-    )
+  //   e.target.blur()
+  // }
 
-    if (errors.length > 0) {
-      return (
-        <ul className={style.errors}>
-          {errors}
-        </ul>
-      )
-    }
+  // renderErrors() {
+  //   const errors = this.state.errors.map((error, index) =>
+  //     <li key={index}>{error}</li>
+  //   )
 
-    return ''
-  }
+  //   if (errors.length > 0) {
+  //     return (
+  //       <ul className={style.errors}>
+  //         {errors}
+  //       </ul>
+  //     )
+  //   }
 
-  renderSuccessMsg() {
-    if (!!this.state.succesMsg) {
-      return (
-        <div className={style.succesMsg}>
-          <p>{this.state.succesMsg}</p>
-        </div>
-      )
-    }
+  //   return ''
+  // }
 
-    return ''
-  }
+  // renderSuccessMsg() {
+  //   if (!!this.state.succesMsg) {
+  //     return (
+  //       <div className={style.succesMsg}>
+  //         <p>{this.state.succesMsg}</p>
+  //       </div>
+  //     )
+  //   }
+
+  //   return ''
+  // }
 
   render() {
+    const url = `https://formspree.io/${config.contactEmail}`
+
     return (
       <div className={style.container}>
-        <div className={style.loader} />
-        {this.renderErrors()}
-        {this.renderSuccessMsg()}
-
-        <div>
+        <form action={url} method="POST">
           <label htmlFor="message">Message:</label>
           <textarea ref="message" id="message" className={style.textarea} type="text" required placeholder="message" />
-
-          <input type="text" ref="_bazzinga" style={{ display: 'none' }} />
 
           <label htmlFor="contact-email">Your contact email:</label>
           <input ref="email" id="contact-email" className={style.input} type="text" type="email" placeholder="email" name="_replyto" />
 
-          <button
-            className="button-primary"
-            onClick={this.handleFormSubmit}
-            disabled={this.state.isSending}
-          >
-            Send
-          </button>
-        </div>
+          <input className="button-primary" value="Send" type="submit" />
+        </form>
       </div>
     )
   }
