@@ -13,6 +13,7 @@ const Root = (props) =>
       <Router history={props.history}>
         {HomeRoute}
         {EditorRoute}
+        {ContactRoute}
         {ShowcaseRoute}
       </Router>
     </div>
