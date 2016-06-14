@@ -4,6 +4,7 @@ import worldEmptyData, { countryCodes } from '../../data/empty/world'
 import usaEmptyData, { stateCodes } from '../../data/empty/usa'
 import chinaEmptyData, { chinaCodes } from '../../data/empty/china'
 import canadaEmptyData, { canadaCodes } from '../../data/empty/canada'
+import franceEmptyData, { franceCodes } from '../../data/empty/france'
 
 export default {
   mapType: '',
@@ -12,12 +13,14 @@ export default {
     world: countryCodes,
     china: chinaCodes,
     canada: canadaCodes,
+    france: franceCodes,
   }),
   regionData: Map({
     usa: usaEmptyData,
     world: worldEmptyData,
     china: chinaEmptyData,
     canada: canadaEmptyData,
+    france: franceEmptyData,
   }),
   sortState: Map({ key: 'name', direction: 'ASC' }),
   mapUi: Map({

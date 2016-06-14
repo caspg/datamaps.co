@@ -6,6 +6,7 @@ module.exports = {
     { code: 'world', displayName: 'World' },
     { code: 'china', displayName: 'China' },
     { code: 'canada', displayName: 'Canada' },
+    { code: 'france', displayName: 'France' },
   ],
   configs: {
     usa: {
@@ -42,6 +43,15 @@ module.exports = {
         },
       },
       csvExample: [['code', 'value'], ['QC', 104], ['YT', 101], ['ON', 106]],
+    },
+    france: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator().center([2.2, 46.4]).scale(width * 2)
+            .translate([width / 2, height / 2]);
+        },
+      },
+      csvExample: [['name', 'value'], ['Corsica', 105], ['Normandy', 99], ['Île-de-France', 103]]
     },
   },
 }
