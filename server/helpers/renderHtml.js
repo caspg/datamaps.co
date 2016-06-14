@@ -7,6 +7,8 @@ function renderHtml(data) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
 
+        <meta name="msvalidate.01" content="E13826D612F7D8D97C50E1DB61BF34C6" />
+
         <title>${data.title}</title>
         <meta name='description' content='${data.description}'/>
         <meta property="og:image" content="http://datamaps.co/images/icons/icon-300.png"/>
