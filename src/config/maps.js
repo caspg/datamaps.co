@@ -8,6 +8,7 @@ module.exports = {
     { code: 'canada', displayName: 'Canada' },
     { code: 'france', displayName: 'France' },
     { code: 'germany', displayName: 'Germany' },
+    { code: 'italy', displayName: 'Italy' },
   ],
   configs: {
     usa: {
@@ -57,13 +58,20 @@ module.exports = {
     germany: {
       mapUi: {
         projection: function _projection(width, height) {
-          return d3.geo.mercator()
-            .center([10.5, 51.35])
-            .scale(width * 2.5)
+          return d3.geo.mercator().center([10.5, 51.35]).scale(width * 2.5)
             .translate([width / 2, height / 2.2]);
         },
       },
-      csvExample: [['name', 'value'], ['HE', 101], ['SH', 99], ['MV', 103]],
+      csvExample: [['code', 'value'], ['HE', 101], ['SH', 99], ['MV', 103]],
+    },
+    italy: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.albers().center([0, 41]).rotate([347, 0]).scale(width * 2.9)
+            .translate([width / 2, height / 2.1])
+        },
+      },
+      csvExample: [['name', 'value'], ['Abruzzo', 102], ['Sicily', 99], ['Piemonte', 103]],
     },
   },
 }

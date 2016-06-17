@@ -7,6 +7,7 @@ import chinaEmptyData from '../../data/empty/china'
 import canadaEmptyData from '../../data/empty/canada'
 import franceEmptyData from '../../data/empty/france'
 import germanyEmptyData from '../../data/empty/germany'
+import italyEmptyData from '../../data/empty/italy'
 
 function codeByName(emptyData, newDatum) {
   const datum = emptyData.find((item) =>
@@ -45,6 +46,7 @@ export default function regionData(state = Map(), action) {
         canada: canadaEmptyData,
         france: franceEmptyData,
         germany: germanyEmptyData,
+        italy: italyEmptyData,
       }[action.mapType]
 
       return state.set(action.mapType, emptyData.withMutations((data) =>
