@@ -1,12 +1,4 @@
-import { fromJS, List } from 'immutable'
-
-// without 'DC'
-export const stateCodes = List([
-  'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS',
-  'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY',
-  'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV',
-  'WI', 'WY',
-])
+import { fromJS } from 'immutable'
 
 export default fromJS({
   AL: { name: 'Alabama', code: 'AL', value: '' },
@@ -17,7 +9,7 @@ export default fromJS({
   CO: { name: 'Colorado', code: 'CO', value: '' },
   CT: { name: 'Connecticut', code: 'CT', value: '' },
   DE: { name: 'Delaware', code: 'DE', value: '' },
-  DC: { name: 'District of Columbia', code: 'DC', value: '' },
+  // DC: { name: 'District of Columbia', code: 'DC', value: '' },
   FL: { name: 'Florida', code: 'FL', value: '' },
   GA: { name: 'Georgia', code: 'GA', value: '' },
   HI: { name: 'Hawaii', code: 'HI', value: '' },

@@ -1,20 +1,4 @@
-import { fromJS, List } from 'immutable'
-
-export const canadaCodes = List([
-  "MB",
-  "SK",
-  "AB",
-  "BC",
-  "NU",
-  "NT",
-  "YT",
-  "ON",
-  "QC",
-  "NB",
-  "NS",
-  "NF",
-  "PE"
-])
+import { fromJS } from 'immutable'
 
 export default fromJS({
   "MB": {

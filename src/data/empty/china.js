@@ -1,38 +1,4 @@
-import { fromJS, List } from 'immutable'
-
-export const chinaCodes = List([
-  "GS",
-  "QH",
-  "GX",
-  "GZ",
-  "CQ",
-  "BJ",
-  "FJ",
-  "AH",
-  "GD",
-  "XZ",
-  "XJ",
-  "HA",
-  "NX",
-  "SA",
-  "SX",
-  "HU",
-  "HN",
-  "SC",
-  "YN",
-  "HB",
-  "HE",
-  "LN",
-  "SD",
-  "TJ",
-  "JX",
-  "JS",
-  "SH",
-  "ZJ",
-  "JL",
-  "NM",
-  "HL",
-])
+import { fromJS } from 'immutable'
 
 export default fromJS({
   "GS": {
