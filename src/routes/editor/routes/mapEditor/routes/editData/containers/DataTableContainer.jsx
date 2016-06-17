@@ -21,13 +21,12 @@ class DataTableContainer extends Component {
   }
 
   render() {
-    const { mapType } = this.props
+    const { sortedRegionData, sortState } = this.props
 
     return (
       <DataTable
-        regionCodes={this.props.sortedRegionCodes}
-        regionData={this.props.regionData.get(mapType)}
-        sortState={this.props.sortState}
+        regionData={sortedRegionData}
+        sortState={sortState}
         onRowEdit={this.handleRowEdit}
         toggleDirection={this.handleToggleDirection}
       />
@@ -37,18 +36,17 @@ class DataTableContainer extends Component {
 
 DataTableContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  regionData: PropTypes.instanceOf(Map).isRequired,
-  sortedRegionCodes: PropTypes.instanceOf(List).isRequired,
+  sortedRegionData: PropTypes.instanceOf(Map).isRequired,
   sortState: PropTypes.instanceOf(Map).isRequired,
   mapType: PropTypes.string.isRequired,
 }
 
-function sortCollection(regionCodes, sortState, regionData) {
+function sortCollection(sortState, regionData) {
   const sortKey = sortState.get('key')
   const direction = (sortState.get('direction') === 'ASC') ? 1 : -1
-  const sortValue = (code) => regionData.get(code).get(sortKey)
+  const sortValue = (regionDatum) => regionData.get(regionDatum.get('code')).get(sortKey)
 
-  return regionCodes.sort((a, b) => {
+  return regionData.sort((a, b) => {
     if (sortValue(a) > sortValue(b)) return 1 * direction
     if (sortValue(a) < sortValue(b)) return -1 * direction
     return 0
@@ -56,15 +54,13 @@ function sortCollection(regionCodes, sortState, regionData) {
 }
 
 function mapStateToProps(state) {
-  const { regionCodes, sortState, regionData, mapType } = state
-  const currentRegionCodes = regionCodes.get(mapType)
+  const { sortState, regionData, mapType } = state
   const currentRegionData = regionData.get(mapType)
 
   return {
-    sortedRegionCodes: sortCollection(currentRegionCodes, sortState, currentRegionData),
-    regionData,
+    sortedRegionData: sortCollection(sortState, currentRegionData),
     sortState,
-    mapType
+    mapType,
   }
 }
 

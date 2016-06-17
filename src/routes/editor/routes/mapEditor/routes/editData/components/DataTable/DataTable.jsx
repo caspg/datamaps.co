@@ -24,20 +24,16 @@ export default class DataTable extends Component {
   }
 
   renderTableRows() {
-    const { regionData, regionCodes } = this.props
-    return regionCodes.map((code, index) => {
-      const regionDatum = regionData.get(code)
-
-      return (
-        <DataTableRow
-          key={index}
-          regionName={regionDatum.get('name')}
-          regionCode={regionDatum.get('code')}
-          value={regionDatum.get('value')}
-          onRowEdit={this.props.onRowEdit}
-        />
-      )
-    })
+    const { regionData } = this.props
+    return regionData.valueSeq().map((regionDatum, index) =>
+      <DataTableRow
+        key={index}
+        regionName={regionDatum.get('name')}
+        regionCode={regionDatum.get('code')}
+        value={regionDatum.get('value')}
+        onRowEdit={this.props.onRowEdit}
+      />
+    )
   }
 
   render() {
@@ -57,7 +53,6 @@ export default class DataTable extends Component {
 }
 
 DataTable.propTypes = {
-  regionCodes: PropTypes.instanceOf(List).isRequired,
   regionData: PropTypes.instanceOf(Map).isRequired,
   onRowEdit: PropTypes.func.isRequired,
   sortState: PropTypes.instanceOf(Map).isRequired,
