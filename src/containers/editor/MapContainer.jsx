@@ -7,7 +7,7 @@ import DatamapBox from 'components/editor/DatamapBox/DatamapBox'
 
 const MapContainer = (props) =>
   <DatamapBox
-    regionData={props.regionData.get(props.mapType)}
+    regionData={props.regionData.get(props.mapType, Map())}
     extremeValues={props.extremeValues}
     mapUi={props.mapUi}
     mapType={props.mapType}
