@@ -7,6 +7,7 @@ import canadaEmptyData, { canadaCodes } from '../../data/empty/canada'
 import franceEmptyData, { franceCodes } from '../../data/empty/france'
 import germanyEmptyData, { germanyCodes } from '../../data/empty/germany'
 import italyEmptyData, { italyCodes } from '../../data/empty/italy'
+import polandEmptyData, { polandCodes } from '../../data/empty/poland'
 
 export default {
   mapType: '',
@@ -18,6 +19,7 @@ export default {
     france: franceCodes,
     germany: germanyCodes,
     italy: italyCodes,
+    poland: polandCodes,
   }),
   regionData: Map({
     usa: usaEmptyData,
@@ -27,6 +29,7 @@ export default {
     france: franceEmptyData,
     germany: germanyEmptyData,
     italy: italyEmptyData,
+    poland: polandEmptyData,
   }),
   sortState: Map({ key: 'name', direction: 'ASC' }),
   mapUi: Map({

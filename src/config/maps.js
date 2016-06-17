@@ -9,6 +9,7 @@ module.exports = {
     { code: 'france', displayName: 'France' },
     { code: 'germany', displayName: 'Germany' },
     { code: 'italy', displayName: 'Italy' },
+    { code: 'poland', displayName: 'Poland' },
   ],
   configs: {
     usa: {
@@ -72,6 +73,15 @@ module.exports = {
         },
       },
       csvExample: [['name', 'value'], ['Abruzzo', 102], ['Sicily', 99], ['Piemonte', 103]],
+    },
+    poland: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator().center([20.5, 51.35]).scale(width * 3.2)
+            .translate([width / 2, height / 1.9]);
+        },
+      },
+      csvExample: [['name', 'value'], ['Silesian', 102], ['Masovian', 99], ['Pomeranian', 103]],
     },
   },
 }
