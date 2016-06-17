@@ -47,6 +47,9 @@ function sortCollection(sortState, regionData) {
   const sortValue = (regionDatum) => regionData.get(regionDatum.get('code')).get(sortKey)
 
   return regionData.sort((a, b) => {
+    if (sortKey === 'value' && a.get('value') === '') return 1
+    if (sortKey === 'value' && b.get('value') === '') return -1
+
     if (sortValue(a) > sortValue(b)) return 1 * direction
     if (sortValue(a) < sortValue(b)) return -1 * direction
     return 0
