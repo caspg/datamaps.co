@@ -1,5 +1,5 @@
 import { Map } from 'immutable'
-import { EDIT_ROW, UPLOAD_DATA } from '../constants/ActionTypes'
+import { EDIT_ROW, UPLOAD_DATA, LOAD_EMPTY_DATA } from '../constants/ActionTypes'
 
 import worldEmptyData from '../../data/empty/world'
 import usaEmptyData from '../../data/empty/usa'
@@ -46,6 +46,10 @@ export default function regionData(state = Map(), action) {
       return state.set(action.mapType, emptyData.withMutations((data) =>
         updateEmptyData(data, action.data))
       )
+    }
+
+    case LOAD_EMPTY_DATA: {
+      return state.set(action.mapType, action.emptyData)
     }
 
     default:
