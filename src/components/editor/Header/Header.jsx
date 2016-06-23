@@ -28,7 +28,7 @@ const Header = (props) => {
         </div>
         <div className="col-xs-12 col-sm-6">
           <div className="row middle-xs start-xs end-sm">
-            {!isEditorPath && <SaveButtons />}
+            {!isEditorPath && <SaveButtons mapType={props.mapType} />}
           </div>
         </div>
       </div>

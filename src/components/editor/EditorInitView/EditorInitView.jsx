@@ -19,7 +19,7 @@ const EditorInitView = (props) => {
     <div className={style.container}>
       <div className={style.thumbs}>
         <div className="row center-xs">
-          <div className="col-sm-8">
+          <div className="col-sm-10">
             {mapThumbs}
           </div>
         </div>

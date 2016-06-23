@@ -20,12 +20,12 @@ export default class ContactForm extends Component {
     const { message, email } = this.refs
     const url = `https://formspree.io/${config.contactEmail}`
 
-    if (process.env.NODE_ENV !== 'production') {
-      message.value = ''
-      email.value = ''
-      this.setState({ succesMsg: 'Message was successfully sent!', isSending: false })
-      return
-    }
+    // if (process.env.NODE_ENV !== 'production') {
+    //   message.value = ''
+    //   email.value = ''
+    //   this.setState({ succesMsg: 'Message was successfully sent!', isSending: false })
+    //   return
+    // }
 
     axios.post(url, {
       message: message.value,

@@ -1,11 +1,6 @@
 import { Map, fromJS } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA, LOAD_EMPTY_DATA } from '../constants/ActionTypes'
 
-import worldEmptyData from '../../data/empty/world'
-import usaEmptyData from '../../data/empty/usa'
-import chinaEmptyData from '../../data/empty/china'
-import canadaEmptyData from '../../data/empty/canada'
-
 function codeByName(emptyData, newDatum) {
   const datum = emptyData.find((item) =>
     item.get('name') === newDatum.get('name')

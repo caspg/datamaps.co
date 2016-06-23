@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { svgAsDataUri, saveSvgAsPng } from 'save-svg-as-png'
 
 import style from './SaveButtons.css'
@@ -11,12 +11,13 @@ export default class SaveButtons extends Component {
   }
 
   trackEvent(type) {
+    console.log(this.props.mapType)
     if (process.env.NODE_ENV !== 'production') return
     ga('send', {
       hitType: 'event',
       eventCategory: 'Save Button',
       eventAction: type,
-      eventLabel: 'Save Buttons',
+      eventLabel: this.props.mapType,
     });
   }
 
@@ -50,4 +51,8 @@ export default class SaveButtons extends Component {
       </div>
     )
   }
+}
+
+SaveButtons.propTypes = {
+  mapType: PropTypes.string.isRequired,
 }

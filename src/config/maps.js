@@ -6,6 +6,10 @@ module.exports = {
     { code: 'world', displayName: 'World' },
     { code: 'china', displayName: 'China' },
     { code: 'canada', displayName: 'Canada' },
+    { code: 'france', displayName: 'France' },
+    { code: 'germany', displayName: 'Germany' },
+    { code: 'italy', displayName: 'Italy' },
+    { code: 'poland', displayName: 'Poland' },
   ],
   configs: {
     usa: {
@@ -42,6 +46,42 @@ module.exports = {
         },
       },
       csvExample: [['code', 'value'], ['QC', 104], ['YT', 101], ['ON', 106]],
+    },
+    france: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator().center([2.2, 46.4]).scale(width * 2)
+            .translate([width / 2, height / 2]);
+        },
+      },
+      csvExample: [['name', 'value'], ['Corsica', 105], ['Normandy', 99], ['Île-de-France', 103]]
+    },
+    germany: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator().center([10.5, 51.35]).scale(width * 2.5)
+            .translate([width / 2, height / 2.2]);
+        },
+      },
+      csvExample: [['code', 'value'], ['HE', 101], ['SH', 99], ['MV', 103]],
+    },
+    italy: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.albers().center([0, 41]).rotate([347, 0]).scale(width * 2.9)
+            .translate([width / 2, height / 2.1])
+        },
+      },
+      csvExample: [['name', 'value'], ['Abruzzo', 102], ['Sicily', 99], ['Piemonte', 103]],
+    },
+    poland: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator().center([20.5, 51.35]).scale(width * 3.2)
+            .translate([width / 2, height / 1.9]);
+        },
+      },
+      csvExample: [['name', 'value'], ['Silesian', 102], ['Masovian', 99], ['Pomeranian', 103]],
     },
   },
 }

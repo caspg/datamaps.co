@@ -9,7 +9,7 @@ const Footer = (props) =>
           <span className={style.text}>
             2016 © Datamaps.co
           </span>
-          <a href="https://twitter.com/caspg_" className={style.imagelink}>
+          <a href="https://twitter.com/datamapsco" className={style.imagelink}>
             <img className={style.twittericon} src="/images/icons/twitter-64.png" alt="twitter icon" />
           </a>
         </div>
