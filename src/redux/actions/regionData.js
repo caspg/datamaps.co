@@ -18,11 +18,11 @@ function uploadDataAndRedirect(data, mapType) {
 }
 
 function toggleDirection(sortKey) {
-return { type: TOGGLE_DIRECTION, sortKey };
+  return { type: TOGGLE_DIRECTION, sortKey };
 }
 
-function loadEmptyData(mapType, emptyData) {
-  return { type: LOAD_EMPTY_DATA, mapType, emptyData }
+function loadEmptyData(mapType, topoData) {
+  return { type: LOAD_EMPTY_DATA, mapType, topoData }
 }
 
 export {

@@ -1,4 +1,4 @@
-import { Map } from 'immutable'
+import { Map, fromJS } from 'immutable'
 import { EDIT_ROW, UPLOAD_DATA, LOAD_EMPTY_DATA } from '../constants/ActionTypes'
 
 import worldEmptyData from '../../data/empty/world'
@@ -26,6 +26,20 @@ function updateEmptyData(emptyData, data) {
   }
 }
 
+function reduceTopoData(topoData) {
+  const reducedData = topoData.reduce((object, item) => {
+    object[item.id] = {
+      name: item.properties.name,
+      code: item.id,
+      value: '',
+    }
+
+    return object
+  }, {})
+
+  return fromJS(reducedData)
+}
+
 export default function regionData(state = Map(), action) {
   switch (action.type) {
     case EDIT_ROW: {
@@ -36,20 +50,16 @@ export default function regionData(state = Map(), action) {
     }
 
     case UPLOAD_DATA: {
-      const emptyData = {
-        usa: usaEmptyData,
-        world: worldEmptyData,
-        china: chinaEmptyData,
-        canada: canadaEmptyData,
-      }[action.mapType]
+      const emptyData = state.get(action.mapType).map(datum => datum.set('value', ''))
 
-      return state.set(action.mapType, emptyData.withMutations((data) =>
+      return state.set(action.mapType, emptyData.withMutations(data =>
         updateEmptyData(data, action.data))
       )
     }
 
     case LOAD_EMPTY_DATA: {
-      return state.set(action.mapType, action.emptyData)
+      const emptyData = reduceTopoData(action.topoData)
+      return state.set(action.mapType, emptyData)
     }
 
     default:

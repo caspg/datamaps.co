@@ -45,6 +45,7 @@ UploadContainer.propTypes = {
 function mapStateToProps(state) {
   return {
     mapType: state.mapType,
+    regionData: state.regionData,
   }
 }
 

@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Map, fromJS } from 'immutable'
+import { Map } from 'immutable'
 
-import { editRow, toggleDirection, loadEmptyData } from 'redux/actions/regionData'
+import { editRow, toggleDirection } from 'redux/actions/regionData'
 import DataTable from '../components/DataTable/DataTable'
 
 class DataTableContainer extends Component {
@@ -10,29 +10,6 @@ class DataTableContainer extends Component {
     super(props)
     this.handleRowEdit = this.handleRowEdit.bind(this)
     this.handleToggleDirection = this.handleToggleDirection.bind(this)
-  }
-
-  componentWillMount() {
-    const { sortedRegionData, dispatch, mapType } = this.props
-
-    if (sortedRegionData.isEmpty()) {
-      const emptyData = this.reduceTopoData()
-      dispatch(loadEmptyData(mapType, emptyData))
-    }
-  }
-
-  reduceTopoData() {
-    const reducedData = this.props.topoData.reduce((object, item) => {
-      object[item.id] = {
-        name: item.properties.name,
-        code: item.id,
-        value: '',
-      }
-
-      return object
-    }, {})
-
-    return fromJS(reducedData)
   }
 
   handleRowEdit(regionCode, value) {
@@ -62,7 +39,6 @@ DataTableContainer.propTypes = {
   sortedRegionData: PropTypes.instanceOf(Map).isRequired,
   sortState: PropTypes.instanceOf(Map).isRequired,
   mapType: PropTypes.string.isRequired,
-  topoData: PropTypes.array,
 }
 
 function sortCollection(sortState, regionData) {
@@ -85,13 +61,11 @@ function sortCollection(sortState, regionData) {
 }
 
 function mapStateToProps(state) {
-  const { sortState, regionData, mapType, topoData } = state
+  const { sortState, regionData, mapType } = state
   const currentRegionData = regionData.get(mapType, Map())
-  const currentTopoData = topoData.get(mapType)
 
   return {
     sortedRegionData: sortCollection(sortState, currentRegionData),
-    topoData: currentTopoData,
     sortState,
     mapType,
   }
