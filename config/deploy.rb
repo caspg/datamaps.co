@@ -2,7 +2,7 @@ lock '3.5.0'
 
 set :application, 'deltamike_node'
 set :repo_url,    'git@github.com:caspg/datamaps.co.git'
-set :user,        'caspg'
+set :user,        'ubuntu'
 set :use_sudo,    false
 
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
