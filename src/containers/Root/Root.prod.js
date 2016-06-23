@@ -4,7 +4,6 @@ import { Router } from 'react-router'
 
 import HomeRoute from 'routes/home/HomeRoute'
 import EditorRoute from 'routes/editor/EditorRoute'
-import ClickEditorRoute from 'routes/click-editor/ClickEditorRoute'
 import ContactRoute from 'routes/contact/ContactRoute'
 import ShowcaseRoute from 'routes/showcase/ShowcaseRoute'
 
@@ -14,7 +13,6 @@ const Root = (props) =>
       <Router history={props.history}>
         {HomeRoute}
         {EditorRoute}
-        {ClickEditorRoute}
         {ContactRoute}
         {ShowcaseRoute}
       </Router>
