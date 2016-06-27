@@ -23,7 +23,10 @@ export default class DropzoneBox extends Component {
 
       if (this.validateColumnNames(columns)) {
         const list = fromJS(parsedCSV)
-        const filteredList = list.filter((item) => item.get('value'))
+        const filteredList = list.filter((item) => {
+          const value = item.get('value')
+          return !!value && !isNaN(parseFloat(value))
+        })
         const parsedList = filteredList.map((item) =>
           item.update((_item) => _item.set('value', parseFloat(_item.get('value'))))
         )
