@@ -1,4 +1,4 @@
-server '52.17.32.126', port: 22, roles: [:web, :app, :db], primary: true
+server '52.208.173.65', port: 22, roles: [:web, :app, :db], primary: true
 
 set :ssh_options, {
   forward_agent: true,

@@ -10,6 +10,7 @@ module.exports = {
     { code: 'germany', displayName: 'Germany' },
     { code: 'italy', displayName: 'Italy' },
     { code: 'poland', displayName: 'Poland' },
+    { code: 'russia', displayName: 'Russia' },
   ],
   configs: {
     usa: {
@@ -82,6 +83,19 @@ module.exports = {
         },
       },
       csvExample: [['name', 'value'], ['Silesian', 102], ['Masovian', 99], ['Pomeranian', 103]],
+    },
+    russia: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.albers()
+            .rotate([-105, 0])
+            .center([-10, 65])
+            .parallels([52, 64])
+            .scale(width / 1.4)
+            .translate([width / 2, height / 2.1]);
+        },
+      },
+      csvExample: [['name', 'value'], ['Republic of Buryatia', 102], ['Moscow Oblast', 99], ['Smolensk Oblast', 103]],
     },
   },
 }
