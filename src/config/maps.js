@@ -14,6 +14,7 @@ module.exports = {
     { code: 'india', displayName: 'India' },
     { code: 'brazil', displayName: 'Brazil' },
     { code: 'netherlands', displayName: 'Netherlands' },
+    { code: 'australia', displayName: 'Australia' },
   ],
   configs: {
     usa: {
@@ -132,6 +133,17 @@ module.exports = {
         },
       },
       csvExample: [['name', 'value'], ['Friesland', 102], ['Limburg', 99], ['Utrecht', 103]],
+    },
+    australia: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator()
+            .center([134, -28])
+            .scale(width / 1.2)
+            .translate([width / 2.1, height / 2.2])
+        },
+      },
+      csvExample: [['name', 'value'], ['Northern Territory', 102], ['Tasmania', 99], ['Queensland', 103]],
     },
   },
 }
