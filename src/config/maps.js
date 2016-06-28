@@ -13,6 +13,7 @@ module.exports = {
     { code: 'russia', displayName: 'Russia' },
     { code: 'india', displayName: 'India' },
     { code: 'brazil', displayName: 'Brazil' },
+    { code: 'netherlands', displayName: 'Netherlands' },
   ],
   configs: {
     usa: {
@@ -120,6 +121,17 @@ module.exports = {
         },
       },
       csvExample: [['name', 'value'], ['Mato Grosso', 102], ['São Paulo', 99], ['Alagoas', 103]],
+    },
+    netherlands: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator()
+            .center([5.6, 52])
+            .scale(width * 7)
+            .translate([width / 2, height / 2])
+        },
+      },
+      csvExample: [['name', 'value'], ['Friesland', 102], ['Limburg', 99], ['Utrecht', 103]],
     },
   },
 }
