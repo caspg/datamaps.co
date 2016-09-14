@@ -6,7 +6,7 @@ import HomeRoute from 'routes/home/HomeRoute'
 import EditorRoute from 'routes/editor/EditorRoute'
 import ContactRoute from 'routes/contact/ContactRoute'
 import ShowcaseRoute from 'routes/showcase/ShowcaseRoute'
-import Devtools from '../Devtools'
+import DevTools from '../DevTools'
 
 const Root = (props) =>
   <Provider store={props.store}>
@@ -17,7 +17,7 @@ const Root = (props) =>
         {ContactRoute}
         {ShowcaseRoute}
       </Router>
-      <Devtools />
+      <DevTools />
     </div>
   </Provider>
 
