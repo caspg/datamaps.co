@@ -16,7 +16,15 @@ export default function parseFile(string) {
     })
   , new List())
 
-  return d3.dsv(
-    delimiters[occurrences.sortBy(i => i.count).last().index]
-  ).parse(string)
+  const delimiter = delimiters[occurrences.sortBy(i => i.count).last().index]
+
+  const accessor = (d) =>
+    Object.keys(d).reduce((object, key) => {
+      /* eslint-disable no-param-reassign */
+      object[key.toLowerCase()] = d[key]
+      /* eslint-enable */
+      return object
+    }, {})
+
+  return d3.dsv(delimiter).parse(string, accessor)
 }
