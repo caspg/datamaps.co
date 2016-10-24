@@ -8,7 +8,7 @@ function countOccurences(delimiter, string) {
 }
 
 export default function parseFile(string) {
-  const delimiters = [',', ';', 't', '|']
+  const delimiters = [',', ';', '\t', '|']
   const occurrences = delimiters.reduce((results, delimiter, i) =>
     results.push({
       count: countOccurences(delimiter, string),
