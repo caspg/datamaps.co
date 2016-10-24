@@ -22,10 +22,16 @@
 * add map info to `src/config/maps.js`
 * create map image thumb and put to `public/images/maps/` [resolution: 350x250]
 
-## development
+## Dependencies
+
+* Node v6.6.0
+* npm v3.10.7
+* yarnpkg v0.15.1
+
+## Development
 
 * clone this repo
-* run `npm install` from main repo directory
+* run `yarn install` from main repo directory
 * start express.js server: `npm start`
 * go to localhost:3030 in your browser
 
