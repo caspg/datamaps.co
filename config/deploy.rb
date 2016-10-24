@@ -26,6 +26,13 @@ namespace :deploy do
     end
   end
 
+  desc 'Install package.json dependecies with yarnpkg'
+  task :yarn_install do
+    on roles(:app) do
+      execute "cd '#{release_path}'; yarn install"
+    end
+  end
+
   desc 'Stop application'
   task :stop do
     on roles(:app) do
@@ -48,6 +55,7 @@ namespace :deploy do
   end
 
   before :starting, :check_revision
+  before 'deploy:updated', 'yarn_install'
   after :finishing, :build
   after :finishing, :stop
   after :finishing, :start
