@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
-import d3 from 'd3'
 import { fromJS } from 'immutable'
 
+import parseDsv from 'utils/parseDsv'
 import style from './DropzoneBox.css'
 
 export default class DropzoneBox extends Component {
@@ -18,11 +18,11 @@ export default class DropzoneBox extends Component {
     const file = files[0]
     const reader = new FileReader()
     reader.onload = (e) => {
-      const parsedCSV = d3.csv.parse(e.target.result)
-      const columns = Object.keys(parsedCSV[0])
+      const parsedDsv = parseDsv(e.target.result)
+      const columns = Object.keys(parsedDsv[0])
 
       if (this.validateColumnNames(columns)) {
-        const list = fromJS(parsedCSV)
+        const list = fromJS(parsedDsv)
         const filteredList = list.filter((item) => {
           const value = item.get('value')
           return !!value && !isNaN(parseFloat(value))
