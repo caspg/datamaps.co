@@ -1,7 +1,7 @@
 @value purple-gradient from 'styles/colors.css';
 
 .header {
-  composes: purple-gradient;
+  /*composes: purple-gradient;*/
 }
 
 .title-container {

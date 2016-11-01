@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       <Header>
-        <Navbar textColor="white" />
+        <Navbar />
       </Header>
 
       <About />

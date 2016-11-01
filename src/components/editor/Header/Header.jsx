@@ -13,7 +13,7 @@ const Header = (props) => {
   return (
     <div>
       <div className={style['navbar-wrapper']}>
-        <Navbar textColor="grey" />
+        <Navbar />
       </div>
 
       <div className={'row ' + style.actionbar}>
