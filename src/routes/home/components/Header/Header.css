@@ -1,14 +1,40 @@
 @value purple-gradient from 'styles/colors.css';
 
-.header {
-  /*composes: purple-gradient;*/
+.header-content {
+  composes: purple-gradient;
+  min-height: 500px;
 }
 
 .title-container {
-  height: 250px;
+  max-width: 500px;
+  text-align: left;
+  margin-right: 0;
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
 .title {
   padding: 15px;
   color: white;
+  line-height: 1.6;
+}
+
+.image {
+  max-width: 500px;
+  height: auto;
+  margin-left: 0;
+  margin-bottom: 60px;
+}
+
+@media only screen and (min-width: 48em) {
+  .title-container {
+    margin-right: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .image {
+    margin-left: 50px;
+    margin-bottom: 0;
+  }
 }
