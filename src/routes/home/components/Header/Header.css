@@ -1,26 +1,43 @@
-@value purple-gradient from 'styles/colors.css';
+@value purple-gradient, dark-color, orange-color-300, orange-color-400, grey-color-dark from 'styles/colors.css';
 
 .header-content {
   composes: purple-gradient;
   min-height: 500px;
+  padding: 20px;
 }
 
 .title-container {
   max-width: 500px;
-  text-align: left;
   margin-right: 0;
   margin-top: 45px;
-  margin-bottom: 45px;
+  margin-bottom: 50px;
+  text-align: center;;
 }
 
 .title {
   padding: 15px;
   color: white;
   line-height: 1.6;
+  text-align: left;
+}
+
+.button {
+  margin: 20px 0;
+  background: orange-color-300;
+  color: dark-color;
+  border-radius: 4px;
+  border-width: 0;
+  width: 200px;
+  box-shadow: 2px 6px 11px 0px grey-color-dark;
+}
+
+.button:hover {
+  background: orange-color-400;
 }
 
 .image {
   max-width: 500px;
+  width: 100%;
   height: auto;
   margin-left: 0;
   margin-bottom: 60px;

@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
+import routes from 'config/routes'
 import style from './Header.css'
 
 const Header = (props) =>
@@ -16,6 +18,10 @@ const Header = (props) =>
             <h1 className={style.title}>
               Create your free data map of world
             </h1>
+
+            <Link to={routes.editor} className={`button ${style.button}`}>
+              go to the editor
+            </Link>
           </div>
 
         </div>
