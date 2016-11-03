@@ -162,8 +162,8 @@ module.exports = {
         projection: function _projection(width, height) {
           return d3.geo.mercator()
             .center([118, 21])
-            .scale(width * 10)
-            .translate([width / 2.1, height / 1.8])
+            .scale(width * 8)
+            .translate([width / 2, height / 2])
         },
       },
       csvExample: [['code', 'value'], ['TPE', 102], ['KHH', 99], ['TXG', 103]],
