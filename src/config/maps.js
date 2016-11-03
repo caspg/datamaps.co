@@ -16,6 +16,7 @@ module.exports = {
     { code: 'netherlands', displayName: 'Netherlands' },
     { code: 'australia', displayName: 'Australia' },
     { code: 'switzerland', displayName: 'Switzerland' },
+    { code: 'taiwan', displayName: 'Taiwan' },
   ],
   configs: {
     usa: {
@@ -163,7 +164,7 @@ module.exports = {
           return d3.geo.mercator()
             .center([118, 21])
             .scale(width * 8)
-            .translate([width / 2, height / 2])
+            .translate([width / 6, height / 1])
         },
       },
       csvExample: [['code', 'value'], ['TPE', 102], ['KHH', 99], ['TXG', 103]],
