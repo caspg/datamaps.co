@@ -4,8 +4,6 @@ import axios from 'axios'
 import style from './ContactForm.css'
 import config from 'config'
 
-window.ax = axios
-
 export default class ContactForm extends Component {
   constructor(props) {
     super(props)
