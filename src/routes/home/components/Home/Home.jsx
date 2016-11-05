@@ -8,6 +8,7 @@ import ActionButton from '../ActionButton/ActionButton'
 import EditorImage from '../EditorImage/EditorImage'
 import EditorAttributes from '../EditorAttributes/EditorAttributes'
 import Footer from 'components/Footer/Footer'
+import BetaListSection from '../BetaListSection'
 
 const Home = () => {
   document.title = metaTags.titles.home
@@ -18,11 +19,11 @@ const Home = () => {
         <Navbar />
       </Header>
 
+      <EditorAttributes />
+      <BetaListSection />
       <About />
-
       <ActionButton />
       <EditorImage />
-      <EditorAttributes />
 
       <Footer>
         <i>
