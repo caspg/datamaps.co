@@ -1,6 +1,9 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react'
 
+import './MailChimpSignup.global.css'
+import style from './MailChimpSignup.css'
+
 class MailChimpSignup extends Component {
   static downloadScripts(scripts, callback) {
     const createScript = src =>
@@ -20,24 +23,28 @@ class MailChimpSignup extends Component {
 
   static loadValidationScripts() {
     /* eslint-disable no-unused-vars */
-    const someMailchimpMagic = ($) => {
-      window.fnames = []
-      window.ftypes = []
-      window.fnames[0] = 'EMAIL'
-      window.ftypes[0] = 'email'
-      window.fnames[1] = 'FNAME'
-      window.ftypes[1] = 'text'
+    const loadScripts = () => {
+      const someMailchimpMagic = ($) => {
+        window.fnames = []
+        window.ftypes = []
+        window.fnames[0] = 'EMAIL'
+        window.ftypes[0] = 'email'
+        window.fnames[1] = 'FNAME'
+        window.ftypes[1] = 'text'
+      }
+
+      const scripts = [
+        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+        '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js',
+      ]
+
+      MailChimpSignup.downloadScripts(scripts, () => {
+        someMailchimpMagic(window.jQuery)
+        window.$mcj = window.jQuery.noConflict(true)
+      })
     }
 
-    const scripts = [
-      'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-      '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js',
-    ]
-
-    MailChimpSignup.downloadScripts(scripts, () => {
-      someMailchimpMagic(window.jQuery)
-      window.$mcj = window.jQuery.noConflict(true)
-    })
+    setTimeout(loadScripts, 500)
     /* eslint-enable */
   }
 
@@ -64,8 +71,14 @@ class MailChimpSignup extends Component {
                 <input type="text" name="b_a0f03e010de6c97e1c6da625e_f68ea09ddb" tabIndex="-1" value="" />
               </div>
 
-              <div className="clear">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" />
+              <div>
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                  className={style.button}
+                />
               </div>
             </div>
         </form>
