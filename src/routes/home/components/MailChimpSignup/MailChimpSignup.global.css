@@ -7,6 +7,7 @@
 
 .MailChimpSignup #mc_embed_signup input.mce_inline_error {
   border-color: red-900;
+  background-color: white;
 }
 
 .MailChimpSignup #mce-success-response {

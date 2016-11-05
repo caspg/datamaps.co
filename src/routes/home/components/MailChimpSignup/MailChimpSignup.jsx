@@ -115,7 +115,7 @@ class MailChimpSignup extends Component {
 
   render() {
     return (
-      <div className="MailChimpSignup" style={{ textAlign: 'center' }}>
+      <div className="MailChimpSignup">
         {this.state.componentDidMount && MailChimpSignup.renderForm()}
         {this.state.componentDidMount && MailChimpSignup.loadValidationScripts()}
       </div>
