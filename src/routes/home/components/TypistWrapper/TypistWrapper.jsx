@@ -57,7 +57,8 @@ class TypistWrapper extends Component {
 }
 
 TypistWrapper.propTypes = {
-
+  className: PropTypes.string.isRequired,
+  words: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default TypistWrapper

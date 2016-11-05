@@ -3,8 +3,12 @@ import { Link } from 'react-router'
 
 import TypistWrapper from '../TypistWrapper/TypistWrapper'
 
+import maps from 'config/maps'
 import routes from 'config/routes'
 import style from './Header.css'
+
+const currentMaps = () =>
+  maps.types.map(i => i.displayName)
 
 const HeaderText = () => (
   <div className={style['title-container']}>
@@ -13,7 +17,7 @@ const HeaderText = () => (
 
       <TypistWrapper
         className={style.typist}
-        words={['World', 'USA', 'Poland', 'France']}
+        words={currentMaps()}
       />
     </h1>
 
