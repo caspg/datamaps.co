@@ -55,11 +55,23 @@ class MailChimpSignup extends Component {
           <div id="mc_embed_signup_scroll">
 
             <div className="mc-field-group">
-              <input type="email" placeholder="Your email" name="EMAIL" className="required email" id="mce-EMAIL" />
+              <input
+                type="email"
+                placeholder="Your email"
+                name="EMAIL"
+                id="mce-EMAIL"
+                className={`required email ${style.input}`}
+              />
             </div>
 
             <div className="mc-field-group">
-              <input type="text" placeholder="First name" name="FNAME" className="required" id="mce-FNAME" />
+              <input
+                type="text"
+                placeholder="First name"
+                name="FNAME"
+                id="mce-FNAME"
+                className={`required ${style.input}`}
+              />
             </div>
 
             <div id="mce-responses" className="clear">
@@ -74,7 +86,7 @@ class MailChimpSignup extends Component {
               <div>
                 <input
                   type="submit"
-                  value="Subscribe"
+                  value="Join the beta list"
                   name="subscribe"
                   id="mc-embedded-subscribe"
                   className={style.button}
@@ -103,7 +115,7 @@ class MailChimpSignup extends Component {
 
   render() {
     return (
-      <div style={{ textAlign: 'center' }}>
+      <div className="MailChimpSignup" style={{ textAlign: 'center' }}>
         {this.state.componentDidMount && MailChimpSignup.renderForm()}
         {this.state.componentDidMount && MailChimpSignup.loadValidationScripts()}
       </div>
