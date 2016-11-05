@@ -5,20 +5,13 @@ import './MailChimpSignup.global.css'
 import style from './MailChimpSignup.css'
 
 class MailChimpSignup extends Component {
-  static downloadScripts(scripts, callback) {
-    const createScript = src =>
-      new Promise((resolve) => {
-        const script = document.createElement('script')
-        script.type = 'text/javascript';
-        script.src = src
-        script.onload = resolve
+  static createScript(src, callback) {
+    const script = document.createElement('script')
+    script.type = 'text/javascript';
+    script.src = src
+    script.onload = callback
 
-        document.body.appendChild(script)
-      })
-
-    Promise.all(
-      scripts.map(script => createScript(script))
-    ).then(callback)
+    document.body.appendChild(script)
   }
 
   static loadValidationScripts() {
@@ -33,12 +26,9 @@ class MailChimpSignup extends Component {
         window.ftypes[1] = 'text'
       }
 
-      const scripts = [
-        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-        '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js',
-      ]
+      const scriptsSrc = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'
 
-      MailChimpSignup.downloadScripts(scripts, () => {
+      MailChimpSignup.createScript(scriptsSrc, () => {
         someMailchimpMagic(window.jQuery)
         window.$mcj = window.jQuery.noConflict(true)
       })
