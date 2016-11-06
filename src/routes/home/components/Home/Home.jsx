@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <Header>
-        <Navbar />
+        <Navbar className="box-shadow" />
       </Header>
 
       <EditorAttributes />

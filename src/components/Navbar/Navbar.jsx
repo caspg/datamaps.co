@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
 import routes from 'config/routes'
 import style from './Navbar.css'
 
-const Navbar = () => (
-  <nav className={`row middle-xs + ${style.nav}`}>
+const Navbar = props => (
+  <nav className={`row middle-xs ${style.nav} ${style[props.className]}`}>
     <div className="col-sm-6 col-xs-12">
       <Link to={routes.root} className={style['link-logo']}>
         <div className="row middle-xs">
@@ -32,5 +32,9 @@ const Navbar = () => (
     </div>
   </nav>
 )
+
+Navbar.propTypes = {
+  className: PropTypes.string.isRequired,
+}
 
 export default Navbar
