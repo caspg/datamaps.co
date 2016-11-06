@@ -11,7 +11,7 @@ import DevTools from '../DevTools'
 const Root = (props) =>
   <Provider store={props.store}>
     <div>
-      <Router history={props.history}>
+      <Router history={props.history} onUpdate={() => window.scrollTo(0, 0)}>
         {HomeRoute}
         {EditorRoute}
         {ContactRoute}
