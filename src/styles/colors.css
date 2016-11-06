@@ -24,6 +24,7 @@
 @value red-50: #FFEBEE;
 
 @value sea-blue: #03A9F4;
+@value light-blue: #f2f9fc;
 
 .purple-gradient {
   background-color: $purple-color-500;

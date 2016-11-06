@@ -9,11 +9,17 @@ import MapAutosuggest from '../MapAutosuggest'
 
 import routes from 'config/routes'
 
+// <MapSelect
+//   mapType={props.mapType}
+//   onMapTypeChange={props.onMapTypeChange}
+//   currentPath={props.currentPath}
+// />
+
 const Header = (props) => {
   const isEditorPath = props.currentPath === routes.editor
 
   return (
-    <div>
+    <div className={style.container}>
       <div className={style['navbar-wrapper']}>
         <Navbar />
       </div>
@@ -22,11 +28,7 @@ const Header = (props) => {
         <div className="col-xs-12 col-sm-6">
           <div className="row middle-xs start-xs">
             <MapAutosuggest />
-            <MapSelect
-              mapType={props.mapType}
-              onMapTypeChange={props.onMapTypeChange}
-              currentPath={props.currentPath}
-            />
+
           </div>
         </div>
         <div className="col-xs-12 col-sm-6">

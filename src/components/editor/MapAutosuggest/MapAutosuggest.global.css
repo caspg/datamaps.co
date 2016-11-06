@@ -1,0 +1,52 @@
+@value light-blue, grey-color-100, grey-color-300 from 'styles/colors.css';
+@value input-width: 170px;
+@value container-width: 168px;
+
+.react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input {
+  margin-bottom: 0;
+  width: input-width;
+}
+
+.react-autosuggest__input:focus {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: 280px;
+  overflow: scroll;
+  background: white;
+  width: container-width;
+
+  border: 1px solid grey-color-300;
+  border-radius: 4px;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container:empty {
+  border: none;
+}
+
+.react-autosuggest__suggestions-list {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.react-autosuggest__suggestion {
+  padding: 10px;
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+
+.react-autosuggest__suggestion--focused {
+  background-color: light-blue;
+}

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Autosuggest from 'react-autosuggest'
 
 import mapsConfig from 'config/maps'
+import './MapAutosuggest.global.css'
 
 const mapsOptions = mapsConfig.types.map(item => (
   { code: item.code, label: item.displayName }
@@ -40,7 +41,7 @@ class MapAutosuggest extends Component {
 
     this.state = {
       value: '',
-      suggestions: [],
+      suggestions: mapsOptions,
     }
 
     this.onChange = this.onChange.bind(this)
@@ -62,7 +63,7 @@ class MapAutosuggest extends Component {
 
   onSuggestionsClearRequested() {
     this.setState({
-      suggestions: [],
+      suggestions: mapsOptions,
     })
   }
 
@@ -83,6 +84,8 @@ class MapAutosuggest extends Component {
         getSuggestionValue={MapAutosuggest.getSuggestionValue}
         renderSuggestion={MapAutosuggest.renderSuggestion}
         inputProps={inputProps}
+        focusFirstSuggestion
+        shouldRenderSuggestions={MapAutosuggest.shouldRenderSuggestions}
       />
     )
   }
