@@ -1,7 +1,6 @@
 @value grey-color-100 from 'styles/colors.css';
 
 .container {
-  margin-bottom: 150px;
   padding-top: 100px;
   padding-bottom: 80px;
 

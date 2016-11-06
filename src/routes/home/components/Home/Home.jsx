@@ -9,6 +9,7 @@ import EditorImage from '../EditorImage/EditorImage'
 import EditorAttributes from '../EditorAttributes/EditorAttributes'
 import Footer from 'components/Footer/Footer'
 import BetaListSection from '../BetaListSection'
+import MapsImages from '../MapsImages'
 
 const Home = () => {
   document.title = metaTags.titles.home
@@ -21,6 +22,9 @@ const Home = () => {
 
       <EditorAttributes />
       <BetaListSection />
+      <MapsImages />
+
+
       <About />
       <ActionButton />
       <EditorImage />

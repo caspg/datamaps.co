@@ -29,7 +29,11 @@ const HeaderText = () => (
 
 const HeaderImage = () => (
   <div className={style['image-container']}>
-    <img className={style.image} src="/images/editor-screen.png" alt="datamaps-editor" />
+    <img
+      className={style.image}
+      src="/images/landing-page/editor-screen.png"
+      alt="datamaps-editor"
+    />
   </div>
 )
 
