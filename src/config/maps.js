@@ -16,6 +16,7 @@ module.exports = {
     { code: 'netherlands', displayName: 'Netherlands' },
     { code: 'australia', displayName: 'Australia' },
     { code: 'switzerland', displayName: 'Switzerland' },
+    { code: 'taiwan', displayName: 'Taiwan' },
   ],
   configs: {
     usa: {
@@ -156,6 +157,15 @@ module.exports = {
         },
       },
       csvExample: [['name', 'value'], ['Zürich', 102], ['Fribourg', 99], ['Geneva', 103]],
+    },
+    taiwan: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator().center([121, 24]).scale(width*8)
+            .translate([width / 2, height / 2])
+        },
+      },
+      csvExample: [['code', 'value'], ['IL', 102], ['YL', 101], ['TP', 106], ['KH',55]],
     },
 
   },
