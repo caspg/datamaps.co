@@ -7,14 +7,18 @@ import style from './Navbar.css'
 const Navbar = props => (
   <nav className={`row middle-xs ${style.nav} ${style[props.className]}`}>
     <div className="col-sm-6 col-xs-12">
-      <Link to={routes.root} className={style['link-logo']}>
-        <div className="row middle-xs">
+      <div className="row middle-xs">
+
+        <Link to={routes.root} className={style['link-logo']}>
           <img className={style['logo-image']} src="/images/logo.png" />
+        </Link>
+
+        <Link to={routes.root} className={style['link-logo']}>
           <h4 className={style['logo-text']}>
             Datamaps.co
           </h4>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </div>
 
     <div className="col-sm-6 col-xs-12 end-sm start-xs">
@@ -34,7 +38,7 @@ const Navbar = props => (
 )
 
 Navbar.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
 }
 
 export default Navbar

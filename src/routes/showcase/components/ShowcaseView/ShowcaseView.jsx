@@ -26,7 +26,7 @@ const ShowcaseView = () => {
   return (
     <div>
       <div className={style.header}>
-        <Navbar textColor="white" />
+        <Navbar className="box-shadow" />
       </div>
 
       <div className={style['contact-wrapper']}>
