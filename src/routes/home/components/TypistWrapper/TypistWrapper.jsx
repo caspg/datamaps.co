@@ -18,15 +18,31 @@ class TypistWrapper extends Component {
     this.handleTypingDone = this.handleTypingDone.bind(this)
   }
 
-  handleTypingDone() {
-    this.setState({
-      typing: false,
-    }, () => {
-      setTimeout(() => this.setState({
+  componentWillMount() {
+    this.timeouts = []
+  }
+
+  componentWillUnmount() {
+    this.timeouts.forEach(window.clearTimeout)
+  }
+
+  restartTypistTimeout() {
+    return setTimeout(() =>
+      this.setState({
         typing: true,
         currentWord: TypistWrapper.randomWord(this.props.words),
       }), 2500)
-    })
+  }
+
+  handleTypingDone() {
+    const setsStateCallback = () =>
+      this.timeouts.push(
+        this.restartTypistTimeout()
+      )
+
+    this.setState({
+      typing: false,
+    }, setsStateCallback)
   }
 
   renderTypist() {
