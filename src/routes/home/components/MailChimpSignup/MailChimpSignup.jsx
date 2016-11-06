@@ -4,9 +4,12 @@ import React, { Component } from 'react'
 import './MailChimpSignup.global.css'
 import style from './MailChimpSignup.css'
 
+const MAILCHIMP_FORM_ID = 'MAILCHIMP_FORM'
+
 class MailChimpSignup extends Component {
   static createScript(src, callback) {
     const script = document.createElement('script')
+    script.id = MAILCHIMP_FORM_ID
     script.type = 'text/javascript';
     script.src = src
     script.onload = callback
@@ -88,26 +91,16 @@ class MailChimpSignup extends Component {
     )
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      componentDidMount: false,
-    }
-  }
-
   componentDidMount() {
-    /* eslint-disable react/no-did-mount-set-state */
-    this.setState({
-      componentDidMount: true,
-    })
+    if (!document.getElementById(MAILCHIMP_FORM_ID)) {
+      MailChimpSignup.loadValidationScripts()
+    }
   }
 
   render() {
     return (
       <div className="MailChimpSignup">
-        {this.state.componentDidMount && MailChimpSignup.renderForm()}
-        {this.state.componentDidMount && MailChimpSignup.loadValidationScripts()}
+        {MailChimpSignup.renderForm()}
       </div>
     )
   }
