@@ -1,13 +1,15 @@
-.container {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: scroll;
-}
-
 .thumbs {
   padding-top: 80px;
   padding-bottom: 120px;
+}
+
+@media only screen and (min-width: 48em) {
+  .container {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+  }
 }

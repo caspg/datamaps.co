@@ -5,6 +5,8 @@ import Navbar from 'components/Navbar/Navbar'
 import SaveButtons from '../SaveButtons/SaveButtons'
 import MapSelect from '../MapSelect/MapSelect'
 
+import MapAutosuggest from '../MapAutosuggest'
+
 import routes from 'config/routes'
 
 const Header = (props) => {
@@ -16,9 +18,10 @@ const Header = (props) => {
         <Navbar />
       </div>
 
-      <div className={'row ' + style.actionbar}>
+      <div className={`row ${style.actionbar}`}>
         <div className="col-xs-12 col-sm-6">
           <div className="row middle-xs start-xs">
+            <MapAutosuggest />
             <MapSelect
               mapType={props.mapType}
               onMapTypeChange={props.onMapTypeChange}
