@@ -3,17 +3,10 @@ import React, { PropTypes } from 'react'
 import style from './Header.css'
 import Navbar from 'components/Navbar/Navbar'
 import SaveButtons from '../SaveButtons/SaveButtons'
-import MapSelect from '../MapSelect/MapSelect'
 
 import MapAutosuggest from '../MapAutosuggest'
 
 import routes from 'config/routes'
-
-// <MapSelect
-//   mapType={props.mapType}
-//   onMapTypeChange={props.onMapTypeChange}
-//   currentPath={props.currentPath}
-// />
 
 const Header = (props) => {
   const isEditorPath = props.currentPath === routes.editor
@@ -27,7 +20,11 @@ const Header = (props) => {
       <div className={`row ${style.actionbar}`}>
         <div className="col-xs-12 col-sm-6">
           <div className="row middle-xs start-xs">
-            <MapAutosuggest />
+            <MapAutosuggest
+              mapType={props.mapType}
+              onMapTypeChange={props.onMapTypeChange}
+              currentPath={props.currentPath}
+            />
 
           </div>
         </div>
