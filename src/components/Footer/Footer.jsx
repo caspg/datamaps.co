@@ -45,7 +45,7 @@ const Footer = (props) =>
   </footer>
 
 Footer.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 }
 
 export default Footer

@@ -7,6 +7,14 @@ import style from './MailChimpSignup.css'
 const MAILCHIMP_FORM_ID = 'MAILCHIMP_FORM'
 
 class MailChimpSignup extends Component {
+  static removeScript() {
+    const script = document.getElementById(MAILCHIMP_FORM_ID)
+
+    if (!!script) {
+      script.parentNode.removeChild(script)
+    }
+  }
+
   static createScript(src, callback) {
     const script = document.createElement('script')
     script.id = MAILCHIMP_FORM_ID
@@ -17,27 +25,29 @@ class MailChimpSignup extends Component {
     document.body.appendChild(script)
   }
 
+  static mailchimpMagic() {
+    /* eslint-disable no-unused-vars */
+    (($) => {
+      window.fnames = []
+      window.ftypes = []
+      window.fnames[0] = 'EMAIL'
+      window.ftypes[0] = 'email'
+      window.fnames[1] = 'FNAME'
+      window.ftypes[1] = 'text'
+    })(window.jQuery)
+
+    window.$mcj = window.jQuery.noConflict(true)
+  }
+
   static loadValidationScripts() {
     /* eslint-disable no-unused-vars */
-    const loadScripts = () => {
-      const someMailchimpMagic = ($) => {
-        window.fnames = []
-        window.ftypes = []
-        window.fnames[0] = 'EMAIL'
-        window.ftypes[0] = 'email'
-        window.fnames[1] = 'FNAME'
-        window.ftypes[1] = 'text'
-      }
+    const scriptsSrc = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'
 
-      const scriptsSrc = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'
+    MailChimpSignup.removeScript()
 
-      MailChimpSignup.createScript(scriptsSrc, () => {
-        someMailchimpMagic(window.jQuery)
-        window.$mcj = window.jQuery.noConflict(true)
-      })
-    }
-
-    setTimeout(loadScripts, 500)
+    MailChimpSignup.createScript(scriptsSrc, () => {
+      MailChimpSignup.mailchimpMagic()
+    })
     /* eslint-enable */
   }
 
@@ -92,9 +102,7 @@ class MailChimpSignup extends Component {
   }
 
   componentDidMount() {
-    if (!document.getElementById(MAILCHIMP_FORM_ID)) {
-      MailChimpSignup.loadValidationScripts()
-    }
+    setTimeout(MailChimpSignup.loadValidationScripts, 500)
   }
 
   render() {
