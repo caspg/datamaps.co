@@ -1,4 +1,4 @@
-@value grey-color-600 from 'styles/colors.css';
+@value grey-color-600, grey-color-dark from 'styles/colors.css';
 
 .footer {
   margin-top: 50px;
@@ -24,4 +24,8 @@
   composes: text;
   margin: 0 10px;
   margin-bottom: 10px;
+}
+
+.textlink:hover {
+  color: grey-color-dark;
 }
