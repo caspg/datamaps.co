@@ -5,7 +5,7 @@ import style from './ContactInfo.css'
 const ContactInfo = () =>
   <div className={style.container}>
     <p>
-      Send me a message if you have any problems, find a bug or have a feature suggestion.
+      Send me a message if you have any problems, found a bug or have a feature suggestion.
     </p>
 
     <br />

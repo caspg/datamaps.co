@@ -5,7 +5,6 @@ import Header from '../Header/Header'
 import Navbar from 'components/Navbar/Navbar'
 import About from '../About/About'
 import ActionButton from '../ActionButton/ActionButton'
-import EditorImage from '../EditorImage/EditorImage'
 import EditorAttributes from '../EditorAttributes/EditorAttributes'
 import Footer from 'components/Footer/Footer'
 import BetaListSection from '../BetaListSection'
@@ -27,7 +26,6 @@ const Home = () => {
 
       <About />
       <ActionButton />
-      <EditorImage />
 
       <Footer>
         <i>
