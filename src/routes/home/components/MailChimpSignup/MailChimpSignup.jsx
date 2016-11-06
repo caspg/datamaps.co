@@ -102,7 +102,7 @@ class MailChimpSignup extends Component {
   }
 
   componentDidMount() {
-    setTimeout(MailChimpSignup.loadValidationScripts, 500)
+    setTimeout(MailChimpSignup.loadValidationScripts, 800)
   }
 
   render() {
