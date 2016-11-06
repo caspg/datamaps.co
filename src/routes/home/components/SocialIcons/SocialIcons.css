@@ -1,0 +1,18 @@
+.container {
+  padding-top: 40px;
+}
+
+.icon {
+  margin-left: 15px;
+  opacity: 0.3;
+  height: 50px;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.6;
+}
+
+.twittericon {
+  composes: icon;
+}

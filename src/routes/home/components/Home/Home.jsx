@@ -1,6 +1,7 @@
 import React from 'react'
 
 import metaTags from 'config/meta'
+
 import Header from '../Header/Header'
 import Navbar from 'components/Navbar/Navbar'
 import About from '../About/About'
@@ -9,6 +10,7 @@ import EditorAttributes from '../EditorAttributes/EditorAttributes'
 import Footer from 'components/Footer/Footer'
 import BetaListSection from '../BetaListSection'
 import MapsImages from '../MapsImages'
+import SocialIcons from '../SocialIcons'
 
 const Home = () => {
   document.title = metaTags.titles.home
@@ -26,6 +28,8 @@ const Home = () => {
 
       <About />
       <ActionButton />
+
+      <SocialIcons />
 
       <Footer>
         <i>
