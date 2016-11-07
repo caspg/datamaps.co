@@ -3,8 +3,8 @@ import React, { PropTypes } from 'react'
 import style from './EditorHeader.css'
 import Navbar from 'components/Navbar/Navbar'
 import SaveButtons from '../SaveButtons/SaveButtons'
-
 import MapAutosuggest from '../MapAutosuggest'
+import HamburgerMenu from '../../HamburgerMenu'
 
 import routes from 'config/routes'
 
@@ -14,7 +14,9 @@ const EditorHeader = (props) => {
   return (
     <div className={style.container}>
       <div className={style['navbar-wrapper']}>
-        <Navbar />
+        <Navbar>
+          <HamburgerMenu />
+        </Navbar>
       </div>
 
       <div className={`row ${style.actionbar}`}>

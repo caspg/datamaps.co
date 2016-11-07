@@ -1,0 +1,29 @@
+@value grey-color-dark, grey-color-600 from 'styles/colors.css';
+
+.hamburger-menu {
+  display: inline-block;
+  padding: 0 10px;
+  margin: 0;
+  border-color: grey-color-600;
+}
+
+.hamburger-menu:hover {
+  border-color: grey-color-dark;
+}
+
+.hamburger-menu:hover .hamburger-slice {
+  background-color: grey-color-dark;
+}
+
+.hamburger-slice {
+  margin-bottom: 6px;
+  width: 24px;
+  height: 2px;
+  background-color: grey-color-600;
+  border-radius: 5px;
+  position: relative;
+}
+
+.hamburger-slice:last-of-type {
+  margin-bottom: 0;
+}
