@@ -10,7 +10,7 @@ const EditorAttributes = () =>
         <div className="row around-xs">
           <AttributeItem
             iconName="sheet.svg"
-            text="upload csv data"
+            text="upload data"
           />
           <AttributeItem
             iconName="mixer.svg"
@@ -18,7 +18,7 @@ const EditorAttributes = () =>
           />
           <AttributeItem
             iconName="arrows.svg"
-            text="save png"
+            text="save png/svg"
           />
         </div>
       </div>

@@ -21,7 +21,7 @@ const Navbar = props => (
       </div>
     </div>
 
-    <div className="col-xs-6">
+    <div className="col-xs-6 show-xs">
       <div className="row middle-xs end-xs">
         {props.children}
       </div>
