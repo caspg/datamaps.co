@@ -23,3 +23,9 @@
 :global(.data-classification .Select-control) {
   border-color: purple-600;
 }
+
+@media only screen and (max-width: 48em) {
+  :global(.hide-xs) {
+    display: none;
+  }
+}

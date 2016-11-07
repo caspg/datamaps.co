@@ -21,7 +21,7 @@ const Navbar = props => (
       </div>
     </div>
 
-    <div className="col-sm-6 col-xs-12 end-sm start-xs">
+    <div className="col-sm-6 col-xs-12 end-sm start-xs hide-xs">
       <ul className={style['unordered-list']}>
         <li className={style['list-item']}>
           <Link to={routes.editor} className={style.link}>Editor</Link>

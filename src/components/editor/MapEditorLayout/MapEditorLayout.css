@@ -1,6 +1,10 @@
 @value grey-color-300 from 'styles/colors.css';
 @value editor-body-width: 400px;
 
+.container {
+  margin-top: 60px;
+}
+
 .map-column {
   height: 600px;
   padding-bottom: 20px;

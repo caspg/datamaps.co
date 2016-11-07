@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import style from './Header.css'
+import style from './EditorHeader.css'
 import Navbar from 'components/Navbar/Navbar'
 import SaveButtons from '../SaveButtons/SaveButtons'
 
@@ -8,7 +8,7 @@ import MapAutosuggest from '../MapAutosuggest'
 
 import routes from 'config/routes'
 
-const Header = (props) => {
+const EditorHeader = (props) => {
   const isEditorPath = props.currentPath === routes.editor
 
   return (
@@ -18,7 +18,7 @@ const Header = (props) => {
       </div>
 
       <div className={`row ${style.actionbar}`}>
-        <div className="col-xs-12 col-sm-6">
+        <div className="col-xs-6">
           <div className="row middle-xs start-xs">
             <MapAutosuggest
               mapType={props.mapType}
@@ -28,8 +28,8 @@ const Header = (props) => {
 
           </div>
         </div>
-        <div className="col-xs-12 col-sm-6">
-          <div className="row middle-xs start-xs end-sm">
+        <div className="col-xs-6 hide-xs">
+          <div className="row middle-xs end-xs">
             {!isEditorPath && <SaveButtons mapType={props.mapType} />}
           </div>
         </div>
@@ -39,10 +39,10 @@ const Header = (props) => {
   )
 }
 
-Header.propTypes = {
+EditorHeader.propTypes = {
   mapType: PropTypes.string.isRequired,
   onMapTypeChange: PropTypes.func.isRequired,
   currentPath: PropTypes.string.isRequired,
 }
 
-export default Header
+export default EditorHeader

@@ -27,7 +27,7 @@ class MapAutosuggest extends Component {
   }
 
   static getSuggestionValue(suggestion) {
-    return suggestion.code
+    return suggestion.label
   }
 
   static renderSuggestion(suggestion) {
@@ -58,8 +58,16 @@ class MapAutosuggest extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    const displayName = (mapType) =>
+      mapsConfig.types.filter(i => i.code === mapType)[0].displayName
+
+    const value = (nextProps.currentPath === routes.editor) ?
+      '' :
+      displayName(nextProps.mapType)
+
+
     this.setState({
-      value: (nextProps.currentPath === routes.editor) ? '' : nextProps.mapType,
+      value,
     })
   }
 
