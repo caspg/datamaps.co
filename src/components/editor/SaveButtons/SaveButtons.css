@@ -12,3 +12,12 @@
     margin-left: 15px;
   }
 }
+
+.hamburger-btn {
+  margin: 10px;
+  background-color: white;
+}
+
+.hamburger-btn:first-of-type {
+  margin-right: 0;
+}

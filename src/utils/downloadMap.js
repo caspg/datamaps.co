@@ -30,5 +30,5 @@ export const downloadSvg = (mapType) => {
   document.body.appendChild(a)
   a.addEventListener('click', () => a.parentNode.removeChild(a))
   a.click()
-  this.trackEvent('SVG', mapType)
+  trackEvent('SVG', mapType)
 }
