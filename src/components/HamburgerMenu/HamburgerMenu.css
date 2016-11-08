@@ -39,8 +39,17 @@
   min-width: 250px;
   background-color: grey-color-100;
   z-index: 10;
-  box-shadow: -5px 5px 10px grey-color-300;
   border-top: 1px solid grey-color-300;
+}
+
+.links-container-dark {
+  composes: links-container;
+  box-shadow: -5px 5px 10px grey-color-dark;
+}
+
+.links-container-grey {
+  composes: links-container;
+  box-shadow: -5px 5px 10px grey-color-300;
 }
 
 .unordered-list {

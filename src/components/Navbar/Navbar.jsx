@@ -30,6 +30,9 @@ const Navbar = props => (
     <div className="col-sm-6 end-sm start-xs hide-xs">
       <ul className={style['unordered-list']}>
         <li className={style['list-item']}>
+          <Link to={routes.root} className={style.link}>Home</Link>
+        </li>
+        <li className={style['list-item']}>
           <Link to={routes.editor} className={style.link}>Editor</Link>
         </li>
         <li className={style['list-item']}>
@@ -45,6 +48,7 @@ const Navbar = props => (
 
 Navbar.propTypes = {
   className: PropTypes.string,
+  children: PropTypes.element,
 }
 
 export default Navbar

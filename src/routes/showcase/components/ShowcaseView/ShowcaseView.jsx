@@ -2,13 +2,15 @@ import React from 'react'
 import { Link } from 'react-router'
 
 import metaTags from 'config/meta'
+import rotues from 'config/routes'
+import showcase from 'config/showcase'
+
 import Navbar from 'components/Navbar/Navbar'
 import Footer from 'components/Footer/Footer'
-import ShowcaseItem from '../ShowcaseItem/ShowcaseItem'
+import HamburgerMenu from 'components/HamburgerMenu'
 
-import rotues from 'config/routes'
+import ShowcaseItem from '../ShowcaseItem/ShowcaseItem'
 import style from './ShowcaseView.css'
-import showcase from 'config/showcase'
 
 const ShowcaseView = () => {
   document.title = metaTags.titles.showcase
@@ -26,7 +28,9 @@ const ShowcaseView = () => {
   return (
     <div>
       <div className={style.header}>
-        <Navbar className="box-shadow" />
+        <Navbar className="box-shadow">
+          <HamburgerMenu />
+        </Navbar>
       </div>
 
       <div className={style['contact-wrapper']}>

@@ -2,6 +2,8 @@ import React from 'react'
 
 import metaTags from 'config/meta'
 import Navbar from 'components/Navbar/Navbar'
+import HamburgerMenu from 'components/HamburgerMenu'
+
 import ContactForm from '../ContactForm/ContactForm'
 import ContactInfo from '../ContactInfo/ContactInfo'
 import Footer from 'components/Footer/Footer'
@@ -14,7 +16,9 @@ const ContactView = () => {
   return (
     <div>
       <div className={style.header}>
-        <Navbar className="box-shadow" />
+        <Navbar className="box-shadow">
+          <HamburgerMenu />
+        </Navbar>
       </div>
 
       <div className={style['contact-wrapper']}>

@@ -2,6 +2,7 @@ import React from 'react'
 
 import metaTags from 'config/meta'
 
+import HamburgerMenu from 'components/HamburgerMenu'
 import Header from '../Header/Header'
 import Navbar from 'components/Navbar/Navbar'
 import About from '../About/About'
@@ -18,7 +19,9 @@ const Home = () => {
   return (
     <div>
       <Header>
-        <Navbar className="box-shadow" />
+        <Navbar className="box-shadow">
+          <HamburgerMenu shadowColor="dark" />
+        </Navbar>
       </Header>
 
       <EditorAttributes />

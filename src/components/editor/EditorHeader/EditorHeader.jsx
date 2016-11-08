@@ -17,7 +17,7 @@ const EditorHeader = (props) => {
         <Navbar>
           <HamburgerMenu>
             {
-              !isEditorPath &&
+              isEditorPath ? null :
                 <SaveButtons
                   mapType={props.mapType}
                   className="hamburger-btn"

@@ -47,9 +47,12 @@ class HamburgerMenu extends Component {
     return (
       <div
         ref={(e) => { this.linksContainer = e }}
-        className={style['links-container']}
+        className={style[`links-container-${this.props.shadowColor}`]}
       >
         <ul className={style['unordered-list']}>
+          <li className={style['list-item']}>
+            <Link to={routes.root} className={style.link}>Home</Link>
+          </li>
           <li className={style['list-item']}>
             <Link to={routes.editor} className={style.link}>Editor</Link>
           </li>
@@ -85,8 +88,13 @@ class HamburgerMenu extends Component {
   }
 }
 
+HamburgerMenu.defaultProps = {
+  shadowColor: 'grey',
+}
+
 HamburgerMenu.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
+  shadowColor: PropTypes.string.isRequired,
 }
 
 export default HamburgerMenu
