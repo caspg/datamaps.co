@@ -5,6 +5,7 @@ import Navbar from 'components/Navbar/Navbar'
 import SaveButtons from '../SaveButtons/SaveButtons'
 import MapAutosuggest from '../MapAutosuggest'
 import HamburgerMenu from '../../HamburgerMenu'
+import HamburgerSaveButtons from '../../HamburgerSaveButtons'
 
 import routes from 'config/routes'
 
@@ -15,7 +16,9 @@ const EditorHeader = (props) => {
     <div className={style.container}>
       <div className={style['navbar-wrapper']}>
         <Navbar>
-          <HamburgerMenu />
+          <HamburgerMenu>
+            {!isEditorPath && <HamburgerSaveButtons />}
+          </HamburgerMenu>
         </Navbar>
       </div>
 

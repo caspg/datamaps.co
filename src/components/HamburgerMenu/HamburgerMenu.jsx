@@ -35,6 +35,8 @@ class HamburgerMenu extends Component {
             <Link to={routes.showcase} className={style.link}>Showcase</Link>
           </li>
         </ul>
+
+        {this.props.children}
       </div>
     )
   }

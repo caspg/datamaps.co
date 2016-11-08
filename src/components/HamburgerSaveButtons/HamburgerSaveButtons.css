@@ -1,0 +1,12 @@
+.container {
+  padding: 10px;
+}
+
+.save-btn {
+  background-color: white;
+  margin-bottom: 0;
+}
+
+.save-btn:first-of-type {
+  margin-right: 10px;
+}
