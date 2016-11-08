@@ -44,24 +44,27 @@ class HamburgerMenu extends Component {
   }
 
   renderMenuLinks() {
+    const links = [
+      { to: routes.root, text: 'Home' },
+      { to: routes.editor, text: 'Editor' },
+      { to: routes.contact, text: 'Contact' },
+      { to: routes.shwocase, text: 'Showcase' },
+    ]
+
+    const renderLinks = () => links.map((link, i) =>
+      <li key={i} className={style['list-item']}>
+        <Link to={link.to} className={style.link}>{link.text}</Link>
+      </li>
+    )
+
+
     return (
       <div
         ref={(e) => { this.linksContainer = e }}
         className={style[`links-container-${this.props.shadowColor}`]}
       >
         <ul className={style['unordered-list']}>
-          <li className={style['list-item']}>
-            <Link to={routes.root} className={style.link}>Home</Link>
-          </li>
-          <li className={style['list-item']}>
-            <Link to={routes.editor} className={style.link}>Editor</Link>
-          </li>
-          <li className={style['list-item']}>
-            <Link to={routes.contact} className={style.link}>Contact</Link>
-          </li>
-          <li className={style['list-item']}>
-            <Link to={routes.showcase} className={style.link}>Showcase</Link>
-          </li>
+          {renderLinks()}
         </ul>
 
         {this.props.children}

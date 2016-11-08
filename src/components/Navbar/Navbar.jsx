@@ -4,6 +4,21 @@ import { Link } from 'react-router'
 import routes from 'config/routes'
 import style from './Navbar.css'
 
+const renderLinnks = () => {
+  const links = [
+    { to: routes.root, text: 'Home' },
+    { to: routes.editor, text: 'Editor' },
+    { to: routes.contact, text: 'Contact' },
+    { to: routes.shwocase, text: 'Showcase' },
+  ]
+
+  return links.map((link, i) =>
+    <li key={i} className={style['list-item']}>
+      <Link to={link.to} className={style.link}>{link.text}</Link>
+    </li>
+  )
+}
+
 const Navbar = props => (
   <nav className={`row middle-xs ${style.nav} ${style[props.className]}`}>
     <div className="col-xs-6">
@@ -29,18 +44,7 @@ const Navbar = props => (
 
     <div className="col-sm-6 end-sm start-xs hide-xs">
       <ul className={style['unordered-list']}>
-        <li className={style['list-item']}>
-          <Link to={routes.root} className={style.link}>Home</Link>
-        </li>
-        <li className={style['list-item']}>
-          <Link to={routes.editor} className={style.link}>Editor</Link>
-        </li>
-        <li className={style['list-item']}>
-          <Link to={routes.contact} className={style.link}>Contact</Link>
-        </li>
-        <li className={style['list-item']}>
-          <Link to={routes.showcase} className={style.link}>Showcase</Link>
-        </li>
+        {renderLinnks()}
       </ul>
     </div>
   </nav>
