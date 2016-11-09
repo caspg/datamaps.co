@@ -5,6 +5,7 @@ import Navbar from 'components/Navbar/Navbar'
 import SaveButtons from '../SaveButtons/SaveButtons'
 import MapAutosuggest from '../MapAutosuggest'
 import HamburgerMenu from '../../HamburgerMenu'
+import MailChimpPopup from '../../MailChimpPopup'
 
 import routes from 'config/routes'
 
@@ -38,9 +39,14 @@ const EditorHeader = (props) => {
 
           </div>
         </div>
-        <div className="col-xs-6 hide-xs">
+        <div className="col-xs-6">
           <div className="row middle-xs end-xs">
-            {!isEditorPath && <SaveButtons mapType={props.mapType} />}
+
+            <MailChimpPopup />
+
+            <div className="hide-xs">
+              {!isEditorPath && <SaveButtons mapType={props.mapType} />}
+            </div>
           </div>
         </div>
       </div>
