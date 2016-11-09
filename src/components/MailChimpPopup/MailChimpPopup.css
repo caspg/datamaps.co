@@ -7,3 +7,23 @@
   color: white;
   border: none;
 }
+
+.button:hover {
+  color: white;
+  box-shadow: 1px 1px 2px 1px rgba(39, 39, 39, 0.4);
+}
+
+.button:focus {
+  color: white;
+}
+
+.modal-container {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: red;
+}

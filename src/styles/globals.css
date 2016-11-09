@@ -24,6 +24,10 @@
   border-color: purple-600;
 }
 
+:global(.ReactModal__Body--open) {
+    overflow: hidden;
+}
+
 @media only screen and (max-width: 48em) {
   :global(.hide-xs) {
     display: none;

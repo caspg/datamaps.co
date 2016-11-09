@@ -45,7 +45,6 @@ class HamburgerMenu extends Component {
 
   renderMenuLinks() {
     const links = [
-      { to: routes.root, text: 'Home' },
       { to: routes.editor, text: 'Editor' },
       { to: routes.contact, text: 'Contact' },
       { to: routes.showcase, text: 'Showcase' },
