@@ -1,7 +1,7 @@
 import React from 'react'
 
 import style from './BetaListSection.css'
-import MailChimpSignup from '../MailChimpSignup'
+import MailChimpSignup from 'components/MailChimpSignup'
 
 const BetaListSection = () => (
   <div className={style.container}>
