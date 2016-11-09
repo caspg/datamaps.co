@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Modal from 'react-modal'
 
 import style from './MailChimpPopup.css'
+import MailChimpSignup from 'components/MailChimpSignup'
 
 class MailChimpPopup extends Component {
   constructor(props) {
@@ -39,7 +40,20 @@ class MailChimpPopup extends Component {
           className={style['modal-container']}
           overlayClassName={style.overlay}
         >
-          <h1>ELo</h1>
+          <div>
+            <div className="row end-xs">
+              <button
+                className={style.closebutton}
+                onClick={this.closeModal}
+              >
+                X
+              </button>
+            </div>
+            <h4 className={style['modal-header']}>
+              Subscribe to receive early access invite to the new platform
+            </h4>
+            <MailChimpSignup />
+          </div>
         </Modal>
       </div>
     )

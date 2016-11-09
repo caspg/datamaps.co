@@ -1,3 +1,5 @@
+@value grey-color-100, grey-color-500 from 'styles/colors.css';
+
 .button {
   margin-top: 5px;
   margin-bottom: 0;
@@ -17,13 +19,36 @@
   color: white;
 }
 
+.closebutton {
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
 .modal-container {
-  width: 200px;
-  height: 200px;
+  padding: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: grey-color-100;
+  border: 1px solid grey-color-500;
+  width: 80%;
+  text-align: center;
+}
 
-  background-color: red;
+.modal-container:focus {
+  outline: none;
+}
+
+.modal-header {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 48em) {
+  .modal-container {
+    width: 50%;
+    max-width: 750px;
+  }
 }
