@@ -14,7 +14,13 @@
 
 .actionbar {
   height: 40px;
-  padding: 0 40px;
+  padding: 0 20px;
   border: 1px solid grey-color-300;
   background-color: white;
+}
+
+@media only screen and (min-width: 48em) {
+  .actionbar {
+    padding: 0 40px;
+  }
 }

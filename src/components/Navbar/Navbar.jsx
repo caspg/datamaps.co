@@ -9,7 +9,7 @@ const renderLinnks = () => {
     { to: routes.root, text: 'Home' },
     { to: routes.editor, text: 'Editor' },
     { to: routes.contact, text: 'Contact' },
-    { to: routes.shwocase, text: 'Showcase' },
+    { to: routes.showcase, text: 'Showcase' },
   ]
 
   return links.map((link, i) =>
