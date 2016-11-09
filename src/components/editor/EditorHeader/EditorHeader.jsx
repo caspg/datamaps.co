@@ -29,7 +29,7 @@ const EditorHeader = (props) => {
       </div>
 
       <div className={`row ${style.actionbar}`}>
-        <div className="col-xs-6">
+        <div className="col-xs-3">
           <div className="row middle-xs start-xs">
             <MapAutosuggest
               mapType={props.mapType}
@@ -39,7 +39,7 @@ const EditorHeader = (props) => {
 
           </div>
         </div>
-        <div className="col-xs-6">
+        <div className="col-xs-9">
           <div className="row middle-xs end-xs">
 
             <MailChimpPopup />

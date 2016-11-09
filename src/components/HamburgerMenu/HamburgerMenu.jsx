@@ -20,6 +20,10 @@ class HamburgerMenu extends Component {
     window.addEventListener('click', this.handleClickOutside)
   }
 
+  componentWillReceiveProps() {
+    this.setState({ shouldRenderLinks: false })
+  }
+
   componentWillUnmount() {
     window.removeEventListener('click', this.handleClickOutside)
   }

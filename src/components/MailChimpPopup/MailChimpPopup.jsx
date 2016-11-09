@@ -39,6 +39,7 @@ class MailChimpPopup extends Component {
           onRequestClose={this.closeModal}
           className={style['modal-container']}
           overlayClassName={style.overlay}
+          portalClassName={style.portal}
         >
           <div>
             <div className="row end-xs">

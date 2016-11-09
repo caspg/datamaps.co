@@ -27,6 +27,11 @@
   border-color: grey-color-500;
 }
 
+.portal {
+  position: relative;
+  z-index: 3;
+}
+
 .modal-container {
   padding: 20px;
   position: absolute;
@@ -37,6 +42,7 @@
   border: 1px solid grey-color-500;
   width: 80%;
   text-align: center;
+  z-index: 3;
 }
 
 .modal-container:focus {
