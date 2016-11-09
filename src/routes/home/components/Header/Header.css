@@ -16,8 +16,10 @@
 .title {
   padding: 15px;
   color: white;
-  line-height: 1.6;
+  line-height: 1.2em;
+  height: 3.6em;
   text-align: left;
+  margin-bottom: 10px;
 }
 
 .typist {
@@ -26,6 +28,7 @@
 
 .button {
   margin: 20px 0;
+  margin-top: 10px;
   background: orange-color-300;
   color: dark-color;
   border-radius: 4px;
