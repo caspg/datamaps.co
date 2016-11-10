@@ -5,13 +5,12 @@
   padding: 20px;
 }
 
-.image {
-  margin: 20px;
+.imagewrapper {
+  padding: 2px;
+  width: 250px;
+  height: 180px;
   border: 1px solid grey-color-300;
   border-radius: 8px;
-  max-width: 250px;
-  width: 100%;
-  height: auto;
   cursor: pointer;
 
   -webkit-transition: box-shadow 0.1s ease-in-out;
@@ -20,8 +19,17 @@
   transition: box-shadow 0.1s ease-in-out;
 }
 
-.image:hover {
+.imagewrapper:hover {
   -webkit-box-shadow: 3px 3px 8px 0px grey-color-300;
   -moz-box-shadow: 3px 3px 8px 0px grey-color-300;
   box-shadow: 3px 3px 8px 0px grey-color-300;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  margin-top: 15px;
 }

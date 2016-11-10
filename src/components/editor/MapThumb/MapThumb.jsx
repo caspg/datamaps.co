@@ -18,16 +18,18 @@ class MapThumb extends Component {
 
     return (
       <div className={style.container}>
-        <div>
+        <div
+          className={style.imagewrapper}
+          onClick={this.handleClick}
+        >
           <img
             className={style.image}
             src={`/images/maps/${code}.jpg`}
             alt={displayName}
-            onClick={this.handleClick}
           />
         </div>
 
-        <h4>
+        <h4 className={style.title}>
           {displayName}
         </h4>
       </div>
