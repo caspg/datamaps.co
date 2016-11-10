@@ -1,14 +1,28 @@
-@value grey-color-dark from "styles/colors.css";
+@value grey-color-dark, grey-color-100 from "styles/colors.css";
 
 .nav {
-  height: 50px;
-  padding: 0 20px 0 20px;
+  min-height: 60px;
+  padding: 0 40px 0 40px;
+  background-color: grey-color-100;
+  position: relative;
+}
+
+.box-shadow {
+  box-shadow: 0px 2px 4px 0px grey-color-dark;
 }
 
 .unordered-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  padding-bottom: 15px;
+  margin-left: 20px;
+}
+
+@media only screen and (min-width: 48em) {
+  .unordered-list {
+    padding-bottom: 0;
+  }
 }
 
 .list-item {
@@ -20,23 +34,24 @@
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
-}
-
-.grey-link {
-  composes: link;
   color: grey-color-dark;
 }
 
-.grey-link:hover {
+.link:hover {
   color: grey-color-dark;
-  background-color:
 }
 
-.white-link {
+.link-logo {
   composes: link;
-  color: white;
+  padding: 0;
 }
 
-.white-link:hover {
-  color: white;
+.logo-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.logo-text {
+  padding: 10px 0;
 }

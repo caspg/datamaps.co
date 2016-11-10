@@ -1,0 +1,20 @@
+@value red-900, light-green-50, light-green-400, light-green-900 from 'styles/colors.css';
+
+.MailChimpSignup #mc_embed_signup .mce_inline_error {
+  color: red-900;
+  background-color: transparent;
+}
+
+.MailChimpSignup #mc_embed_signup input.mce_inline_error {
+  border-color: red-900;
+  background-color: white;
+}
+
+.MailChimpSignup #mce-success-response {
+  display: inline-block;
+  color: light-green-900;
+  max-width: 350px;
+  text-align: justify;
+  background-color: light-green-50;
+  border: 1px solid light-green-400;
+}

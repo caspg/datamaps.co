@@ -2,7 +2,13 @@
 @value grey-color-100: #F5F5F5;
 @value grey-color-200: #EEEEEE;
 @value grey-color-300: #E0E0E0;
+@value grey-color-500: #9E9E9E;
 @value grey-color-600: #757575;
+
+@value dark-color: #1D1D1D;
+
+@value orange-color-300: #FFB74D;
+@value orange-color-400: #FFA726;
 
 @value purple-600: #5E35B1;
 @value purple-400: #7E57C2;
@@ -12,6 +18,13 @@
 @value light-green-900: #33691E;
 
 @value dark: #222;
+
+@value red-900: #B71C1C;
+@value red-300: #E57373;
+@value red-50: #FFEBEE;
+
+@value sea-blue: #03A9F4;
+@value light-blue: #f2f9fc;
 
 .purple-gradient {
   background-color: $purple-color-500;

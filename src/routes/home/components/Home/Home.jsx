@@ -1,13 +1,17 @@
 import React from 'react'
 
 import metaTags from 'config/meta'
+
+import HamburgerMenu from 'components/HamburgerMenu'
 import Header from '../Header/Header'
 import Navbar from 'components/Navbar/Navbar'
 import About from '../About/About'
 import ActionButton from '../ActionButton/ActionButton'
-import EditorImage from '../EditorImage/EditorImage'
 import EditorAttributes from '../EditorAttributes/EditorAttributes'
 import Footer from 'components/Footer/Footer'
+import BetaListSection from '../BetaListSection'
+import MapsImages from '../MapsImages'
+import SocialIcons from '../SocialIcons'
 
 const Home = () => {
   document.title = metaTags.titles.home
@@ -15,14 +19,20 @@ const Home = () => {
   return (
     <div>
       <Header>
-        <Navbar textColor="white" />
+        <Navbar className="box-shadow">
+          <HamburgerMenu shadowColor="dark" />
+        </Navbar>
       </Header>
 
-      <About />
-
-      <ActionButton />
-      <EditorImage />
       <EditorAttributes />
+      <BetaListSection />
+      <MapsImages />
+
+
+      <About />
+      <ActionButton />
+
+      <SocialIcons />
 
       <Footer>
         <i>

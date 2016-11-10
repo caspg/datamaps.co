@@ -1,0 +1,78 @@
+@value grey-color-dark, grey-color-600, grey-color-100, grey-color-300 from 'styles/colors.css';
+
+.container {
+  margin-bottom: -6px;
+}
+
+.hamburger-menu {
+  display: inline-block;
+  padding: 0 10px;
+  margin: 0;
+  border-color: grey-color-600;
+}
+
+.hamburger-menu:hover {
+  border-color: grey-color-dark;
+}
+
+.hamburger-menu:hover .hamburger-slice {
+  background-color: grey-color-dark;
+}
+
+.hamburger-slice {
+  margin-bottom: 6px;
+  width: 24px;
+  height: 2px;
+  background-color: grey-color-600;
+  border-radius: 5px;
+  position: relative;
+}
+
+.hamburger-slice:last-of-type {
+  margin-bottom: 0;
+}
+
+.links-container {
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  min-width: 250px;
+  background-color: grey-color-100;
+  z-index: 10;
+  border-top: 1px solid grey-color-300;
+}
+
+.links-container-dark {
+  composes: links-container;
+  box-shadow: -5px 5px 10px grey-color-dark;
+}
+
+.links-container-grey {
+  composes: links-container;
+  box-shadow: -5px 5px 10px grey-color-300;
+}
+
+.unordered-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  margin: 0;
+  padding-right: 20px;
+  border-bottom: 1px solid grey-color-300;
+}
+
+.list-item a {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 0;
+
+  color: grey-color-600;
+  text-decoration: none;
+}
+
+.list-item a:hover {
+  color: grey-color-dark;
+}

@@ -1,6 +1,12 @@
 @value grey-color-300 from 'styles/colors.css';
 @value editor-body-width: 400px;
 
+.container {
+  margin-top: 100px;
+  position: relative;
+  z-index: 1
+}
+
 .map-column {
   height: 600px;
   padding-bottom: 20px;
@@ -9,7 +15,7 @@
 
 @media(min-width: 950px) {
   .container {
-    margin-top: 92px;
+    margin-top: 102px;
     position: absolute;
     top: 0;
     bottom: 0;

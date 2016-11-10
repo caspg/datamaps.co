@@ -11,9 +11,6 @@ function renderHtml(data) {
 
         <title>${data.title}</title>
         <meta name='description' content='${data.description}'/>
-        <meta property="og:image" content="http://datamaps.co/images/icons/icon-300.png"/>
-        <link rel="image_src" href="http://datamaps.co/images/icons/icon-300.png"/>
-
         <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/bundles/app.bundle.css">
 
