@@ -20,6 +20,7 @@ module.exports = {
     { code: 'europe', displayName: 'Europe' },
     { code: 'uk', displayName: 'United Kingdom' },
     { code: 'ukraine', displayName: 'Ukraine' },
+    { code: 'sweden', displayName: 'Sweden' },
   ],
   configs: {
     usa: {
@@ -204,6 +205,17 @@ module.exports = {
         },
       },
       csvExample: [['code', 'value'], ['KR', 102], ['OD', 99], ['VO', 103]],
+    },
+    sweden: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator()
+            .center([18, 62])
+            .scale(width * 1.2)
+            .translate([width / 1.8, height / 2])
+        },
+      },
+      csvExample: [['code', 'value'], ['BL', 102], ['JA', 99], ['SN', 103]],
     },
   },
 }
