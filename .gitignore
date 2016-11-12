@@ -3,7 +3,7 @@ node_modules/
 public/bundles/*
 !public/bundles/.gitkeep
 
-lib/scripts/outputs
+lib/scripts/outputs/*
 log/*
 
 ngrok

@@ -66,6 +66,7 @@ export default class MapElements extends Component {
       width: svgWidth,
       height: svgHeight,
       fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+      border: '1px dashed #ddd',
     }
 
     const mapLegend = (
@@ -113,7 +114,7 @@ export default class MapElements extends Component {
           <Title
             text="created with datamaps.co ©"
             className="crreated-with"
-            coords={{ x: 30, y: svgHeight - 40}}
+            coords={{ x: 30, y: svgHeight - 40 }}
           />
 
           {isNotExtremeValuesEmpty && mapLegend}
