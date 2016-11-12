@@ -18,6 +18,7 @@ module.exports = {
     { code: 'switzerland', displayName: 'Switzerland' },
     { code: 'taiwan', displayName: 'Taiwan' },
     { code: 'europe', displayName: 'Europe' },
+    { code: 'uk', displayName: 'United Kingdom' },
   ],
   configs: {
     usa: {
@@ -180,6 +181,17 @@ module.exports = {
         },
       },
       csvExample: [['code', 'value'], ['PL', 102], ['GB', 99], ['DE', 103]],
+    },
+    uk: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator()
+            .center([-2, 55])
+            .scale(width * 2)
+            .translate([width / 2, height / 1.9])
+        },
+      },
+      csvExample: [['code', 'value'], ['AS', 102], ['ES', 99], ['LN', 103]],
     },
   },
 }
