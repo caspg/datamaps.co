@@ -55,7 +55,7 @@ export default class MapElements extends Component {
   }
 
   render() {
-    const svgWidth = 850
+    const svgWidth = 800
     const svgHeight = svgWidth * 0.8
     const { mapUi, extremeValues, regionData } = this.props
     const noDataColor = mapUi.get('noDataColor')
