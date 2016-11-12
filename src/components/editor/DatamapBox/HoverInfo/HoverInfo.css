@@ -2,7 +2,7 @@
 
 .hoverinfo {
   position: fixed;
-  width: 100px;
+  min-width: 100px;
   min-height: 50px;
   border: 1px solid grey-color-300;
   background-color: white;
