@@ -19,6 +19,7 @@ module.exports = {
     { code: 'taiwan', displayName: 'Taiwan' },
     { code: 'europe', displayName: 'Europe' },
     { code: 'uk', displayName: 'United Kingdom' },
+    { code: 'ukraine', displayName: 'Ukraine' },
   ],
   configs: {
     usa: {
@@ -192,6 +193,17 @@ module.exports = {
         },
       },
       csvExample: [['code', 'value'], ['AS', 102], ['ES', 99], ['LN', 103]],
+    },
+    ukraine: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator()
+            .center([32, 48])
+            .scale(width * 2.5)
+            .translate([width / 2, height / 1.9])
+        },
+      },
+      csvExample: [['code', 'value'], ['KR', 102], ['OD', 99], ['VO', 103]],
     },
   },
 }
