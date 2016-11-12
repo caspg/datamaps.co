@@ -19,6 +19,7 @@
   * http://www.mapshaper.org/ - Tool for editing and converting Shapefile to topoJSON
 * place topoJSON file in `public/data/topo/MAP_TYPE.json`
 * create example csv and put to `public/data/csv/`
+  * you can run: `node lib/scripts/js_to_csv.js [MAP_TYPE]` (it will load topojson file from previous steps)
 * add map info to `src/config/maps.js`
 * create map image thumb and put to `public/images/maps/` [resolution: 350x250]
 
