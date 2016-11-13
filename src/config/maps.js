@@ -21,6 +21,7 @@ module.exports = {
     { code: 'uk', displayName: 'United Kingdom' },
     { code: 'ukraine', displayName: 'Ukraine' },
     { code: 'sweden', displayName: 'Sweden' },
+    { code: 'norway', displayName: 'Norway' },
   ],
   configs: {
     usa: {
@@ -211,6 +212,17 @@ module.exports = {
         projection: function _projection(width, height) {
           return d3.geo.mercator()
             .center([18, 62])
+            .scale(width * 1.2)
+            .translate([width / 1.8, height / 2])
+        },
+      },
+      csvExample: [['code', 'value'], ['BL', 102], ['JA', 99], ['SN', 103]],
+    },
+    norway: {
+      mapUi: {
+        projection: function _projection(width, height) {
+          return d3.geo.mercator()
+            .center([18, 65])
             .scale(width * 1.2)
             .translate([width / 1.8, height / 2])
         },
