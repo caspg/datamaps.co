@@ -7,7 +7,7 @@ const BetaListSection = () => (
   <div className={style.container}>
     <div className="row center-xs">
       <div className="col-xs-12">
-        <h3>
+        <h3 id="beta-list">
           Subscribe to receive early access invite to the new platform
         </h3>
       </div>
