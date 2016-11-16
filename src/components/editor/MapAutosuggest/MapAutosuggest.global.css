@@ -23,7 +23,7 @@
   top: 100%;
   left: 0;
   max-height: 280px;
-  overflow: scroll;
+  overflow: auto;
   background: white;
   width: container-width;
 
