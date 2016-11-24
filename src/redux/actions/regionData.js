@@ -6,13 +6,13 @@ function editRow(regionCode, value, mapType) {
   return { type: EDIT_ROW, regionCode, value, mapType }
 }
 
-function uploadData(data, mapType) {
-  return { type: UPLOAD_DATA, data, mapType }
+function uploadData(payload, mapType) {
+  return { type: UPLOAD_DATA, payload, mapType }
 }
 
-function uploadDataAndRedirect(data, mapType) {
+function uploadDataAndRedirect(payload, mapType) {
   return dispatch => {
-    dispatch(uploadData(data, mapType))
+    dispatch(uploadData(payload, mapType))
     dispatch(push(`/editor/${mapType}/edit-data`))
   }
 }

@@ -16,6 +16,7 @@ module.exports = {
   module: {
     loaders: [
       {
+        key: 'jsx',
         test: /.jsx?$/,
         loaders: ['babel-loader'],
         exclude: /node_modules/,

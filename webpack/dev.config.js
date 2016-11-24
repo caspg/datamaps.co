@@ -1,5 +1,11 @@
-const config = require('./config');
+const config = require('./config')
 
-config.devtool = 'eval-source-map';
+config.devtool = 'eval-source-map'
 
-module.exports = config;
+const jsxLoader = config.module.loaders.filter(loader =>
+  loader.key === 'jsx'
+)[0]
+
+jsxLoader.loaders.push('eslint-loader')
+
+module.exports = config

@@ -1,29 +1,27 @@
 import { Map, fromJS } from 'immutable'
+import uploadSteps from 'config/constants/upload'
 import { EDIT_ROW, UPLOAD_DATA, LOAD_EMPTY_DATA } from '../constants/ActionTypes'
 
-function codeByName(emptyData, newDatum) {
-  const datum = emptyData.find((item) =>
-    item.get('name') === newDatum.get('name')
-  )
+function updateEmptyData(emptyData, payload) {
+  const { data, idKey, columnIndexes } = payload
 
-  return (!!datum) ? datum.get('code') : ''
-}
+  for (let i = 0; i < data.length; i++) {
+    const idIndex = columnIndexes[idKey]
+    const valueIndex = columnIndexes[uploadSteps.VALUE]
+    const newDatum = data[i]
+    const emptyDatum = emptyData.find(d => d.get(idKey) === newDatum[idIndex])
+    const numericValue = parseFloat(newDatum[valueIndex])
 
-function updateEmptyData(emptyData, data) {
-  for (let i = 0; i < data.size; i++) {
-    const newDatum = data.get(i)
-    const code = newDatum.get('code') || codeByName(emptyData, newDatum)
-    const emptyDatum = emptyData.get(code)
-
-    if (!!emptyDatum) {
-      emptyData.setIn([code, 'value'], newDatum.get('value'))
+    if (emptyDatum && !isNaN(numericValue)) {
+      const code = emptyDatum.get('code')
+      emptyData.setIn([code, 'value'], numericValue)
     }
   }
 }
 
 function reduceTopoData(topoData) {
   const reducedData = topoData.reduce((object, item) => {
-    object[item.id] = {
+    object[item.id] = { // eslint-disable-line no-param-reassign
       name: item.properties.name,
       code: item.id,
       value: '',
@@ -46,9 +44,8 @@ export default function regionData(state = Map(), action) {
 
     case UPLOAD_DATA: {
       const emptyData = state.get(action.mapType).map(datum => datum.set('value', ''))
-
       return state.set(action.mapType, emptyData.withMutations(data =>
-        updateEmptyData(data, action.data))
+        updateEmptyData(data, action.payload))
       )
     }
 

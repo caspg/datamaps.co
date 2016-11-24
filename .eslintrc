@@ -7,6 +7,6 @@
   },
   "rules": {
     "semi": 0,
-    "new-cap": [2, "capIsNewExceptions": ["Map", "List"]]
+    "new-cap": [2, "capIsNewExceptions": ["Map", "List", "Record"]]
   }
 }

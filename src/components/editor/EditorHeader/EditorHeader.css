@@ -1,11 +1,12 @@
 @value grey-color-100, grey-color-300 from 'styles/colors.css';
+@value editor-header-z-index from 'styles/variables.css';
 
 .container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: editor-header-z-index;
 }
 
 .navbar-wrapper {

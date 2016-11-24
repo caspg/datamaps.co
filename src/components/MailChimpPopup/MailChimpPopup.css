@@ -1,4 +1,5 @@
 @value grey-color-100, grey-color-500 from 'styles/colors.css';
+@value mailchimp-popup-z-index from 'styles/variables.css';
 
 .button {
   margin-top: 5px;
@@ -29,7 +30,7 @@
 
 .portal {
   position: relative;
-  z-index: 3;
+  z-index: mailchimp-popup-z-index;
 }
 
 .modal-container {
@@ -42,7 +43,6 @@
   border: 1px solid grey-color-500;
   width: 80%;
   text-align: center;
-  z-index: 3;
 }
 
 .modal-container:focus {

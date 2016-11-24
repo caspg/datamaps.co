@@ -25,9 +25,9 @@
 
 ## Dependencies
 
-* Node v6.6.0
-* npm v3.10.7
-* yarnpkg v0.15.1
+* Node v7.1.0
+* npm v3.10.9
+* yarnpkg v0.16.1
 
 ## Development
 

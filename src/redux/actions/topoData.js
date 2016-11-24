@@ -1,5 +1,5 @@
 import axios from 'axios'
-import * as topojson from 'topojson'
+import * as topojson from 'topojson-client'
 
 import { RECEIVE_TOPO_DATA } from '../constants/ActionTypes'
 

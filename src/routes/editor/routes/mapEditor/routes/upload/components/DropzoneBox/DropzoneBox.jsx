@@ -1,17 +1,20 @@
 import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
-import { fromJS } from 'immutable'
 
 import parseDsv from 'utils/parseDsv'
 import style from './DropzoneBox.css'
+import DataUploadModal from '../DataUploadModal'
 
 export default class DropzoneBox extends Component {
   constructor(props) {
     super(props)
     this.onDrop = this.onDrop.bind(this)
     this.state = {
-      errors: [],
+      modalIsOpen: false,
+      parsedDsv: [],
     }
+
+    this.handleModalClose = this.handleModalClose.bind(this)
   }
 
   onDrop(files) {
@@ -19,55 +22,35 @@ export default class DropzoneBox extends Component {
     const reader = new FileReader()
     reader.onload = (e) => {
       const parsedDsv = parseDsv(e.target.result)
-      const columns = Object.keys(parsedDsv[0])
 
-      if (this.validateColumnNames(columns)) {
-        const list = fromJS(parsedDsv)
-        const filteredList = list.filter((item) => {
-          const value = item.get('value')
-          return !!value && !isNaN(parseFloat(value))
-        })
-        const parsedList = filteredList.map((item) =>
-          item.update((_item) => _item.set('value', parseFloat(_item.get('value'))))
-        )
-
-        this.props.onDataUpload(parsedList)
-      }
+      this.setState({
+        modalIsOpen: true,
+        parsedDsv,
+      })
     }
 
     reader.readAsText(file)
   }
 
-  validateColumnNames(columns) {
-    const errors = []
-
-    if (columns.indexOf('value') === -1) {
-      errors.push('CSV file has to contain "value" column')
-    }
-
-    if (columns.indexOf('code') === -1 && columns.indexOf('name') === -1) {
-      errors.push('CSV file has to contain "code" or "name" column')
-    }
-
-    if (errors.length > 0) {
-      this.setState({ errors })
-      return false
-    }
-
-    return true
-  }
-
-  renderErrors() {
-    const errors = this.state.errors.map((error, index) => <li key={index}>{error}</li>)
-
-    return errors.length > 0 ? (<ul className={style.errors}>{errors}</ul>) : ''
+  handleModalClose() {
+    this.setState({
+      modalIsOpen: false,
+      parsedDsv: [],
+    })
   }
 
   render() {
+    const dataUploadModal = (
+      <DataUploadModal
+        data={this.state.parsedDsv}
+        onClose={this.handleModalClose}
+        modalIsOpen={this.state.modalIsOpen}
+        mapType={this.props.mapType}
+      />
+    )
+
     return (
       <div>
-        {this.renderErrors()}
-
         <Dropzone
           className={style.dropzone}
           activeClassName={style['dropzone-active']}
@@ -77,11 +60,13 @@ export default class DropzoneBox extends Component {
             Try dropping some file here, or click to select files to upload.
           </div>
         </Dropzone>
+
+        {dataUploadModal}
       </div>
     )
   }
 }
 
 DropzoneBox.propTypes = {
-  onDataUpload: PropTypes.func.isRequired,
+  mapType: PropTypes.string.isRequired,
 }

@@ -1,4 +1,4 @@
-import d3 from 'd3'
+import { dsvFormat } from 'd3-dsv'
 import { List } from 'immutable'
 
 function countOccurences(delimiter, string) {
@@ -18,13 +18,5 @@ export default function parseFile(string) {
 
   const delimiter = delimiters[occurrences.sortBy(i => i.count).last().index]
 
-  const accessor = (d) =>
-    Object.keys(d).reduce((object, key) => {
-      /* eslint-disable no-param-reassign */
-      object[key.toLowerCase()] = d[key]
-      /* eslint-enable */
-      return object
-    }, {})
-
-  return d3.dsv(delimiter).parse(string, accessor)
+  return dsvFormat(delimiter).parseRows(string)
 }

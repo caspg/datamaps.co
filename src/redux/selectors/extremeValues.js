@@ -1,7 +1,7 @@
 import { Map, List } from 'immutable'
 import { createSelector } from 'reselect'
 
-const replaceUndefined = (value) =>
+const replaceUndefined = value =>
   (typeof value === 'undefined') ? '' : value
 
 const getMapType = (state) => state.mapType
