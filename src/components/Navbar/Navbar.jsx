@@ -35,13 +35,13 @@ const Navbar = props => (
       </div>
     </div>
 
-    <div className="col-xs-6 show-xs">
+    <div className="col-xs-6 show-sm">
       <div className="row middle-xs end-xs">
         {props.children}
       </div>
     </div>
 
-    <div className="col-sm-6 end-sm start-xs hide-xs">
+    <div className="col-sm-6 end-sm start-xs hide-sm">
       <ul className={style['unordered-list']}>
         {renderLinnks()}
       </ul>

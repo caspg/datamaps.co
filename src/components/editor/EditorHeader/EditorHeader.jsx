@@ -6,6 +6,7 @@ import SaveButtons from '../SaveButtons/SaveButtons'
 import MapAutosuggest from '../MapAutosuggest'
 import HamburgerMenu from '../../HamburgerMenu'
 import MailChimpPopup from '../../MailChimpPopup'
+import PayPalDonateButton from '../../PayPalDonateButton'
 
 import routes from 'config/routes'
 
@@ -44,7 +45,9 @@ const EditorHeader = (props) => {
 
             <MailChimpPopup />
 
-            <div className="hide-xs">
+            <PayPalDonateButton />
+
+            <div className="hide-sm">
               {!isEditorPath && <SaveButtons mapType={props.mapType} />}
             </div>
           </div>

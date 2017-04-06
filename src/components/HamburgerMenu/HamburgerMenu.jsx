@@ -80,7 +80,7 @@ class HamburgerMenu extends Component {
       <div className={style.container}>
         <button
           onClick={this.handleClick}
-          className={`${style['hamburger-menu']} show-xs`}
+          className={`${style['hamburger-menu']} show-sm`}
           ref={(e) => { this.hamburgerButton = e }}
         >
           <div className={style['hamburger-slice']} />
