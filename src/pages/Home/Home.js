@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-Home.propTypes = {
+import AppHead from 'components/AppHead';
 
-};
-
-function Home(props) {
+function Home() {
   return (
     <div>
+      <AppHead />
+
       <h1>Home</h1>
     </div>
   );
