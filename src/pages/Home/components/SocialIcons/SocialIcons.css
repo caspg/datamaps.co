@@ -1,0 +1,16 @@
+.container {
+  padding-top: 40px;
+}
+
+.icon {
+  margin-left: 15px;
+  padding: 0 12px;
+  height: 50px;
+
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.6;
+}
