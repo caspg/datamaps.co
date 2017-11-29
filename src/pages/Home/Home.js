@@ -12,6 +12,7 @@ import EditorAttributes from './components/EditorAttributes';
 import MapsImages from './components/MapsImages';
 import About from './components/About';
 import ActionButton from './components/ActionButton';
+import SocialIcons from './components/SocialIcons';
 
 function Home() {
   return (
@@ -30,7 +31,7 @@ function Home() {
       <About />
       <ActionButton />
 
-      {/* <SocialIcons /> */}
+      <SocialIcons />
 
       {/* <Footer>
         <i>
