@@ -1,10 +1,22 @@
 import React, { Component, PropTypes } from 'react'
 import routes from 'config/routes'
-import { Link } from 'react-router'
+import Link from 'next/link'
 
-import style from './HamburgerMenu.css'
+import { greyDark, grey600, grey300, grey100 } from '@src/styles/colors';
 
 class HamburgerMenu extends Component {
+  static propTypes = {
+    children: PropTypes.element,
+    shadowColor: PropTypes.oneOf([
+      'dark',
+      'grey',
+    ]),
+  }
+
+  static defaultProps = {
+    shadowColor: 'grey',
+  }
+
   constructor(props) {
     super(props)
 
@@ -55,18 +67,25 @@ class HamburgerMenu extends Component {
     ]
 
     const renderLinks = () => links.map((link, i) =>
-      <li key={i} className={style['list-item']}>
-        <Link to={link.to} className={style.link}>{link.text}</Link>
+      <li key={i} className="HamburgerMenu__list-item">
+        <Link href={link.to}>
+          <a>
+            {link.text}
+          </a>
+        </Link>
       </li>
     )
 
+    const className = `
+      HamburgerMenu__links-container HamburgerMenu__links-container-${this.props.shadowColor}
+    `
 
     return (
       <div
         ref={(e) => { this.linksContainer = e }}
-        className={style[`links-container-${this.props.shadowColor}`]}
+        className={className}
       >
-        <ul className={style['unordered-list']}>
+        <ul className="HamburgerMenu__unordered-list">
           {renderLinks()}
         </ul>
 
@@ -77,30 +96,98 @@ class HamburgerMenu extends Component {
 
   render() {
     return (
-      <div className={style.container}>
+      <div className="HamburgerMenu__container">
         <button
           onClick={this.handleClick}
-          className={`${style['hamburger-menu']} show-sm`}
+          className="hamburger-menu show-sm"
           ref={(e) => { this.hamburgerButton = e }}
         >
-          <div className={style['hamburger-slice']} />
-          <div className={style['hamburger-slice']} />
-          <div className={style['hamburger-slice']} />
+          <div className="hamburger-slice" />
+          <div className="hamburger-slice" />
+          <div className="hamburger-slice" />
         </button>
 
         {this.state.shouldRenderLinks && this.renderMenuLinks()}
+
+        <style jsx>{`
+          .HamburgerMenu__container {
+            margin-bottom: -6px;
+          }
+
+          .hamburger-menu {
+            display: inline-block;
+            padding: 0 10px;
+            margin: 0;
+            border-color: ${grey600};
+          }
+
+          .hamburger-menu:hover {
+            border-color: ${greyDark};
+          }
+
+          .hamburger-slice {
+            margin-bottom: 6px;
+            width: 24px;
+            height: 2px;
+            background-color: ${grey600};
+            border-radius: 5px;
+            position: relative;
+          }
+
+          .hamburger-menu:hover .hamburger-slice {
+            background-color: ${greyDark};
+          }
+
+          .hamburger-slice:last-of-type {
+            margin-bottom: 0;
+          }
+
+          :global(.HamburgerMenu__list-item) {
+            margin: 0;
+            padding-right: 20px;
+            border-bottom: 1px solid ${grey300};
+          }
+
+          :global(.HamburgerMenu__list-item a) {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 0;
+
+            color: ${grey600};
+            text-decoration: none;
+          }
+
+          :global(.HamburgerMenu__list-item a:hover) {
+            color: ${greyDark};
+          }
+
+          :global(.HamburgerMenu__unordered-list) {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+          }
+
+          :global(.HamburgerMenu__links-container) {
+            position: absolute;
+            top: 100%;
+            right: 10px;
+            min-width: 250px;
+            background-color: ${grey100};
+            z-index: 10;
+            border-top: 1px solid ${grey300};
+          }
+
+          :global(.HamburgerMenu__links-container-dark) {
+            box-shadow: -5px 5px 10px ${greyDark};
+          }
+
+          :global(.HamburgerMenu__links-container-grey) {
+            box-shadow: -5px 5px 10px ${grey300};
+          }
+        `}</style>
       </div>
     )
   }
-}
-
-HamburgerMenu.defaultProps = {
-  shadowColor: 'grey',
-}
-
-HamburgerMenu.propTypes = {
-  children: PropTypes.element,
-  shadowColor: PropTypes.string.isRequired,
 }
 
 export default HamburgerMenu

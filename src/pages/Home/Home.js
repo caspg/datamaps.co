@@ -4,7 +4,7 @@ import metaTags from '@src/config/meta'
 import AppHead from '@src/components/AppHead';
 import GlobalStyles from '@src/components/GlobalStyles';
 import Navbar from '@src/components/Navbar'
-// import HamburgerMenu from 'components/HamburgerMenu'
+import HamburgerMenu from '@src/components/HamburgerMenu'
 
 import Header from './components/Header';
 
@@ -16,7 +16,7 @@ function Home() {
 
       <Header>
         <Navbar className="box-shadow">
-          {/* <HamburgerMenu shadowColor="dark" /> */}
+        <HamburgerMenu shadowColor="dark" />
         </Navbar>
       </Header>
     </div>

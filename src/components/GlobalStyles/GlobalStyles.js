@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { purple600 } from 'styles/colors';
+import { purple600, greyDark } from 'styles/colors';
 
 function GlobalStyles() {
   return (
@@ -35,7 +35,7 @@ function GlobalStyles() {
         }
 
         .box-shadow {
-          box-shadow: 0px 2px 4px 0px grey-color-dark;
+          box-shadow: 0px 2px 4px 0px ${greyDark};
         }
 
         @media only screen and (max-width: 48em) {

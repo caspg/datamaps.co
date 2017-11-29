@@ -18,9 +18,9 @@ function Navbar(props) {
     ]
 
     return links.map((link, i) =>
-      <li key={i} className="list-item">
+      <li key={i} className="Navbar__list-item">
         <Link href={link.to}>
-          <a className="link">
+          <a className="Navbar__link">
             {link.text}
           </a>
         </Link>
@@ -34,13 +34,13 @@ function Navbar(props) {
         <div className="row middle-xs">
 
           <Link href={routes.root}>
-            <a className="link" style={{ padding: 0 }}>
+            <a className="Navbar__link" style={{ padding: 0 }}>
               <img className="logo-image" src="/static/images/logo.png" />
             </a>
           </Link>
 
           <Link href={routes.root}>
-            <a className="link" style={{ padding: 0 }}>
+            <a className="Navbar__link" style={{ padding: 0 }}>
               <h4 className="logo-text">
                 Datamaps.co
               </h4>
@@ -77,19 +77,19 @@ function Navbar(props) {
           margin-left: 20px;
         }
 
-        :global(.list-item) {
+        :global(.Navbar__list-item) {
           display: inline-block;
           margin-bottom: 0;
         }
 
-        :global(.link) {
+        :global(.Navbar__link) {
           padding: 10px;
           border-radius: 5px;
           text-decoration: none;
           color: ${greyDark};
         }
 
-        :global(.link:hover) {
+        :global(.Navbar__link:hover) {
           color: ${greyDark};
         }
 
