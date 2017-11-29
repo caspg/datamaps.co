@@ -22,7 +22,7 @@ function Home() {
 
       <Header>
         <Navbar className="box-shadow">
-        <HamburgerMenu shadowColor="dark" />
+          <HamburgerMenu shadowColor="dark" />
         </Navbar>
       </Header>
 

@@ -170,7 +170,7 @@ class HamburgerMenu extends Component {
           :global(.HamburgerMenu__links-container) {
             position: absolute;
             top: 100%;
-            right: 10px;
+            right: 0;
             min-width: 250px;
             background-color: ${grey100};
             z-index: 10;
