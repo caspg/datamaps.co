@@ -1,47 +1,89 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
+import Link from 'next/link'
 
-import routes from 'config/routes'
-import style from './Footer.css'
+import routes from '@src/config/routes'
+import { grey600, greyDark } from '@src/styles/colors';
 
 const FooterLink = (props) =>
-  <Link className={style.textlink} to={props.to}>
-    {props.text}
-  </Link>
+  <span className="FooterLink">
+    <Link href={props.href}>
+      <a className="FooterLink__link">
+        {props.text}
+      </a>
+    </Link>
+
+    <style jsx>{`
+      .FooterLink {
+        margin-bottom: 10px;
+      }
+
+      .FooterLink__link {
+        color: ${grey600};
+        margin: 0 10px;
+        margin-bottom: 10px;
+      }
+
+      .FooterLink__link:hover {
+        color: ${greyDark};
+      }
+    `}</style>
+  </span>
 
 FooterLink.propTypes = {
-  to: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 }
 
 const Footer = (props) =>
-  <footer className={style.footer}>
+  <footer className="Footer">
     <div className="row">
       <div className="col-xs-12">
         <div className="row center-xs middle-xs">
 
-          <FooterLink to={routes.root} text="Home" />
+          <FooterLink href={routes.root} text="Home" />
           {'|'}
-          <FooterLink to={routes.editor} text="Editor" />
+          <FooterLink href={routes.editor} text="Editor" />
           {'|'}
-          <FooterLink to={routes.contact} text="Contact" />
+          <FooterLink href={routes.contact} text="Contact" />
           {'|'}
-          <FooterLink to={routes.showcase} text="Showcase" />
+          <FooterLink href={routes.showcase} text="Showcase" />
 
         </div>
         <div className="row center-xs middle-xs">
-          <span className={style.text}>
-            2016 © Datamaps.co
+          <span className="Footer__text">
+            2016-2017 © Datamaps.co
           </span>
 
         </div>
       </div>
     </div>
     <div className="row center-xs">
-      <div className={style['small-text']}>
+      <div className="Footer__small-text">
         {props.children}
       </div>
     </div>
+
+    <style jsx>{`
+      .Footer {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        width: 100%;
+        min-height: 70px;
+        background-color: white;
+        color: ${grey600};
+      }
+
+      .Footer__text {
+        color: ${grey600};
+      }
+
+      .Footer__small-text {
+        font-size: 10px;
+        margin-top: 10px;
+        padding-right: 0;
+        color: ${grey600};
+      }
+    `}</style>
   </footer>
 
 Footer.propTypes = {
