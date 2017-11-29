@@ -3,16 +3,7 @@ import React, { PropTypes } from 'react'
 import { purpleGradient } from 'styles/colors';
 
 import HeaderText from './components/HeaderText'
-
-// const HeaderImage = () => (
-//   <div className={style['image-container']}>
-//     <img
-//       className={style.image}
-//       src="/images/landing-page/editor-screen.png"
-//       alt="datamaps-editor"
-//     />
-//   </div>
-// )
+import HeaderImage from './components/HeaderImage'
 
 const Header = (props) =>
   <header>
@@ -28,17 +19,17 @@ const Header = (props) =>
         </div>
       </div>
 
-      {/* <div className="col-sm-6 col-xs-12">
+      <div className="col-sm-6 col-xs-12">
         <div className="row start-sm center-xs">
           <HeaderImage />
         </div>
-      </div> */}
+      </div>
 
     </div>
 
     <style jsx>{`
       .header-content {
-        .min-height: 500px;
+        min-height: 500px;
         padding: 20px;
         ${purpleGradient}
       }
