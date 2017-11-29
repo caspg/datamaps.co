@@ -9,6 +9,7 @@ import HamburgerMenu from '@src/components/HamburgerMenu'
 import Header from './components/Header';
 import EditorAttributes from './components/EditorAttributes';
 import MapsImages from './components/MapsImages';
+import About from './components/About';
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function Home() {
 
       <EditorAttributes />
       <MapsImages />
+      <About />
     </div>
   );
 }
