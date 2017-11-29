@@ -34,6 +34,10 @@ function GlobalStyles() {
           overflow: hidden;
         }
 
+        .box-shadow {
+          box-shadow: 0px 2px 4px 0px grey-color-dark;
+        }
+
         @media only screen and (max-width: 48em) {
           .hide-xs {
             display: none;

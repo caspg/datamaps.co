@@ -1,5 +1,6 @@
 const darkColor = '#1D1D1D';
 
+const grey100 = '#F5F5F5';
 const greyDark = '#424242';
 
 const orange300 = '#FFB74D';
@@ -25,6 +26,7 @@ const purpleGradient = `
 export {
   darkColor,
   greyDark,
+  grey100,
 
   orange300,
   orange400,

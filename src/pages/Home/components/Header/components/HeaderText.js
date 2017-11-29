@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 
 import maps from '@src/config/maps'
-import { greyDark, orange300, orange400, darkColor } from 'styles/colors';
-import routes from 'config/routes'
+import { greyDark, orange300, orange400, darkColor } from '@src/styles/colors';
+import routes from '@src/config/routes'
 
 import TypistWrapper from './TypistWrapper'
 

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import { purpleGradient } from 'styles/colors';
+import { purpleGradient } from '@src/styles/colors';
 
 import HeaderText from './components/HeaderText'
 import HeaderImage from './components/HeaderImage'
