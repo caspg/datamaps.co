@@ -7,6 +7,7 @@ import Navbar from '@src/components/Navbar'
 import HamburgerMenu from '@src/components/HamburgerMenu'
 import Footer from '@src/components/Footer'
 
+import ContactInfo from './components/ContactInfo';
 import ContactForm from './components/ContactForm';
 
 function Contact() {
@@ -24,7 +25,7 @@ function Contact() {
           <div className="col-sm-offset-2" />
 
           <div className="col-xs-10 col-sm-4">
-            {/* <ContactInfo /> */}
+            <ContactInfo />
           </div>
 
           <div className="col-xs-10 col-sm-4">
