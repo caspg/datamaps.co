@@ -23,6 +23,12 @@ function AppHead(props) {
       <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+      <link href="/static/css/vendors/normalize.css" rel="stylesheet" type="text/css" />
+      <link href="/static/css/vendors/flexboxgrid.min.css" rel="stylesheet" type="text/css" />
+      <link href="/static/css/vendors/skeleton.css" rel="stylesheet" type="text/css" />
+      <link href="/static/css/vendors/react-select.css" rel="stylesheet" type="text/css" />
+      <link href="/static/css/vendors/react-typist.css" rel="stylesheet" type="text/css" />
     </Head>
   );
 }
