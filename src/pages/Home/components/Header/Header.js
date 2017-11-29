@@ -1,12 +1,11 @@
 import React, { PropTypes } from 'react'
-// import { Link } from 'react-router'
+import Link from 'next/link'
 
 import maps from '@src/config/maps'
-import { purpleGradient } from 'styles/colors';
+import { purpleGradient, greyDark, orange300, orange400, darkColor } from 'styles/colors';
+import routes from 'config/routes'
 
 import TypistWrapper from '../TypistWrapper'
-
-// import routes from 'config/routes'
 
 const currentMaps = () =>
   maps.types.map(i => i.displayName)
@@ -21,9 +20,9 @@ const HeaderText = () => (
       </div>
     </h1>
 
-    {/* <Link to={routes.editor} className={`button ${style.button}`}>
-      go to the editor
-    </Link> */}
+    <Link href={routes.editor}>
+      <a className="button">go to the editor</a>
+    </Link>
 
     <style jsx>{`
       .title-container {
@@ -44,6 +43,21 @@ const HeaderText = () => (
 
       .typist {
         display: inline-block;
+      }
+
+      .button {
+        margin: 20px 0;
+        margin-top: 10px;
+        background: ${orange300};
+        color: ${darkColor};
+        border-radius: 4px;
+        border-width: 0;
+        width: 200px;
+        box-shadow: 2px 6px 11px 0px ${greyDark};
+      }
+
+      .button:hover {
+        background: ${orange400};
       }
 
       @media only screen and (min-width: 48em) {

@@ -48,7 +48,6 @@ class TypistWrapper extends Component {
   renderTypist() {
     return (
       <Typist
-        className={this.props.className}
         startDelay={1500}
         avgTypingDelay={200}
         onTypingDone={this.handleTypingDone}
@@ -73,7 +72,6 @@ class TypistWrapper extends Component {
 }
 
 TypistWrapper.propTypes = {
-  className: PropTypes.string.isRequired,
   words: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
