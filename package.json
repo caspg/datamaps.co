@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "",
+    "dev": "next",
     "start": "node server/index.js",
     "w": "webpack -w --config webpack/dev.config.js",
     "build": "NODE_ENV=production webpack -p --config webpack/prod.config.js",
@@ -29,7 +30,7 @@
     "forever": "^0.15.1",
     "immutable": "^3.8.1",
     "morgan": "^1.7.0",
-    "next": "^4.1.4",
+    "next": "3.2.2",
     "react": "^15.3.2",
     "react-autosuggest": "^7.0.1",
     "react-color": "^2.4.2",
