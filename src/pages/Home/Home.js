@@ -7,6 +7,7 @@ import Navbar from '@src/components/Navbar'
 import HamburgerMenu from '@src/components/HamburgerMenu'
 
 import Header from './components/Header';
+import EditorAttributes from './components/EditorAttributes';
 
 function Home() {
   return (
@@ -19,6 +20,8 @@ function Home() {
         <HamburgerMenu shadowColor="dark" />
         </Navbar>
       </Header>
+
+      <EditorAttributes />
     </div>
   );
 }
