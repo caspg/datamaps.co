@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
 import { setMapType } from 'redux/actions'
-import EditorHeader from 'components/editor/EditorHeader'
+// import EditorHeader from 'components/editor/EditorHeader'
 
 class HeaderContainer extends Component {
   constructor(props) {
@@ -23,11 +23,12 @@ class HeaderContainer extends Component {
 
   render() {
     return (
-      <EditorHeader
-        currentPath={this.props.currentPath}
-        mapType={this.props.mapType}
-        onMapTypeChange={this.handleMapTypeChange}
-      />
+      // <EditorHeader
+      //   currentPath={this.props.currentPath}
+      //   mapType={this.props.mapType}
+      //   onMapTypeChange={this.handleMapTypeChange}
+      // />
+      null
     )
   }
 }
