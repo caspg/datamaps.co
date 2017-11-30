@@ -1,10 +1,14 @@
 export const darkColor = '#1D1D1D';
 
 export const grey100 = '#F5F5F5';
+export const grey200 = '#EEEEEE';
 export const grey300 = '#E0E0E0';
+export const grey500 = '#9E9E9E';
 export const grey600 = '#757575';
 export const greyDark = '#424242';
 
+export const orange50 = '#FFF3E0';
+export const orange200 = '#FFCC80';
 export const orange300 = '#FFB74D';
 export const orange400 = '#FFA726';
 
