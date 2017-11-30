@@ -3,7 +3,6 @@ import Autosuggest from 'react-autosuggest'
 
 import routes from '@src/config/routes'
 import mapsConfig from '@src/config/maps'
-// import './MapAutosuggest.global.css'
 
 import MapAutosuggestStyles from './MapAutosuggestStyles';
 
