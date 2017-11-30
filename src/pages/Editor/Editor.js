@@ -5,6 +5,7 @@ import metaTags from '@src/config/meta'
 import AppHead from '@src/components/AppHead';
 import GlobalStyles from '@src/components/GlobalStyles';
 import HeaderContainer from '@src/containers/editor/HeaderContainer'
+import withReduxStore from '@src/hocs/withReduxStore';
 
 Editor.propTypes = {
   url: PropTypes.shape({
@@ -26,4 +27,4 @@ function Editor(props) {
   );
 }
 
-export default Editor;
+export default withReduxStore(Editor);
