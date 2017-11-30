@@ -4,8 +4,9 @@ import routes from '@src/config/routes'
 import metaTags from '@src/config/meta'
 import AppHead from '@src/components/AppHead';
 import GlobalStyles from '@src/components/GlobalStyles';
-import HeaderContainer from '@src/containers/editor/HeaderContainer'
 import withReduxStore from '@src/hocs/withReduxStore';
+
+import HeaderContainer from './containers/HeaderContainer'
 
 EditorPage.propTypes = {
   url: PropTypes.shape({
