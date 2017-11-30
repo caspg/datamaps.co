@@ -12,7 +12,7 @@ import Footer from '@src/components/Footer'
 
 import ShowcaseItem from './components/ShowcaseItem';
 
-function Showcase() {
+function ShowcasePage() {
   return (
     <div>
       <AppHead title={metaTags.titles.showcase} />
@@ -63,4 +63,4 @@ function Showcase() {
   );
 }
 
-export default Showcase;
+export default ShowcasePage;

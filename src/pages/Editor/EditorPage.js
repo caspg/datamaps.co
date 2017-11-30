@@ -7,13 +7,13 @@ import GlobalStyles from '@src/components/GlobalStyles';
 import HeaderContainer from '@src/containers/editor/HeaderContainer'
 import withReduxStore from '@src/hocs/withReduxStore';
 
-Editor.propTypes = {
+EditorPage.propTypes = {
   url: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
 }
 
-function Editor(props) {
+function EditorPage(props) {
   return (
     <div>
       <AppHead title={metaTags.titles.editor} />
@@ -27,4 +27,4 @@ function Editor(props) {
   );
 }
 
-export default withReduxStore(Editor);
+export default withReduxStore(EditorPage);

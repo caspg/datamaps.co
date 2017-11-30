@@ -14,7 +14,7 @@ import About from './components/About';
 import ActionButton from './components/ActionButton';
 import SocialIcons from './components/SocialIcons';
 
-function Home() {
+function HomePage() {
   return (
     <div>
       <AppHead title={metaTags.titles.home} />
@@ -42,4 +42,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

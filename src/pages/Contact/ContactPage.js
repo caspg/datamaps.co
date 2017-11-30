@@ -10,7 +10,7 @@ import Footer from '@src/components/Footer'
 import ContactInfo from './components/ContactInfo';
 import ContactForm from './components/ContactForm';
 
-function Contact() {
+function ContactPage() {
   return (
     <div>
       <AppHead title={metaTags.titles.contact} />
@@ -46,4 +46,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactPage;
