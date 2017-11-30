@@ -5,12 +5,9 @@ import { grey100, grey300 } from '@src/styles/colors'
 
 import Navbar from '@src/components/Navbar'
 import HamburgerMenu from '@src/components/HamburgerMenu'
+import PayPalDonateButton from '@src/components/PayPalDonateButton'
 import SaveButtons from '@src/components/editor/SaveButtons'
 import MapAutosuggest from '@src/components/editor/MapAutosuggest'
-
-// import HamburgerMenu from '../../HamburgerMenu'
-// import MailChimpPopup from '../../MailChimpPopup'
-// import PayPalDonateButton from '../../PayPalDonateButton'
 
 import routes from 'config/routes'
 
@@ -43,10 +40,11 @@ const EditorHeader = (props) => {
 
           </div>
         </div>
-        {/* <div className="col-xs-9">
+        <div className="col-xs-9">
           <div className="row middle-xs end-xs">
 
-            <MailChimpPopup />
+            {/* TODO: what to do with mailchimp popup? */}
+            {/* <MailChimpPopup /> */}
 
             <PayPalDonateButton />
 
@@ -54,7 +52,7 @@ const EditorHeader = (props) => {
               {!isEditorPath && <SaveButtons mapType={props.mapType} />}
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <style jsx>{`
