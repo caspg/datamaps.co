@@ -1,6 +1,0 @@
-{
-  "uid": "deltamike_node",
-  "append": true,
-  "script": "index.js",
-  "sourceDir": "./server"
-}
