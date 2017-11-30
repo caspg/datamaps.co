@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
-import { setMapType } from 'redux/actions'
+import { setMapType } from '@src/redux/actions'
 
-// import EditorInitView from 'components/editor/EditorInitView/EditorInitView'
+import EditorInitView from './components/EditorInitView'
 
 class EditorInitContainer extends Component {
   static propTypes = {
@@ -30,10 +30,9 @@ class EditorInitContainer extends Component {
 
   render() {
     return (
-      // <EditorInitView handleMapSelect={this.handleMapSelect} />
-      <h1>
-        EditorInitContainer
-      </h1>
+      <EditorInitView
+        handleMapSelect={this.handleMapSelect}
+      />
     )
   }
 }
