@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import Autosuggest from 'react-autosuggest'
 
-import routes from 'config/routes'
-import mapsConfig from 'config/maps'
-import './MapAutosuggest.global.css'
+import routes from '@src/config/routes'
+import mapsConfig from '@src/config/maps'
+// import './MapAutosuggest.global.css'
+
+import MapAutosuggestStyles from './MapAutosuggestStyles';
 
 const mapsOptions = mapsConfig.types.map(item => (
   { code: item.code, label: item.displayName }
@@ -114,17 +116,21 @@ class MapAutosuggest extends Component {
     }
 
     return (
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={MapAutosuggest.getSuggestionValue}
-        renderSuggestion={MapAutosuggest.renderSuggestion}
-        inputProps={inputProps}
-        focusFirstSuggestion
-        shouldRenderSuggestions={MapAutosuggest.shouldRenderSuggestions}
-        onSuggestionSelected={this.onSuggestionSelected}
-      />
+      <div>
+        <Autosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={MapAutosuggest.getSuggestionValue}
+          renderSuggestion={MapAutosuggest.renderSuggestion}
+          inputProps={inputProps}
+          focusFirstSuggestion
+          shouldRenderSuggestions={MapAutosuggest.shouldRenderSuggestions}
+          onSuggestionSelected={this.onSuggestionSelected}
+        />
+
+        <MapAutosuggestStyles />
+      </div>
     )
   }
 }

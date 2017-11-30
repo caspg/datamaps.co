@@ -1,14 +1,13 @@
 import React, { PropTypes } from 'react'
 
 import { editorHeaderZIndex } from '@src/styles/variables'
-import { grey100 } from '@src/styles/colors'
+import { grey100, grey300 } from '@src/styles/colors'
 
 import Navbar from '@src/components/Navbar'
 import HamburgerMenu from '@src/components/HamburgerMenu'
 import SaveButtons from '@src/components/editor/SaveButtons'
+import MapAutosuggest from '@src/components/editor/MapAutosuggest'
 
-// import SaveButtons from '../SaveButtons/SaveButtons'
-// import MapAutosuggest from '../MapAutosuggest'
 // import HamburgerMenu from '../../HamburgerMenu'
 // import MailChimpPopup from '../../MailChimpPopup'
 // import PayPalDonateButton from '../../PayPalDonateButton'
@@ -33,7 +32,7 @@ const EditorHeader = (props) => {
         </Navbar>
       </div>
 
-      {/* <div className={`row ${style.actionbar}`}>
+      <div className="row EditorHeader__actionbar">
         <div className="col-xs-3">
           <div className="row middle-xs start-xs">
             <MapAutosuggest
@@ -44,7 +43,7 @@ const EditorHeader = (props) => {
 
           </div>
         </div>
-        <div className="col-xs-9">
+        {/* <div className="col-xs-9">
           <div className="row middle-xs end-xs">
 
             <MailChimpPopup />
@@ -55,8 +54,8 @@ const EditorHeader = (props) => {
               {!isEditorPath && <SaveButtons mapType={props.mapType} />}
             </div>
           </div>
-        </div>
-      </div> */}
+        </div> */}
+      </div>
 
       <style jsx>{`
         .EditorHeader__container {
@@ -69,6 +68,13 @@ const EditorHeader = (props) => {
 
         .EditorHeader__navbar-wrapper {
           background-color: ${grey100};
+        }
+
+        .EditorHeader__actionbar {
+          height: 40px;
+          padding: 0 20px;
+          border: 1px solid ${grey300};
+          background-color: white;
         }
       `}</style>
     </div>
