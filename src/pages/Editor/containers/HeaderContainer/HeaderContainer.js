@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
+import Router from 'next/router'
 
 import { setMapType } from 'redux/actions'
 
@@ -19,7 +19,7 @@ class HeaderContainer extends Component {
       dispatch(setMapType(mapType))
     }
 
-    dispatch(push(`${mainPath}/${mapType}`))
+    Router.push(`${mainPath}/${mapType}`)
   }
 
   render() {
