@@ -7,6 +7,7 @@ import GlobalStyles from '@src/components/GlobalStyles';
 import withReduxStore from '@src/hocs/withReduxStore';
 
 import HeaderContainer from './containers/HeaderContainer'
+import EditorInitContainer from './containers/EditorInitContainer'
 
 EditorPage.propTypes = {
   url: PropTypes.shape({
@@ -23,6 +24,10 @@ function EditorPage(props) {
       <HeaderContainer
         mainPath={routes.editor}
         currentPath={props.url.pathname}
+      />
+
+      <EditorInitContainer
+        mainPath={routes.editor}
       />
     </div>
   );
