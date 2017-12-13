@@ -11,15 +11,22 @@ class TypistWrapper extends Component {
     super(props)
 
     this.state = {
-      typing: true,
-      currentWord: TypistWrapper.randomWord(props.words),
+      typing: false,
+      currentWord: 'World',
     }
+
+    this.timeouts = []
 
     this.handleTypingDone = this.handleTypingDone.bind(this)
   }
 
-  componentWillMount() {
+  /* eslint-disable react/no-did-mount-set-state */
+  componentDidMount() {
     this.timeouts = []
+
+    setTimeout(() => {
+      this.setState({ typing: true })
+    }, 1500)
   }
 
   componentWillUnmount() {
@@ -59,14 +66,16 @@ class TypistWrapper extends Component {
 
   render() {
     return (
-      this.state.typing ?
-        this.renderTypist() :
-        <span>
-          {this.state.currentWord}
-          <span className="Cursor--blinking">
-            {"|"}
+      this.state.typing
+        ? this.renderTypist()
+        : (
+          <span>
+            {this.state.currentWord}
+            <span className="Cursor--blinking">
+              {"|"}
+            </span>
           </span>
-        </span>
+        )
     )
   }
 }
