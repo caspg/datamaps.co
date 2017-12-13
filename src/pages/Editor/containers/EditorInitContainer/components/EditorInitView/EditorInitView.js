@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import maps from '@src/config/maps'
-import Footer from '@src/components/Footer/Footer'
+import Footer from '@src/components/Footer'
 
 import MapThumb from './components/MapThumb'
 

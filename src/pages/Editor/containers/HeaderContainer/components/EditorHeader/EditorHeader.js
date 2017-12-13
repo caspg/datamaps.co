@@ -8,7 +8,7 @@ import HamburgerMenu from '@src/components/HamburgerMenu'
 import PayPalDonateButton from '@src/components/PayPalDonateButton'
 import SaveButtons from '@src/components/editor/SaveButtons'
 
-import MapAutosuggest from '@src/components/editor/MapAutosuggest'
+import MapAutosuggest from './components/MapAutosuggest'
 
 import routes from 'config/routes'
 
