@@ -6,7 +6,7 @@ import { grey100, grey300 } from '@src/styles/colors'
 import Navbar from '@src/components/Navbar'
 import HamburgerMenu from '@src/components/HamburgerMenu'
 import PayPalDonateButton from '@src/components/PayPalDonateButton'
-import SaveButtons from '@src/components/editor/SaveButtons'
+import SaveButtons from '@src/components/SaveButtons'
 
 import MapAutosuggest from './components/MapAutosuggest'
 
