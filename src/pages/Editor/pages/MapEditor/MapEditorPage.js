@@ -9,6 +9,7 @@ import withReduxStore from '@src/hocs/withReduxStore';
 import HeaderContainer from '@src/pages/Editor/containers/HeaderContainer'
 
 import MapEditorContainer from './containers/MapEditorContainer'
+import MapEditorInitiView from './components/MapEditorInitiView'
 
 MapEditorPage.propTypes = {
   url: PropTypes.shape({
@@ -38,7 +39,9 @@ function MapEditorPage(props) {
         currentPath={props.url.pathname}
       />
 
-      <MapEditorContainer params={{ mapType }} />
+      <MapEditorContainer params={{ mapType }}>
+        <MapEditorInitiView mapType={mapType} />
+      </MapEditorContainer>
     </div>
   );
 }

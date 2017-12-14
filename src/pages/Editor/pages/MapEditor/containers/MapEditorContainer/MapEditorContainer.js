@@ -14,8 +14,8 @@ class MapEditorContainer extends Component {
     params: PropTypes.shape({
       mapType: PropTypes.string.isRequired,
     }),
+    children: PropTypes.node.isRequired,
 
-    children: PropTypes.node,
     mapType: PropTypes.string,
   }
 
