@@ -9,7 +9,7 @@ import withReduxStore from '@src/hocs/withReduxStore';
 import HeaderContainer from '@src/pages/Editor/containers/HeaderContainer'
 
 import MapEditorContainer from './containers/MapEditorContainer'
-import MapEditorInitiView from './components/MapEditorInitiView'
+import MapEditorSidebarSwitch from './MapEditorSidebarSwitch'
 
 MapEditorPage.propTypes = {
   url: PropTypes.shape({
@@ -18,10 +18,11 @@ MapEditorPage.propTypes = {
       mapType: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  children: PropTypes.element,
 }
 
 function MapEditorPage(props) {
-  const { url: { query: { mapType } } } = props;
+  const { url: { query: { mapType }, pathname } } = props;
   const prettyMapType = mapsConfig.types.find(i =>
       i.code === mapType
   ).displayName
@@ -40,7 +41,10 @@ function MapEditorPage(props) {
       />
 
       <MapEditorContainer params={{ mapType }}>
-        <MapEditorInitiView mapType={mapType} />
+        <MapEditorSidebarSwitch
+          pathname={pathname}
+          mapType={mapType}
+        />
       </MapEditorContainer>
     </div>
   );

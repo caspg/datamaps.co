@@ -12,12 +12,12 @@ function MapEditorInitiView(props) {
       <div className="row center-xs">
         <div className="col-xs-12">
           <div className="MapEditorInitiView__wrapper">
-            <Link route={`/editor/${props.mapType}/upload`}>
+            <Link prefetch route={`/editor/${props.mapType}/upload`}>
               <a className="button MapEditorInitiView__button">
                 Upload CSV data file
               </a>
             </Link>
-            <Link route={`/editor/${props.mapType}/edit-data`}>
+            <Link prefetch route={`/editor/${props.mapType}/edit-data`}>
               <a className="button MapEditorInitiView__button">
                 go to data table
               </a>
