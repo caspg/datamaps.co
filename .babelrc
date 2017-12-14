@@ -6,7 +6,8 @@
       {
         "root": ["./src"],
         "alias": {
-          "@src": "./src"
+          "@src": "./src",
+          "@routes": "./server/routes.js"
         }
       }
     ]

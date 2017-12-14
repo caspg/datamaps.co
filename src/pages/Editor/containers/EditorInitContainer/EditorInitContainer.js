@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import Router from 'next/router'
 
+import { Router } from '@routes'
 import { setMapType } from '@src/redux/actions'
 
 import EditorInitView from './components/EditorInitView'
@@ -25,7 +25,7 @@ class EditorInitContainer extends Component {
       dispatch(setMapType(mapType))
     }
 
-    Router.push(`${mainPath}/${mapType}`)
+    Router.pushRoute(`${mainPath}/${mapType}`)
   }
 
   render() {

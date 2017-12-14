@@ -7,5 +7,6 @@ routes
   .add('contact', routesConfig.contact)
   .add('showcase', routesConfig.showcase)
   .add('editor', routesConfig.editor)
+  .add('mapEditor', routesConfig.mapEditor)
 
 module.exports = routes
