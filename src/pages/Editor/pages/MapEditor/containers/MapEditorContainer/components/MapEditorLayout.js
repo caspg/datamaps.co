@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 
-// import MapContainer from 'containers/editor/MapContainer'
-
 import { mapEditorLayoutZIndex } from '@src/styles/variables';
 import { grey300 } from '@src/styles/colors';
 import Footer from '@src/components/Footer'
+
+import MapContainer from '../../MapContainer'
 
 const editorBodyWidth = '400px';
 
@@ -12,7 +12,7 @@ function MapEditorLayout(props) {
   return (
     <div className="MapEditorLayout">
       <div className="MapEditorLayout__map-column">
-        {/* {props.isDataReady && <MapContainer />} */}
+        {props.isDataReady && <MapContainer />}
       </div>
 
       <div className="MapEditorLayout__body-column">

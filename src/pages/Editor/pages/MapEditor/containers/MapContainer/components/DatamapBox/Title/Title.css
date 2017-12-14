@@ -1,0 +1,24 @@
+@value grey-color-dark, grey-color-600 from 'styles/colors.css';
+
+.title-common {
+  text-anchor: start;
+  fill: grey-color-dark;
+  font-weight: 300;
+}
+
+.map-title {
+  composes: title-common;
+  font-size: 25px;
+}
+
+.legend-title {
+  composes: title-common;
+  text-anchor: end;
+  font-size: 12px;
+}
+
+.crreated-with {
+  composes: title-common;
+  font-size: 11px;
+  fill: grey-color-600;
+}

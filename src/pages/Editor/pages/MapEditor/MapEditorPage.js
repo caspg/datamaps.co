@@ -38,15 +38,6 @@ function MapEditorPage(props) {
         currentPath={props.url.pathname}
       />
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <h1>{props.url.query.mapType}</h1>
-
       <MapEditorContainer params={{ mapType }} />
     </div>
   );
