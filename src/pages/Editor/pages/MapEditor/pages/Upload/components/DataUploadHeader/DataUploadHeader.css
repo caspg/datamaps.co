@@ -1,0 +1,9 @@
+@value grey-color-300 from 'styles/colors.css';
+
+.container {
+  background-color: white;
+  min-height: 60px;
+  padding: 20px;
+  padding-left: 35px;
+  border-bottom: 1px solid grey-color-300;
+}

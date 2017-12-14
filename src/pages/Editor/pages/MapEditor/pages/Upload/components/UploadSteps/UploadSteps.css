@@ -1,0 +1,79 @@
+@value grey-color-dark, grey-color-500, light-blue-200, light-green-200, orange-color-200 from 'styles/colors.css';
+
+.container {
+  display: inline-block;
+}
+
+.step-group {
+  display: inline-block;
+  margin-right: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.slash {
+  margin: 0 10px;
+  margin-left: 20px;
+}
+
+.skiplink {
+  text-decoration: none;
+}
+
+.step {
+  font-size: 1.2em;
+  color: grey-color-500;
+}
+
+.stepSelected {
+  color: grey-color-dark;
+}
+
+.stepActive {
+  composes: step;
+  color: grey-color-dark;
+  font-weight: 600;
+}
+
+.stepDone {
+  composes: step;
+  color: grey-color-dark;
+}
+
+.checkmark {
+  padding: 5px;
+  display:inline-block;
+  margin-right: 5px;
+}
+
+.checkmark:after {
+  content: '';
+  display: block;
+
+  width: 3px;
+  height: 6px;
+
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+
+  transform: rotate(45deg);
+}
+
+.step-title {
+  text-transform: uppercase;
+}
+
+.code-step-title {
+  composes: step-title;
+  border-bottom: 2px solid orange-color-200;
+}
+
+.name-step-title {
+  composes: step-title;
+  border-bottom: 2px solid light-green-200;
+}
+
+.value-step-title {
+  composes: step-title;
+  border-bottom: 2px solid light-blue-200;
+}

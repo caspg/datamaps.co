@@ -1,0 +1,30 @@
+@value grey-color-600, grey-color-100 from 'styles/colors.css';
+
+.dropzone {
+  margin: 30px 0;
+  padding: 25px;
+  height: 150px;
+  border-width: 1px;
+  border-color: grey-color-600;
+  border-style: dashed;
+  border-radius: 5px;
+  background-color: grey-color-100;
+}
+
+.dropzone-active {
+  border-style: solid;
+}
+
+.errors {
+  padding: 15px;
+  margin: 20px 0;
+  background: #FFEBEE;
+  border: 1px solid #E57373;
+  color: #B71C1C;
+}
+
+@media(min-width: 950px) {
+  .dropzone {
+    width: 250px;
+  }
+}

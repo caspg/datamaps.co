@@ -1,0 +1,26 @@
+@value grey-color-500, grey-color-dark, light-blue-50, light-blue-200 from 'styles/colors.css';
+
+.container {
+  margin-top: 30px;
+  margin-left: 35px;
+}
+
+.button {
+  color: grey-color-dark;
+  background-color: light-blue-200;
+  border-color: light-blue-200;
+  margin: 0;
+}
+
+.button:focus,
+.button:hover {
+  background-color: light-blue-200;
+  border-color: light-blue-200;
+}
+
+.button:hover:disabled,
+.button:disabled {
+  color: grey-color-500;
+  background-color: light-blue-50;
+  border-color: light-blue-50;
+}

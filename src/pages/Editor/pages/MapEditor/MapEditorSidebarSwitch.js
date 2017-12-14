@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import pages from '@src/config/pages'
 import MapEditorInitiView from './components/MapEditorInitiView'
+import Upload from './pages/Upload'
 
 MapEditorSidebarSwitch.propTypes = {
   pathname: PropTypes.string.isRequired,
@@ -13,7 +14,7 @@ function MapEditorSidebarSwitch(props) {
   switch (props.pathname) {
     case pages.upload:
       return (
-        <h1>Upload</h1>
+        <Upload mapType={props.mapType} />
       )
 
     default:
