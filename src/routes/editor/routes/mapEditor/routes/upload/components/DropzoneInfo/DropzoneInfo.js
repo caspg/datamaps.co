@@ -25,7 +25,7 @@ const DropzoneInfo = (props) => {
         <li className={style['list-item']}>DSV (semicolons or pipes)</li>
       </ul>
 
-      <a href={`/data/csv/${mapType}.csv`} download={`${mapType}-data.csv`}>
+      <a href={`/static/data/csv/${mapType}.csv`} download={`${mapType}-data.csv`}>
         example {displayMapName} csv
       </a>
 

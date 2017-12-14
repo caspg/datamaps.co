@@ -6,8 +6,9 @@ import mapsConfig from '@src/config/maps';
 import AppHead from '@src/components/AppHead';
 import GlobalStyles from '@src/components/GlobalStyles';
 import withReduxStore from '@src/hocs/withReduxStore';
-
 import HeaderContainer from '@src/pages/Editor/containers/HeaderContainer'
+
+import MapEditorContainer from './containers/MapEditorContainer'
 
 MapEditorPage.propTypes = {
   url: PropTypes.shape({
@@ -45,6 +46,8 @@ function MapEditorPage(props) {
       <br />
 
       <h1>{props.url.query.mapType}</h1>
+
+      <MapEditorContainer params={{ mapType }} />
     </div>
   );
 }

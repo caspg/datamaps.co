@@ -9,7 +9,7 @@ function receiveTopoData(mapType, topoData) {
 
 export function fetchTopoData(mapType) {
   return dispatch => {
-    const url = `/data/topo/${mapType}.json`
+    const url = `/static/data/topo/${mapType}.json`
     return axios.get(url)
       .then((response) => {
         const topoJSONData = response.data
