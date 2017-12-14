@@ -5,14 +5,14 @@ import { downloadPng, downloadSvg } from '@src/utils/downloadMap'
 const SaveButtons = props => (
   <div>
     <button
-      className={`button ${props.className}}`}
+      className={`SaveButtons__save-btn ${props.className}`}
       onClick={() => downloadSvg(props.mapType)}
     >
       Save svg
     </button>
 
     <button
-      className={`button ${props.className}}`}
+      className={`SaveButtons__save-btn ${props.className}`}
       onClick={() => downloadPng(props.mapType)}
     >
       Save png
