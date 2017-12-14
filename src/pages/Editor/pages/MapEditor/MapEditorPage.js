@@ -14,10 +14,14 @@ MapEditorPage.propTypes = {
 }
 
 function MapEditorPage(props) {
+  const { url: { query: { mapType } } } = props;
+
   return (
     <div>
-      {/* TODO: pass correct title */}
-      <AppHead title={metaTags.titles.editor} />
+      <AppHead
+        title={metaTags.titles.mapEditor(mapType)}
+        description={metaTags.descriptions.mapEditor(mapType)}
+      />
       <GlobalStyles />
 
       <h1>MapEditorPage</h1>
