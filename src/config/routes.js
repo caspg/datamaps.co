@@ -1,6 +1,9 @@
-/* eslint key-spacing: ["error", { "align": "value" }] */
+/**
+ * This file is used in server/routes, without babel transpilation
+ */
 
-export default {
+/* eslint key-spacing: ["error", { "align": "value" }] */
+module.exports = {
   root: '/',
 
   editor:    '/editor',

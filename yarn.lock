@@ -4368,6 +4368,12 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+next-routes@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/next-routes/-/next-routes-1.2.0.tgz#be10cd2f3c90421610977e4a12640e2cc75774f4"
+  dependencies:
+    path-to-regexp "^2.1.0"
+
 next@3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/next/-/next-3.2.2.tgz#f89473a15595a06d5ab25fae3351e440d305159a"
@@ -4794,6 +4800,10 @@ path-to-regexp@^1.0.0:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
   dependencies:
     isarray "0.0.1"
+
+path-to-regexp@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-2.1.0.tgz#7e30f9f5b134bd6a28ffc2e3ef1e47075ac5259b"
 
 path-type@^1.0.0:
   version "1.1.0"
