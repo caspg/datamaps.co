@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import style from './CSVExample.css'
-import mapConfig from 'config/maps'
+import mapConfig from '@src/config/maps'
+import { grey100, grey300 } from '@src/styles/colors'
 
 const example = (type) =>
   mapConfig.configs[type].csvExample.map((item, index) =>
@@ -9,8 +9,17 @@ const example = (type) =>
   )
 
 const CSVExample = (props) =>
-  <div className={style['csv-example']}>
+  <div className="CSVExample">
     {example(props.type)}
+
+    <style jsx>{`
+      .CSVExample {
+        margin-top: 20px;
+        background-color: ${grey100};
+        padding: 5px 20px;
+        border: 1px solid ${grey300};
+      }
+    `}</style>
   </div>
 
 CSVExample.propTypes = { type: PropTypes.string }

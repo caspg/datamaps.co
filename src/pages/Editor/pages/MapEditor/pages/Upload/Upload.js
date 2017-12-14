@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 import { Link } from '@routes'
 
 // import DropzoneBox from '.components/DropzoneBox/DropzoneBox'
-// import DropzoneInfo from './components/DropzoneInfo/DropzoneInfo'
+import DropzoneInfo from './components/DropzoneInfo'
 
 const Upload = (props) => {
   const { mapType } = props
@@ -20,7 +20,7 @@ const Upload = (props) => {
         {/* <DropzoneBox mapType={mapTypes} /> */}
       </div>
 
-      {/* <DropzoneInfo mapType={mapTypes} /> */}
+      <DropzoneInfo mapType={mapType} />
 
       <style jsx>{`
         .Upload {
