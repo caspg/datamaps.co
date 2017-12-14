@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import metaTags from '@src/config/meta'
+import mapsConfig from '@src/config/maps';
 import AppHead from '@src/components/AppHead';
 import GlobalStyles from '@src/components/GlobalStyles';
 import withReduxStore from '@src/hocs/withReduxStore';
@@ -15,12 +16,15 @@ MapEditorPage.propTypes = {
 
 function MapEditorPage(props) {
   const { url: { query: { mapType } } } = props;
+  const prettyMapType = mapsConfig.types.find(i =>
+      i.code === mapType
+  ).displayName
 
   return (
     <div>
       <AppHead
-        title={metaTags.titles.mapEditor(mapType)}
-        description={metaTags.descriptions.mapEditor(mapType)}
+        title={metaTags.titles.mapEditor(prettyMapType)}
+        description={metaTags.descriptions.mapEditor(prettyMapType)}
       />
       <GlobalStyles />
 

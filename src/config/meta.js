@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 function mapEditorTitle(mapType) {
-  return `Create map of ${mapType.toUpperCase()} - Datamaps.co`;
+  return `Create map of ${mapType} - Datamaps.co`;
 }
 
 function mapEditorDescripton(mapType) {
-  return `Create and download your free data map of ${mapType.toUpperCase()} or choose from many other maps.`;
+  return `Create and download your free data map of ${mapType} or choose from many other maps.`;
 }
 
 module.exports = {
