@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { purple600, greyDark } from 'styles/colors';
+import { purple600, greyDark } from '@src/styles/colors';
 
 function GlobalStyles() {
   return (

@@ -2,11 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { Map } from 'immutable'
 import d3 from 'd3'
 
-const style = {} // TODO
-// import style from './MapElements.css'
-import Title from '../Title/Title'
-import Datamap from '../Datamap/Datamap'
-import MapLegend from '../MapLegend/MapLegend'
+import Title from './Title'
+import Datamap from './Datamap'
+import MapLegend from './MapLegend'
 
 export default class MapElements extends Component {
   shouldComponentUpdate(nextProps) {
@@ -68,6 +66,11 @@ export default class MapElements extends Component {
       height: svgHeight,
       fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
       border: '1px dashed #ddd',
+      margin: 'auto',
+      position: 'absolute',
+      top: 15,
+      left: 0,
+      right: 0,
     }
 
     const mapLegend = (
@@ -83,7 +86,7 @@ export default class MapElements extends Component {
       extremeValues.get('max') !== ''
 
     return (
-      <svg className={style.svg} style={svgStyle}>
+      <svg style={svgStyle}>
         <g id="root-svg-group">
           <Title
             text={this.props.mapUi.get('title')}

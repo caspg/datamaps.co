@@ -28,15 +28,13 @@ function MapContainer(props) {
 
 const makeMapStateToProps = () => {
   const extremeValuesSelector = makeExtremeValuesSelector()
-  const mapStateToProps = (state) => {
-    return {
-      regionData: state.regionData,
-      extremeValues: extremeValuesSelector(state),
-      mapUi: state.mapUi,
-      topoData: state.topoData,
-      mapType: state.mapType,
-    }
-  }
+  const mapStateToProps = (state) => ({
+    regionData: state.regionData,
+    extremeValues: extremeValuesSelector(state),
+    mapUi: state.mapUi,
+    topoData: state.topoData,
+    mapType: state.mapType,
+  })
 
   return mapStateToProps
 }

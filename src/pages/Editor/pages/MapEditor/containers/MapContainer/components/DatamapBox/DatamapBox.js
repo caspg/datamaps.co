@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { Map } from 'immutable'
 
-// import style from './DatamapBox.css'
-import MapElements from './MapElements/MapElements'
-import HoverInfo from './HoverInfo/HoverInfo'
-
-const style = {} // TODO
+import MapElements from './components/MapElements'
+import HoverInfo from './components/HoverInfo'
+import TitleStyle from './components/TitleStyle'
 
 export default class DatamapBox extends Component {
   constructor(props) {
@@ -53,7 +51,7 @@ export default class DatamapBox extends Component {
     } = this.state
 
     return (
-      <div ref="DatamapBox" className={style.datamapbox}>
+      <div className="DatamapBox">
         <MapElements
           topoData={this.props.topoData}
           mapType={this.props.mapType}
@@ -72,6 +70,14 @@ export default class DatamapBox extends Component {
           name={activeSubunitName}
           value={activeSubunitValue}
         />
+
+        <TitleStyle />
+        <style jsx>{`
+          .DatamapBox {
+            height: 100%;
+            position: relative;
+          }
+        `}</style>
       </div>
     )
   }
