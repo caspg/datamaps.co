@@ -5,8 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "node server",
-    "build": "next build",
-    "start": "NODE_ENV=production node server"
+    "build": "next build && next export"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "MIT",
