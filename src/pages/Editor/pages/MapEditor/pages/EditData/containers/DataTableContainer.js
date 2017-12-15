@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Map } from 'immutable'
 
 import { editRow, toggleDirection } from '@src/redux/actions/regionData'
-import DataTable from './components/DataTable/DataTable'
+import DataTable from './components/DataTable'
 
 class DataTableContainer extends Component {
   constructor(props) {

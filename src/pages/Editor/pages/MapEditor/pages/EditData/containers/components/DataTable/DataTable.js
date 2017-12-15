@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { Map } from 'immutable'
 
-import SortableHeader from '../SortableHeader/SortableHeader'
-import DataTableRow from '../DataTableRow/DataTableRow'
+import SortableHeader from './components/SortableHeader'
+import DataTableRow from './components/DataTableRow'
 
 export default class DataTable extends Component {
   sortableHeaders() {
