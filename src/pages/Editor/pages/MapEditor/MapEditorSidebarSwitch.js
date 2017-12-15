@@ -5,6 +5,7 @@ import pages from '@src/config/pages'
 import MapEditorInitiView from './components/MapEditorInitiView'
 import Upload from './pages/Upload'
 import EditData from './pages/EditData'
+import EditMap from './pages/EditMap'
 
 MapEditorSidebarSwitch.propTypes = {
   pathname: PropTypes.string.isRequired,
@@ -21,6 +22,11 @@ function MapEditorSidebarSwitch(props) {
     case pages.editData:
       return (
         <EditData mapType={props.mapType} />
+      )
+
+    case pages.editMap:
+      return (
+        <EditMap mapType={props.mapType} />
       )
 
     default:

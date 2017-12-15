@@ -1,7 +1,7 @@
 import { Map } from 'immutable'
 import React, { PropTypes } from 'react'
 
-import { grey300 } from '@src/styles/colors'
+import { grey300, darkColor } from '@src/styles/colors'
 
 const arrowH = '5px'
 
@@ -54,7 +54,7 @@ const SortableHeader = (props) => {
           height: 0;
           border-style: solid;
           border-width: ${arrowH} ${arrowH} 0 ${arrowH};
-          border-color: dark transparent transparent transparent;
+          border-color: ${darkColor} transparent transparent transparent;
         }
 
         .SortableHeader__arrow-desc {
@@ -66,7 +66,7 @@ const SortableHeader = (props) => {
           height: 0;
           border-style: solid;
           border-width: 0 ${arrowH} ${arrowH} ${arrowH};
-          border-color: transparent transparent dark transparent;
+          border-color: transparent transparent ${darkColor} transparent;
         }
       `}</style>
     </th>
