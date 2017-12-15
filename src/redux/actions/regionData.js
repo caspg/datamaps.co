@@ -1,4 +1,4 @@
-import { push } from 'react-router-redux'
+import { Router } from '@routes'
 
 import { EDIT_ROW, UPLOAD_DATA, TOGGLE_DIRECTION, LOAD_EMPTY_DATA } from '../constants/ActionTypes'
 
@@ -13,7 +13,7 @@ function uploadData(payload, mapType) {
 function uploadDataAndRedirect(payload, mapType) {
   return dispatch => {
     dispatch(uploadData(payload, mapType))
-    dispatch(push(`/editor/${mapType}/edit-data`))
+    Router.pushRoute(`/editor/${mapType}/edit-data`)
   }
 }
 
