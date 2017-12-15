@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import style from './DomainValueEditor.css'
-import NumericInput from 'components/NumericInput/NumericInput'
+import NumericInput from 'components/NumericInput'
 
 const DomainValueEditor = (props) =>
   <div>

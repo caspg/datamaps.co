@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 
-import style from './NumericInput.css'
-
 export default class NumericInput extends Component {
   constructor(props) {
     super(props)
@@ -40,7 +38,7 @@ export default class NumericInput extends Component {
     return (
       <input
         type="text"
-        className={style[this.props.className]}
+        className={this.props.className}
         value={this.state.value}
         onChange={this.handleOnChange}
         onBlur={this.handleOnBlur}
@@ -52,11 +50,14 @@ export default class NumericInput extends Component {
 
 NumericInput.propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  className: PropTypes.string,
   placeholder: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onBlur: PropTypes.func.isRequired,
+  className: PropTypes.oneOf([
+    'NumericInput__input',
+    'NumericInput__table-input',
+  ]),
 }
 
 NumericInput.defaultProps = {
-  className: 'input',
+  className: 'NumericInput__input',
 }

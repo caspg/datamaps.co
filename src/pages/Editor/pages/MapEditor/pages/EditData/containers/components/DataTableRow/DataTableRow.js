@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
-import style from './DataTableRow.css'
-import NumericInput from 'components/NumericInput'
+import NumericInput from '@src/components/NumericInput'
+import { grey300 } from '@src/styles/colors'
 
 export default class DataTableRow extends Component {
   constructor(props) {
@@ -21,16 +21,30 @@ export default class DataTableRow extends Component {
   render() {
     return (
       <tr>
-        <td className={style.cell}>
+        <td className="DataTableRow__cell">
           {this.props.regionName}
         </td>
-        <td className={style.cell}>
+        <td className="DataTableRow__cell">
           <NumericInput
             className="NumericInput__table-input"
             value={this.props.value}
             onBlur={this.handleInputBlur}
           />
         </td>
+
+        <style jsx>{`
+          .DataTableRow__cell {
+            width: 50%;
+            height: 35px;
+            padding: 0;
+            border: 1px solid ${grey300};
+            border-left: none;
+          }
+
+          .DataTableRow__cell:first-of-type {
+            padding-left: 15px;
+          }
+        `}</style>
       </tr>
     )
   }
