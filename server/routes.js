@@ -12,5 +12,6 @@ routes
   .add('editor', routesConfig.editor)
   .add('mapEditor', routesConfig.mapEditor, pagesConfig.mapEditor)
   .add('upload', routesConfig.upload, pagesConfig.upload)
+  .add('editData', routesConfig.editData, pagesConfig.editData)
 
 module.exports = routes
