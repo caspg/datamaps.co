@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import { Link } from '@routes'
 
-import DropzoneBox from './components/DropzoneBox/DropzoneBox'
+import DropzoneBox from './components/DropzoneBox'
 import DropzoneInfo from './components/DropzoneInfo'
 
 const Upload = (props) => {

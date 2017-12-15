@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 import mapsConfig from '@src/config/maps'
 import { grey600, grey300 } from '@src/styles/colors'
 
-import CSVExample from './CSVExample'
+import CSVExample from './components/CSVExample'
 
 const DropzoneInfo = (props) => {
   const { mapType } = props
