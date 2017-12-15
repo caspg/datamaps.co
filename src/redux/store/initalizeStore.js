@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
+import isSSR from '@src/utils/isSSR'
+
 import rootReducer from '../reducers'
 import initialState from './initialState'
 
@@ -19,4 +21,22 @@ function makeStore() {
   )
 }
 
-export default makeStore;
+let reduxStore = null
+
+function initalizeStore() {
+  console.log('initalizeStore')
+  console.log('isSSR: ', isSSR())
+
+  if (isSSR()) {
+    // Create new store for every server-side request
+    return makeStore()
+  }
+
+  if (!reduxStore) {
+    reduxStore = makeStore()
+  }
+
+  return reduxStore;
+}
+
+export default initalizeStore;

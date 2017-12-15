@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 
-import makeStore from '@src/redux/store/makeStore';
+import initalizeStore from '@src/redux/store/initalizeStore';
 
 function withReduxStore(ComposedComponent) {
   class ComponentWithReduxStore extends Component {
@@ -18,7 +18,7 @@ function withReduxStore(ComposedComponent) {
     constructor(props) {
       super(props);
 
-      this.reduxStore = makeStore();
+      this.reduxStore = initalizeStore();
     }
 
     render() {
