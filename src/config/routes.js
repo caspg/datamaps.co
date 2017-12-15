@@ -12,9 +12,6 @@ module.exports = {
   editData:  '/editor/:mapType/edit-data',
   editMap:   '/editor/:mapType/edit-map',
 
-  clickEditor:    '/click-editor',
-  clickMapEditor: '/click-editor/:mapType',
-
   contact: '/contact',
 
   showcase: '/showcase',
