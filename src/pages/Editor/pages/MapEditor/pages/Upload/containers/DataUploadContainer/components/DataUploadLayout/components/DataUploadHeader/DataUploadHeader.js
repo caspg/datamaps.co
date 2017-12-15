@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react'
 
 import { grey300 } from '@src/styles/colors'
 
-import UploadSteps from '../UploadSteps'
-import UploadInstructions from '../UploadInstructions'
+import UploadSteps from './components/UploadSteps'
+import UploadInstructions from './components/UploadInstructions'
 
 const DataUploadHeader = (props) => {
   const { currentStep, columnIndexes, onSkipStep, onChangeStep } = props

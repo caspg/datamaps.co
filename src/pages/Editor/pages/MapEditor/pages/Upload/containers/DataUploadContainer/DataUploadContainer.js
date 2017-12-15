@@ -5,7 +5,7 @@ import { Record } from 'immutable'
 import { uploadDataAndRedirect } from '@src/redux/actions/regionData'
 import uploadSteps from '@src/config/constants/upload'
 
-import DataUploadLayout from '../components/DataUploadLayout'
+import DataUploadLayout from './components/DataUploadLayout'
 
 const ColumnIndexes = Record({
   [uploadSteps.CODE]: undefined,

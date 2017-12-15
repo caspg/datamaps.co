@@ -4,7 +4,7 @@ import Modal from 'react-modal'
 import { dataUploadModalZIndex } from '@src/styles/variables'
 import { grey500 } from '@src/styles/colors'
 
-import DataUploadContainer from '../../containers/DataUploadContainer'
+import DataUploadContainer from '../../../containers/DataUploadContainer'
 
 const DataUploadModal = props => (
   <Modal

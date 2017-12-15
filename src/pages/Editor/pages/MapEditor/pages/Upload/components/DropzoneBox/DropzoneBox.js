@@ -4,7 +4,7 @@ import Dropzone from 'react-dropzone'
 import { grey600, grey100 } from '@src/styles/colors'
 import parseDsv from '@src/utils/parseDsv'
 
-import DataUploadModal from '../DataUploadModal'
+import DataUploadModal from './components/DataUploadModal'
 
 class DropzoneBox extends Component {
   static propTypes = {

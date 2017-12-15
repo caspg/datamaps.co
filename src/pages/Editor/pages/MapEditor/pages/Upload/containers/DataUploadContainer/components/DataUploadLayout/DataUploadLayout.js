@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react'
 
-import DataUploadHeader from '../DataUploadHeader'
-import DataUploadGrid from '../DataUploadGrid'
-
-import GridActions from '../GridActions'
+import DataUploadHeader from './components/DataUploadHeader'
+import DataUploadGrid from './components/DataUploadGrid'
+import GridActions from './components/GridActions'
 
 const DataUploadLayout = props => (
   <div>
