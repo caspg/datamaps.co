@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Typist from 'react-typist'
+import PropTypes from 'prop-types'
 
 class TypistWrapper extends Component {
   static randomWord(words) {

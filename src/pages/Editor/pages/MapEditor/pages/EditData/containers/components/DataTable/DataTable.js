@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { Map } from 'immutable'
+import PropTypes from 'prop-types'
 
 import SortableHeader from './components/SortableHeader'
 import DataTableRow from './components/DataTableRow'

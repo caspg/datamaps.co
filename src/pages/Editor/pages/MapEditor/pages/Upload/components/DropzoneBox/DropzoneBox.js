@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
+import PropTypes from 'prop-types'
 
 import { grey600, grey100 } from '@src/styles/colors'
 import parseDsv from '@src/utils/parseDsv'

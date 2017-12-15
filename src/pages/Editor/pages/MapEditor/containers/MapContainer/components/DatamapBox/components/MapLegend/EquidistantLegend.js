@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { Map } from 'immutable'
+import PropTypes from 'prop-types'
 
 export default class EquidistantLegend extends Component {
   renderLegend() {

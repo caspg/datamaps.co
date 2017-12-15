@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Map } from 'immutable'
+import PropTypes from 'prop-types'
 
 import { setMapType } from '@src/redux/actions'
 import { fetchTopoData } from '@src/redux/actions/topoData'

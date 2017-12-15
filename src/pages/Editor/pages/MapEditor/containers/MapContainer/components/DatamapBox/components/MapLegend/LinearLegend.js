@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import d3 from 'd3'
 import { Map } from 'immutable'
+import PropTypes from 'prop-types'
 
 export default class LinearLegend extends Component {
   linearColorScale(value) {

@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { Map } from 'immutable'
 import d3 from 'd3'
+import PropTypes from 'prop-types'
 
 import Title from './Title'
 import Datamap from './Datamap'

@@ -1,7 +1,8 @@
-import React, { Component, PropTypes } from 'react'
-import routes from 'config/routes'
+import React, { Component } from 'react'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
+import routes from '@src/config/routes'
 import { greyDark, grey600, grey300, grey100 } from '@src/styles/colors';
 
 class HamburgerMenu extends Component {

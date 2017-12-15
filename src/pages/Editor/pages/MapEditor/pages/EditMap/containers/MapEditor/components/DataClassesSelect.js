@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Select from 'react-select'
+import PropTypes from 'prop-types'
 
 export default class DataClassesSelect extends Component {
   constructor(props) {

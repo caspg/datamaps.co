@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { Map } from 'immutable'
+import PropTypes from 'prop-types'
 
 import LinearLegend from './LinearLegend'
 import EquidistantLegend from './EquidistantLegend'

@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
 import routes from '@src/config/routes'
 import { grey100, greyDark } from '@src/styles/colors';

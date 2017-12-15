@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import NumericInput from '@src/components/NumericInput'
 import { grey300 } from '@src/styles/colors'

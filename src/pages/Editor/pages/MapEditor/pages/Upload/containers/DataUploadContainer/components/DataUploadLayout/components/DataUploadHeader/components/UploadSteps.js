@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import { greyDark, orange200, lightGreen200, lightBlue200 } from '@src/styles/colors'
 import uploadSteps from '@src/config/constants/upload'

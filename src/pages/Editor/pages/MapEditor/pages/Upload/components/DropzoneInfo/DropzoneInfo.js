@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import mapsConfig from '@src/config/maps'
 import { grey600, grey300 } from '@src/styles/colors'

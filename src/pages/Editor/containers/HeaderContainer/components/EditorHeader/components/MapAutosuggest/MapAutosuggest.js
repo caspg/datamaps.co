@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Autosuggest from 'react-autosuggest'
+import PropTypes from 'prop-types'
 
 import routes from '@src/config/routes'
 import mapsConfig from '@src/config/maps'

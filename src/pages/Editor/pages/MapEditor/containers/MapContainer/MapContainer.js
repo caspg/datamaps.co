@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Map } from 'immutable'
+import PropTypes from 'prop-types'
 
 import makeExtremeValuesSelector from '@src/redux/selectors/extremeValues'
 

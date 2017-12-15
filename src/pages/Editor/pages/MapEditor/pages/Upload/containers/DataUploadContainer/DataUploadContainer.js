@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Record } from 'immutable'
+import PropTypes from 'prop-types'
 
 import { uploadDataAndRedirect } from '@src/redux/actions/regionData'
 import uploadSteps from '@src/config/constants/upload'

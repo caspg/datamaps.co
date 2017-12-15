@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const AttributeItem = (props) =>
   <div className="col-xs-12 col-sm-4">

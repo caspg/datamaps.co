@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Map } from 'immutable'
+import PropTypes from 'prop-types'
 
 import { editRow, toggleDirection } from '@src/redux/actions/regionData'
 import DataTable from './components/DataTable'

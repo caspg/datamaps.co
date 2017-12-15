@@ -1,5 +1,6 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Map } from 'immutable'
-import React, { PropTypes } from 'react'
 
 import { grey300, darkColor } from '@src/styles/colors'
 

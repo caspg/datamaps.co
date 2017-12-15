@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import { mapEditorLayoutZIndex } from '@src/styles/variables';
 import { grey300 } from '@src/styles/colors';
