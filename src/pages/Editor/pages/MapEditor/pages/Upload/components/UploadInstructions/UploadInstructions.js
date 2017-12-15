@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import uploadSteps from 'config/constants/upload'
-import style from './UploadInstructions.css'
+import uploadSteps from '@src/config/constants/upload'
 
 const UploadInstructions = (props) => {
   const handleSkipStep = (event, type) => {
@@ -50,8 +49,14 @@ const UploadInstructions = (props) => {
   }
 
   return (
-    <div className={style.container}>
+    <div className="UploadInstructions">
       {renderInstruction()}
+
+      <style jsx>{`
+        .UploadInstructions {
+          margin-top: 20px;
+        }
+      `}</style>
     </div>
   );
 };

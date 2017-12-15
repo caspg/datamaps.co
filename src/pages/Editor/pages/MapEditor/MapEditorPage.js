@@ -9,6 +9,7 @@ import withReduxStore from '@src/hocs/withReduxStore';
 import HeaderContainer from '@src/pages/Editor/containers/HeaderContainer'
 
 import MapEditorContainer from './containers/MapEditorContainer'
+import MapEditorRegionDataContainer from './containers/MapEditorRegionDataContainer'
 import MapEditorSidebarSwitch from './MapEditorSidebarSwitch'
 
 MapEditorPage.propTypes = {
@@ -41,10 +42,12 @@ function MapEditorPage(props) {
       />
 
       <MapEditorContainer params={{ mapType }}>
-        <MapEditorSidebarSwitch
-          pathname={pathname}
-          mapType={mapType}
-        />
+        <MapEditorRegionDataContainer>
+          <MapEditorSidebarSwitch
+            pathname={pathname}
+            mapType={mapType}
+          />
+        </MapEditorRegionDataContainer>
       </MapEditorContainer>
     </div>
   );

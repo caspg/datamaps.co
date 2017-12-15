@@ -1,11 +1,11 @@
-import { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Map } from 'immutable'
 
-import { loadEmptyData } from 'redux/actions/regionData'
+import { loadEmptyData } from '@src/redux/actions/regionData'
 
-class MapEditorWrapper extends Component {
-  componentWillMount() {
+class MapEditorRegionDataContainer extends Component {
+  componentDidMount() {
     const { regionData, dispatch, mapType, topoData } = this.props
 
     if (!regionData) {
@@ -14,11 +14,15 @@ class MapEditorWrapper extends Component {
   }
 
   render() {
-    return this.props.children
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    )
   }
 }
 
-MapEditorWrapper.propTypes = {
+MapEditorRegionDataContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   regionData: PropTypes.instanceOf(Map),
@@ -38,4 +42,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(MapEditorWrapper)
+export default connect(mapStateToProps)(MapEditorRegionDataContainer)

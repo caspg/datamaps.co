@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Record } from 'immutable'
 
-import { uploadDataAndRedirect } from 'redux/actions/regionData'
-import uploadSteps from 'config/constants/upload'
+import { uploadDataAndRedirect } from '@src/redux/actions/regionData'
+import uploadSteps from '@src/config/constants/upload'
+
 import DataUploadLayout from '../components/DataUploadLayout'
 
 const ColumnIndexes = Record({

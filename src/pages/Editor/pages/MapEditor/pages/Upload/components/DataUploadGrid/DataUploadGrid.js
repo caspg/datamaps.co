@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 
-import uploadSteps from 'config/constants/upload'
-import style from './DataUploadGrid.css'
+import uploadSteps from '@src/config/constants/upload'
+import { grey500, greyDark, grey100 } from '@src/styles/colors'
 
 const NUMBER_OF_ROWS = 5
 
@@ -54,7 +54,7 @@ class DataUploadGrid extends Component {
 
     const renderCells = (row, rowIndex) =>
       row.map((datum, columnIndex) => {
-        const headerClassName = (rowIndex === 0) ? 'header' : ''
+        const headerClassName = (rowIndex === 0) ? 'DataUploadGrid__header' : ''
         const isHighlighted = this.state.highlightedColumnIndex === columnIndex
 
         const backgroundColor = () => {
@@ -72,7 +72,7 @@ class DataUploadGrid extends Component {
         return (
           <td
             key={`${columnIndex}-td`}
-            className={`${style.cell} ${style[headerClassName]}`}
+            className={`DataUploadGrid__cell ${headerClassName}`}
             onMouseEnter={() => this.handleMouseEnter(columnIndex)}
             style={cellStyle}
           >
@@ -84,7 +84,6 @@ class DataUploadGrid extends Component {
     return this.props.data.slice(0, NUMBER_OF_ROWS).map((row, rowIndex) =>
       <tr
         key={`${rowIndex}-tr`}
-        className={style.row}
       >
         {renderCells(row, rowIndex)}
       </tr>
@@ -112,12 +111,12 @@ class DataUploadGrid extends Component {
 
   render() {
     return (
-      <div className={style.container}>
+      <div className="DataUploadGrid">
         {this.renderRowsInfo()}
 
-        <div className={style.tableContainer}>
+        <div className="DataUploadGrid__tableContainer">
           <table
-            className={style.table}
+            className="DataUploadGrid__table"
             onMouseLeave={this.handleMouseLeave}
             onClick={this.handleColumnClick}
           >
@@ -126,6 +125,43 @@ class DataUploadGrid extends Component {
             </tbody>
           </table>
         </div>
+
+        <style jsx>{`
+          .DataUploadGrid {
+            margin-top: 30px;
+            padding-left: 35px;
+          }
+
+          .DataUploadGrid__tableContainer {
+            overflow: auto;
+          }
+
+          .DataUploadGrid__table {
+            background-color: white;
+            border: 1px solid ${grey500};
+          }
+        `}</style>
+
+        <style jsx global>{`
+          .DataUploadGrid__cell {
+            min-width: 200px;
+            padding-left: 25px;
+
+            border-right: 1px solid ${grey500};
+            border-bottom: 1px solid ${grey500};
+            cursor: pointer;
+          }
+
+          .DataUploadGrid__cell:first-child {
+            padding-left: 40px;
+          }
+
+          .DataUploadGrid__header {
+            border: 1px solid ${greyDark};
+            background-color: ${grey100};
+            font-weight: 600;
+          }
+        `}</style>
       </div>
     )
   }

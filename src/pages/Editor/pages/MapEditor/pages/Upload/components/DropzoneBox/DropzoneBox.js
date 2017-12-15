@@ -1,11 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
 
-import parseDsv from 'utils/parseDsv'
-import style from './DropzoneBox.css'
+import { grey600, grey100 } from '@src/styles/colors'
+import parseDsv from '@src/utils/parseDsv'
+
 import DataUploadModal from '../DataUploadModal'
 
-export default class DropzoneBox extends Component {
+class DropzoneBox extends Component {
+  static propTypes = {
+    mapType: PropTypes.string.isRequired,
+  }
+
   constructor(props) {
     super(props)
     this.onDrop = this.onDrop.bind(this)
@@ -52,8 +57,8 @@ export default class DropzoneBox extends Component {
     return (
       <div>
         <Dropzone
-          className={style.dropzone}
-          activeClassName={style['dropzone-active']}
+          className="Dropzone"
+          activeClassName="Dropzone-active"
           onDrop={this.onDrop}
         >
           <div>
@@ -62,11 +67,32 @@ export default class DropzoneBox extends Component {
         </Dropzone>
 
         {dataUploadModal}
+
+        <style jsx global>{`
+          .Dropzone {
+            margin: 30px 0;
+            padding: 25px;
+            height: 150px;
+            border-width: 1px;
+            border-color: ${grey600};
+            border-style: dashed;
+            border-radius: 5px;
+            background-color: ${grey100};
+          }
+
+          .Dropzone-active {
+            border-style: solid;
+          }
+
+          @media(min-width: 950px) {
+            .Dropzone {
+              width: 250px;
+            }
+          }
+        `}</style>
       </div>
     )
   }
 }
 
-DropzoneBox.propTypes = {
-  mapType: PropTypes.string.isRequired,
-}
+export default DropzoneBox

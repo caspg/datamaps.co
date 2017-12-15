@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import style from './DataUploadHeader.css'
+import { grey300 } from '@src/styles/colors'
+
 import UploadSteps from '../UploadSteps'
 import UploadInstructions from '../UploadInstructions'
 
@@ -8,7 +9,7 @@ const DataUploadHeader = (props) => {
   const { currentStep, columnIndexes, onSkipStep, onChangeStep } = props
 
   return (
-    <div className={style.container}>
+    <div className="DataUploadHeader">
       <UploadSteps
         currentStep={currentStep}
         columnIndexes={columnIndexes}
@@ -19,6 +20,16 @@ const DataUploadHeader = (props) => {
         currentStep={currentStep}
         onSkipStep={onSkipStep}
       />
+
+      <style jsx>{`
+        .DataUploadHeader {
+          background-color: white;
+          min-height: 60px;
+          padding: 20px;
+          padding-left: 35px;
+          border-bottom: 1px solid ${grey300};
+        }
+      `}</style>
     </div>
   )
 }
