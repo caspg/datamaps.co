@@ -1,63 +1,49 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
+import React, { PropTypes } from 'react'
 
 import { Link } from '@routes'
-// import style from './EditMapView.css'
-// import CommonEditor from '../CommonEditor'
-// import LinearScaleEditor from '../LinearScaleEditor'
-// import EquidistantScaleEditor from '../EquidistantScaleEditor'
 
-const style = {}
-
-class EditMap extends Component {
-  // renderEditor() {
-  //   const dataClassification = this.props.mapUi.get('dataClassification')
-  //   const linearEditor = <LinearScaleEditor />
-  //   const equidistantEditor = <EquidistantScaleEditor />
-  //   const editors = {
-  //     linear: linearEditor,
-  //     equidistant: equidistantEditor,
-  //   }
-
-  //   return editors[dataClassification]
-  // }
-
-  render() {
-    return (
-      <div className={style.container}>
-        <div className={style.wrapper}>
-          <Link prefetch route={`/editor/${this.props.mapType}/upload`}>
-            <a className={style.link}>
-              Upload new data
-            </a>
-          </Link>
-          <Link prefetch route={`/editor/${this.props.mapType}/edit-data`}>
-            <a className={style.link}>
-              Edit data
-            </a>
-          </Link>
-
-          <h1>EditMap</h1>
-
-          {/* <CommonEditor>
-            {this.renderEditor()}
-          </CommonEditor> */}
-        </div>
-      </div>
-    )
-  }
-}
+import MapEditor from './containers/MapEditor'
 
 EditMap.propTypes = {
-  mapUi: PropTypes.object.isRequired,
   mapType: PropTypes.string.isRequired,
 }
 
-function mapStateToProps(state) {
-  return {
-    mapUi: state.mapUi,
-    mapType: state.mapType,
-  }
+function EditMap(props) {
+  return (
+    <div className="EditMap">
+      <div className="EditMap__wrapper">
+        <Link prefetch route={`/editor/${props.mapType}/upload`}>
+          <a className="EditMap__link">
+            Upload new data
+          </a>
+        </Link>
+        <Link prefetch route={`/editor/${props.mapType}/edit-data`}>
+          <a className="EditMap__link">
+            Edit data
+          </a>
+        </Link>
+
+        <h1>EditMap</h1>
+
+        <MapEditor />
+      </div>
+
+      <style jsx>{`
+        .EditMap {
+          min-height: 100%;
+          margin-bottom: -120px; /* Height of Footer and footer's margin */
+        }
+
+        .EditMap__wrapper {
+          padding: 30px;
+        }
+
+        .EditMap__link {
+          margin-right: 20px;
+        }
+      `}</style>
+    </div>
+  )
 }
 
-export default connect(mapStateToProps)(EditMap)
+export default EditMap
