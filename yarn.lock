@@ -3983,9 +3983,11 @@ react-themeable@^1.1.0:
   dependencies:
     object-assign "^3.0.0"
 
-react-typist@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-typist/-/react-typist-1.0.3.tgz#030a6cb5bad57835c185ae7e6874674171072fa3"
+react-typist@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-typist/-/react-typist-2.0.4.tgz#e7ee4de53ead913d363d38f07b700c00ce271be0"
+  dependencies:
+    prop-types "^15.5.10"
 
 react@15.5.4:
   version "15.5.4"

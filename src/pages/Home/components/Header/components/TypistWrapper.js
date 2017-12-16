@@ -26,7 +26,10 @@ class TypistWrapper extends Component {
     this.timeouts = []
 
     setTimeout(() => {
-      this.setState({ typing: true })
+      this.setState({
+        typing: true,
+        currentWord: TypistWrapper.randomWord(this.props.words),
+      })
     }, 1500)
   }
 
