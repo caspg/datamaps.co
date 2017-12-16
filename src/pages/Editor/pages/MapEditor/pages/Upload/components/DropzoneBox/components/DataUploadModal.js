@@ -14,6 +14,8 @@ const DataUploadModal = props => (
     className="DataUploadModal"
     overlayClassName="DataUploadModal__overlay"
     portalClassName="DataUploadModal__portal"
+    contentLabel="Data upload modal"
+    ariaHideApp={false}
   >
     <button
       className="DataUploadModal__close-button"

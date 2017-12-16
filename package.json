@@ -23,7 +23,7 @@
     "react-color": "^2.4.2",
     "react-dom": "15.5.4",
     "react-dropzone": "^3.3.2",
-    "react-modal": "^1.5.2",
+    "react-modal": "^3.1.8",
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.7",
