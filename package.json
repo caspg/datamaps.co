@@ -20,7 +20,7 @@
     "prop-types": "^15.6.0",
     "react": "15.5.4",
     "react-autosuggest": "^9.3.2",
-    "react-color": "^2.4.2",
+    "react-color": "^2.13.8",
     "react-dom": "15.5.4",
     "react-dropzone": "^3.3.2",
     "react-modal": "^3.1.8",
