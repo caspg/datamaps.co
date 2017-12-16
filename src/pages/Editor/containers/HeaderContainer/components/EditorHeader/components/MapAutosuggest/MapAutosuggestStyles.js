@@ -55,7 +55,7 @@ function MapAutosuggestStyles() {
         margin-bottom: 0;
       }
 
-      .react-autosuggest__suggestion--focused {
+      .react-autosuggest__suggestion--highlighted {
         background-color: ${lightBlue};
       }
     `}</style>

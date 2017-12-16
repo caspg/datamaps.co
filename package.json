@@ -19,7 +19,7 @@
     "next-routes": "^1.2.0",
     "prop-types": "^15.6.0",
     "react": "15.5.4",
-    "react-autosuggest": "^7.0.1",
+    "react-autosuggest": "^9.3.2",
     "react-color": "^2.4.2",
     "react-dom": "15.5.4",
     "react-dropzone": "^3.3.2",

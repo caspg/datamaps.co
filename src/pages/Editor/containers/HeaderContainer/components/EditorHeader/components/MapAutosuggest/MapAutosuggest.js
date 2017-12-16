@@ -79,9 +79,9 @@ class MapAutosuggest extends Component {
     })
   }
 
-  onBlur(event, { focusedSuggestion }) {
-    if (!focusedSuggestion) return;
-    this.handleValueChanged(focusedSuggestion);
+  onBlur(event, { highlightedSuggestion }) {
+    if (!highlightedSuggestion) return;
+    this.handleValueChanged(highlightedSuggestion);
   }
 
   onSuggestionsFetchRequested({ value }) {
@@ -124,7 +124,7 @@ class MapAutosuggest extends Component {
           getSuggestionValue={MapAutosuggest.getSuggestionValue}
           renderSuggestion={MapAutosuggest.renderSuggestion}
           inputProps={inputProps}
-          focusFirstSuggestion
+          highlightFirstSuggestion
           shouldRenderSuggestions={MapAutosuggest.shouldRenderSuggestions}
           onSuggestionSelected={this.onSuggestionSelected}
         />
