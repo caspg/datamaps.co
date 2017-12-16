@@ -24,9 +24,6 @@ function makeStore() {
 let reduxStore = null
 
 function initalizeStore() {
-  console.log('initalizeStore')
-  console.log('isSSR: ', isSSR())
-
   if (isSSR()) {
     // Create new store for every server-side request
     return makeStore()
