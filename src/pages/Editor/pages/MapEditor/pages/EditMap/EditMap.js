@@ -24,8 +24,6 @@ function EditMap(props) {
           </a>
         </Link>
 
-        <h1>EditMap</h1>
-
         <MapEditor />
       </div>
 

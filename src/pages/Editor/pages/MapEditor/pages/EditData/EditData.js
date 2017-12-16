@@ -6,8 +6,6 @@ import DataTableContainer from './containers/DataTableContainer'
 
 const EditDataView = (props) =>
   <div className="EditDataView">
-    <h1>EditDataView</h1>
-
       <Link prefetch route={`/editor/${props.mapType}/edit-map`}>
         <a className="button EditDataView__link">
           edit map style

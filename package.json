@@ -15,16 +15,16 @@
     "d3": "^3.5.16",
     "d3-dsv": "^1.0.3",
     "immutable": "^3.8.1",
-    "next": "3.2.2",
+    "next": "^4.2.1",
     "next-routes": "^1.2.0",
     "prop-types": "^15.6.0",
-    "react": "15.5.4",
+    "react": "^16.2.0",
     "react-autosuggest": "^9.3.2",
     "react-color": "^2.13.8",
-    "react-dom": "15.5.4",
-    "react-dropzone": "^3.3.2",
+    "react-dom": "^16.2.0",
+    "react-dropzone": "^4.2.3",
     "react-modal": "^3.1.8",
-    "react-redux": "^4.4.5",
+    "react-redux": "4.4.8",
     "react-select": "^1.1.0",
     "react-typist": "^2.0.4",
     "redux": "^3.6.0",
@@ -39,10 +39,6 @@
     "eslint-config-airbnb": "^6.2.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^4.2.3",
-    "json2csv": "^3.5.0",
-    "redux-devtools": "^3.2.0",
-    "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.0.9",
-    "stylelint": "^5.2.1"
+    "json2csv": "^3.5.0"
   }
 }
