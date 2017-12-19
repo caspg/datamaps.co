@@ -6,7 +6,8 @@
 module.exports = {
   root: '/',
 
-  editor:    '/editor',
+  editor: '/editor',
+
   mapEditor: '/editor/:mapType',
   upload:    '/editor/:mapType/upload',
   editData:  '/editor/:mapType/edit-data',
