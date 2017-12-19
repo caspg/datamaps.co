@@ -44,11 +44,20 @@ class MapAutosuggest extends Component {
     return true;
   }
 
+  static getDisplayValue(props) {
+    const displayName = (mapType) =>
+      mapsConfig.types.filter(i => i.code === mapType)[0].displayName
+
+    return (props.currentPath === routes.editor || !props.mapType)
+      ? ''
+      : displayName(props.mapType)
+  }
+
   constructor(props) {
     super(props)
 
     this.state = {
-      value: '',
+      value: MapAutosuggest.getDisplayValue(props),
       suggestions: [],
     }
 
@@ -60,16 +69,8 @@ class MapAutosuggest extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const displayName = (mapType) =>
-      mapsConfig.types.filter(i => i.code === mapType)[0].displayName
-
-    const value = (nextProps.currentPath === routes.editor) ?
-      '' :
-      displayName(nextProps.mapType)
-
-
     this.setState({
-      value,
+      value: MapAutosuggest.getDisplayValue(nextProps),
     })
   }
 
