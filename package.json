@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "node server",
-    "build:static": "next build && next export",
+    "build:static": "next build && next export"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "MIT",
@@ -31,6 +31,7 @@
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.4",
     "save-svg-as-png": "^1.0.2",
+    "serverless-client-s3": "^2.0.0",
     "topojson-client": "^2.1.0"
   },
   "devDependencies": {
