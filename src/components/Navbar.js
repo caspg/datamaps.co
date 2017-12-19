@@ -20,7 +20,7 @@ function Navbar(props) {
 
     return links.map((link, i) =>
       <li key={i} className="Navbar__list-item">
-        <Link href={link.to}>
+        <Link prefetch href={link.to}>
           <a className="Navbar__link">
             {link.text}
           </a>

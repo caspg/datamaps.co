@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const ActionButton = () =>
   <div className="row center-xs">
-    <Link href="/editor">
+    <Link prefetch href="/editor">
       <a className="button ActionButton__button">
         Go to the editor
       </a>
