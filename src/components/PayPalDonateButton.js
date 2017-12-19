@@ -20,6 +20,10 @@ class PayPalDonateButton extends Component {
     event.preventDefault()
     this.paypallForm.submit()
     this.props.afterOnClick()
+
+    if (process.env.NODE_ENV === 'production') {
+      console.log('PAYPALL DONATE BUTTON CLICKED')
+    }
   }
 
   render() {
