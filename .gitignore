@@ -8,3 +8,5 @@ log/*
 
 ngrok
 .next
+
+client/dist

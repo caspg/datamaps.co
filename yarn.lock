@@ -4844,9 +4844,9 @@ send@0.16.1:
     range-parser "~1.2.0"
     statuses "~1.3.1"
 
-serverless-client-s3@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/serverless-client-s3/-/serverless-client-s3-2.0.0.tgz#2653df243bce2b9d565b9474b44372e70f3e69bf"
+serverless-finch@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/serverless-finch/-/serverless-finch-1.3.0.tgz#09ae5db044cbb71384d825c13b58091875965602"
   dependencies:
     async "^1.5.2"
     bluebird "^3.0.6"

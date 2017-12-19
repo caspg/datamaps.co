@@ -1,0 +1,14 @@
+service: datamaps-co
+
+provider:
+  name: aws
+  stage: prod
+  region: us-east-1
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: datamaps.co
+    distributionFolder: client/dist
