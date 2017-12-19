@@ -6,7 +6,7 @@ import { downloadPng, downloadSvg } from '@src/utils/downloadMap'
 import PayPallModal from './PayPallModal'
 
 const DOWNLOADS_COUNT = 'DOWNLOADS_COUNT'
-const DOWNLOADS_LIMIT = 5
+const DOWNLOADS_LIMIT = 3
 
 class SaveButtons extends Component {
   static defaultProps = {
