@@ -40,7 +40,9 @@ function PayPallModal(props) {
         <br />
 
         <div style={{ marginLeft: -15 }}>
-          <PayPalDonateButton />
+          <PayPalDonateButton
+            afterOnClick={props.onClose}
+          />
         </div>
       </div>
 
