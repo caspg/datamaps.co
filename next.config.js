@@ -1,3 +1,5 @@
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
 const mapConfig = require('./src/config/maps')
 const pages = require('./src/config/pages')
 
@@ -11,7 +13,6 @@ mapTypes.forEach((mapType) => {
   editorMapRoutes[`/editor/${mapType}/edit-map`] = { page: pages.editMap, query: { mapType } }
 })
 
-// next.config.js
 module.exports = {
   exportPathMap: () => ({
     '/': { page: '/' },
@@ -21,4 +22,17 @@ module.exports = {
 
     ...editorMapRoutes,
   }),
+  webpack: (config) => {
+    if (process.env.ANALYZE) {
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          analyzerPort: 8888,
+          openAnalyzer: true,
+        })
+      )
+    }
+
+    return config
+  },
 }

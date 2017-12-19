@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server",
     "build:static": "next build && next export -o client/dist",
-    "deploy:s3": "yarn run build:static && serverless client deploy"
+    "deploy:s3": "yarn run build:static && serverless client deploy",
+    "analyze": "ANALYZE=true next build"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "MIT",
@@ -18,7 +19,6 @@
     "immutable": "^3.8.1",
     "next": "^4.2.1",
     "next-routes": "^1.2.0",
-    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-autosuggest": "^9.3.2",
     "react-color": "^2.13.8",
@@ -41,6 +41,8 @@
     "eslint-config-airbnb": "^6.2.0",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^4.2.3",
-    "json2csv": "^3.5.0"
+    "json2csv": "^3.5.0",
+    "prop-types": "^15.6.0",
+    "webpack-bundle-analyzer": "^2.9.1"
   }
 }
