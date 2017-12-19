@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Router from 'next/router'
 import PropTypes from 'prop-types'
 
-import { setMapType } from 'redux/actions'
+import { Router } from '@routes'
+import { setMapType } from '@src/redux/actions'
 
 import EditorHeader from './components/EditorHeader'
 
@@ -20,7 +20,7 @@ class HeaderContainer extends Component {
       dispatch(setMapType(mapType))
     }
 
-    Router.push(`${mainPath}/${mapType}`)
+    Router.pushRoute(`${mainPath}/${mapType}`)
   }
 
   render() {
