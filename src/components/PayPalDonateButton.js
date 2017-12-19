@@ -22,7 +22,12 @@ class PayPalDonateButton extends Component {
     this.props.afterOnClick()
 
     if (process.env.NODE_ENV === 'production') {
-      console.log('PAYPALL DONATE BUTTON CLICKED')
+      window.ga('send', {
+        hitType: 'event',
+        eventCategory: 'Save Button',
+        eventAction: 'PAY_PALL_BUTTON',
+        eventLabel: 'clicked',
+      });
     }
   }
 
