@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "node server",
     "build:static": "next build && next export",
-    "gh-deploy": "bash ./scripts/gh-deploy.sh"
   },
   "author": "Kacper Goliński <kacper.golinski@gmail.com>",
   "license": "MIT",
