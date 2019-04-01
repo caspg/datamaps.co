@@ -1,8 +1,14 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react'
 
-import './MailChimpSignup.global.css'
-import style from './MailChimpSignup.css'
+import {
+  seaBlue,
+  grey500,
+  red900,
+  lightGreen50,
+  lightGreen400,
+  lightGreen900,
+} from '@src/styles/colors'
 
 const MAILCHIMP_FORM_ID = 'MAILCHIMP_FORM'
 
@@ -63,7 +69,7 @@ class MailChimpSignup extends Component {
                 placeholder="Your email"
                 name="EMAIL"
                 id="mce-EMAIL"
-                className={`required email ${style.input}`}
+                className="required email MailChimpSignup__input"
               />
             </div>
 
@@ -73,7 +79,7 @@ class MailChimpSignup extends Component {
                 placeholder="First name"
                 name="FNAME"
                 id="mce-FNAME"
-                className={`required ${style.input}`}
+                className="required MailChimpSignup__input"
               />
             </div>
 
@@ -92,7 +98,7 @@ class MailChimpSignup extends Component {
                   value="Join the beta list"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  className={style.button}
+                  className="MailChimpSignup__submit-btn"
                 />
               </div>
             </div>
@@ -109,6 +115,45 @@ class MailChimpSignup extends Component {
     return (
       <div className="MailChimpSignup">
         {MailChimpSignup.renderForm()}
+
+        <style jsx global>{`
+          .MailChimpSignup__input {
+            width: 300px;
+            border-color: ${grey500};
+          }
+
+          .MailChimpSignup__submit-btn {
+            margin: 20px 0;
+            background: ${seaBlue};
+            color: white;
+            border-radius: 4px;
+            border-width: 0;
+            width: 300px;
+            box-shadow: 2px 6px 11px 2px rgba(39, 39, 39, 0.5);
+          }
+        `}</style>
+
+        <style jsx global>{`
+          .MailChimpSignup #mc_embed_signup .mce_inline_error {
+            color: ${red900};
+            background-color: transparent;
+          }
+
+          .MailChimpSignup #mc_embed_signup input.mce_inline_error {
+            border-color: ${red900};
+            background-color: white;
+          }
+
+          .MailChimpSignup #mce-success-response {
+            padding: 5px;
+            display: inline-block;
+            color: ${lightGreen900};
+            max-width: 350px;
+            text-align: justify;
+            background-color: ${lightGreen50};
+            border: 1px solid ${lightGreen400};
+          }
+        `}</style>
       </div>
     )
   }

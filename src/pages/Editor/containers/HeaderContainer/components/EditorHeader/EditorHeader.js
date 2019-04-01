@@ -5,6 +5,7 @@ import { editorHeaderZIndex } from '@src/styles/variables'
 import { grey100, grey300 } from '@src/styles/colors'
 
 import Navbar from '@src/components/Navbar'
+import MailChimpPopup from '@src/components/MailChimpPopup'
 import HamburgerMenu from '@src/components/HamburgerMenu'
 import PayPalDonateButton from '@src/components/PayPalDonateButton'
 import SaveButtons from '@src/components/SaveButtons'
@@ -46,7 +47,7 @@ const EditorHeader = (props) => {
           <div className="row middle-xs end-xs">
 
             {/* TODO: what to do with mailchimp popup? */}
-            {/* <MailChimpPopup /> */}
+            <MailChimpPopup />
 
             <PayPalDonateButton />
 

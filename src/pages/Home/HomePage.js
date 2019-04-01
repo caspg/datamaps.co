@@ -13,6 +13,7 @@ import MapsImages from './components/MapsImages';
 import About from './components/About';
 import ActionButton from './components/ActionButton';
 import SocialIcons from './components/SocialIcons';
+import { BetaListSection } from './components/BetaListSection'
 
 function HomePage() {
   return (
@@ -27,6 +28,7 @@ function HomePage() {
       </Header>
 
       <EditorAttributes />
+      <BetaListSection />
       <MapsImages />
       <About />
       <ActionButton />
